@@ -1,0 +1,82 @@
+ <!DOCTYPE html>
+    <html data-require="word-problems music">
+        <head>
+            <title>Grand Staff Note Reading</title>
+            <script src="../khan-exercise.js"></script>
+          
+        </head>
+        <body>
+            <div class="exercise">
+                <div class="vars">
+                    <var id="NOTE">randRange( 1, 31)</var>
+                    <var id ="LETTERS">new Array("asdf","G sharp","A sharp","C sharp","D sharp","F sharp","G sharp","A sharp","D sharp","F sharp","G sharp", "A sharp","C sharp","D sharp","F sharp","G sharp", "G flat", "A flat", "B flat" , "D flat", "E flat", "G flat", "A flat", "B flat" , "D flat", "E flat", "G flat" , "A flat", "B flat", "D flat","E flat", "G flat" )</var>
+                    <var id = "ANSWER">LETTERS[NOTE]</var>
+                    <var id ="PLAYSOUND">playSound((NOTE+1))</var>
+                    
+                </div>
+
+                <div class="problems">
+                   <div id="problem-type-or-description"> 
+                   	<div class = "problem">
+                    <p>What note is this?  Select an option from the list.</p>
+                        <span data-if="NOTE === 1"><img src="../images/sharpsflats/1.jpg" /></span>
+                        <span data-if="NOTE === 2"><img src="../images/sharpsflats/2.jpg" /></span>
+                        <span data-if="NOTE === 3"><img src="../images/sharpsflats/3.jpg" /></span>
+                        <span data-if="NOTE === 4"><img src="../images/sharpsflats/4.jpg" /></span>
+                        <span data-if="NOTE === 5"><img src="../images/sharpsflats/5.jpg" /></span>
+                        <span data-if="NOTE === 6"><img src="../images/sharpsflats/6.jpg" /></span>
+                        <span data-if="NOTE === 7"><img src="../images/sharpsflats/7.jpg" /></span>
+                        <span data-if="NOTE === 8"><img src="../images/sharpsflats/8.jpg" /></span>
+                        <span data-if="NOTE === 9"><img src="../images/sharpsflats/9.jpg" /></span>
+                        <span data-if="NOTE === 10"><img src="../images/sharpsflats/10.jpg" /></span>
+                        <span data-if="NOTE === 11"><img src="../images/sharpsflats/11.jpg" /></span>
+                        <span data-if="NOTE === 12"><img src="../images/sharpsflats/12.jpg" /></span>
+                        <span data-if="NOTE === 13"><img src="../images/sharpsflats/13.jpg" /></span>
+                        <span data-if="NOTE === 14"><img src="../images/sharpsflats/14.jpg" /></span>
+                        <span data-if="NOTE === 15"><img src="../images/sharpsflats/15.jpg" /></span>
+                        <span data-if="NOTE === 16"><img src="../images/sharpsflats/16.jpg" /></span>
+                        <span data-if="NOTE === 17"><img src="../images/sharpsflats/17.jpg" /></span>
+                        <span data-if="NOTE === 18"><img src="../images/sharpsflats/18.jpg" /></span>
+                        <span data-if="NOTE === 19"><img src="../images/sharpsflats/19.jpg" /></span>
+                        <span data-if="NOTE === 20"><img src="../images/sharpsflats/20.jpg" /></span>
+                        <span data-if="NOTE === 21"><img src="../images/sharpsflats/21.jpg" /></span>
+                        <span data-if="NOTE === 22"><img src="../images/sharpsflats/22.jpg" /></span>
+                        <span data-if="NOTE === 23"><img src="../images/sharpsflats/23.jpg" /></span>
+                        <span data-if="NOTE === 24"><img src="../images/sharpsflats/24.jpg" /></span>
+                        <span data-if="NOTE === 25"><img src="../images/sharpsflats/25.jpg" /></span>
+                        <span data-if="NOTE === 26"><img src="../images/sharpsflats/26.jpg" /></span>
+                        <span data-if="NOTE === 27"><img src="../images/sharpsflats/27.jpg" /></span>
+                        <span data-if="NOTE === 28"><img src="../images/sharpsflats/28.jpg" /></span>
+                        <span data-if="NOTE === 29"><img src="../images/sharpsflats/29.jpg" /></span>
+                        <span data-if="NOTE === 30"><img src="../images/sharpsflats/30.jpg" /></span>
+                        <span data-if="NOTE === 31"><img src="../images/sharpsflats/31.jpg" /></span>
+                     
+                    </div>
+                  
+                    <p class="solution"><var>ANSWER</var></p>
+                    <ul class="choices" data-category="true">
+    					<li>G flat</li>
+    					<li>A sharp</li>
+    					<li>B flat</li>
+    					<li>C sharp</li>
+    					<li>D flat</li>
+    					<li>D sharp</li>
+    					<li>E flat</li>
+    					<li>F sharp</li>
+    					<li>A flat</li>
+    					<li>G sharp</li>
+					</ul>
+
+                   
+                    </div>
+                </div>
+
+                <div class="hints">
+                   <p>Is this note a sharp or a flat?</p>
+                   <p>This note is <var>ANSWER</var>.</p>
+                   
+                   </div>
+                </div>
+            </div>
+        </body>
+    </html>

@@ -1,0 +1,18 @@
+  /* MAKE CHANGES HERE RATHER THAN BOOTSTRAP CSS */
+   
+   
+   
+    body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      
+           .span3 {
+      background-color: whiteSmoke;
+      text-align: center;
+     
+      }
+      
+      .row {     
+      padding-bottom: 20px;
+      }

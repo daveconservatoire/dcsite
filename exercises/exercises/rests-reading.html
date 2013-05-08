@@ -1,0 +1,61 @@
+ <!DOCTYPE html>
+    <html data-require="word-problems">
+        <head>
+            <title>Reading rests</title>
+            <script src="../exercises/khan-exercise.js"></script>
+    
+	
+        </head>
+        <body>
+            <div class="exercise">
+                <div class="vars">
+                    <var id="QUESTION">randRange( 0, 4)</var>
+                    <var id ="AANSWERS">new Array("Whole rest","Half rest","Quarter rest","Eighth rest","Sixteenth rest")</var>  
+                    <var id ="BANSWERS">new Array("4","2","1","0.5","0.25")</var>        
+                </div>
+
+                <div class="problems">
+                   <div id="ONE"> 
+                   		<div class = "problem">
+                    		<p>What is the name for this rest symbol? </p>
+                        	<span data-if="QUESTION === 0"><img src="../images/restimages/0.png" /></span>
+                        	<span data-if="QUESTION === 1"><img src="../images/restimages/1.png" /></span>
+                        	<span data-if="QUESTION === 2"><img src="../images/restimages/2.png" /></span>
+                        	<span data-if="QUESTION === 3"><img src="../images/restimages/3.png" /></span>
+                        	<span data-if="QUESTION === 4"><img src="../images/restimages/4.png" /></span>
+						</div>
+						<div class="solution"><var>AANSWERS[QUESTION]</var></div>
+						<ul class="choices" data-category="true">
+    					<li>Whole rest</li>
+    					<li>Half rest</li>
+    					<li>Quarter rest</li>
+    					<li>Eighth rest</li>
+    					<li>Sixteenth rest</li>
+						</ul>
+				
+					</div>
+				
+                <div id="TWO"> 
+                   	<div class = "problem">
+                    	<p>How many beats should we rest for when we see this symbol?</p>
+                    	<span data-if="QUESTION === 0"><img src="../images/restimages/0.png" /></span>
+                        <span data-if="QUESTION === 1"><img src="../images/restimages/1.png" /></span>
+                        <span data-if="QUESTION === 2"><img src="../images/restimages/2.png" /></span>
+                        <span data-if="QUESTION === 3"><img src="../images/restimages/3.png" /></span>
+                        <span data-if="QUESTION === 4"><img src="../images/restimages/4.png" /></span>
+					 </div>
+					 <div class="solution"><var>BANSWERS[QUESTION]</var></div>
+						<ul class="choices" data-category="true">
+    					<li>4</li>
+    					<li>2</li>
+    					<li>1</li>
+    					<li>0.5</li>
+    					<li>0.25</li>
+						</ul>
+				
+					</div>
+				</div>
+				</div>
+        </body>
+</html>
+    

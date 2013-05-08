@@ -1,0 +1,36 @@
+ <!DOCTYPE html>
+    <html data-require="word-problems music">
+        <head>
+            <title>Identifying Scale Degrees</title>
+            <script src="../khan-exercise.js"></script>
+          
+        </head>
+        <body>
+            <div class="exercise">
+                <div class="vars">
+                    <var id="NOTE">randRange( 1, 8)</var>
+                    <var id="ANSWERS">new Array("blah", "1", "2", "3", "4", "5", "6", "7", "1")</var>
+              
+
+                    <var id = "MYSOUND">playSound(NOTE)</var>
+                </div>
+
+                <div class="problems">
+                   <div id="problem-type-or-description"> 
+                   	<div class = "problem">
+                   	
+                    <p>You will hear a phrase to introduce a key.  Then one degree of the scale will follow.  Please enter the degree of the scale you just heard (eg. 1 for the tonic, 5 for the dominant etc.)</p>
+             
+                    </div>
+                  
+                      <p class="solution" data-type="text"><var>ANSWERS[NOTE]</var></p>
+                   
+                    </div>
+                </div>
+
+                <div class="hints">
+           
+                </div>
+            </div>
+        </body>
+    </html>

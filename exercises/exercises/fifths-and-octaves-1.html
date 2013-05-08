@@ -1,0 +1,44 @@
+ <!DOCTYPE html>
+    <html data-require="word-problems music">
+        <head>
+            <title>Recognising Fifths and Octaves</title>
+            <script src="../exercises/khan-exercise.js"></script>
+          
+        </head>
+        <body>
+            <div class="exercise">
+                <div class="vars">
+                    <var id="NOTE">randRange( 1, 24)</var>
+              
+
+                    <var id = "MYSOUND">playSound(NOTE)</var>
+                </div>
+
+                <div class="problems">
+                   <div id="problem-type-or-description"> 
+                   	<div class = "problem">
+                   	
+                    <p>You will hear a phrase to establish a key.  This will be followed by two notes, please tell me if these are a fifth apart or an octave apart.</p>
+             
+                    </div>
+                  
+                     <div class="solution">
+                     <span data-if="NOTE < 13">Fifth</span>
+                     <span data-if="NOTE > 12">Octave</span>
+                     
+                     </div>
+						<ul class="choices" data-category="true">
+    					<li>Fifth</li>
+    					<li>Octave</li>
+						</ul>			
+					</div>
+                   
+                    </div>
+                </div>
+
+                <div class="hints">
+           
+                </div>
+            </div>
+        </body>
+    </html>

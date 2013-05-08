@@ -1,0 +1,138 @@
+ <!DOCTYPE html>
+    <html data-require="word-problems music">
+        <head>
+        	<title>Dynamics Quiz</title>
+        	<script src="../exercises/khan-exercise.js"></script>
+		</head>
+        <body>
+            <div class="exercise">
+                <div class="vars">
+                    <var id="QUESTION">randRange( 0, 9)</var>
+                    <var id="QUESTIONA">randRange( 0, 5)</var>
+                    <var id="AANSWERS">new Array("Get Louder","Get Quieter","Play Loudly","Play Very Loudly","Play Moderately Loud","Play Moderately Quiet","Play Quietly","Play Very Quietly", "Play Suddenly Loud", "Play Suddenly Quiet")</var>
+                    <var id="BANSWERS">new Array("Crescendo","Diminuendo","Forte","Fortissimo","Mezzo Forte","Mezzo Piano","Piano","Pianissimo","Subito Forte","Subito Piano")</var>
+            
+              <var id="CANSWERS">new Array("pp","p","mp","mf","f","ff")</var>
+               </div>
+			 <div class="problems">
+                  <div id="ONE"> 
+                   	<div class = "problem">
+                    	<p>If we see this symbol in a piece of music it is telling us to . . . </p>
+                    </div>
+                    <div class="question">
+                        <span data-if="QUESTION === 0"><img src="../images/dynamicsquiz/cresc.jpg" /></span>
+                        <span data-if="QUESTION === 1"><img src="../images/dynamicsquiz/dim.jpg" /></span>
+                        <span data-if="QUESTION === 2"><img src="../images/dynamicsquiz/f.jpg" /></span>
+                        <span data-if="QUESTION === 3"><img src="../images/dynamicsquiz/ff.jpg" /></span>
+                        <span data-if="QUESTION === 4"><img src="../images/dynamicsquiz/mf.jpg" /></span>
+                        <span data-if="QUESTION === 5"><img src="../images/dynamicsquiz/mp.jpg" /></span>
+                        <span data-if="QUESTION === 6"><img src="../images/dynamicsquiz/p.jpg" /></span>
+                        <span data-if="QUESTION === 7"><img src="../images/dynamicsquiz/pp.jpg" /></span>
+                        <span data-if="QUESTION === 8"><img src="../images/dynamicsquiz/subf.jpg" /></span>
+                        <span data-if="QUESTION === 9"><img src="../images/dynamicsquiz/subp.jpg" /></span>
+                    </div>
+  
+                
+                  
+                    <div class="solution"><var>AANSWERS[QUESTION]</var></div>
+						<ul class="choices" data-category="true">
+    					<li>Get Louder</li>
+    					<li>Get Quieter</li>
+    					<li>Play Loudly</li>
+    					<li>Play Very Loudly</li>
+    					<li>Play Moderately Loud</li>
+    					<li>Play Moderately Quiet</li>
+    					<li>Play Quietly</li>
+    					<li>Play Very Quietly</li>
+    					<li>Play Suddenly Loud</li>
+    					<li>Play Suddenly Quiet</li>
+						</ul>
+                    
+                </div>
+                <div id="TWO"> 
+                   	<div class = "problem">
+                    	<p>The italian musical term described by this symbol is?</p>
+                    </div>
+                    <div class="question">
+                        <span data-if="QUESTION === 0"><img src="../images/dynamicsquiz/cresc.jpg" /></span>
+                        <span data-if="QUESTION === 1"><img src="../images/dynamicsquiz/dim.jpg" /></span>
+                        <span data-if="QUESTION === 2"><img src="../images/dynamicsquiz/f.jpg" /></span>
+                        <span data-if="QUESTION === 3"><img src="../images/dynamicsquiz/ff.jpg" /></span>
+                        <span data-if="QUESTION === 4"><img src="../images/dynamicsquiz/mf.jpg" /></span>
+                        <span data-if="QUESTION === 5"><img src="../images/dynamicsquiz/mp.jpg" /></span>
+                        <span data-if="QUESTION === 6"><img src="../images/dynamicsquiz/p.jpg" /></span>
+                        <span data-if="QUESTION === 7"><img src="../images/dynamicsquiz/pp.jpg" /></span>
+                        <span data-if="QUESTION === 8"><img src="../images/dynamicsquiz/subf.jpg" /></span>
+                        <span data-if="QUESTION === 9"><img src="../images/dynamicsquiz/subp.jpg" /></span>
+                    </div> 
+					<div class="solution">
+						<var>BANSWERS[QUESTION]</var>
+					</div>
+					<ul class="choices" data-category="true">
+    					<li>Crescendo</li>
+    					<li>Diminuendo</li>
+    					<li>Forte</li>
+    					<li>Fortissimo</li>
+    					<li>Mezzo Forte</li>
+    					<li>Mezzo Piano</li>
+    					<li>Piano</li>
+    					<li>Pianissimo</li>
+    					<li>Subito Forte</li>
+    					<li>Subito Piano</li>
+					</ul>
+                  
+                </div>
+                                <div id="TWO"> 
+                   	<div class = "problem">
+                    	<p>The italian musical term described by this symbol is?</p>
+                    </div>
+                    <div class="question">
+                        <span data-if="QUESTION === 0"><img src="../images/dynamicsquiz/cresc.jpg" /></span>
+                        <span data-if="QUESTION === 1"><img src="../images/dynamicsquiz/dim.jpg" /></span>
+                        <span data-if="QUESTION === 2"><img src="../images/dynamicsquiz/f.jpg" /></span>
+                        <span data-if="QUESTION === 3"><img src="../images/dynamicsquiz/ff.jpg" /></span>
+                        <span data-if="QUESTION === 4"><img src="../images/dynamicsquiz/mf.jpg" /></span>
+                        <span data-if="QUESTION === 5"><img src="../images/dynamicsquiz/mp.jpg" /></span>
+                        <span data-if="QUESTION === 6"><img src="../images/dynamicsquiz/p.jpg" /></span>
+                        <span data-if="QUESTION === 7"><img src="../images/dynamicsquiz/pp.jpg" /></span>
+                        <span data-if="QUESTION === 8"><img src="../images/dynamicsquiz/subf.jpg" /></span>
+                        <span data-if="QUESTION === 9"><img src="../images/dynamicsquiz/subp.jpg" /></span>
+                    </div> 
+					<div class="solution">
+						<var>BANSWERS[QUESTION]</var>
+					</div>
+					<ul class="choices" data-category="true">
+    					<li>Crescendo</li>
+    					<li>Diminuendo</li>
+    					<li>Forte</li>
+    					<li>Fortissimo</li>
+    					<li>Mezzo Forte</li>
+    					<li>Mezzo Piano</li>
+    					<li>Piano</li>
+    					<li>Pianissimo</li>
+    					<li>Subito Forte</li>
+    					<li>Subito Piano</li>
+					</ul>
+                  
+                </div>
+                <div id="THREE"> 
+                   	<div class = "problem">
+                    <p>How do we represent this instruction in standard music notation? Use lowercase (eg. ff for "Play Very Loudly")</p>
+                    </div>
+                    <div class="question">
+                        <span data-if="QUESTIONA === 0"><h2>Play Very Quietly</h2></span>
+                        <span data-if="QUESTIONA === 1"><h2>Play Quietly</h2></span>
+                        <span data-if="QUESTIONA === 2"><h2>Play Moderately Quiet</h2></span>
+                        <span data-if="QUESTIONA === 3"><h2>Play Moderately Loud</h2></span>
+                        <span data-if="QUESTIONA === 4"><h2>Play Loudly</h2></span>
+                         <span data-if="QUESTIONA === 5"><h2>Play Very Loudly</h2></span>
+
+                    </div> 
+                        <p class="solution" data-type="text"><var>CANSWERS[QUESTIONA]</var></p>
+                  
+                </div>
+
+            </div>
+        </body>
+    </html>
+    

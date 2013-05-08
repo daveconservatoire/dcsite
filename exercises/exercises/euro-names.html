@@ -1,0 +1,59 @@
+ <!DOCTYPE html>
+    <html data-require="word-problems">
+        <head>
+        	<title>European Note Names</title>
+        	<script src="../exercises/khan-exercise.js"></script>
+		</head>
+        <body>
+            <div class="exercise">
+                <div class="vars">
+                    <var id="QUESTION">randRange( 0, 7)</var> 
+                    <var id="QUESTIONA">randRange( 0, 7)</var> 
+                    <var id="NOTENAMES">new Array("semibreve", "minim", "crochet", "dotted minim", "dotted semibreve", "minim tied to a crochet", "semibreve tied to a minim", "semibreve tied to a crochet")</var>
+                    <var id="ANSWERS">new Array("4", "2", "1", "3", "6", "3", "6", "5")</var>
+                    <var id="NOTENAMESA">new Array("three crochets", "two minims", "six quavers", "four semiquavers", "two semibreves", "two dotted crochets", "one crochet and two quavers", "four quavers")</var>
+                    <var id="ANSWERSA">new Array("3", "4", "3", "1", "8", "3", "2", "2")</var>
+               </div>
+			 <div class="problems">
+			 	<div id="One"> 
+      
+                    <div class="question">
+                 <p>For how many beats does a <var>NOTENAMES[QUESTION]</var> last?</p>
+					</div> 
+					<div class="extra-info"><i>Enter your answer a a figure</i></div>
+                    <p class="solution" data-type="text"><var>ANSWERS[QUESTION]</var></p>
+                <div class="hints">
+                <p data-if="QUESTION===0">A semibreve is the European name for a whole note.</p>
+                <p data-if="QUESTION===1">A minim is the European name for a half note.</p>
+                <p data-if="QUESTION===2">A crochet is the European name for a crochet note.</p>
+                <p data-if="QUESTION===3">A minim is the European name for a half note, as it is dotted its length is extended by one half.</p>
+                <p data-if="QUESTION===4">A semibreve is the European name for a whole note, as it is dotted its length is extended by one half.</p>
+                <p data-if="QUESTION===5">A minim is the European name for a half note and a crochet is the European name for a quarter note.</p>
+                <p data-if="QUESTION===6">A semibreve is the European name for a whole note, and a minim is the European name for a half note.</p>
+                <p data-if="QUESTION===7">A semibreve is the European name for a whole note, and a crochet is the European name for a quarter.</p>
+                </div>
+       
+                  
+                </div>
+                <div id="Two"> 
+                    <div class="question">
+                 		<p>For how many beats do <var>NOTENAMESA[QUESTIONA]</var> last?</p>
+					</div> 
+					
+					<div class="extra-info"><i>Enter your answer a a figure</i></div>
+                    <p class="solution" data-type="text"><var>ANSWERSA[QUESTIONA]</var></p>    
+                                 <div class="hints">
+                <p data-if="QUESTIONA===0">A crochet is the European name for a quarter note.</p>
+                <p data-if="QUESTIONA===1">A minim is the European name for a half note.</p>
+                <p data-if="QUESTIONA===2">A quaver is the European name for an eighth note.</p>
+                <p data-if="QUESTIONA===3">A semiquaver is the European name for a sixteenth note.</p>
+                <p data-if="QUESTIONA===4">A semibreve is the European name for a whole note.</p>
+                <p data-if="QUESTIONA===5">A crochet is the European name for a quarter note, adding the dot extends its length by half.</p>
+                <p data-if="QUESTIONA===6">A crochet is the European name for a quarter note, and a quaver is the European name for a eighth note.</p>
+                <p data-if="QUESTIONA===7">A quaver is the European name for an eighth note.</p>
+                </div>       
+                </div>
+            </div>
+        </body>
+    </html>
+    

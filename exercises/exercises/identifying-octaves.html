@@ -1,0 +1,44 @@
+ <!DOCTYPE html>
+    <html data-require="word-problems music">
+        <head>
+            <title>Identifying Octaves</title>
+            <script src="../exercises/khan-exercise.js"></script>
+          
+        </head>
+        <body>
+            <div class="exercise">
+                <div class="vars">
+                    <var id="NOTE">randRange( 0, 14)</var>
+              
+
+                    <var id = "MYSOUND">playSound(NOTE)</var>
+                </div>
+
+                <div class="problems">
+                   <div id="problem-type-or-description"> 
+                   	<div class = "problem">
+                   	
+                    <p>You will hear two notes.  Are they an octave apart?  Two notes an octave apart are like two flavours of the same thing, sounding clear and clean.</p>
+             
+                    </div>
+                  
+                     <div class="solution">
+                     <span data-if="NOTE < 7">Yes, an octave apart!</span>
+                     <span data-if="NOTE > 6">No, some other distance apart.</span>
+                     
+                     </div>
+						<ul class="choices" data-category="true">
+    					<li>Yes, an octave apart!</li>
+    					<li>No, some other distance apart.</li>
+						</ul>			
+					</div>
+                   
+                    </div>
+                </div>
+
+                <div class="hints">
+           
+                </div>
+            </div>
+        </body>
+    </html>

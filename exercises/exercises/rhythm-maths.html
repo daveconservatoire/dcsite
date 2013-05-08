@@ -1,0 +1,49 @@
+ <!DOCTYPE html>
+    <html data-require="word-problems">
+        <head>
+            <title>Rhythm Maths</title>
+            <script src="../exercises/khan-exercise.js"></script>
+    
+	
+        </head>
+        <body>
+            <div class="exercise">
+                <div class="vars">
+                    <var id="NOTE1">randRange( 0, 2)</var>
+                    <var id="NOTE2">randRange( 0, 2)</var>
+                     <var id="NOTE3">randRange( 0, 2)</var>
+                    <var id="LENGTHS">new Array(1,2,4)</var>
+                    <var id="ANSWER">LENGTHS[NOTE1] + LENGTHS[NOTE2] + LENGTHS[NOTE3]</var>
+                </div>
+
+                <div class="problems">
+                   <div id="problem-type-or-description"> 
+                   	<div class = "problem">
+                    <p>Solve this problem, adding together the lengths in beats of the notes shown.</p>
+                        <span data-if="NOTE1 === 0"><img src="../images/rhythmimages/quarter.jpg" /></span>
+                        <span data-if="NOTE1 === 1"><img src="../images/rhythmimages/half.jpg" /></span>
+                        <span data-if="NOTE1 === 2"><img src="../images/rhythmimages/whole.jpg" /></span>
+                        <span><img src="../images/rhythmimages/plus.jpg" /></span>
+						<span data-if="NOTE2 === 0"><img src="../images/rhythmimages/quarter.jpg" /></span>
+                        <span data-if="NOTE2 === 1"><img src="../images/rhythmimages/half.jpg" /></span>
+                        <span data-if="NOTE2 === 2"><img src="../images/rhythmimages/whole.jpg" /></span>
+                        <span><img src="../images/rhythmimages/plus.jpg" /></span>
+						<span data-if="NOTE3 === 0"><img src="../images/rhythmimages/quarter.jpg" /></span>
+                        <span data-if="NOTE3 === 1"><img src="../images/rhythmimages/half.jpg" /></span>
+                        <span data-if="NOTE3 === 2"><img src="../images/rhythmimages/whole.jpg" /></span>
+                     
+                    </div>
+                  
+                    <p class="solution" data-type="text"><var>ANSWER</var></p>
+
+                   
+                    </div>
+                </div>
+
+                <div class="hints">
+                    <!-- Any hints to show to the student. -->
+                </div>
+            </div>
+        </body>
+    </html>
+    

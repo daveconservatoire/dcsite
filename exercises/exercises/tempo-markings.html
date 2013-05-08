@@ -1,0 +1,94 @@
+ <!DOCTYPE html>
+    <html data-require="word-problems">
+        <head>
+        	<title>Learning Italian Tempo Markings</title>
+        	<script src="../exercises/khan-exercise.js"></script>
+		</head>
+        <body>
+            <div class="exercise">
+                <div class="vars" data-ensure="QUESTION != QUESTIONA">
+                    <var id="QUESTION">randRange( 0, 4)</var> 
+                    <var id="QUESTIONA">randRange( 0, 4)</var>         
+              <var id="ANSWERS">new Array("Slow","At ease","At a walking pace","Quick and lively","Very fast")</var>
+              <var id="ANSWERSA">new Array("Lento","Adagio","Andante","Allegro","Presto")</var>
+               </div>
+			 <div class="problems">
+
+                <div id="One"> 
+                   	<div class = "problem">
+                    <p>What might be a good English description for this Italian tempo marking?</p>
+                    </div>
+                    <div class="question">
+                        <span data-if="QUESTION === 0"><h2>Lento</h2></span>
+                        <span data-if="QUESTION === 1"><h2>Adagio</h2></span>
+                        <span data-if="QUESTION === 2"><h2>Andante</h2></span>
+                        <span data-if="QUESTION === 3"><h2>Allegro</h2></span>
+                        <span data-if="QUESTION === 4"><h2>Presto</h2></span>
+					</div> 
+                    <p class="solution"><var>ANSWERS[QUESTION]</var></p>
+                    <ul class="choices" data-category="true">
+    					<li>Slow</li>
+    					<li>At ease</li>
+    					<li>At a walking pace</li>
+    					<li>Quick and lively</li>
+    					<li>Very fast</li>
+					</ul>
+                  
+                </div>
+                
+                <div id="Two"> 
+                	<div class = "problem">
+                    <p>Which of these two tempo markings is slower?</p>
+                    </div>
+                    <div class="question">
+                        <span data-if="QUESTION === 0"><h2>Lento</h2></span>
+                        <span data-if="QUESTION === 1"><h2>Adagio</h2></span>
+                        <span data-if="QUESTION === 2"><h2>Andante</h2></span>
+                        <span data-if="QUESTION === 3"><h2>Allegro</h2></span>
+                        <span data-if="QUESTION === 4"><h2>Presto</h2></span>
+                        <p>or</p>
+                        <span data-if="QUESTIONA === 0"><h2>Lento</h2></span>
+                        <span data-if="QUESTIONA === 1"><h2>Adagio</h2></span>
+                        <span data-if="QUESTIONA === 2"><h2>Andante</h2></span>
+                        <span data-if="QUESTIONA === 3"><h2>Allegro</h2></span>
+                        <span data-if="QUESTIONA === 4"><h2>Presto</h2></span>
+					</div> 
+                    <p class="solution" data-type="text">
+                    <span data-if="QUESTION < QUESTIONA"><var>ANSWERSA[QUESTION]</var></span>
+                      <span data-if="QUESTION > QUESTIONA"><var>ANSWERSA[QUESTIONA]</var></span>
+                    </p>
+     
+                  
+                  
+                </div>
+                
+                <div id="Three"> 
+                   	<div class = "problem">
+                    <p>Which of these two tempo markings is faster?</p>
+                    </div>
+                    <div class="question">
+                        <span data-if="QUESTION === 0"><h2>Lento</h2></span>
+                        <span data-if="QUESTION === 1"><h2>Adagio</h2></span>
+                        <span data-if="QUESTION === 2"><h2>Andante</h2></span>
+                        <span data-if="QUESTION === 3"><h2>Allegro</h2></span>
+                        <span data-if="QUESTION === 4"><h2>Presto</h2></span>
+                        <p>or</p>
+                        <span data-if="QUESTIONA === 0"><h2>Lento</h2></span>
+                        <span data-if="QUESTIONA === 1"><h2>Adagio</h2></span>
+                        <span data-if="QUESTIONA === 2"><h2>Andante</h2></span>
+                        <span data-if="QUESTIONA === 3"><h2>Allegro</h2></span>
+                        <span data-if="QUESTIONA === 4"><h2>Presto</h2></span>
+					</div> 
+                    <p class="solution" data-type="text">
+                    <span data-if="QUESTION > QUESTIONA"><var>ANSWERSA[QUESTION]</var></span>
+                      <span data-if="QUESTION < QUESTIONA"><var>ANSWERSA[QUESTIONA]</var></span>
+                    </p>
+          
+                  
+                </div>
+
+
+            </div>
+        </body>
+    </html>
+    
