@@ -1,7 +1,0 @@
-<?
-
-class UserIdentity extends CUserIdentity
-{
-
-
-}
