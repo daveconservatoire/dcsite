@@ -129,7 +129,7 @@ class SiteController extends Controller
                 Yii::app()->user->login($identity, 3600*24*7);
                
                 // Special redirect with closing popup window
-                $authIdentity->redirect();
+                $authIdentity->redirect(array('site/index'));
             }
             else {
                 // Close popup window and redirect to cancelUrl
