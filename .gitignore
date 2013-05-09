@@ -1,5 +1,4 @@
 /index.php
-protected/components/UserIdentity.php
 protected/config/main.php
 assets/*
 !assets/.gitignore
