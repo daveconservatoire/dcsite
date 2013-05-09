@@ -42,6 +42,13 @@ return array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
 		),
+		
+		//Set you BaseUrl here otherwise it will default to the install directory of the index.php
+		/*
+		'request' => array(
+            'baseUrl' => 'http://www.example.com',
+        ),
+        */
 		    'loid' => array(
         'class' => 'ext.lightopenid.loid',
     ),
