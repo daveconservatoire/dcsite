@@ -171,6 +171,6 @@ class SiteController extends Controller
 	public function actionLogout()
 	{
 		Yii::app()->user->logout();
-		$this->redirect(Yii::app()->request->baseUrl);
+		$this->redirect('http://www.daveconservatoire.org/');
 	}
 }
