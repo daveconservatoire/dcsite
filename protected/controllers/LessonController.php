@@ -7,6 +7,8 @@ class LessonController extends Controller
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 	public $layout='//layouts/main';
+	
+	
 
 	/**
 	 * @return array action filters
@@ -53,6 +55,34 @@ class LessonController extends Controller
 	   
 	   
 	   $lessonmodel=Lesson::model()->find("urltitle = '".$urltitle."'");
+	   //Add in special Facebook and Google metadata for video pages. 
+	   
+	   if($lessonmodel->filetype=="l") {
+		   
+		  Yii::app()->clientScript->registerMetaTag('http://img.youtube.com/vi/'.$lessonmodel->youtubeid.'/0.jpg',null,null,array('property'=>'og:image'));
+	      Yii::app()->clientScript->registerMetaTag('http://www.youtube.com/v/'.$lessonmodel->youtubeid,null,null,array('property'=>'og:video'));
+	      Yii::app()->clientScript->registerMetaTag('http://www.daveconservatoire.org/lesson/'.$lessonmodel->urltitle,null,null,array('property'=>'og:url'));
+	       Yii::app()->clientScript->registerMetaTag($lessonmodel->urltitle.' | Dave Conservatoire',null,null,array('property'=>'og:title'));
+	         Yii::app()->clientScript->registerMetaTag('A free lesson from Dave Conservatoire (www.daveconservatoire.org) called: '.$lessonmodel->title ,null,null,array('property'=>'og:description'));
+	         Yii::app()->clientScript->registerMetaTag('video' ,null,null,array('property'=>'og:type'));
+	        
+	         
+	       
+	
+		  
+		
+
+
+
+
+Video pixel width: < meta property="og:video:width" content="video_width" >
+Video pixel height: < meta property="og:video:height" content="name="video_height" >
+Content Type: < meta property="og:type" content="video" >
+	   }
+	   
+	
+	
+	
 		$this->render($lessonmodel->filetype,array(
 			'model'=>$lessonmodel
 		));

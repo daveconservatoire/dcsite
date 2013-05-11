@@ -12,8 +12,6 @@
         <meta property="fb:page_id" content="199558400134104" />
         <meta property="og:title" content="Dave Conservatoire"/>
         <meta property="og:type" content="non_profit"/>
-        <meta property="og:url" content="http://www.daveconservatoire.org"/>
-
         <meta property="og:site_name" content="daveconservatoire.org"/>
 
     <!-- Le styles -->

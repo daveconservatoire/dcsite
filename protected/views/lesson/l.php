@@ -13,6 +13,11 @@ $this->pageTitle=$model->title." | ".$course->title." | "."Dave Conservatoire";
 $this->extraDesc="A free music lesson called - ".$model->title.". ";
 $this->extraKeywords=$model->title.", ".$course->title.", ";
 
+if (!empty($this->pageDescription))
+{
+  echo '<meta name="description" content="' . $this->pageDescription . '" />';
+}
+
 
 
 
