@@ -62,6 +62,7 @@ class LessonController extends Controller
 		  Yii::app()->clientScript->registerMetaTag('http://img.youtube.com/vi/'.$lessonmodel->youtubeid.'/0.jpg',null,null,array('property'=>'og:image'));
 	      Yii::app()->clientScript->registerMetaTag('http://www.youtube.com/v/'.$lessonmodel->youtubeid,null,null,array('property'=>'og:video'));
 	      Yii::app()->clientScript->registerMetaTag('http://www.daveconservatoire.org/lesson/'.$lessonmodel->urltitle,null,null,array('property'=>'og:url'));
+<<<<<<< HEAD
 	       Yii::app()->clientScript->registerMetaTag($lessonmodel->urltitle.' | Dave Conservatoire',null,null,array('property'=>'og:title'));
 	         Yii::app()->clientScript->registerMetaTag('A free lesson from Dave Conservatoire (www.daveconservatoire.org) called: '.$lessonmodel->title ,null,null,array('property'=>'og:description'));
 	         Yii::app()->clientScript->registerMetaTag('video' ,null,null,array('property'=>'og:type'));
@@ -78,6 +79,12 @@ class LessonController extends Controller
 Video pixel width: < meta property="og:video:width" content="video_width" >
 Video pixel height: < meta property="og:video:height" content="name="video_height" >
 Content Type: < meta property="og:type" content="video" >
+=======
+	       Yii::app()->clientScript->registerMetaTag($lessonmodel->title.' | Dave Conservatoire',null,null,array('property'=>'og:title'));
+	         Yii::app()->clientScript->registerMetaTag('A free lesson from Dave Conservatoire (www.daveconservatoire.org) called: '.$lessonmodel->title ,null,null,array('property'=>'og:description'));
+	         Yii::app()->clientScript->registerMetaTag('video' ,null,null,array('property'=>'og:type'));
+	        
+>>>>>>> Added Facebook OG meta info to improve what the video pages look like when shared!
 	   }
 	   
 	
