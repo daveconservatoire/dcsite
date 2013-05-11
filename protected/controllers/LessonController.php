@@ -79,32 +79,11 @@ class LessonController extends Controller
 	          Yii::app()->clientScript->registerMetaTag('360' ,null,null,array('name'=>'twitter:image:height'));
 	          Yii::app()->clientScript->registerMetaTag('@dconservatoire' ,null,null,array('name'=>'twitter:creator:id'));
 	           Yii::app()->clientScript->registerMetaTag('@dconservatoire' ,null,null,array('name'=>'twitter:site:id'));
-	          Yii::app()->clientScript->registerMetaTag('360' ,null,null,array('name'=>'twitter:image:height'));
-	          
-	         
-	      
-	           
-	           
-	         
-	         
-	         
-	         
-	         
-	         
-	         
-	  
+	          Yii::app()->clientScript->registerMetaTag('https://www.youtube.com/embed/EW7vmjBBjsM' ,null,null,array('name'=>'twitter:player'));
+	           Yii::app()->clientScript->registerMetaTag('316' ,null,null,array('name'=>'twitter:player:height'));
+	            Yii::app()->clientScript->registerMetaTag('560' ,null,null,array('name'=>'twitter:player:width'));
 
-/*
-
-
-
-
-<meta name="twitter:player" content="https://davidwalsh.name/video-embed/12345">
-<meta name="twitter:player:width" content="435">
-<meta name="twitter:player:height" content="251">
-<meta name="twitter:player:stream" content="https://davidwalsh.name/raw-stream/12345.mp4">
-<meta name="twitter:player:stream:content_type" content="video/mp4; codecs="avc1.42E01E1, mpa.40.2"">
-*/	        
+     
 	         
 	      
 	   }
