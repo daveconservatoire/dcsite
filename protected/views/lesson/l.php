@@ -62,8 +62,13 @@ if (!empty($this->pageDescription))
 </table>
 <br />
 
- <div id="vidcontainer" style="margin: 0 auto; text-align: center">
-     <div id="player"></div>
+ <div id="vidcontainer" style="margin: 0 auto; text-align: center" itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
+ <meta itemprop="name" content="<?= $model->title;?>" />
+ <meta itemprop="description" content="A free music lesson from Dave Conservatoire called - <?= $model->title;?>" />
+ <meta itemprop="thumbnailUrl" content="http://img.youtube.com/vi/<?=$model->youtubeid;?>/0.jpg" />
+ <meta itemprop="contentURL" content="http://www.youtube.com/v/<?=$model->youtubeid;?>?showinfo=0&rel=0" />
+ <meta itemprop="embedURL" content="https://www.youtube.com/embed/<?=$model->youtubeid;?>?showinfo=0&rel=0" />
+ <div id="player"></div>
  </div>
     <script>
       // 2. This code loads the IFrame Player API code asynchronously.
