@@ -90,7 +90,7 @@ class LessonController extends Controller
 	         
 	  
 
-
+/*
 
 
 
@@ -102,7 +102,7 @@ class LessonController extends Controller
 <meta name="twitter:player:height" content="251">
 <meta name="twitter:player:stream" content="https://davidwalsh.name/raw-stream/12345.mp4">
 <meta name="twitter:player:stream:content_type" content="video/mp4; codecs="avc1.42E01E1, mpa.40.2"">
-	        
+*/	        
 	         
 	      
 	   }
