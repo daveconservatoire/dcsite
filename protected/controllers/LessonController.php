@@ -64,7 +64,7 @@ class LessonController extends Controller
 		  Yii::app()->clientScript->registerMetaTag('http://img.youtube.com/vi/'.$lessonmodel->youtubeid.'/0.jpg',null,null,array('property'=>'og:image'));
 	      Yii::app()->clientScript->registerMetaTag('http://www.youtube.com/v/'.$lessonmodel->youtubeid.'?showinfo=0&rel=0',null,null,array('property'=>'og:video'));
 	      Yii::app()->clientScript->registerMetaTag('http://www.daveconservatoire.org/lesson/'.$lessonmodel->urltitle,null,null,array('property'=>'og:url'));
-	      Yii::app()->clientScript->registerMetaTag($lessonmodel->urltitle.' | Dave Conservatoire',null,null,array('property'=>'og:title'));
+	      Yii::app()->clientScript->registerMetaTag($lessonmodel->title.' | Dave Conservatoire',null,null,array('property'=>'og:title'));
 	      Yii::app()->clientScript->registerMetaTag('A free lesson from Dave Conservatoire (www.daveconservatoire.org) called: '.$lessonmodel->title ,null,null,array('property'=>'og:description'));
 	      Yii::app()->clientScript->registerMetaTag('video' ,null,null,array('property'=>'og:type'));
 	      
@@ -72,11 +72,15 @@ class LessonController extends Controller
 	      // Twitter Meta 
 	      Yii::app()->clientScript->registerMetaTag('player' ,null,null,array('name'=>'twitter:card'));
 	      Yii::app()->clientScript->registerMetaTag('http://www.daveconservatoire.org/lesson/'.$lessonmodel->urltitle ,null,null,array('name'=>'twitter:url'));
-	      Yii::app()->clientScript->registerMetaTag($lessonmodel->urltitle.' | Dave Conservatoire',null,null,array('name'=>'twitter:title'));
+	      Yii::app()->clientScript->registerMetaTag($lessonmodel->title.' | Dave Conservatoire',null,null,array('name'=>'twitter:title'));
 	         Yii::app()->clientScript->registerMetaTag('A free lesson from Dave Conservatoire (www.daveconservatoire.org) called: '.$lessonmodel->title ,null,null,array('name'=>'twitter:description'));
 	         Yii::app()->clientScript->registerMetaTag('http://img.youtube.com/vi/'.$lessonmodel->youtubeid.'/0.jpg',null,null,array('name'=>'twitter:image'));
 	         Yii::app()->clientScript->registerMetaTag('480' ,null,null,array('name'=>'twitter:image:width'));
 	          Yii::app()->clientScript->registerMetaTag('360' ,null,null,array('name'=>'twitter:image:height'));
+	          Yii::app()->clientScript->registerMetaTag('@dconservatoire' ,null,null,array('name'=>'twitter:creator:id'));
+	           Yii::app()->clientScript->registerMetaTag('@dconservatoire' ,null,null,array('name'=>'twitter:site:id'));
+	          Yii::app()->clientScript->registerMetaTag('360' ,null,null,array('name'=>'twitter:image:height'));
+	          
 	         
 	      
 	           
@@ -94,8 +98,6 @@ class LessonController extends Controller
 
 
 
-<meta name="twitter:image:width" content="600">
-<meta name="twitter:image:height" content="600">
 
 <meta name="twitter:player" content="https://davidwalsh.name/video-embed/12345">
 <meta name="twitter:player:width" content="435">
