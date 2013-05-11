@@ -63,9 +63,7 @@ if (!empty($this->pageDescription))
 <br />
 
  <div id="vidcontainer" style="margin: 0 auto; text-align: center">
-     <iframe id="player" type="text/html" width="640" height="390"
-  src="http://www.youtube.com/embed/<?= $model->youtubeid;?>?enablejsapi=1&rel=0&autoplay=1"
-  frameborder="0"></iframe>
+     <div id="player"></div>
  </div>
     <script>
       // 2. This code loads the IFrame Player API code asynchronously.
@@ -79,7 +77,10 @@ if (!empty($this->pageDescription))
       var player;
       function onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
-     
+          height: '390',
+          width: '640',
+          videoId: '<?=$model->youtubeid;?>',
+          playerVars: { 'autoplay': 1, 'showinfo': 0, 'rel': 0 },
           events: {
             'onStateChange': onPlayerStateChange
           }
