@@ -42,6 +42,17 @@ $this->pageTitle="Scale Dictionary | "."Dave Conservatoire";
                 <option value="2">Harmonic Minor</option>
                  <option value="3">Wholetone Scale</option>
                  <option value="4">Diminished Scale</option>
+                 <option value="11">Ionian Mode (major scale)</option>
+                 <option value="12">Dorian Mode</option>
+                 <option value="13">Phrygian Mode</option>
+                 <option value="14">Lydian Mode</option>
+                 <option value="15">Mixolydian Mode</option>
+                 <option value="16">Aeolian Mode (natural minor)</option>
+                 <option value="17">Locrian Mode</option>
+        
+        
+        
+        
         
               </select>
               </div>
