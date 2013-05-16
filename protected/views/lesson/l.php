@@ -120,7 +120,7 @@ if (!empty($this->pageDescription))
         // callback handler that will be called on error
         error: function(response){
             // log the error to the console
-        },
+        }
     
     });
       }
