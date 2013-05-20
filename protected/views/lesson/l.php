@@ -85,7 +85,7 @@ if (!empty($this->pageDescription))
           height: '390',
           width: '640',
           videoId: '<?=$model->youtubeid;?>',
-          playerVars: { 'autoplay': 1, 'showinfo': 0, 'rel': 0 },
+          playerVars: { 'showinfo': 0, 'rel': 0 },
           events: {
             'onStateChange': onPlayerStateChange
           }
