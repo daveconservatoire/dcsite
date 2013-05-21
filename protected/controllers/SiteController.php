@@ -43,7 +43,7 @@ class SiteController extends Controller
 	      Yii::app()->clientScript->registerMetaTag('http://www.daveconservatoire.org/',null,null,array('property'=>'og:url'));
 	      Yii::app()->clientScript->registerMetaTag('Dave Conservatoire - Learn about music for free',null,null,array('property'=>'og:title'));
 	      Yii::app()->clientScript->registerMetaTag('Over 100 free music lessons and interactive exercises to help to find out how music works!' ,null,null,array('property'=>'og:description'));
-	      Yii::app()->clientScript->registerMetaTag('homepage' ,null,null,array('property'=>'og:type'));
+	      Yii::app()->clientScript->registerMetaTag('website' ,null,null,array('property'=>'og:type'));
 	      
 	      
 	      // Twitter Meta 
