@@ -73,15 +73,15 @@ class LessonController extends Controller
 	      Yii::app()->clientScript->registerMetaTag('player' ,null,null,array('name'=>'twitter:card'));
 	      Yii::app()->clientScript->registerMetaTag('http://www.daveconservatoire.org/lesson/'.$lessonmodel->urltitle ,null,null,array('name'=>'twitter:url'));
 	      Yii::app()->clientScript->registerMetaTag($lessonmodel->title.' | Dave Conservatoire',null,null,array('name'=>'twitter:title'));
-	         Yii::app()->clientScript->registerMetaTag('A free lesson from Dave Conservatoire (www.daveconservatoire.org) called: '.$lessonmodel->title ,null,null,array('name'=>'twitter:description'));
-	         Yii::app()->clientScript->registerMetaTag('http://img.youtube.com/vi/'.$lessonmodel->youtubeid.'/0.jpg',null,null,array('name'=>'twitter:image'));
-	         Yii::app()->clientScript->registerMetaTag('480' ,null,null,array('name'=>'twitter:image:width'));
-	          Yii::app()->clientScript->registerMetaTag('360' ,null,null,array('name'=>'twitter:image:height'));
-	          Yii::app()->clientScript->registerMetaTag('@dconservatoire' ,null,null,array('name'=>'twitter:creator'));
-	           Yii::app()->clientScript->registerMetaTag('@dconservatoire' ,null,null,array('name'=>'twitter:site'));
-	          Yii::app()->clientScript->registerMetaTag('https://www.youtube.com/embed/'.$lessonmodel->youtubeid ,null,null,array('name'=>'twitter:player'));
-	           Yii::app()->clientScript->registerMetaTag('316' ,null,null,array('name'=>'twitter:player:height'));
-	            Yii::app()->clientScript->registerMetaTag('560' ,null,null,array('name'=>'twitter:player:width'));
+	      Yii::app()->clientScript->registerMetaTag('A free lesson from Dave Conservatoire (www.daveconservatoire.org) called: '.$lessonmodel->title ,null,null,array('name'=>'twitter:description'));
+	      Yii::app()->clientScript->registerMetaTag('http://img.youtube.com/vi/'.$lessonmodel->youtubeid.'/0.jpg',null,null,array('name'=>'twitter:image'));
+	      Yii::app()->clientScript->registerMetaTag('480' ,null,null,array('name'=>'twitter:image:width'));
+	      Yii::app()->clientScript->registerMetaTag('360' ,null,null,array('name'=>'twitter:image:height'));
+	      Yii::app()->clientScript->registerMetaTag('@dconservatoire' ,null,null,array('name'=>'twitter:creator'));
+	      Yii::app()->clientScript->registerMetaTag('@dconservatoire' ,null,null,array('name'=>'twitter:site'));
+	      Yii::app()->clientScript->registerMetaTag('https://www.youtube.com/embed/'.$lessonmodel->youtubeid ,null,null,array('name'=>'twitter:player'));
+	      Yii::app()->clientScript->registerMetaTag('316' ,null,null,array('name'=>'twitter:player:height'));
+	      Yii::app()->clientScript->registerMetaTag('560' ,null,null,array('name'=>'twitter:player:width'));
 
      
 	         
