@@ -133,16 +133,28 @@ if (!empty($this->pageDescription))
  
   <br /><!-- AddThis Button BEGIN -->
   
+
   
   
-  
-  
-  
-<div class="addthis_toolbox addthis_default_style ">
+
+
+  <? if($model->description!=""):?>
+  <div class="well">
+  <?= nl2br($model->description);?>
+  <br /><br />
+    <div class="addthis_toolbox addthis_default_style ">
 <a href="http://www.addthis.com/bookmark.php?v=250&amp;username=xa-4d544f4d3f05cc76" class="addthis_button_compact">Share</a>
 </div>
 <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4d544f4d3f05cc76"></script>
-<!-- AddThis Button END -->
+  </div>
+
+  <? else:?>
+    <div class="addthis_toolbox addthis_default_style ">
+<a href="http://www.addthis.com/bookmark.php?v=250&amp;username=xa-4d544f4d3f05cc76" class="addthis_button_compact">Share</a>
+</div>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4d544f4d3f05cc76"></script>
+ 
+  <? endif;?>
 <br />
 
   <h3>Any Questions?</h3>
