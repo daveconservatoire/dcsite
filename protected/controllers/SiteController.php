@@ -124,6 +124,13 @@ class SiteController extends Controller
 		}
 		$this->render('contact',array('model'=>$model));
 	}
+	
+		public function actionVideositemap()
+	{
+	
+		$this->renderPartial('videositemap');
+	}
+
 
 	/**
 	 * Displays the login page
