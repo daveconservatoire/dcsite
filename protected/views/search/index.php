@@ -15,7 +15,12 @@
 
 
 
-<? foreach ($results as $result):?>
+<? 
+$empty=false;
+foreach ($results as $result):
+$empty=true;
+?>
+
 <div class="row">
 
 <div class="span7">
@@ -53,5 +58,11 @@
 </div>
 <hr />
 <? endforeach;?>
+
+<? if(!$empty):?>
+<h4>No Results Found</h4>
+<br />
+<p>D'oh.  Looks like I haven't made any resources on this topic yet.  Perhaps there might be something interesting on the <a href="<? echo Yii::app()->request->baseUrl;?>">homepage</a>, or you might like to <a href="<? echo Yii::app()->request->baseUrl;?>/site/contact">send me an email</a> to ask me to make what you need.</p>
+<? endif;?>  
 
 <? endif; ?>
