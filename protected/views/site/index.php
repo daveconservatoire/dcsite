@@ -12,6 +12,10 @@
 	<div class="hero-unit">
 		<h1>Learn about music online</h1>
         <p>Simple online theory lessons and exercises to help you discover how music works.</p>
+<form class="form-search" method="get" action="<? echo Yii::app()->request->baseUrl;?>/search">
+  <input type="text" name="searchquery" class="input-xxlarge search-query input-block-level" placeholder="Search for a topic. . . ">
+  <button type="submit" class="btn"><i class="icon-search"></i></button>
+</form>
 		
         <a class="btn btn-large" href="/lesson/what-is-music-theory">Get started!</a>
         <a class="btn btn-large" href="/login">Sign in to track your progress!</a>
