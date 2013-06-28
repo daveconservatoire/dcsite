@@ -1,97 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-  
+<head>
+<meta charset="utf-8">
+<title>Dave Conservatoire</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="<?php echo CHtml::encode($this->extraDesc); ?>Dave Conservatoire offers free lessons and interactive exercises on music theory." >
+<meta name="keywords" content="<?php echo CHtml::encode($this->extraKeywords); ?>free music lessons, free music theory, open learning, music history, music notation lessons" />
+<meta property="fb:page_id" content="199558400134104" />
+<meta property="og:title" content="Dave Conservatoire"/>
+<meta property="og:type" content="non_profit"/>
+<meta property="og:site_name" content="daveconservatoire.org"/>
+<link href='http://fonts.googleapis.com/css?family=Lato:400,700,300' rel='stylesheet' type='text/css'>
+<!--[if IE]>
+	<link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Lato:400" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Lato:700" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet" type="text/css">
+<![endif]-->
 
-    <title><?php echo CHtml::encode($this->pageTitle); ?></title>
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<link href="css/theme.css" rel="stylesheet">
+<link href="css/prettyPhoto.css" rel="stylesheet" type="text/css"/>
 
-        <meta name="description" content="<?php echo CHtml::encode($this->extraDesc); ?>Dave Conservatoire offers free lessons and interactive exercises on music theory." />
-        <meta name="keywords" content="<?php echo CHtml::encode($this->extraKeywords); ?>free music lessons, free music theory, open learning, music history, music notation lessons" />
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!--[if IE 7]>
+<link rel="stylesheet" href="css/font-awesome-ie7.min.css">
+<![endif]-->
 
-        <meta property="fb:page_id" content="199558400134104" />
-        <meta property="og:title" content="Dave Conservatoire"/>
-        <meta property="og:type" content="non_profit"/>
-        <meta property="og:site_name" content="daveconservatoire.org"/>
+<!--timeline-->
+<link rel="stylesheet" type="text/css" href="css/timeline.css" />
+<script src="js/modernizr.custom.js"></script>
 
-    <!-- Le styles -->
-    <link href="<?php echo Yii::app()->request->baseUrl; ?>/keyboard/style.css" rel="stylesheet">
-    <link href="<?php echo Yii::app()->request->baseUrl; ?>/style/css/bootstrap.css" rel="stylesheet">
+<!-- scripts -->
+<script src="js/jquery.js"></script>			
+<script src="js/bootstrap.min.js"></script>
+<script src="js/superfish.js"></script>
+<script type="text/javascript" src="js/scripts.js"></script>
 
-    <style type="text/css">
-      body {
-        padding-top: 60px;
-        padding-bottom: 40px;
-      }
-      
-           .span3 {
-      background-color: whiteSmoke;
-      text-align: center;
-     
-      }
-      
-      .row {     
-      padding-bottom: 20px;
-      }
-
-
-    </style>
-    
-        <!-- Le javascript
-    ================================================== -->
-   
-    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-    <script src="<?php echo Yii::app()->request->baseUrl; ?>/style/js/bootstrap.js"></script>
-     <script src="<?php echo Yii::app()->request->baseUrl; ?>/style/js/functions.js"></script>
-
-    
-
-    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <!-- Le fav and touch icons NEEDED -->
-   
-  </head>
+</head>
 
 <body>
+<!--header-->
+	<div class="header">
+		<!--logo-->
+			<div class="container">
+					<div class="logo">
+						 <a href="index.html"><img src="img/logo.png" alt=""  /></a>  
+					</div>
+					<!--menu-->
+					<nav id="main_menu">
+					<div class="menu_wrap">
+						<ul class="nav sf-menu ">
+						
+							<li class="sub-menu active"><a href="javascript:{}">About</a>
+				
+							</li>
+							<li class="sub-menu"><a href="javascript:{}">Support</a>
+	
+							</li>
+							<li class="sub-menu"><a href="javascript:{}">Contact</a>
+					
+							</li>
+						
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</div>
+	<!--//header-->
 
-<? include('components/nav.php');?>
 
 
-<div class="container" id="page">
 
 
 	<?php echo $content; ?>
 
       <!-- Example row of columns -->
+			<!--footer-->
+		<div id="footer2">
+		<div class="container">
+			<div class="row">
+				<div class="span12">
+				<div class="copyright">
+							&copy; Dave Conservatoire
+							<script type="text/javascript">
+							//<![CDATA[
+								var d = new Date()
+								document.write(d.getFullYear())
+								//]]>
+								</script>
+							 .  Except where noted, All Rights Reserved.
+						</div>
+						</div>
+					</div>
+				</div>
+					</div>
+					<!-- up to top -->
+				<a href="#"><i class="go-top hidden-phone hidden-tablet  icon-double-angle-up"></i></a>
+				<!--//end--> 
+				
 
-<? include('components/footer.php');?>
-
-    </div> <!-- /container -->
-<!-- modal box for alerts -->
-
-
-<div class="modal hide fade" id="myModal">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal">×</button>
-    <h3 id="modal-title"></h3>
-  </div>
-  <div class="modal-body">
-    <p id="modal-text"></p>
-  </div>
-  <div class="modal-footer">
-    <a href="#" class="btn" data-dismiss="modal">Close</a>
-  
-  </div>
-</div>
-
-<!-- end modal -->
-
-  </body>
-</html>
-
+<!-- skills -->
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
@@ -105,5 +117,11 @@
   })();
 
 </script>
+
+
+					
+</body>
+</html>
+
 
 

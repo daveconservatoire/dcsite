@@ -1,5 +1,44 @@
-<? $counter=1;?>
+<style>
+.span2 {
+	background-color: #fff;
+	margin-bottom:20px; 
 
+}
+
+.span2 p {
+	
+	color: #000;
+	padding: 10px;
+}
+
+.suggested-action .suggested-action-image-link {
+background-size: cover;
+background-repeat: no-repeat;
+border-bottom: 10px solid #13967e;
+display: block;
+height: 200px;
+margin: -14px -15px 22px;
+overflow: hidden;
+position: relative;
+}
+
+.suggested-action {
+background-color: #f7f7f7;
+color: #444!important;
+display: block;
+margin-bottom: 0;
+padding: 14px;
+height: 180px;
+position: relative;
+}
+</style>
+
+
+<? $counter=1;?>
+	<!--banner-->
+	<div id="banner">
+	<div class="container intro_wrapper">
+	<div class="inner_content">
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -32,30 +71,46 @@
 			<div style="clear:both"></div>
 		</div>
 	</div>
+	
+
+	
+
 	<div class='page-header'><h2>Newest!</h2></div>
-<ul class="thumbnails">
+<div class="thumbnails">
 	<div class="row"  style="margin-left: 0px">
 		<? foreach($newlessons as $lesson): ?>
-		<li class='span3'>
+		<div class='span3'>
 			<?php if ($lesson->filetype == "l"): ?>
-			<a href='lesson/<?=$lesson->urltitle;?>' class='thumbnail'>
-			<img src='http://img.youtube.com/vi/<?=$lesson->youtubeid;?>/default.jpg'/>
-			<h5><?=$lesson->title;?></h5>
+	
+        
+<a class="vertical-shadow suggested-action" href="/lesson/<?=$lesson->urltitle;?>">
+    <div class="suggested-action-image-link cs" style="background-image: url(http://img.youtube.com/vi/<?=$lesson->youtubeid;?>/0.jpg);">
+    </div>
+    <h2 class="suggested-action-title" title=":<?=$lesson->title;?>"><?=$lesson->title;?></h2>
+
+</a>
+
 			</a>
 			<? endif;?>
 			<?php if ($lesson->filetype == "p"): ?>
-				<a href='lesson/<?=$lesson->urltitle;?>' class='thumbnail'>
-				<img src='images/playlist.jpg' />
-				<h5><?=$lesson->title;?></h5>
+<a class="vertical-shadow suggested-action" href="/lesson/<?=$lesson->urltitle;?>">
+    <div class="suggested-action-image-link cs" style="background-image: url(images/playlist.jpg);">
+    </div>
+    <h2 class="suggested-action-title" title=":<?=$lesson->title;?>"><?=$lesson->title;?></h2>
+
+</a>
 				</a>
 			<? endif;?>
 			<?php if ($lesson->filetype == "e"): ?>
-				<a href='exercises/exercises/<?=$lesson->youtubeid;?>.html' class='thumbnail'>
-				<img src='images/exercise.jpg' />
-				<h5><?=$lesson->title;?></h5>
+<a class="vertical-shadow suggested-action" href="/lesson/<?=$lesson->urltitle;?>">
+    <div class="suggested-action-image-link cs" style="background-image: url(images/exercise.jpg);">
+    </div>
+    <h2 class="suggested-action-title" title=":<?=$lesson->title;?>"><?=$lesson->title;?></h2>
+
+</a>
 				</a>
 			<? endif;?>
-		</li>
+		</div>
 		<? if($counter==4){ ?>
 		</div><div class='row' style="margin-left: 0px">
 		<? $counter=1; }  else { $counter++;} ?> 
@@ -125,6 +180,16 @@ if (!empty($recentexs)):?>
 	<? endif; ?>
 	<? endif;?>
 
+	</div>
+		</div>
+			</div>
+			
+	<div class="container wrapper">
+	<div class="inner_content">
+	<div class="pad30"></div>
+	
+
+
 
 <?
 // Getting the lessons for each course - would like to move this controller but not sure how!
@@ -136,34 +201,44 @@ $counter=1;
 $this->pageTitle='Home | '.Yii::app()->name ;
 ?>
 <div class='page-header'><h2><?=$course->title?></h2></div>
-<ul class="thumbnails">
+<div class="thumbnails">
 	<div class="row"  style="margin-left: 0px">
 		<? foreach($lessons as $lesson): ?>
-		<li class='span3'>
+		<div class='span2'>
 			<?php if ($lesson->filetype == "l"): ?>
-				<a href='lesson/<?=$lesson->urltitle;?>' class='thumbnail'>
+			
+				<a href='lesson/<?=$lesson->urltitle;?>' class='thumbnail vertical-shadow suggested-action'>
 				<img src='http://img.youtube.com/vi/<?=$lesson->youtubeid;?>/default.jpg'/>
-				<h5>Part <?=$lesson->lessonno;?> - <?=$lesson->title;?></h5>
+				<p><?=$lesson->title;?></p>
 				</a>
+
+
+
 			<? endif;?>
 			<?php if ($lesson->filetype == "p"): ?>
-				<a href='lesson/<?=$lesson->urltitle;?>' class='thumbnail'>
-				<img src='images/playlist.jpg' />
-				<h5>Part <?=$lesson->lessonno;?> - <?=$lesson->title;?></h5>
+	<a href='lesson/<?=$lesson->urltitle;?>' class='thumbnail vertical-shadow suggested-action'>
+				<img src='images/playlist.jpg'/>
+				<p><?=$lesson->title;?></p>
 				</a>
+
 			<? endif;?>
 			<?php if ($lesson->filetype == "e"): ?>
-				<a href='exercise/<?=$lesson->youtubeid;?>' class='thumbnail'>
-				<img src='images/exercise.jpg' />
-				<h5>Part <?=$lesson->lessonno;?> - <?=$lesson->title;?></h5>
+	<a href='lesson/<?=$lesson->urltitle;?>' class='thumbnail vertical-shadow suggested-action'>
+				<img src='images/exercise.jpg'/>
+			<p><?=$lesson->title;?></p>
 				</a>
+
+
+</a>
 			<? endif;?>
-		</li>
-    <? if($counter==4){ ?>
+		</div>
+    <? if($counter==6){ ?>
 	</div>
 	<div class='row' style="margin-left: 0px">
     <? $counter=1; } else { $counter++;} ?> 
 		<? endforeach;?>
 	</div>
-</ul>
+</div>
 <? endforeach;?>
+	</div>
+	</div>
