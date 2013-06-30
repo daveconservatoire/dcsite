@@ -1,10 +1,20 @@
 <?php
 $this->pageTitle='Support Us | '.Yii::app()->name ;
 ?>
+	<div id="banner">
+	<div class="container intro_wrapper">
+	<div class="inner_content">
+	<h1>This is Cool!  How can I help?</h1>
+	<h1 class="title">Support</h1>
+	
 
-<h1>This is cool!  How can I help?</h1>
-<p>&nbsp;</p>
-
+	</div>
+		</div>
+			</div>
+			
+				<div class="container wrapper">
+	<div class="inner_content">
+	<div class="pad30"></div>
 
 <p>Music is so very important as it helps us to express ourselves, communicate with those around us and form friendships with others.  Perhaps, most importantly, along with other arts, music makes us human.  It is for everyone and will mean something different for everyone. </p>
 
@@ -52,3 +62,4 @@ $this->pageTitle='Support Us | '.Yii::app()->name ;
        </div>
 </div>
 </div>
+	</div></div>

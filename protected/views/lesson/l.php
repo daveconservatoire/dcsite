@@ -17,60 +17,48 @@ if (!empty($this->pageDescription))
 {
   echo '<meta name="description" content="' . $this->pageDescription . '" />';
 }
-
-
-
-
 ?>
 
-<h2 class="playlisttitle"><?=$model->title;?> - (<?=$course->title;?>, Part <?=$model->lessonno?>)</h2>
-<table style="font-size: small">
-	<tr>
-		<td style="width:470px"><? if(isset($prev)){ echo "Previous Lesson:";?> 
-		<? if($prev->filetype=="l" || $prev->filetype=="p") {
-		?>
-		<a href="<? echo Yii::app()->request->baseUrl;?>/lesson/<?=$prev->urltitle;?>">	
-		<?			
-		} else {
-			?>
-			<a href="<? echo Yii::app()->request->baseUrl;?>/exercise/<?=$prev->urltitle;?>">	
-			<?
-		}
-		
-		?>
-		<?=$prev->title;?>
-		</a>
-		<? }?>
-		</td>
-		
-		<td style="width:470px; text-align: right"><? if(isset($next)){ echo "Next Lesson:";?> 
-		<? if($next->filetype=="l" || $next->filetype=="p") {
-		?>
-		<a href="<? echo Yii::app()->request->baseUrl;?>/lesson/<?=$next->urltitle;?>">	
-		<?			
-		} else {
-			?>
-			<a href="<? echo Yii::app()->request->baseUrl;?>/exercise/<?=$next->urltitle;?>">	
-			<?
-		}
-		?>
-		<?=$next->title;?>
-		</a>
-		<? };?>
-		</td>
-	</tr>
-</table>
-<br />
 
- <div id="vidcontainer" style="margin: 0 auto; text-align: center" itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
+
+
+
+
+	<!--banner-->
+	<!--
+	<div id="banner">
+	<div class="container intro_wrapper">
+	<div class="inner_content">
+
+	<h1 class="title">Video Title</h1>
+	<h1 class="intro">Short description</h1>
+	</div>
+		</div>
+			</div>
+-->			
+			<div class="container wrapper">
+		<div class="inner_content">
+	<div class="pad30"></div>
+		<div class="row">
+			<div class="span3" >
+<? $this->renderPartial("//layouts/components/sidebar", array('model'=>$model));?>
+
+						</div>
+						
+					<div class="span9">
+					
+
+					 <div id="vidcontainer" style="margin: 0 auto; text-align: center" itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
  <meta itemprop="name" content="<?= $model->title;?>" />
  <meta itemprop="description" content="A free music lesson from Dave Conservatoire called - <?= $model->title;?>" />
  <meta itemprop="thumbnailUrl" content="http://img.youtube.com/vi/<?=$model->youtubeid;?>/0.jpg" />
  <meta itemprop="contentURL" content="http://www.youtube.com/v/<?=$model->youtubeid;?>?showinfo=0&rel=0" />
  <meta itemprop="embedURL" content="https://www.youtube.com/embed/<?=$model->youtubeid;?>?showinfo=0&rel=0" />
- <div id="player"></div>
+ <div class="vendor">
+<iframe src="http://www.youtube.com/embed/<?=$model->youtubeid;?>?enablejsapi=1&showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe>
  </div>
-    <script>
+ 
+     <script>
       // 2. This code loads the IFrame Player API code asynchronously.
       var tag = document.createElement('script');
       tag.src = "//www.youtube.com/iframe_api";
@@ -127,18 +115,44 @@ if (!empty($this->pageDescription))
     </script>
  
  
- 
- 
- 
- 
-  <br /><!-- AddThis Button BEGIN -->
-  
+ </div>
+					<ul class="pager">
+  <li class="previous">
+  <? if(isset($prev)){ ?> 
+		<? if($prev->filetype=="l" || $prev->filetype=="p") {
+		?>
+		<a href="<? echo Yii::app()->request->baseUrl;?>/lesson/<?=$prev->urltitle;?>">	
+		<?			
+		} else {
+			?>
+			<a href="<? echo Yii::app()->request->baseUrl;?>/exercise/<?=$prev->urltitle;?>">	
+			<?
+		}
+		
+		?>
+		&larr; Previous Lesson
+		</a>
+		<? }?>
 
-  
-  
-
-
-  <? if($model->description!=""):?>
+  </li>
+  <li class="next">
+  <? if(isset($next)){?> 
+		<? if($next->filetype=="l" || $next->filetype=="p") {
+		?>
+		<a href="<? echo Yii::app()->request->baseUrl;?>/lesson/<?=$next->urltitle;?>">	
+		<?			
+		} else {
+			?>
+			<a href="<? echo Yii::app()->request->baseUrl;?>/exercise/<?=$next->urltitle;?>">	
+			<?
+		}
+		?>
+		Next Lesson &rarr;
+		</a>
+		<? };?>
+  </li>
+</ul>
+		  <? if($model->description!=""):?>
   <div class="well">
   <?= nl2br($model->description);?>
   <br /><br />
@@ -155,22 +169,18 @@ if (!empty($this->pageDescription))
 <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4d544f4d3f05cc76"></script>
  
   <? endif;?>
-<br />
-
-  <h3>Any Questions?</h3>
-<div id="disqus_thread"></div>
-
-
-<script type="text/javascript">
-  /**
-    * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread] 
-    */
-  (function() {
-   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-   dsq.src = 'http://davecon.disqus.com/embed.js';
-   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=davecon">comments powered by Disqus.</a></noscript>
-
+<br />			
+					
+	
+			<div class="pad25"></div>
+			<? $this->renderPartial("//layouts/components/comments"); ?>
+				</div>
+					</div>
+						</div>
+					</div>
+				
+				</div>
+			</div>
+		</div>
+	<!--//page-->
 

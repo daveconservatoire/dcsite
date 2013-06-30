@@ -26,7 +26,7 @@ Purchase:  http://themeforest.net/user/josweb
 
 body {
 	margin:0; padding:0;
-	font:13px/22px 'Lato', sans-serif;
+	font:14px/22px 'Lato', sans-serif;
 	color:#555;
 	background: #f0f0f0;  
 	-webkit-backface-visibility:hidden; 
@@ -179,7 +179,7 @@ img { vertical-align:top; ms-interpolation-mode:bicubic; opacity:1.0;}
     -o-transform:rotate(360deg);
 }
 
-/**** BUTTONS ****/
+/**** BUTTONS ***
 .btn{ 
 	border:0;
 	-webkit-transition:background-color .4s ease-in;
@@ -193,6 +193,7 @@ img { vertical-align:top; ms-interpolation-mode:bicubic; opacity:1.0;}
 .btn-primary:hover { background-color:#333;}
 .btn:visited, .btn:focus { color:#fff; }
 .label, .badge {text-shadow: none; }
+*/
 
 /**** TYPOGRAPHY ****/
 h1,h2,h3,h4,h5,h6 { font-weight:300; letter-spacing:-0.25px; }
@@ -232,7 +233,7 @@ h1.intro {  line-height:40px; font-weight:300;}
 /**** LOGO****/
 .logo a{
  	float:left; 
-	margin:26px 0 0 0;
+	margin:8px 0 0 0;
 	webkit-transition:all 0.3s ease-in;  
     -moz-transition:all 0.3s ease-in;  
     -o-transition:all 0.3s ease-in;  
@@ -1428,6 +1429,16 @@ ul#itemContainer { list-style: none; padding:0 0; margin:0 0; width:100%; }
   top: auto;
   bottom: 200px;  //height of the footer
 }
+
+.sidebar-selected {
+	background-color: #f1592a;
+
+}
+
+.sidebar-selected-link {
+	color: #fff;
+}
+
 
 
 

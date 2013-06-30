@@ -34,6 +34,8 @@ position: relative;
 </style>
 
 
+
+
 <? $counter=1;?>
 	<!--banner-->
 	<div id="banner">
