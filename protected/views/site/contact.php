@@ -1,8 +1,27 @@
+<style>
+
+input, textarea {
+	width: 100%;
+}
+</style>
+
 <?php
 $this->pageTitle='Contact | '.Yii::app()->name ;
 ?>
 
-<h1>Contact</h1>
+	<div id="banner">
+	<div class="container intro_wrapper">
+	<div class="inner_content">
+	<h1>Do you have questions, feedback, suggestions?  Or just want to say hi!</h1>
+	<h1 class="title">Contact</h1>
+	
+
+	</div>
+		</div>
+			</div>
+
+		<div class="container wrapper">
+	<div class="inner_content">
 
 <?php if(Yii::app()->user->hasFlash('contact')): ?>
 
@@ -13,9 +32,10 @@ $this->pageTitle='Contact | '.Yii::app()->name ;
 <?php else: ?>
 
 <p>
-Do you have questions, feedback, suggestions?  Or just want to say hi!  Please feel free below. 
-</p>
 
+</p>
+<div class="row">
+<div class="span6">
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -73,7 +93,7 @@ Do you have questions, feedback, suggestions?  Or just want to say hi!  Please f
             <button type="reset" class="btn">Clear</button>
           </div>
         </fieldset>
-
+</div></div></div></div>
 
 <?php $this->endWidget(); ?>
 

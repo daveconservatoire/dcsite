@@ -1,28 +1,6 @@
 $(document).ready(function(){	
 
-/*************************************************************
-	FLICKR BLOG  - add your id - find it here - http://idgettr.com/
-**************************************************************/
-	$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?id=60241562@N08&lang=en-us&format=json&jsoncallback=?", function(data){
-		$.each(data.items, function(i,item){
-			if(i<=8){ // <‹ change this number to display more or less images
-				$("<img/>").attr("src", item.media.m.replace('_m', '_s')).appendTo(".FlickrImagesBlog ul")
-				.wrap("<li><a href='" + item.link + "' target='_blank' title='Flickr'></a></li>");
-			}
-		});			
-    });	
 
-/*************************************************************
-	FLICKR  ALT. HOME - add your id - find it here - http://idgettr.com/
-**************************************************************/
-	$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?id=60241562@N08&lang=en-us&format=json&jsoncallback=?", function(data){
-		$.each(data.items, function(i,item){
-			if(i<=9){ // <‹ change this number to display more or less images
-				$("<img/>").attr("src", item.media.m.replace('_m', '_s')).appendTo(".FlickrImages ul")
-				.wrap("<li><a href='" + item.link + "' target='_blank' title='Flickr'></a></li>");
-			}
-		});			
-    });	
 
 /***************************************************
 	MENU

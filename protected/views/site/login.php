@@ -1,9 +1,21 @@
+
 <?php
 $this->pageTitle='Login | '.Yii::app()->name ;
 ?>
 
-<h1>Login</h1>
-<p>&nbsp;</p>
+	<div id="banner">
+	<div class="container intro_wrapper">
+	<div class="inner_content">
+
+	<h1 class="title">Login</h1>
+	
+
+	</div>
+		</div>
+			</div>
+
+			<div class="container wrapper">
+	<div class="inner_content">
 <h3>Do you already have an account on one of these sites? Click the logo to use your account to login here:</h3>
 <p>&nbsp;</p>
 <?php Yii::app()->eauth->renderWidget(); ?>
@@ -19,3 +31,5 @@ $this->pageTitle='Login | '.Yii::app()->name ;
 <p>&nbsp;</p>
 <h3>What if I don't have an account with one of these three sites?</h3>
 <p>No problem!  Just go sign up <a href="https://accounts.google.com/SignUp?continue=https%3A%2F%2Faccounts.google.com%2FManageAccount" target="_blank">here</a> or <a href="http://www.facebook.com/r.php?locale=en_GB" target="_blank">here</a>. </p>
+	</div>
+			</div>

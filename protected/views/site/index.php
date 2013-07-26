@@ -54,12 +54,19 @@ position: relative;
 		<h1>Learn about music online</h1>
         <p>Simple online theory lessons and exercises to help you discover how music works.</p>
 <form class="form-search" method="get" action="<? echo Yii::app()->request->baseUrl;?>/search">
-  <input type="text" name="searchquery" class="input-xxlarge search-query input-block-level" placeholder="Search for a topic. . . ">
-  <button type="submit" class="btn"><i class="icon-search"></i></button>
+
+<div class="input-append  input-block-level">
+  <input type="text" name="searchquery" class="input-xxlarge search-query topsearch " 
+  <? if (isset($_GET['searchquery'])){ echo "value='".$_GET['searchquery']."'";} else {echo "placeholder='Enter your search term here'";}?>"  />
+    <button type="submit" class="btn">Search</button>
+  </div>
+
+
+
 </form>
 		
-        <a class="btn btn-large" href="/lesson/what-is-music-theory">Get started!</a>
-        <a class="btn btn-large" href="/login">Sign in to track your progress!</a>
+        <a class="btn btn-large" href="<? echo Yii::app()->request->baseUrl;?>/lesson/what-is-music-theory">Get started!</a>
+        <a class="btn btn-large" href="<? echo Yii::app()->request->baseUrl;?>/login">Sign in to track your progress!</a>
 		<div style="padding:15px 0 15px;">    
 			<div style="float: right; ">
 				<a href="https://twitter.com/share" class="twitter-share-button" data-via="dconservatoire" data-align="right" data-counturl="http://www.daveconservatoire.org">Tweet</a>
@@ -85,7 +92,7 @@ position: relative;
 			<?php if ($lesson->filetype == "l"): ?>
 	
         
-<a class="vertical-shadow suggested-action" href="/lesson/<?=$lesson->urltitle;?>">
+<a class="vertical-shadow suggested-action" href="<? echo Yii::app()->request->baseUrl;?>/lesson/<?=$lesson->urltitle;?>">
     <div class="suggested-action-image-link cs" style="background-image: url(http://img.youtube.com/vi/<?=$lesson->youtubeid;?>/0.jpg);">
     </div>
     <h2 class="suggested-action-title" title=":<?=$lesson->title;?>"><?=$lesson->title;?></h2>
@@ -95,7 +102,7 @@ position: relative;
 			</a>
 			<? endif;?>
 			<?php if ($lesson->filetype == "p"): ?>
-<a class="vertical-shadow suggested-action" href="/lesson/<?=$lesson->urltitle;?>">
+<a class="vertical-shadow suggested-action" href="<? echo Yii::app()->request->baseUrl;?>/lesson/<?=$lesson->urltitle;?>">
     <div class="suggested-action-image-link cs" style="background-image: url(images/playlist.jpg);">
     </div>
     <h2 class="suggested-action-title" title=":<?=$lesson->title;?>"><?=$lesson->title;?></h2>
@@ -104,7 +111,7 @@ position: relative;
 				</a>
 			<? endif;?>
 			<?php if ($lesson->filetype == "e"): ?>
-<a class="vertical-shadow suggested-action" href="/lesson/<?=$lesson->urltitle;?>">
+<a class="vertical-shadow suggested-action" href="<? echo Yii::app()->request->baseUrl;?>/lesson/<?=$lesson->urltitle;?>">
     <div class="suggested-action-image-link cs" style="background-image: url(images/exercise.jpg);">
     </div>
     <h2 class="suggested-action-title" title=":<?=$lesson->title;?>"><?=$lesson->title;?></h2>
