@@ -973,6 +973,8 @@ var Khan = (function() {
 lowLag.init();
 for(var i=1; i<=soundtoload;i++){
 lowLag.load(urlBase+"sounds/cello/"+i+".wav", 'sound'+i);
+
+$('#loadingtext').html("Now loading sound "+i);	
 }
   
      onjQueryLoaded();
@@ -1042,6 +1044,7 @@ lowLag.load(urlBase+"sounds/cello/"+i+".wav", 'sound'+i);
 
             // All remote exercises (if any) have now been loaded
             $.when.apply($, promises).then(function() {
+                
                 loadTestModeSite();
             });
         });
@@ -1108,6 +1111,7 @@ lowLag.load(urlBase+"sounds/cello/"+i+".wav", 'sound'+i);
     // (still usually a little bit random).
     // There has got to be a better way to do this.
     function makeProblemBag(problems, n) {
+      
         var bag = [], totalWeight = 0;
 
         if (problems.length > 0) {
@@ -1284,7 +1288,7 @@ lowLag.load(urlBase+"sounds/cello/"+i+".wav", 'sound'+i);
 
     function makeProblem(id, seed) {
         debugLog("start of makeProblem");
-
+        
         // Enable scratchpad (unless the exercise explicitly disables it later)
         Khan.scratchpad.enable();
 
@@ -2280,9 +2284,11 @@ lowLag.load(urlBase+"sounds/cello/"+i+".wav", 'sound'+i);
             weighExercises(problems);
             problemBag = makeProblemBag(problems, 10);
         }
-
+  
         // Generate the initial problem when dependencies are done being loaded
-        makeProblem();
+        $('#starter').html('<a id="startbutton">START NOW!</a>');
+     $("#startbutton").on('click', function() {makeProblem(); $("#container").css('visibility','visible');  $('#starter').hide();});
+    
     }
 
     return Khan;

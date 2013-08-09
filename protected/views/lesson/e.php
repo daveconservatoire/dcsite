@@ -19,9 +19,9 @@
 						
 					<div class="span9">
 					
+<h3 id="starter">LOADING SOUNDS</h3>
 
-
- <div class="single-exercise visited-no-recolor" id="container" style="overflow: hidden;">
+ <div class="single-exercise visited-no-recolor" id="container" style="overflow: hidden; visibility: hidden">
                         <article class="exercises-content clearfix">
                         <div class="exercises-header"><h2 class="section-headline">
                                 <div class="topic-exercise-badge">&nbsp;</div>
