@@ -38,7 +38,7 @@ body {
 /**** PAGE CONTAINERS ****/
 .header { 
 	padding:0 0;
-	background:#323A45;
+	background:#ffffff;
 	margin:0 auto; 
 	height: 86px;
 	width: 100%;
@@ -254,7 +254,7 @@ h1.intro {  line-height:40px; font-weight:300;}
 /**** LOGO****/
 .logo a{
  	float:left; 
-	margin:8px 0 0 0;
+	margin:4px 0 0 0;
 	webkit-transition:all 0.3s ease-in;  
     -moz-transition:all 0.3s ease-in;  
     -o-transition:all 0.3s ease-in;  
