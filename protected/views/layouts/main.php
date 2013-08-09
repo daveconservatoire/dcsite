@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-require="math math-format graphie graphie-helpers-arithmetic" >
 <head>
 <meta charset="utf-8">
 <title>Dave Conservatoire</title>
@@ -31,7 +31,7 @@
 <![endif]-->
 
 <!--timeline-->
-<link rel="stylesheet" type="text/css" href="css/timeline.css" />
+
 <script src="<?=bu();?>/js/modernizr.custom.js"></script>
 
 <!-- scripts -->

@@ -248,6 +248,8 @@ var Khan = (function() {
             document.getElementsByTagName("head")[0].appendChild(link);
         })();
     }
+    
+    
 
     // The main Khan Module
     var Khan = {
@@ -960,14 +962,46 @@ var Khan = (function() {
                 var src = initScripts.shift();
                 Khan.loadScript(src, loadInitScripts);
             } else {
-                onjQueryLoaded();
+                     soundManager.setup({
+  url: '/dcsite/swf/',
+  flashVersion: 9, // optional: shiny features (default = 8)
+  // optional: ignore Flash where possible, use 100% HTML5 mode
+  // preferFlash: false,
+  onready: function() {
+   var soundtoload=$("#SOUNDSTOLOAD").text(); 
+lowLag.init();
+for(var i=1; i<=soundtoload;i++){
+lowLag.load("/dcsite/sounds/cello/"+i+".wav", 'sound'+i);
+}
+  
+     onjQueryLoaded();
+  }
+});
             }
         })();
     } else {
-        onjQueryLoaded();
+        soundManager.setup({
+  url: '/dcsite/swf/',
+  flashVersion: 9, // optional: shiny features (default = 8)
+  // optional: ignore Flash where possible, use 100% HTML5 mode
+  // preferFlash: false,
+  onready: function() {
+    var soundtoload=$("#SOUNDSTOLOAD").text(); 
+ 
+
+   
+  
+  
+     onjQueryLoaded();
+  }
+});
+    
+     
     }
 
     function onjQueryLoaded() {
+
+    
         initEvents();
 
         // Initialize to an empty jQuery set

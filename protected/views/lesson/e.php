@@ -1,3 +1,14 @@
+ <?
+
+  $cs = Yii::app()->getClientScript();
+  $cs->registerScriptFile(bu().'/js/soundmanager2.js');
+   $cs->registerScriptFile(bu().'/js/lowlag.js');
+
+  
+  ?>
+  
+ 
+
 		<div class="container wrapper">
 		<div class="inner_content">
 	<div class="pad30"></div>
@@ -169,53 +180,44 @@
 <!-- Here begins the KA exercise code -->
 
 <script src="<? echo Yii::app()->request->baseUrl;?>/js/khan-exercise.js"></script>
- <div class="exercise">
-        <div class="vars">
-            <var id="A">randRange( 100, 999 )</var>
-            <var id="B">randRange( 100, 999 )</var>
-            <var id="A_DECIMAL">randRange( 1, 2 )</var>
-            <var id="B_DECIMAL">A_DECIMAL</var>
-            <var id="NEW_A">A * ( B_DECIMAL &gt; A_DECIMAL ? pow( 10, B_DECIMAL - A_DECIMAL ) : 1)</var>
-            <var id="NEW_B">B * ( A_DECIMAL &gt; B_DECIMAL ? pow( 10, A_DECIMAL - B_DECIMAL ) : 1)</var>
-            <var id="A_DIGITS">
-                (function() {
-                    var result = digits( NEW_A );
-                    for ( var i = 0; i &lt; ( A_DECIMAL - B_DECIMAL ) || result.length &lt; A_DECIMAL + 1; i++ ) {
-                        result.push( 0 );
-                    }
-                    return result;
-                })()</var>
-            <var id="B_DIGITS">
-                (function() {
-                    var result = digits( NEW_B );
-                    for ( var i = 0; i &lt; ( B_DECIMAL - A_DECIMAL ) || result.length &lt; B_DECIMAL + 1; i++ ) {
-                        result.push( 0 );
-                    }
-                    return result;
-                })()</var>
-            <var id="DUMMY">[]</var>
-        </div>
 
-    <div class="problems">
-        <div>
-            <p class="question"><code>\Huge{<var>localeToFixed(roundTo( A_DECIMAL, A * pow( 10, -A_DECIMAL ) ), A_DECIMAL )</var> + <var>localeToFixed(roundTo( B_DECIMAL, B * pow( 10, -B_DECIMAL ) ), B_DECIMAL )</var> = {?}}</code></p>
-            <p class="solution" data-type="decimal"><var>A / pow( 10, A_DECIMAL ) + B / pow( 10, B_DECIMAL )</var></p>
-            <div class="graphie" id="numbers">
-                graph.adder = new Adder( NEW_A, NEW_B, A_DIGITS, B_DIGITS );
-                DUMMY = Array( graph.adder.getNumHints() );
+  <div class="exercise">
+                <div class="vars">
+                    <var id="SOUNDSTOLOAD">9</var>
+                    <var id="NOTE">randRange( 0, 8)</var>
+                    <var id ="LETTERS">new Array("e","f","g","a","b","c","d","e","f")</var>
+                    <var id = "ANSWER">LETTERS[NOTE]</var>
+					<var id = "MYSOUND">lowLag.play("sound"+(NOTE+1))</var>
+                    
+                </div>
+
+                <div class="problems">
+                   <div id="problem-type-or-description"> 
+                   	<div class = "problem">
+                    <p>Enter the letter name of the note displayed below. Please use a lower case letter (e.g. e, f or c). </p>
+                        <span data-if="NOTE === 0"><img src="../images/trebleclefimages/1.jpg" /></span>
+                        <span data-if="NOTE === 1"><img src="../images/trebleclefimages/2.jpg" /></span>
+                        <span data-if="NOTE === 2"><img src="../images/trebleclefimages/3.jpg" /></span>
+                        <span data-if="NOTE === 3"><img src="../images/trebleclefimages/4.jpg" /></span>
+                        <span data-if="NOTE === 4"><img src="../images/trebleclefimages/5.jpg" /></span>
+                        <span data-if="NOTE === 5"><img src="../images/trebleclefimages/6.jpg" /></span>
+                        <span data-if="NOTE === 6"><img src="../images/trebleclefimages/7.jpg" /></span>
+                        <span data-if="NOTE === 7"><img src="../images/trebleclefimages/8.jpg" /></span>
+                        <span data-if="NOTE === 8"><img src="../images/trebleclefimages/9.jpg" /></span>
+                    </div>
+                  
+                    <p class="solution" data-type="text"><var>ANSWER</var></p>
+
+                   
+                    </div>
+                </div>
+
+                <div class="hints">
+                    <p>Does this note sit on a line or in a space?</p>
+                    <p>"FACE in the space" and "Every Green Bus Drives Fast"</p>
+                    <p>This note is <var>ANSWER</var></p>
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="hints">
-        <div class="graphie" data-update="numbers">
-            graph.adder.show();
-            graph.adder.showDecimals( A_DECIMAL, B_DECIMAL );
-        </div>
-        <div class="graphie" data-each="DUMMY as dummy" data-update="numbers">
-            graph.adder.showHint();
-        </div>
-    </div>
-    </div>
     
     <!-- End exercise code -->
 
