@@ -216,7 +216,7 @@ var Khan = (function() {
     // Promise that gets resolved when MathJax is loaded
     mathJaxLoaded,
 
-    urlBase = document.location.hostname ? "/dcsite/" : "",
+    urlBase = document.location.hostname ? "/dcsite/" : "/play/dcsite/",
     
 
     // In local mode, we use khan-exercises local copy of the /images
