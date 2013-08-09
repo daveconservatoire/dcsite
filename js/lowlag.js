@@ -8,8 +8,9 @@ var lowLag = new function(){
 	this.play = this.showNeedInit;
 
 	this.audioTagTimeToLive = 5000;
+	this.urlBase = document.location.hostname =="localhost" ? "/dcsite/" : "/play/dcsite/"
 
-	this.sm2url = '/swf/';
+	this.sm2url = urlBase+'/swf/';
 
 	this.soundUrl = "";
 
