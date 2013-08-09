@@ -972,7 +972,7 @@ var Khan = (function() {
    var soundtoload=$("#SOUNDSTOLOAD").text(); 
 lowLag.init();
 for(var i=1; i<=soundtoload;i++){
-lowLag.load("/dcsite/sounds/cello/"+i+".wav", 'sound'+i);
+lowLag.load(baseUrl+"/sounds/cello/"+i+".wav", 'sound'+i);
 }
   
      onjQueryLoaded();
