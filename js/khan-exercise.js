@@ -216,7 +216,8 @@ var Khan = (function() {
     // Promise that gets resolved when MathJax is loaded
     mathJaxLoaded,
 
-    urlBase = localMode ? "/dcsite/" : "/khan-exercises/",
+    urlBase = document.location.hostname ? "/dcsite/" : "",
+    
 
     // In local mode, we use khan-exercises local copy of the /images
     // directory.  But in production (on www.khanacademy.org), we use
@@ -933,28 +934,28 @@ var Khan = (function() {
         // Load in jQuery and underscore, as well as the interface glue code
         // TODO(cbhl): Don't load history.js if we aren't in readOnly mode.
         var initScripts = [
-                "/supertonic/local-only/jquery.js",
-                "/supertonic/local-only/jquery-migrate-1.1.1.js",
-                "/supertonic/local-only/jquery.ui.core.js",
-                "/supertonic/local-only/jquery.ui.widget.js",
-                "/supertonic/local-only/jquery.ui.mouse.js",
-                "/supertonic/local-only/jquery.ui.position.js",
-                "/supertonic/local-only/jquery.ui.effect.js",
-                "/supertonic/local-only/jquery.ui.effect-shake.js",
-                "/supertonic/local-only/jquery.ui.button.js",
-                "/supertonic/local-only/jquery.ui.draggable.js",
-                "/supertonic/local-only/jquery.ui.resizable.js",
-                "/supertonic/local-only/jquery.ui.dialog.js",
-                "/supertonic/local-only/jquery.qtip.js",
-                "/supertonic/local-only/underscore.js",
-                "/supertonic/local-only/jed.js",
-                "/supertonic/local-only/i18n.js",
+                urlBase+"local-only/jquery.js",
+                urlBase+"local-only/jquery-migrate-1.1.1.js",
+                urlBase+"local-only/jquery.ui.core.js",
+                urlBase+"local-only/jquery.ui.widget.js",
+                urlBase+"local-only/jquery.ui.mouse.js",
+                urlBase+"local-only/jquery.ui.position.js",
+                urlBase+"local-only/jquery.ui.effect.js",
+                urlBase+"local-only/jquery.ui.effect-shake.js",
+                urlBase+"local-only/jquery.ui.button.js",
+                urlBase+"local-only/jquery.ui.draggable.js",
+                urlBase+"local-only/jquery.ui.resizable.js",
+                urlBase+"local-only/jquery.ui.dialog.js",
+                urlBase+"local-only/jquery.qtip.js",
+                urlBase+"local-only/underscore.js",
+                urlBase+"local-only/jed.js",
+                urlBase+"local-only/i18n.js",
                 // TODO(csilvers): I18N: pick the file based on lang=XX param
-                "/supertonic/local-only/localeplanet/icu.en-US.js",
-                "/supertonic/local-only/i18n.js",
-                "/supertonic/exercises-stub.js",
-                "/supertonic/history.js",
-                "/supertonic/interface.js"
+                urlBase+"local-only/localeplanet/icu.en-US.js",
+                urlBase+"local-only/i18n.js",
+                urlBase+"js/exercises-stub.js",
+                urlBase+"js/history.js",
+                urlBase+"js/interface.js"
             ];
 
         (function loadInitScripts() {
@@ -2213,7 +2214,7 @@ lowLag.load("/dcsite/sounds/cello/"+i+".wav", 'sound'+i);
         var src, deps = [];
 
         if (typeof modNameOrObject === "string") {
-            src = urlBase + "utils/" + modNameOrObject + ".js";
+            src = urlBase + "/utils/" + modNameOrObject + ".js";
             deps = Khan.moduleDependencies[modNameOrObject] || [];
         } else {
             src = modNameOrObject.src;
