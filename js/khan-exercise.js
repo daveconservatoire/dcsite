@@ -964,7 +964,7 @@ var Khan = (function() {
                 Khan.loadScript(src, loadInitScripts);
             } else {
                      soundManager.setup({
-  url: '/dcsite/swf/',
+  url: urlBase+'swf/',
   flashVersion: 9, // optional: shiny features (default = 8)
   // optional: ignore Flash where possible, use 100% HTML5 mode
   // preferFlash: false,
