@@ -218,6 +218,10 @@ var Khan = (function() {
 
     urlBase = document.location.hostname =="localhost" ? "/dcsite/" : "/play/dcsite/",
     
+    exerciseUrlTitle=document.location.pathname.substring(document.location.pathname.lastIndexOf('/')+1);
+    
+
+    
 
     // In local mode, we use khan-exercises local copy of the /images
     // directory.  But in production (on www.khanacademy.org), we use
@@ -969,12 +973,13 @@ var Khan = (function() {
   // optional: ignore Flash where possible, use 100% HTML5 mode
   // preferFlash: false,
   onready: function() {
-   var soundtoload=$("#SOUNDSTOLOAD").text(); 
-lowLag.init();
-for(var i=1; i<=soundtoload;i++){
-lowLag.load(urlBase+"sounds/cello/"+i+".wav", 'sound'+i);
+   var firstsound=$("#FIRSTSOUND").text(); 
+    var lastsound=$("#LASTSOUND").text(); 
+lowLag.init();	
+for(var i=firstsound; i<=lastsound;i++){
+lowLag.load(urlBase+"sounds/"+exerciseUrlTitle+"/"+i+".wav", 'sound'+i);
 
-$('#loadingtext').html("Now loading sound "+i);	
+
 }
   
      onjQueryLoaded();

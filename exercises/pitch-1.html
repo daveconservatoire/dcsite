@@ -8,17 +8,19 @@
         <body>
             <div class="exercise">
                 <div class="vars">
+                    <var id="FIRSTSOUND">0</var>
+                    <var id="LASTSOUND">9</var>
                     <var id="NOTE">randRange(0, 9)</var>
                     <var id ="RESULTS">new Array("Lower","Lower","Lower","Lower","Lower","Higher","Higher","Higher","Higher","Higher")</var>                   
  					<var id = "ANSWER">RESULTS[NOTE]</var>
-                    <var id = "MYSOUND">playSound(NOTE)</var>
+                  	<var id = "MYSOUND">playSound("sound"+NOTE)</var>
                 </div>
 
                 <div class="problems">
                    <div id="problem-type-or-description"> 
                    	<div class = "problem">
-                    <p>You will hear two notes.  Is the second note lower or higher in pitch?
-                    <a class="btn" onclick="playAgain();">Play Again</a>
+                    <p>You will hear two notes.  Is the second note lower or higher in pitch?</p>
+                    <a class="btn" id="playagain" onclick="playAgain()">Play Again</a>
                    	</div>
                   
                        <div class="solution"><var>ANSWER</var></div>

@@ -181,44 +181,14 @@
 
 <script src="<? echo Yii::app()->request->baseUrl;?>/js/khan-exercise.js"></script>
 
-  <div class="exercise">
-                <div class="vars">
-                    <var id="SOUNDSTOLOAD">9</var>
-                    <var id="NOTE">randRange( 0, 8)</var>
-                    <var id ="LETTERS">new Array("e","f","g","a","b","c","d","e","f")</var>
-                    <var id = "ANSWER">LETTERS[NOTE]</var>
-					<var id = "MYSOUND">lowLag.play("sound"+(NOTE+1))</var>
-                    
-                </div>
+<? 
 
-                <div class="problems">
-                   <div id="problem-type-or-description"> 
-                   	<div class = "problem">
-                    <p>Enter the letter name of the note displayed below. Please use a lower case letter (e.g. e, f or c). </p>
-                        <span data-if="NOTE === 0"><img src="../images/trebleclefimages/1.jpg" /></span>
-                        <span data-if="NOTE === 1"><img src="../images/trebleclefimages/2.jpg" /></span>
-                        <span data-if="NOTE === 2"><img src="../images/trebleclefimages/3.jpg" /></span>
-                        <span data-if="NOTE === 3"><img src="../images/trebleclefimages/4.jpg" /></span>
-                        <span data-if="NOTE === 4"><img src="../images/trebleclefimages/5.jpg" /></span>
-                        <span data-if="NOTE === 5"><img src="../images/trebleclefimages/6.jpg" /></span>
-                        <span data-if="NOTE === 6"><img src="../images/trebleclefimages/7.jpg" /></span>
-                        <span data-if="NOTE === 7"><img src="../images/trebleclefimages/8.jpg" /></span>
-                        <span data-if="NOTE === 8"><img src="../images/trebleclefimages/9.jpg" /></span>
-                    </div>
-                  
-                    <p class="solution" data-type="text"><var>ANSWER</var></p>
+$end = end((explode('/', $_SERVER['REQUEST_URI'])));
 
-                   
-                    </div>
-                </div>
 
-                <div class="hints">
-                    <p>Does this note sit on a line or in a space?</p>
-                    <p>"FACE in the space" and "Every Green Bus Drives Fast"</p>
-                    <p>This note is <var>ANSWER</var></p>
-                </div>
-            </div>
-    
+include($_SERVER['DOCUMENT_ROOT']."/dcsite/exercises/".$end.".html");
+
+?>
     <!-- End exercise code -->
 
 					</div>
