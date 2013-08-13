@@ -7,5 +7,5 @@ function playSound(sound){
 
 function playAgain(){
 	lowLag.play(holder);
-	$("#playagain").html("testing");
+	$("#playagain").html("Playing").delay(3000).html("Play Again");
 }

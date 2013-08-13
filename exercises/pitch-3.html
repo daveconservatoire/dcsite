@@ -8,10 +8,12 @@
         <body>
             <div class="exercise">
                 <div class="vars">
+                <var id="FIRSTSOUND">20</var>
+                    <var id="LASTSOUND">29</var>
                     <var id="NOTE">randRange(20, 29)</var>
                     <var id ="RESULTS">new Array("Lower","Lower","Lower","Lower","Lower","Higher","Higher","Higher","Higher","Higher")</var>
                     <var id = "ANSWER">RESULTS[(NOTE-20)]</var>
-                    <var id = "MYSOUND">playSound(NOTE)</var>
+                    <var id = "MYSOUND">playSound("sound"+NOTE)</var>
                 </div>
 
                 <div class="problems">

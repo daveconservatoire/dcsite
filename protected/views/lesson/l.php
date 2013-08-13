@@ -55,7 +55,7 @@ if (!empty($this->pageDescription))
  <meta itemprop="contentURL" content="http://www.youtube.com/v/<?=$model->youtubeid;?>?showinfo=0&rel=0" />
  <meta itemprop="embedURL" content="https://www.youtube.com/embed/<?=$model->youtubeid;?>?showinfo=0&rel=0" />
  <div class="vendor">
-<iframe src="http://www.youtube.com/embed/<?=$model->youtubeid;?>?enablejsapi=1&showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe>
+<div id="player"></div>
  </div>
  
      <script>
@@ -102,12 +102,12 @@ if (!empty($this->pageDescription))
         data: "lessonId="+<?=$model->id;?>+"&status="+status+"&position="+position,
         // callback handler that will be called on success
         success: function(response, textStatus, jqXHR){
-            // log a message to the console
+           console.log("Video View logged!");
           
         },
         // callback handler that will be called on error
         error: function(response){
-            // log the error to the console
+            console.log("Video View logging failed!");
         }
     
     });

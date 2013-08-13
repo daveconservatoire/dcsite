@@ -93,8 +93,7 @@ public function actionCreate()
 // Try to save the model
 
     if($model->save()) {
-       $feedback[points]=60;
-       $feedback[badge]="groove";
+      $feedback="Seems to have worked!";
       
     
         $this->_sendResponse(200, CJSON::encode($feedback));

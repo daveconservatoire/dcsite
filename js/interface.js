@@ -150,10 +150,13 @@ function handleSkippedQuestion() {
     return handleAttempt({skipped: true});
 }
 
+var attemptNumber =0;
+
 function handleAttempt(data) {
     var framework = Exercises.getCurrentFramework();
     var skipped = data.skipped;
     var score;
+    
 
     if (framework === "perseus") {
         score = PerseusBridge.scoreInput();
@@ -188,6 +191,22 @@ function handleAttempt(data) {
             score.correct, ++attempts, stringifiedGuess, timeTaken, skipped);
     }
     lastAttemptOrHint = curTime;
+    
+    var url = document.URL.split(/[/]+/).pop();
+    var url = url.substring(0, url.length);
+    var correctAnswer;
+   
+    if (score.correct){correctAnswer=1; attemptNumber++;} else {correctAnswer=0; attemptNumber++;}
+    
+    		    $.ajax({
+        url: "/dcsite/api/exerciseanswer",
+        type: "post",
+        data: "exerciseId="+url+"&complete="+correctAnswer+"&countHints="+hintsUsed+"&timeTaken="+timeTaken+"&attemptNumber="+attemptNumber,
+        // callback handler that will be called on success
+        success: function(response, textStatus, jqXHR){
+           alert("answer logged!")
+          
+        }});
 
     Exercises.guessLog.push(score.guess);
     Exercises.userActivityLog.push([

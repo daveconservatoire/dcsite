@@ -1660,7 +1660,7 @@ lowLag.load(urlBase+"sounds/"+exerciseUrlTitle+"/"+i+".wav", 'sound'+i);
         }
 
         hintsUsed++;
-
+        
         var problem = $(hint).parent();
 
         // Append first so MathJax can sense the surrounding CSS context properly

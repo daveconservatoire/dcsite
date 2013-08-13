@@ -48,7 +48,7 @@
 <!--logo-->
 <div class="container">
 <div class="logo">
-<a href="index.html"><img src="<?=bu();?>/img/logo2.jpg" alt="" style="width:245px;"/></a>
+<a href="<?=bu();?>"><img src="<?=bu();?>/img/logo2.jpg" alt="" style="width:245px;"/></a>
 </div>
 <!--menu-->
 <nav id="main_menu">
