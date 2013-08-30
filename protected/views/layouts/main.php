@@ -46,31 +46,55 @@
 <!--header-->
 <div class="header">
 <!--logo-->
-<div class="container">
-<div class="logo">
-<a href="<?=bu();?>"><img src="<?=bu();?>/img/logo2.jpg" alt="" style="width:245px;"/></a>
+
+ <div class="navbar">
+	<div class="navbar-inner">
+		<div class="container">
+			<a class="brand" href="<?=bu();?>"><?php echo CHtml::encode(Yii::app()->name); ?></a>
+			<div class="navbar">
+			
+					<!--
+					<li class="dropdown"><a href="#tools"class="dropdown-toggle" data-toggle="dropdown">Tools<b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="<? echo Yii::app()->request->baseUrl;?>/tools/scales" class="active">Scale Dictionary</a></li>
+						<li><a href="<? echo Yii::app()->request->baseUrl;?>/tools/chords">Chord Dictionary</a></li>
+					</ul>
+					</li>
+					-->
+                   <a href="<? echo Yii::app()->request->baseUrl;?>/site/about" class="btn">About</a>
+					<a href="<? echo Yii::app()->request->baseUrl;?>/site/support" class="btn">Donate</a>
+					
+					<a href="<? echo Yii::app()->request->baseUrl;?>/site/contact" class="btn">Contact</a>
+			
+				<p class='navbar-text pull-right'>
+				<?php if (Yii::app()->user->isGuest): ?>
+				
+
+					<a class='btn navbarbutton' href='<? echo Yii::app()->request->baseUrl; ?>/site/login'>Login</a>
+				</p>
+				<?php else: ?>
+				
+				<div class="btn-group pull-right">
+				    
+					<a class="btn btn-success" href="<? echo Yii::app()->request->baseUrl; ?>/profile"><i class="icon-user icon-white"></i> <? echo Yii::app()->user->name;?></a>
+					<a class="btn btn-success dropdown-toggle" data-toggle="dropdown" href="#profilemenu"><span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="<? echo Yii::app()->request->baseUrl; ?>/profile"><i class="icon-pencil"></i> My Profile</a></li>
+						<li class="divider"></li>
+						<li><a href="<? echo Yii::app()->request->baseUrl; ?>/site/logout"><i class="icon-share-alt"></i>Logout</a></li>
+					</ul>
+				</div>
+				<? $user=User::model()->findByPk(Yii::app()->user->dcid);?>
+				<span id="points" class="badge pull-right" style="margin: 9px 5px"><?=$user->points;?></span>
+				<?php endif;?>
+			</div>
+		</div>
+	</div>
 </div>
-<!--menu-->
-<nav id="main_menu">
-<div class="menu_wrap">
-<ul class="nav sf-menu ">
-
-<li class="sub-menu active"><a href="javascript:{}">About</a>
-
-</li>
-<li class="sub-menu"><a href="javascript:{}">Support</a>
-
-</li>
-<li class="sub-menu"><a href="javascript:{}">Contact</a>
-
-</li>
-
-</ul>
 </div>
-</nav>
-</div>
-</div>
-<!--//header-->
+    
+
+
 
 
 

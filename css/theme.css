@@ -40,11 +40,11 @@ body {
 	padding:0 0;
 	background:#ffffff;
 	margin:0 auto; 
-	height: 86px;
+
 	width: 100%;
 	z-index: 1000; 
 }
-.inner_content { padding:20px 0 0 0; }
+
 .wrapper {  margin:0px auto; padding:0 0 60px;}
 #banner { background:#e9e6e1; width: 100%; }
 .intro_wrapper {  margin:0 auto; padding:0 0 40px;}
@@ -1629,6 +1629,17 @@ border:0px solid #34495E;
 .blacknote-marker {left:1px;bottom:12px;width:14px;height:16px;background-position:-122px -102px; margin: 70px 0px 0px 1px}
 
 .whitenote-marker, .blacknote-marker {background-image: url("images/keyboard_small.png");background-size:168px 152px; }
+
+/* Custom Style for Lesson titles */
+.lessontitle {height: 100px; background-color: #fff}
+
+
+.bs-docs-sidenav > li:first-child > a {
+
+          border-radius: 0px;
+}
+
+.tab-content {padding: 9px 0 0 0}
 	
 
 /*-----------------------------------------------------------------------------------*/
@@ -1904,5 +1915,31 @@ h1.title { line-height:40px;!important; }
 }
 
 
+
+.lessontitle {
+	height: 61px;
+	margin:0px;
+	padding:0px;
+	
+}
+
+.lessontitle h3 {
+		margin:0px;
+	padding:0px;
+
+	
+}
+.lesson-content {
+
+-webkit-box-shadow: 0 0 8px rgba(0,0,0,0.4);
+-moz-box-shadow: 0 0 8px rgba(0,0,0,0.4);
+box-shadow: 0 0 8px rgba(0,0,0,0.4);
+padding: 12px 10px;
+position: relative;
+background-color: #ffffff;
+
+}
+
+	
 
 

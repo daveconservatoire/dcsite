@@ -1,6 +1,5 @@
-<?php
-
-class LessonController extends Controller
+<?
+class TopicController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -33,9 +32,6 @@ class LessonController extends Controller
 				'users'=>array('*'),
 			),
 
-			array('deny',  // deny all users
-				'users'=>array('*'),
-			),
 		);
 	}
 
@@ -45,15 +41,14 @@ class LessonController extends Controller
 	 */
 	public function actionView($urltitle)
 	{
+	
 	   
-	   
-	   $lessonmodel=Lesson::model()->find("urltitle = '".$urltitle."'");
+	   //$lessonmodel=Lesson::model()->find("urltitle = '".$urltitle."'");
 	   //Add in special Facebook, Twitter and Google metadata for video pages. 
 	   
-	   if($lessonmodel->filetype=="l") {
-	   
+
 	   //Facebook OG meta
-		   
+		 /*  
 		  Yii::app()->clientScript->registerMetaTag('http://img.youtube.com/vi/'.$lessonmodel->youtubeid.'/0.jpg',null,null,array('property'=>'og:image'));
 	      Yii::app()->clientScript->registerMetaTag('http://www.youtube.com/v/'.$lessonmodel->youtubeid.'?showinfo=0&rel=0',null,null,array('property'=>'og:video'));
 	      Yii::app()->clientScript->registerMetaTag('http://www.daveconservatoire.org/lesson/'.$lessonmodel->urltitle,null,null,array('property'=>'og:url'));
@@ -77,47 +72,39 @@ class LessonController extends Controller
 	      Yii::app()->clientScript->registerMetaTag('560' ,null,null,array('name'=>'twitter:player:width'));
 
      
-	         
-	      
-	   }
-	   
+	   */      
+	
+	    //$model=loadModel();
+	    //$course=loadCourse($model->courseId;);
 	
 	
-	
-		$this->render($lessonmodel->filetype,array(
-			'model'=>$lessonmodel
+		$this->render('view',array(
+			'model'=>$this->loadModel($urltitle)
 		));
 		
 		
 	}
-
-   public function actionIndex(){
-	   $this->redirect(bu());
-   }
-
-	/**
-	 * Returns the data model based on the primary key given in the GET variable.
-	 * If the data model is not found, an HTTP exception will be raised.
-	 * @param integer the ID of the model to be loaded
-	 */
-	public function loadModel($id)
+	
+		public function loadModel($urltitle)
 	{
-		$model=Lesson::model()->findByPk($id);
-		if($model===null)
-			throw new CHttpException(404,'The requested page does not exist.');
+		$model=Topic::model()->find("urltitle = '".$urltitle."'");
+		if($model===null) {
+			$this->redirect(bu());
+			}
 		return $model;
 	}
-
-	/**
-	 * Performs the AJAX validation.
-	 * @param CModel the model to be validated
-	 */
-	protected function performAjaxValidation($model)
-	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='lesson-form')
-		{
-			echo CActiveForm::validate($model);
-			Yii::app()->end();
+	
+	public function loadCourse($courseId){
+		$course=Course::model()->find("id = '".$courseId."'");
+		if($course===null){
+			$this->redirect(bu());
+			}
+			return $course;
 		}
+	
+	
+	public function actionIndex() {
+		$this->redirect(bu());
 	}
-}
+	}
+	?>

@@ -205,49 +205,28 @@ if (!empty($recentexs)):?>
 $courses=Course::model()->findAll(array('order'=>'id DESC'));
 foreach($courses as $course): 
 $course=Course::model()->findByPk($course->id);
-$lessons=Lesson::model()->findAll("seriesno=".$course->id ." ORDER BY lessonno");
+$topics=Topic::model()->findAll("courseId=".$course->id ." ORDER BY sortorder");
 $counter=1;
 $this->pageTitle='Home | '.Yii::app()->name ;
 ?>
 <div class='page-header'><h2><?=$course->title?></h2></div>
-<div class="thumbnails">
-	<div class="row"  style="margin-left: 0px">
-		<? foreach($lessons as $lesson): ?>
-		<div class='span2'>
-			<?php if ($lesson->filetype == "l"): ?>
-			
-				<a href='lesson/<?=$lesson->urltitle;?>' class='thumbnail vertical-shadow suggested-action'>
-				<img src='http://img.youtube.com/vi/<?=$lesson->youtubeid;?>/default.jpg'/>
-				<p><?=$lesson->title;?></p>
-				</a>
+<div class="thumbnails tabbable">
+<ul class="nav nav-tabs" style="width: 100%">
 
-
-
-			<? endif;?>
-			<?php if ($lesson->filetype == "p"): ?>
-	<a href='lesson/<?=$lesson->urltitle;?>' class='thumbnail vertical-shadow suggested-action'>
-				<img src='images/playlist.jpg'/>
-				<p><?=$lesson->title;?></p>
-				</a>
-
-			<? endif;?>
-			<?php if ($lesson->filetype == "e"): ?>
-	<a href='lesson/<?=$lesson->urltitle;?>' class='thumbnail vertical-shadow suggested-action'>
-				<img src='images/exercise.jpg'/>
-			<p><?=$lesson->title;?></p>
-				</a>
-
-
-</a>
-			<? endif;?>
+	<div class="row"  style="margin-left: 0px; margin-bottom: 10px">
+		<? foreach($topics as $topic): ?>
+		<div class='span4'>
+		<li><a href="<?=bu();?>/topic/<?=$topic->urltitle;?>"><h3><?=$topic->title;?></h3></a></li>
+         
 		</div>
-    <? if($counter==6){ ?>
+    <? if($counter==3){ ?>
 	</div>
 	<div class='row' style="margin-left: 0px">
     <? $counter=1; } else { $counter++;} ?> 
 		<? endforeach;?>
 	</div>
 </div>
+<div class="pad30"></div>
 <? endforeach;?>
 	</div>
 	</div>

@@ -2291,8 +2291,8 @@ lowLag.load(urlBase+"sounds/"+exerciseUrlTitle+"/"+i+".wav", 'sound'+i);
         }
   
         // Generate the initial problem when dependencies are done being loaded
-        $('#starter').html('<a id="startbutton">START NOW!</a>');
-     $("#startbutton").on('click', function() {makeProblem(); $("#container").css('visibility','visible');  $('#starter').hide();});
+        $('#starterdiv').html('<a id="startbutton" class="btn btn-success btn-large">START NOW!</a>');
+     $("#startbutton").on('click', function() {makeProblem(); $("#container").css('visibility','visible');  $('#starterdiv').hide();});
     
     }
 

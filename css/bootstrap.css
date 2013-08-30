@@ -1,4 +1,4 @@
-/*!
+3672/*!
  * Bootstrap v2.3.1
  *
  * Copyright 2012 Twitter, Inc
@@ -3669,9 +3669,7 @@ input[type="submit"].btn.btn-mini {
   clear: both;
 }
 
-.navbar .container {
-  width: auto;
-}
+
 
 .nav-collapse.collapse {
   height: auto;
@@ -3877,6 +3875,7 @@ input[type="submit"].btn.btn-mini {
   float: left;
 }
 
+/*
 .navbar .nav > li > a {
   float: none;
   padding: 10px 15px 10px;
@@ -3884,6 +3883,7 @@ input[type="submit"].btn.btn-mini {
   text-decoration: none;
   text-shadow: 0 1px 0 #ffffff;
 }
+*/
 
 .navbar .nav .dropdown-toggle .caret {
   margin-top: 8px;

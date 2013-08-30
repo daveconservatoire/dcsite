@@ -32,12 +32,9 @@ $this->extraKeywords=$model->title.", ".$course->title.", ";
 			<div class="container wrapper">
 		<div class="inner_content">
 	<div class="pad30"></div>
-		<div class="row">
-			<div class="span3" >
+
 <? $this->renderPartial("//layouts/components/sidebar", array("model"=>$model));?>
-						</div>
-						
-					<div class="span9">
+			
 					
 <noscript>
 	<div>

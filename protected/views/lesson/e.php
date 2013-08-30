@@ -11,22 +11,20 @@
 
 		<div class="container wrapper">
 		<div class="inner_content">
-	
-		<div class="row">
-			<div class="span3" >
-<? $this->renderPartial("//layouts/components/sidebar", array('model'=>$model));?>
-						</div>
-						
-					<div class="span9">
-					
-<h3 id="starter">LOADING SOUNDS</h3>
 
+<? $this->renderPartial("//layouts/components/sidebar", array('model'=>$model));?>
+				
+						
+<div style="text-align:center;">			
+<div id="starterdiv">					
+<h1 id="starter">Exercise Loading . . .Please Wait</h1>
+<h1 id="starter">Don't forget to turn up your volume!</h1>
+<img src="<? echo bu();?>/img/ajax-loader.gif" />
+</div>
+</div>
  <div class="single-exercise visited-no-recolor" id="container" style="overflow: hidden; visibility: hidden">
                         <article class="exercises-content clearfix">
-                        <div class="exercises-header"><h2 class="section-headline">
-                                <div class="topic-exercise-badge">&nbsp;</div>
-                                <span class="practice-exercise-topic-context">Practicing</span>
-                        </h2></div>
+             
                         <div class="exercises-body">
                             <div class="exercises-stack">&nbsp;</div>
                             <div class="exercises-card current-card">
