@@ -50,7 +50,7 @@
  <div class="navbar">
 	<div class="navbar-inner">
 		<div class="container">
-			<a class="brand" href="<?=bu();?>"><?php echo CHtml::encode(Yii::app()->name); ?></a>
+			<a class="brand" href="<?=bu();?>"><img src="<?=bu()."/img/dclogo3.png";?>" style="width:180px" /></a>
 			<div class="navbar">
 			
 					<!--
@@ -60,7 +60,7 @@
 						<li><a href="<? echo Yii::app()->request->baseUrl;?>/tools/chords">Chord Dictionary</a></li>
 					</ul>
 					</li>
-					-->
+			
                    <a href="<? echo Yii::app()->request->baseUrl;?>/site/about" class="btn">About</a>
 					<a href="<? echo Yii::app()->request->baseUrl;?>/site/support" class="btn">Donate</a>
 					
@@ -87,6 +87,7 @@
 				<? $user=User::model()->findByPk(Yii::app()->user->dcid);?>
 				<span id="points" class="badge pull-right" style="margin: 9px 5px"><?=$user->points;?></span>
 				<?php endif;?>
+				-->
 			</div>
 		</div>
 	</div>

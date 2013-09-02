@@ -33,170 +33,221 @@ position: relative;
 }
 </style>
 
+<div id="banner">
+	<div class="container intro_wrapper">
+	<div class="inner_content">
+	
+	<!--welcome-->
 
+		<div class="welcome_index animated fadeInDown">
+		Welcome to <span>Dave Conservatoire</span> - a free online music school, <br />aiming to provide a world-class music education for <span>everyone</span>.
 
+		</div>
+	<!--//welcome-->
+		</div>
+			</div>
+				</div>
+<div class="container wrapper">
+	<div class="inner_content">
+	<div class="pad45"></div>
+		
+	<!--info boxes-->
+	<div class="row">
+		<div class="span3">
+			<div class="tile">
+			<div class="intro-icon-disc cont-large"><i class="icon-film intro-icon-large dc-text-yellow"></i></div>
+			<h6><small>WATCH</small></h6>
+			<p>Join Dave, your friendly guide, in over 100 video music lessons, introducing how music works from the very beginning.</p>
+			<a id="getstarted" class="btn btn-primary  btn-custom btn-rounded btn-block">Get Started</a>
+			</div> 
+				<div class="pad25"></div>
+				</div> 
+				
+			<div class="span3">
+				<div class="tile">
+				<div class="intro-icon-disc cont-large"><i class="icon-star intro-icon-large"></i></div>
+				<h6><small>PRACTICE</small></h6>
+				<p>Test your understanding as you go, with interactive exercises designed to enhance your awareness and sensitivity to music.</p>
+				<a href="/login" class="btn btn-primary  btn-custom btn-rounded btn-block">Sign in to track your progress</a>
+				</div> 
+					<div class="pad25"></div>
+					</div> 
+					
+			<div class="span3">
+				<div class="tile">
+				<div class="intro-icon-disc cont-large"><i class="icon-info intro-icon-large"></i></div>
+				<h6><small>ABOUT</small></h6>
+				
+				<p>Find out all about Dave Conservatoire; the story so far, where we hope to head in the future and how you can lend a hand.</p>	
+				<a href="#" class="btn btn-primary  btn-custom btn-rounded btn-block">Find out more</a>
+				</div> 
+					<div class="pad25"></div>
+					</div> 
+				
+			<div class="span3">
+				<div class="tile">
+				<div class="intro-icon-disc cont-large"><i class="icon-money  intro-icon-large"></i></div>
+				<h6> <small>DONATE</small></h6>
+				<p>Dave Conservatoire will be totally free forever.  Our dream is that no-one should miss out on having music in their life. </p>
+				<a href="#" class="btn btn-primary  btn-custom btn-rounded btn-block">How you can help</a>
+				</div>
+					<div class="pad25"></div>	
+				</div> 
+				</div> 
+				
+			<!--//info boxes-->
+			<div class="row">
+			<!--col 1-->
+			<div class="span12">
+			<div class="row">
+			<div class="pad25 hidden-phone"></div>	
+			
+			<script type="text/javascript" src="<?=bu()."/js/jquery.carouFredSel-6.2.1-packed.js";?>"></script>
+<script type="text/javascript">
+//<![CDATA
+jQuery(document).ready(function($) {
+	$("#slider_home").carouFredSel({ width : "100%", height : "auto",
+	responsive : true,  circular : true, infinite	: false, auto : false,
+	items : { width : 231, visible: { min: 1, max: 3 }
+	},
+	scroll: { items: 3, },
+	prev : { button : "#sl-prev", key : "left"},
+	next : { button : "#sl-next", key : "right" }
+	});
+		});
+		//]]>
+	</script>
+			
+			<div class="span4">
+			<h1>Latest Content</h1>
+			<h4>Lorem ipsum dolor sit amet, rebum putant recusabo in ius, pri simul tempor ne, his ei summo virtute.</h4>
+			<p>Nam ea labitur pericula. Meis tamquam pro te, cibo mutat necessitatibus id vim. An his tamquam postulant, pri id mazim nostrud diceret 
+			sapientem eloquentiam sea cu, sea ut exerci delicata. Corrumpit vituperata.</p>
+			
+			<a href="#" class="btn btn-primary  btn-custom btn-rounded">view portfolio</a>
+			<div class="pad45"></div>
+			</div>
+			<!--column 2 slider-->
+			<div class="span8 pad15 col_full2">
+			
+			<div id="slider_home">
+            <div class="slider-item">	
+				<div class="slider-image">
+				<div class="hover_colour">
+				<a href="img/large/s1.jpg" data-rel="prettyPhoto">
+					<img src="img/small/s1.jpg" alt="" /></a>
+					</div>
+				</div>
+				<div class="slider-title">
+				<h3><a href="#">catalogue</a></h3>
+				<p>An his tamquam postulant, pri id mazim nostrud diceret.</p>
+				</div>
+			</div>
+			
+			<div class="slider-item">
+				<div class="slider-image">
+				<div class="hover_colour">
+				<a href="img/large/s2.jpg" data-rel="prettyPhoto">
+					<img src="img/small/s2.jpg" alt="" /></a>
+					</div>
+				</div>
+				<div class="slider-title">
+				<h3><a href="#">loupe</a></h3>
+				<p>An his tamquam postulant, pri id mazim nostrud diceret.</p>
+				</div>
+			</div>
+			
+			<div class="slider-item">
+				<div class="slider-image">
+				<div class="hover_colour">
+				<a href="img/large/s3.jpg" data-rel="prettyPhoto">
+					<img src="img/small/s3.jpg" alt="" /></a>
+					</div>
+				</div>
+				<div class="slider-title">
+				<h3><a href="#">retro rocket</a></h3>
+				<p>An his tamquam postulant, pri id mazim nostrud diceret.</p>
+				</div>
+			</div>
+			
+			<div class="slider-item">
+				<div class="slider-image">
+				<div class="hover_colour">
+				<a href="img/large/s4.jpg" data-rel="prettyPhoto">
+					<img src="img/small/s4.jpg" alt="" /></a>
+					</div>
+				</div>
+				<div class="slider-title">
+				<h3><a href="#">infographics</a></h3>
+				<p>An his tamquam postulant, pri id mazim nostrud diceret.</p>
+				</div>
+			</div>
+			
+			<div class="slider-item">
+				<div class="slider-image">
+				<div class="hover_colour">
+				<a href="img/large/s5.jpg" data-rel="prettyPhoto">
+					<img src="img/small/s5.jpg" alt="" /></a>
+					</div>
+				</div>
+				<div class="slider-title">
+				<h3><a href="#">mock up</a></h3>
+					<p>An his tamquam postulant, pri id mazim nostrud diceret.</p>
+					</div>
+				</div>
+			
+			<div class="slider-item">
+				<div class="slider-image">
+				<div class="hover_colour">
+				<a href="img/large/s6.jpg" data-rel="prettyPhoto">
+					<img src="img/small/s6.jpg" alt="" /></a>
+					</div>
+				</div>
+				<div class="slider-title">
+				<h3><a href="#">retro badges</a></h3>
+					<p>An his tamquam postulant, pri id mazim nostrud diceret.</p>
+					</div>
+				</div>
+			
+			<div class="slider-item">
+			<div class="slider-image">
+				<div class="hover_colour">
+				<a href="img/large/s7.jpg" data-rel="prettyPhoto">
+					<img src="img/small/s7.jpg" alt="" /></a>
+					</div>
+				</div>
+				<div class="slider-title">
+				<h3><a href="#">details</a></h3>
+					<p>An his tamquam postulant, pri id mazim nostrud diceret.</p>
+				</div>
+			</div>
+			
+			<div class="slider-item">
+				<div class="slider-image">
+				<div class="hover_colour">
+				<a href="img/large/s8.jpg" data-rel="prettyPhoto">
+					<img src="img/small/s8.jpg" alt="" /></a>
+					</div>
+				</div>
+				<div class="slider-title">
+				<h3><a href="#">vintage form</a></h3>
+					<p>An his tamquam postulant, pri id mazim nostrud diceret.</p>
+				</div>
+			</div>
+				</div>
+				<div id="sl-prev" class="widget-scroll-prev"><i class="icon-chevron-left white"></i></div>
+				<div id="sl-next" class="widget-scroll-next"><i class="icon-chevron-right white but_marg"></i></div>
+			</div>
+				</div>
+				</div>
+			</div>
+		</div>
+		<!--//page-->		<div class="pad25 hidden-desktop"></div>
+	</div>
 
 <? $counter=1;?>
 	<!--banner-->
-	<div id="banner">
-	<div class="container intro_wrapper">
-	<div class="inner_content">
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=321196507942104";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-	<? if (Yii::app()->user->isGuest) :?>
-	<div class="hero-unit">
-		<h1>Learn about music online</h1>
-        <p>Simple online theory lessons and exercises to help you discover how music works.</p>
-<form class="form-search" method="get" action="<? echo Yii::app()->request->baseUrl;?>/search">
 
-<div class="input-append  input-block-level">
-  <input type="text" name="searchquery" class="input-xxlarge search-query topsearch " 
-  <? if (isset($_GET['searchquery'])){ echo "value='".$_GET['searchquery']."'";} else {echo "placeholder='Enter your search term here'";}?>"  />
-    <button type="submit" class="btn">Search</button>
-  </div>
-
-
-
-</form>
-		
-        <a class="btn btn-large" href="<? echo Yii::app()->request->baseUrl;?>/lesson/what-is-music-theory">Get started!</a>
-        <a class="btn btn-large" href="<? echo Yii::app()->request->baseUrl;?>/login">Sign in to track your progress!</a>
-		<div style="padding:15px 0 15px;">    
-			<div style="float: right; ">
-				<a href="https://twitter.com/share" class="twitter-share-button" data-via="dconservatoire" data-align="right" data-counturl="http://www.daveconservatoire.org">Tweet</a>
-				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//		platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-				<a href="https://twitter.com/dconservatoire" class="twitter-follow-button" data-show-count="false" data-align="right">Follow 		@dconservatoire</a>
-				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//	platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-			</div>
-			<div style="float: left">
-				<div class="fb-like" data-href="http://www.daveconservatoire.org" data-send="false" data-width="450" data-show-faces="false" data-action="recommend" data-font="trebuchet ms"></div>  
-			</div>
-			<div style="clear:both"></div>
-		</div>
-	</div>
-	
-
-	
-
-	<div class='page-header'><h2>Newest!</h2></div>
-<div class="thumbnails">
-	<div class="row"  style="margin-left: 0px">
-		<? foreach($newlessons as $lesson): ?>
-		<div class='span3'>
-			<?php if ($lesson->filetype == "l"): ?>
-	
-        
-<a class="vertical-shadow suggested-action" href="<? echo Yii::app()->request->baseUrl;?>/lesson/<?=$lesson->urltitle;?>">
-    <div class="suggested-action-image-link cs" style="background-image: url(http://img.youtube.com/vi/<?=$lesson->youtubeid;?>/0.jpg);">
-    </div>
-    <h2 class="suggested-action-title" title=":<?=$lesson->title;?>"><?=$lesson->title;?></h2>
-
-</a>
-
-			</a>
-			<? endif;?>
-			<?php if ($lesson->filetype == "p"): ?>
-<a class="vertical-shadow suggested-action" href="<? echo Yii::app()->request->baseUrl;?>/lesson/<?=$lesson->urltitle;?>">
-    <div class="suggested-action-image-link cs" style="background-image: url(images/playlist.jpg);">
-    </div>
-    <h2 class="suggested-action-title" title=":<?=$lesson->title;?>"><?=$lesson->title;?></h2>
-
-</a>
-				</a>
-			<? endif;?>
-			<?php if ($lesson->filetype == "e"): ?>
-<a class="vertical-shadow suggested-action" href="<? echo Yii::app()->request->baseUrl;?>/lesson/<?=$lesson->urltitle;?>">
-    <div class="suggested-action-image-link cs" style="background-image: url(images/exercise.jpg);">
-    </div>
-    <h2 class="suggested-action-title" title=":<?=$lesson->title;?>"><?=$lesson->title;?></h2>
-
-</a>
-				</a>
-			<? endif;?>
-		</div>
-		<? if($counter==4){ ?>
-		</div><div class='row' style="margin-left: 0px">
-		<? $counter=1; }  else { $counter++;} ?> 
-		<? endforeach;?>
-	</div>
-</ul>
-
-	<? else: ?>
-	<div class="hero-unit">
-		<h2>Welcome <? 
-		$names= explode(" ", Yii::app()->user->name);
-		echo $names[0];
-		?></h2>
-		<?
-		if(empty($recentvids) && empty($recentexs)): ?>
-			<p>Time to get started, browse the lessons below and dive in!</p>
-		<? else: ?>
-			<p>Here's what you've been working on recently.</p>
-		<? endif; ?>
-		</div>
-	</div>
-	<? if (!empty($recentvids)): ?>
-	<div class="page-header"> <h3>Lessons:</h3></div>
-	<div class="row">
-	<div class="span12">
-       <ul class="thumbnails">
-	<? foreach($recentvids as $recentvid) { $vidinfo=Lesson::model()->findByPK($recentvid->lessonId);?>
-		<li class="span3">
-           <a href='lesson/<?=$vidinfo->urltitle;?>' class='thumbnail'>
-				<img src='http://img.youtube.com/vi/<?=$vidinfo->youtubeid;?>/default.jpg'/>
-				<h5><?=$vidinfo->title;?></h5>
-				</a>
-        </li>
-<?
-}
-?>
-
-                </ul>
-    </div>
-</div>
-<? endif;
-if (!empty($recentexs)):?>
-   <div class="page-header"> <h3>Skills:</h3></div>
-<div class="row">
-
-
- 
-    <div class="span12">
-       <ul class="thumbnails">
-<? foreach($recentexs as $recentex) {
-	$exinfo=Lesson::model()->findByPK($recentex->exerciseId);
-?>
-   
-        <li class="span3">
-          <a href='exercise/<?=$exinfo->urltitle;?>' class='thumbnail'>
-				<img src='images/exercise.jpg' />
-				<h5><?=$exinfo->title;?></h5>
-				</a>
-        </li>
-<?
-}
-?>
-
-                </ul>
-    </div>
-  </div>
-	<? endif; ?>
-	<? endif;?>
-
-	</div>
-		</div>
-			</div>
-			
-	<div class="container wrapper">
-	<div class="inner_content">
-	<div class="pad30"></div>
-	
 
 
 
@@ -209,24 +260,38 @@ $topics=Topic::model()->findAll("courseId=".$course->id ." ORDER BY sortorder");
 $counter=1;
 $this->pageTitle='Home | '.Yii::app()->name ;
 ?>
-<div class='page-header'><h2><?=$course->title?></h2></div>
+
+
+<div id="banner">
+	<div class="container intro_wrapper">
+	<div class="inner_content">
+<div class="pad30"></div>
+	<h1 class="title"><?=$course->title;?></h1>
+	<h1 class="intro"><?=$course->description;?></h1>
+	</div>
+	</div>
+</div>	
+<div class="pad30"></div>
+<div class="container wrapper">
 <div class="thumbnails tabbable">
 <ul class="nav nav-tabs" style="width: 100%">
 
 	<div class="row"  style="margin-left: 0px; margin-bottom: 10px">
 		<? foreach($topics as $topic): ?>
 		<div class='span4'>
-		<li><a href="<?=bu();?>/topic/<?=$topic->urltitle;?>"><h3><?=$topic->title;?></h3></a></li>
+		<li><a class="btn btn-large btn-block btn-primary" href="<?=bu();?>/topic/<?=$topic->urltitle;?>"><h3><?=$topic->title;?></h3></a></li>
          
 		</div>
     <? if($counter==3){ ?>
 	</div>
-	<div class='row' style="margin-left: 0px">
+	<div class='row' style="margin-left: 0px;  margin-bottom: 10px">
     <? $counter=1; } else { $counter++;} ?> 
 		<? endforeach;?>
+	</ul>
 	</div>
 </div>
 <div class="pad30"></div>
 <? endforeach;?>
+	</div>
 	</div>
 	</div>

@@ -235,7 +235,7 @@ h1.intro {  line-height:40px; font-weight:300;}
 	padding:55px 0 30px;
 	font-weight:300; 
 	margin:0 auto;
-	color:#69767F;
+	color:#474747;
 	text-align:center;
 }
 
@@ -1943,3 +1943,42 @@ background-color: #ffffff;
 	
 
 
+/* Color Branding */
+
+.dc-bg-yellow {
+	background-color: #F7941E;
+	background: #F7941E;
+	}
+	
+.dc-text-yellow {
+	color: #F7941E;
+	}
+	
+.dc-bg-orange {
+	background-color: #f1592a;
+	background: #f1592a;
+	}
+	
+.dc-text-orange {
+	color: #f1592a;
+	}
+	
+.dc-bg-redorange {
+	background-color: #ef3e36;
+	background: #ef3e36;
+	}
+	
+.dc-text-redorange {
+	color: #ef3e36;
+	}
+	
+.dc-bg-red {
+	background-color: #bf1e2d;
+	background: #bf1e2d;
+	}
+	
+.dc-text-red {
+	color: #bf1e2d;
+	}
+	
+	

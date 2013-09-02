@@ -6,10 +6,11 @@
 				<div class="span4">
 					<div class="tabbable tabs-left">
 						<ul class="nav nav-tabs" style="width: 100%">
-						<li><a href="#topic-all" data-toggle="tab">View All</a></li>
+								<? $course=Course::model()->findByPk($model->courseId);?>
+						<li><a href="<?=bu()."/course/".$course->urltitle;?>">View All</a></li>
 						<? $topics=Topic::model()->findAll("courseId=".$model->courseId ." ORDER BY sortorder");
 							foreach($topics as $topic) {?>
-							<li  <? if($model->id==$topic->id) { echo 'class="active"';}?>><a href="<?=bu();?>/topic/<?=$topic->urltitle;?>" data-toggle="tab"><?=$topic->title;?></a></li>
+							<li  <? if($model->id==$topic->id) { echo 'class="active"';}?>><a href="<?=bu();?>/topic/<?=$topic->urltitle;?>"><?=$topic->title;?></a></li>
 							<?
 							}
 							?>
@@ -23,7 +24,7 @@
          <div class="thumbnails">
 	        <div class="row"  style="margin: 0 0 20px 0">    
 		          
-<? $lessons=Lesson::model()->findAll("seriesno=".$model->courseId ." ORDER BY lessonno"); 
+<? $lessons=Lesson::model()->findAll("seriesno=".$model->courseId ." AND topicno=".$model->id." ORDER BY lessonno"); 
 $counter=1; 
 foreach ($lessons as $lesson){
 

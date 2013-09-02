@@ -149,6 +149,7 @@
 
                                         </div>
                                     </div>
+                                    <!--
                                     <div class="single-exercise" id="extras">
                                         <ul>
                                             <li> <a href="" id="scratchpad-show" style="">Show scratchpad</a>
@@ -158,12 +159,13 @@
                                             <li> <a href="" id="problem-permalink">Problem permalink</a></li>
                                         </ul>
                                     </div>
+                                    -->
                                 </div>
                             </div>
                         </div>
                         </article>
                     </div>
-                    <div id="end-of-page-spacer" style="height: 38px;">&nbsp;</div>
+                  
                     <div class="badge-award-container" id="badge-notification-container" style="display:none;"></div>
         </div>
     </div>

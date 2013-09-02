@@ -38,7 +38,7 @@ if (!empty($this->pageDescription))
 -->			
 			<div class="container wrapper">
 		<div class="inner_content">
-	<div class="pad30"></div>
+
 
 <? $this->renderPartial("//layouts/components/sidebar", array('model'=>$model));?>
 

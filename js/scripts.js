@@ -73,6 +73,11 @@ $("[data-rel=tooltip]").tooltip();
 		
 		$('html, body').animate({scrollTop: 0}, 300);
 	})
+	
+	$('#getstarted').click(function(event) {
+		event.preventDefault();
+		$('html, body').animate({scrollTop: 1100}, 300);
+	})
 
 /***************************************************
 	IFRAME

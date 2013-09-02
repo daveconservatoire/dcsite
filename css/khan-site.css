@@ -2145,12 +2145,13 @@ button.close {
 #end-of-page-spacer {
   clear: both;
 }
+
 article {
   padding: 0 19px;
   background: #fff;
   position: relative;
   margin: 0 1px;
-  border-top: 1px solid #C6D1AD;
+
 }
 /* Basic typography for the entire site */
 
