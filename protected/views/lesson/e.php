@@ -186,8 +186,13 @@
 $end = end((explode('/', $_SERVER['REQUEST_URI'])));
 
 
-echo $_SERVER['DOCUMENT_ROOT'];
-//include($_SERVER['DOCUMENT_ROOT'].bu()."/exercises/".$end.".html");
+if (substr($_SERVER['DOCUMENT_ROOT'],-1)=="_") {
+$address=substr($_SERVER['DOCUMENT_ROOT'],0,-2);
+} else {
+	$address=$_SERVER['DOCUMENT_ROOT'];
+}
+
+include($address.bu()."/exercises/".$end.".html");
 
 ?>
     <!-- End exercise code -->
