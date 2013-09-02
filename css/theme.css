@@ -45,7 +45,7 @@ body {
 	z-index: 1000; 
 }
 
-.wrapper {  margin:0px auto; padding:0 0 60px;}
+.wrapper {  margin:0px auto; padding:0 0 10px;}
 #banner { background:#e9e6e1; width: 100%; }
 .intro_wrapper {  margin:0 auto; padding:0 0 40px;}
 .intro_wrapper2 {  margin:-6px auto 0; padding:0 0 40px;}

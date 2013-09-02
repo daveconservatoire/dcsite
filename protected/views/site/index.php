@@ -106,7 +106,7 @@ position: relative;
 <script type="text/javascript">
 //<![CDATA
 jQuery(document).ready(function($) {
-	$("#slider_home").carouFredSel({ width : "100%", height : "auto",
+	$("#slider_home").carouFredSel({ width : "100%", height : "400px",
 	responsive : true,  circular : true, infinite	: false, auto : false,
 	items : { width : 231, visible: { min: 1, max: 3 }
 	},
