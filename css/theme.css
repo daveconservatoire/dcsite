@@ -218,38 +218,38 @@ img { vertical-align:top; ms-interpolation-mode:bicubic; opacity:1.0;}
 /**** DC BUTTONS ****/
 
 .dc-btn-yellow {
-	background-color:#F7941E; border:0;
+	background-color:#F7941E; border:0; color:#ffffff;
 }
 
 .dc-btn-yellow:hover {
-	background-color: #d16e00;
+	background-color: #d16e00; color:#ffffff;
 
 	
 	}
 	
 
 .dc-btn-orange {
-background-color: #f1592a; border:0;
+background-color: #f1592a; border:0; color:#ffffff;
 	}
 	
 .dc-btn-orange:hover {
-	background-color: #cb3304;
+	background-color: #cb3304; color:#ffffff;
 	}
 	
 .dc-btn-redorange {
-background-color:#ef3e36; border:0;
+background-color:#ef3e36; border:0; color:#ffffff;
 	}
 	
 .dc-btn-redorange:hover {
-	background-color: #c91810;
+	background-color: #c91810; color:#ffffff;
 	}
 	
 .dc-btn-red {
-background-color:#bf1e2d;; border:0;
+background-color:#bf1e2d;; border:0; color:#ffffff; 
 	}
 	
 .dc-btn-red:hover {
-	background-color: #990007;
+	background-color: #990007; color:#ffffff;
 	}
 	
 
@@ -2009,7 +2009,7 @@ background-color: #ffffff;
 .dc-bg-yellow {
 	background-color: #F7941E;
 	background: #F7941E;
-	color:#ffffff;
+	
 	}
 	
 .dc-text-yellow {
@@ -2019,7 +2019,6 @@ background-color: #ffffff;
 .dc-bg-orange {
 	background-color: #f1592a;
 	background: #f1592a;
-	color:#ffffff;
 	}
 	
 .dc-text-orange {
@@ -2029,7 +2028,6 @@ background-color: #ffffff;
 .dc-bg-redorange {
 	background-color: #ef3e36;
 	background: #ef3e36;
-	color:#ffffff;
 	}
 	
 .dc-text-redorange {
@@ -2039,7 +2037,6 @@ background-color: #ffffff;
 .dc-bg-red {
 	background-color: #bf1e2d;
 	background: #bf1e2d;
-	color:#ffffff;
 	}
 	
 .dc-text-red {
