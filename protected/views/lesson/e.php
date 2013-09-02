@@ -185,7 +185,8 @@
 
 $end = end((explode('/', $_SERVER['REQUEST_URI'])));
 
-echo $_SERVER['DOCUMENT_ROOT'].bu()."/exercises/".$end.".html";
+
+echo $_SERVER['DOCUMENT_ROOT'];
 //include($_SERVER['DOCUMENT_ROOT'].bu()."/exercises/".$end.".html");
 
 ?>
