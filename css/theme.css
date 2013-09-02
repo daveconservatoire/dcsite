@@ -200,7 +200,7 @@ img { vertical-align:top; ms-interpolation-mode:bicubic; opacity:1.0;}
     -o-transform:rotate(360deg);
 }
 
-/**** BUTTONS ***
+/**** BUTTONS ***/
 .btn{ 
 	border:0;
 	-webkit-transition:background-color .4s ease-in;
@@ -214,7 +214,45 @@ img { vertical-align:top; ms-interpolation-mode:bicubic; opacity:1.0;}
 .btn-primary:hover { background-color:#333;}
 .btn:visited, .btn:focus { color:#fff; }
 .label, .badge {text-shadow: none; }
-*/
+
+/**** DC BUTTONS ****/
+
+.dc-btn-yellow {
+	background-color:#F7941E; border:0;
+}
+
+.dc-btn-yellow:hover {
+	background-color: #d16e00;
+
+	
+	}
+	
+
+.dc-btn-orange {
+background-color: #f1592a; border:0;
+	}
+	
+.dc-btn-orange:hover {
+	background-color: #cb3304;
+	}
+	
+.dc-btn-redorange {
+background-color:#ef3e36; border:0;
+	}
+	
+.dc-btn-redorange:hover {
+	background-color: #c91810;
+	}
+	
+.dc-btn-red {
+background-color:#bf1e2d;; border:0;
+	}
+	
+.dc-btn-red:hover {
+	background-color: #990007;
+	}
+	
+
 
 /**** TYPOGRAPHY ****/
 h1,h2,h3,h4,h5,h6 { font-weight:300; letter-spacing:-0.25px; }
@@ -510,8 +548,8 @@ h1.intro {  line-height:40px; font-weight:300;}
 .intro-icon-large:before{ 
 	font-size:38px;
 	padding-left:0px;
-	margin-left:3px; 	
-	color: #2980B9;
+	margin-left:0px; 	
+	
 }
 .intro-icon-disc {
 	webkit-transition: border .5s;
@@ -1828,6 +1866,14 @@ border:0px solid #34495E;
 	animation-name: shake;
 }
 
+#mobilebrand {visibility: hidden; position: absolute; float:none}
+.loginbutton {float:right}
+
+.navbuttons {
+	margin-top:17px;
+	margin-left: 30px;
+}
+
 /*-----------------------------------------------------------------------------------*/
 /*	08: MEDIA QUERIES
 /*-----------------------------------------------------------------------------------*/
@@ -1844,7 +1890,7 @@ border:0px solid #34495E;
     width: 230px \9; /* Override the previous IE8-9 hack */
   }
   
-  .coda-slider-wrapper.arrows .coda-slider, .coda-slider-wrapper.arrows .coda-slider .panel { width: 790px }
+  .coda-slider-wrapper.arrows .coda-slider, .coda-slider-wrapper.arrows .coda-slider .panel { width: 770px }
   
   #accordion2 {display: none}
 }
@@ -1886,6 +1932,21 @@ a.pp_expand, a.pp_contract, .pp_hoverContainer, .pp_gallery, .pp_top, .pp_bottom
 .pp_details { width: 94%!important; padding-left: 3%; padding-right: 4%; padding-top: 10px; padding-bottom: 35px; background-color: #fff; margin-top: -2px!important; }
 a.pp_close { right: 10px!important; top: 12px!important; }
 .theme-default .nivo-html-caption {display:none;}
+
+.welcome_index {
+	width:90%;
+	font: 22px/50px 'Lato', sans-serif;
+	padding:10px 0 10px;
+	font-weight:300; 
+	margin:0 auto;
+	color:#474747;
+	text-align:center;
+}
+
+#mobilebrand {visibility: visible; position: relative; margin:0 auto; margin-top: 5px; padding:0; padding-top:5px}
+#desktopbrand {visibility: hidden; position: absolute}
+.loginbutton {float:none}
+.navbuttons {margin-left:0;}
 
   .bs-docs-sidenav {
     width: 166px;
@@ -1948,6 +2009,7 @@ background-color: #ffffff;
 .dc-bg-yellow {
 	background-color: #F7941E;
 	background: #F7941E;
+	
 	}
 	
 .dc-text-yellow {
@@ -1980,5 +2042,4 @@ background-color: #ffffff;
 .dc-text-red {
 	color: #bf1e2d;
 	}
-	
-	
+

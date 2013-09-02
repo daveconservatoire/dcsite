@@ -1,7 +1,7 @@
 
 <div class="container wrapper">
     <div class="inner_content">
-        <div class="pad30"></div>
+      
             <div class="row">
 				<div class="span4">
 					<div class="tabbable tabs-left">

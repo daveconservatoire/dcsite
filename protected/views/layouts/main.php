@@ -50,33 +50,28 @@
  <div class="navbar">
 	<div class="navbar-inner">
 		<div class="container">
-			<a class="brand" href="<?=bu();?>"><img src="<?=bu()."/img/dclogo3.png";?>" style="width:180px" /></a>
+			<a id="desktopbrand" class="brand" href="<?=bu();?>"><img src="<?=bu()."/img/dclogo3.png";?>" style="width:180px" /></a>
+			<a class="brand" id="mobilebrand" href="<?=bu();?>"><img src="<?=bu()."/img/dcvert.png";?>" style="width:400px" /></a>
 			<div class="navbar">
+			<div class="navbuttons">
 			
-					<!--
-					<li class="dropdown"><a href="#tools"class="dropdown-toggle" data-toggle="dropdown">Tools<b class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li><a href="<? echo Yii::app()->request->baseUrl;?>/tools/scales" class="active">Scale Dictionary</a></li>
-						<li><a href="<? echo Yii::app()->request->baseUrl;?>/tools/chords">Chord Dictionary</a></li>
-					</ul>
-					</li>
-			
-                   <a href="<? echo Yii::app()->request->baseUrl;?>/site/about" class="btn">About</a>
-					<a href="<? echo Yii::app()->request->baseUrl;?>/site/support" class="btn">Donate</a>
+                   <a href="<? echo Yii::app()->request->baseUrl;?>/site/about" class="btn dc-btn-yellow">About</a>
+					<a href="<? echo Yii::app()->request->baseUrl;?>/site/support" class="btn dc-btn-orange">Donate</a>
 					
-					<a href="<? echo Yii::app()->request->baseUrl;?>/site/contact" class="btn">Contact</a>
+					<a href="<? echo Yii::app()->request->baseUrl;?>/site/contact" class="btn   dc-btn-redorange">Contact</a>
 			
-				<p class='navbar-text pull-right'>
+			
+			
 				<?php if (Yii::app()->user->isGuest): ?>
 				
 
-					<a class='btn navbarbutton' href='<? echo Yii::app()->request->baseUrl; ?>/site/login'>Login</a>
-				</p>
+						<a href="<? echo Yii::app()->request->baseUrl;?>/login" class="btn   dc-btn-red loginbutton">Login</a>
+		
 				<?php else: ?>
-				
-				<div class="btn-group pull-right">
+					<? $user=User::model()->findByPk(Yii::app()->user->dcid);?>
+				<div class="btn-group loginbutton">
 				    
-					<a class="btn btn-success" href="<? echo Yii::app()->request->baseUrl; ?>/profile"><i class="icon-user icon-white"></i> <? echo Yii::app()->user->name;?></a>
+					<a class="btn btn-success " href="<? echo Yii::app()->request->baseUrl; ?>/profile"><i class="icon-user icon-white"></i> <? echo Yii::app()->user->name;?> (<?=$user->points;?> Points)</a>
 					<a class="btn btn-success dropdown-toggle" data-toggle="dropdown" href="#profilemenu"><span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="<? echo Yii::app()->request->baseUrl; ?>/profile"><i class="icon-pencil"></i> My Profile</a></li>
@@ -84,10 +79,10 @@
 						<li><a href="<? echo Yii::app()->request->baseUrl; ?>/site/logout"><i class="icon-share-alt"></i>Logout</a></li>
 					</ul>
 				</div>
-				<? $user=User::model()->findByPk(Yii::app()->user->dcid);?>
-				<span id="points" class="badge pull-right" style="margin: 9px 5px"><?=$user->points;?></span>
+			
+				
 				<?php endif;?>
-				-->
+			</div>
 			</div>
 		</div>
 	</div>
