@@ -2009,7 +2009,7 @@ background-color: #ffffff;
 .dc-bg-yellow {
 	background-color: #F7941E;
 	background: #F7941E;
-	
+	color:#ffffff;
 	}
 	
 .dc-text-yellow {
@@ -2019,6 +2019,7 @@ background-color: #ffffff;
 .dc-bg-orange {
 	background-color: #f1592a;
 	background: #f1592a;
+	color:#ffffff;
 	}
 	
 .dc-text-orange {
@@ -2028,6 +2029,7 @@ background-color: #ffffff;
 .dc-bg-redorange {
 	background-color: #ef3e36;
 	background: #ef3e36;
+	color:#ffffff;
 	}
 	
 .dc-text-redorange {
@@ -2037,6 +2039,7 @@ background-color: #ffffff;
 .dc-bg-red {
 	background-color: #bf1e2d;
 	background: #bf1e2d;
+	color:#ffffff;
 	}
 	
 .dc-text-red {
