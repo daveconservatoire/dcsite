@@ -185,8 +185,8 @@
 
 $end = end((explode('/', $_SERVER['REQUEST_URI'])));
 
-
-include($_SERVER['DOCUMENT_ROOT'].bu()."/exercises/".$end.".html");
+echo $_SERVER['DOCUMENT_ROOT'].bu()."/exercises/".$end.".html";
+//include($_SERVER['DOCUMENT_ROOT'].bu()."/exercises/".$end.".html");
 
 ?>
     <!-- End exercise code -->
