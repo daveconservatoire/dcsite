@@ -57,9 +57,10 @@ class SiteController extends Controller
 		if(!Yii::app()->user->isGuest):	
 			$recentvids=UserVideoView::Model()->findAll(array("condition"=>"userId = ".Yii::app()->user->dcid, "limit"=>4, "order"=>"timestamp DESC"));
 			$recentexs=UserExerciseAnswer::Model()->findAll(array("select"=>"t.exerciseId", "condition"=>"userId = ".Yii::app()->user->dcid, "limit"=>4, "order"=>"timestamp DESC", "distinct"=>true));
-			$this->render('index',array('recentvids'=>$recentvids,'recentexs'=>$recentexs));
+			$newlessons=Lesson::model()->findAll(array('condition'=>'filetype="l"', 'order'=>'timestamp DESC', 'limit'=>'10'));  
+			$this->render('index',array('recentvids'=>$recentvids,'recentexs'=>$recentexs,'newlessons'=>$newlessons));
 	    else:
-			$newlessons=Lesson::model()->findAll(array('condition'=>'filetype="l"', 'order'=>'timestamp DESC', 'limit'=>'4'));  
+			$newlessons=Lesson::model()->findAll(array('condition'=>'filetype="l"', 'order'=>'timestamp DESC', 'limit'=>'10'));  
 			$this->render('index', array('newlessons'=>$newlessons));
 		endif;
 	}
