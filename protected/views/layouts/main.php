@@ -54,49 +54,42 @@
 <!--header-->
 <div class="header">
 <!--logo-->
-
- <div class="navbar">
-	<div class="navbar-inner">
-		<div class="container">
-			<a id="desktopbrand" class="brand" href="<?=bu();?>"><img src="<?=bu()."/img/dclogo3.png";?>" alt="Dave Conservatoire" style="width:180px" /></a>
-			<a class="brand" id="mobilebrand" href="<?=bu();?>"><img src="<?=bu()."/img/dcvert.png";?>" alt="Dave Conservatoire" style="width:400px" /></a>
-			<div class="navbar">
-			<div class="navbuttons">
+	<div class="navbar">
+		<div class="navbar-inner">
+			<div class="container">
+				<a id="desktopbrand" class="brand" href="<?=bu();?>"><img src="<?=bu()."/img/dclogo3.png";?>" alt="Dave Conservatoire" style="width:180px" /></a>
+				<a class="brand" id="mobilebrand" href="<?=bu();?>"><img src="<?=bu()."/img/dcvert.png";?>" alt="Dave Conservatoire" style="width:400px" /></a>
+				<div class="navbar">
+				<div class="navbuttons">
+				<a href="<? echo Yii::app()->request->baseUrl;?>/site/about" class="btn dc-btn-yellow">About</a>
+				<a href="<? echo Yii::app()->request->baseUrl;?>/site/support" class="btn dc-btn-orange">Donate</a>
+				<a href="<? echo Yii::app()->request->baseUrl;?>/site/contact" class="btn   dc-btn-redorange">Contact</a>
 			
-                   <a href="<? echo Yii::app()->request->baseUrl;?>/site/about" class="btn dc-btn-yellow">About</a>
-					<a href="<? echo Yii::app()->request->baseUrl;?>/site/support" class="btn dc-btn-orange">Donate</a>
-					
-					<a href="<? echo Yii::app()->request->baseUrl;?>/site/contact" class="btn   dc-btn-redorange">Contact</a>
+			<?php if (Yii::app()->user->isGuest): ?>
 			
+				<a href="<? echo Yii::app()->request->baseUrl;?>/login" class="btn   dc-btn-red loginbutton">Login</a>
 			
+			<?php else: ?>
+			<? $user=User::model()->findByPk(Yii::app()->user->dcid);?>
 			
-				<?php if (Yii::app()->user->isGuest): ?>
-				
-
-						<a href="<? echo Yii::app()->request->baseUrl;?>/login" class="btn   dc-btn-red loginbutton">Login</a>
-		
-				<?php else: ?>
-					<? $user=User::model()->findByPk(Yii::app()->user->dcid);?>
 				<div class="btn-group loginbutton">
-				    
 					<a class="btn btn-success " href="<? echo Yii::app()->request->baseUrl; ?>/profile"><i class="icon-user icon-white"></i> <? echo Yii::app()->user->name;?> (<?=$user->points;?> Points)</a>
 					<a class="btn btn-success dropdown-toggle" data-toggle="dropdown" href="#profilemenu"><span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="<? echo Yii::app()->request->baseUrl; ?>/profile"><i class="icon-pencil"></i> My Profile</a></li>
-						<li class="divider"></li>
-						<li><a href="<? echo Yii::app()->request->baseUrl; ?>/site/logout"><i class="icon-share-alt"></i>Logout</a></li>
+					<li><a href="<? echo Yii::app()->request->baseUrl; ?>/profile"><i class="icon-pencil"></i> My Profile</a></li>
+					<li class="divider"></li>
+					<li><a href="<? echo Yii::app()->request->baseUrl; ?>/site/logout"><i class="icon-share-alt"></i>Logout</a></li>
 					</ul>
 				</div>
 			
-				
-				<?php endif;?>
-			</div>
+			
+			<?php endif;?>
 			</div>
 		</div>
 	</div>
 </div>
-</div>
-    
+
+
 
 
 
