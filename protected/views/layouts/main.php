@@ -26,6 +26,7 @@
 <!--[if lt IE 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
+
 <!--[if IE 7]>
 <link rel="stylesheet" href="css/font-awesome-ie7.min.css">
 
@@ -33,13 +34,12 @@
 
 <!--[if lte IE 7]>
 <script src="<?=bu();?>/js/ie-warning.js"></script>
-<![endif]>
+<![endif]-->
 
 
 
 <script src="<?=bu();?>/js/modernizr.custom.js"></script>
 
-<!-- scripts -->
 <script src="<?=bu();?>/js/jquery.js"></script>	
 <script src="<?=bu();?>/js/bootstrap.min.js"></script>
 <script src="<?=bu();?>/js/superfish.js"></script>
