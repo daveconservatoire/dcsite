@@ -182,10 +182,6 @@ endforeach;
         ytplayer.addEventListener("onStateChange", "onChange");
       }
       
-      
-      $(window).bind('resize',function(){
-     window.location.href = window.location.href;
-});
 
       
     </script>
