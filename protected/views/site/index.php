@@ -95,61 +95,15 @@ position: relative;
 				</div> 
 				</div> 
 				
-			<!--//info boxes-->
-			<div class="row">
-			<!--col 1-->
-			<div class="span12">
-			<div class="row">
-			<div class="pad25 hidden-phone"></div>	
-			
-
-			
-			<div class="span4">
-			<h1>Latest Content</h1>
-			<h4>Here are some of the latest lessons and exercises - why not jump in here if it looks interesting.</h4>
-			<p>If there's something you'd like to know about but you can't find on the site then please let me know!</p>
-			<a href="#" class="btn btn-primary  btn-custom  dc-btn-yellow">Request a lesson!</a>
 		
-			<div class="pad45"></div>
-			</div>
-			<!--column 2 slider-->
-			<div class="span8 pad15 col_full2">
-			
-			<div id="slider_home">
-
-<? foreach($newlessons as $lesson):?>
-	       <div class="slider-item">	
-				<div class="slider-image">
-				
-				<a href="<?=bu()."/lesson/".$lesson->urltitle;?>" >
-					<img src="http://img.youtube.com/vi/<?=$lesson->youtubeid;?>/0.jpg" alt="" /></a>
-				
-				</div>
-				<div class="slider-title">
-				<h3><a href="#"><?=$lesson->title;?></a></h3>
-			
-				</div>
-			</div>
-			<? endforeach;?>
-			
-		
-			
-							</div>
-				<div id="sl-prev" class="widget-scroll-prev"><i class="icon-chevron-left white"></i></div>
-				<div id="sl-next" class="widget-scroll-next"><i class="icon-chevron-right white but_marg"></i></div>
-			</div>
-				</div>
-				</div>
-			</div>
-		</div>
-		<!--//page-->		<div class="pad25 hidden-desktop"></div>
-	</div>
+	
+	</div></div>
 
 <? $counter=1;?>
 	<!--banner-->
 
 
-
+<div id="courses">
 
 <?
 // Getting the lessons for each course - would like to move this controller but not sure how!
@@ -196,6 +150,7 @@ $this->pageTitle='Home | '.Yii::app()->name ;
 <div class="pad30"></div>
 <? $coursecounter++;?>
 <? endforeach;?>
+	</div>
 	</div>
 	</div>
 	</div>
