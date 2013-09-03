@@ -1,7 +1,14 @@
 /**
  * Utility for displaying messages to users of old, unsupported versions of IE.
  *
- * Borrowed from khanacademy.org
+ * While this is basically a third-party piece of code taken from
+ * http://code.google.com/p/ie6-upgrade-warning/, we've customized it to do
+ * things such as tell the user when they're running in IE7 compatibility mode
+ * (and how to get out of compatibility mode).
+ *
+ * As such, we've taken ownership of this file, and we cannot drop in
+ * a replacement from http://code.google.com/p/ie6-upgrade-warning/ without a
+ * careful diff.
  */
 
 var imgPath;
