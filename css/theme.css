@@ -46,7 +46,7 @@ body {
 }
 
 .wrapper {  margin:0px auto; padding:0 0 10px;}
-#banner { background:#e9e6e1; width: 100%; }
+.banner { background:#e9e6e1; width: 100%; }
 .intro_wrapper {  margin:0 auto; padding:0 0 40px;}
 .intro_wrapper2 {  margin:-6px auto 0; padding:0 0 40px;}
 .intro_wrapper3 {  margin:-20px auto 0; padding:0 0 40px;}
@@ -1914,7 +1914,7 @@ nav#main_menu select { display: inline-block; margin:0 auto; text-align:left; wi
 .header{ float:none !important;text-align:center;margin:0px auto 0px auto;padding-bottom:20px!important;}
 .container {  padding: 0 15px !important;}
 .nivo {margin-top:0px!important;}
-#banner { padding-bottom:25px;!important; }
+.banner { padding-bottom:25px;!important; }
 .coda-slider-wrapper.arrows .coda-slider, .coda-slider-wrapper.arrows .coda-slider .panel { width: 458px; }
 .bs-docs-sidenav { width: 165px;}
  .header {height: 86px;}
@@ -1968,7 +1968,7 @@ a.pp_close { right: 10px!important; top: 12px!important; }
 
 @media only screen and (max-width: 480px) { 
 .nivo_height { padding-top:0px!important; }
-#banner { padding-bottom:25px;!important; }
+.banner { padding-bottom:25px;!important; }
 }
 
 /* All Mobile Sizes (devices and browser) */

@@ -1,4 +1,4 @@
-<style>
+<style scoped>
 .span2 {
 	background-color: #fff;
 	margin-bottom:20px; 
@@ -33,7 +33,7 @@ position: relative;
 }
 </style>
 
-<div id="banner">
+<div class="banner">
 	<div class="container intro_wrapper">
 	<div class="inner_content">
 	
@@ -119,7 +119,7 @@ $this->pageTitle='Home | '.Yii::app()->name ;
 ?>
 
 
-<div id="banner">
+<div class="banner">
 	<div class="container intro_wrapper">
 	<div class="inner_content">
 <div class="pad30"></div>
