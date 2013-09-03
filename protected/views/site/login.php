@@ -3,7 +3,7 @@
 $this->pageTitle='Login | '.Yii::app()->name ;
 ?>
 
-	<div id="banner">
+	<div class="banner">
 	<div class="container intro_wrapper">
 	<div class="inner_content">
 

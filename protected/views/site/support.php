@@ -1,7 +1,7 @@
 <?php
 $this->pageTitle='Support Us | '.Yii::app()->name ;
 ?>
-	<div id="banner">
+	<div class="banner">
 	<div class="container intro_wrapper">
 	<div class="inner_content">
 	<h1>This is Cool!  How can I help?</h1>

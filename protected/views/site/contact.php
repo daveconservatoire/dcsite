@@ -9,7 +9,7 @@ input, textarea {
 $this->pageTitle='Contact | '.Yii::app()->name ;
 ?>
 
-	<div id="banner">
+	<div class="banner">
 	<div class="container intro_wrapper">
 	<div class="inner_content">
 	<h1>Do you have questions, feedback, suggestions?  Or just want to say hi!</h1>
