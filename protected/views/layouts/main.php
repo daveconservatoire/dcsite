@@ -35,7 +35,7 @@
 <script src="<?=bu();?>/js/ie-warning.js"></script>
 <![endif]>
 
- <!--[if lte IE 7]><script src="/js/ie-warning/ie-warning.js"></script><script>window.onload=function(){e("/js/ie-warning/")}</script><![endif]-->
+ <!--[if lte IE 7]><script src="<?=bu();?>/js/ie-warning/warning.js"></script><script>window.onload=function(){e("<?=bu();?>/js/ie-warning/")}</script><![endif]-->
 <!--timeline-->
 
 <script src="<?=bu();?>/js/modernizr.custom.js"></script>
