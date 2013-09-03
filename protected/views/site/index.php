@@ -133,15 +133,14 @@ $this->pageTitle='Home | '.Yii::app()->name ;
 <div class="thumbnails tabbable">
 <ul class="nav nav-tabs" style="width: 100%">
 
-	<div class="row"  style="margin-left: 0px; margin-bottom: 10px">
+	
 		<? foreach($topics as $topic): ?>
-		<div class='span4'>
-		<li><a class="btn btn-large btn-block btn-primary dc-btn-<?=$colourarray[$coursecounter];?>" href="<?=bu();?>/topic/<?=$topic->urltitle;?>"><h3><?=$topic->title;?></h3></a></li>
+	
+		<li class="span4"><a class="btn btn-large btn-block btn-primary dc-btn-<?=$colourarray[$coursecounter];?>" href="<?=bu();?>/topic/<?=$topic->urltitle;?>"><h3><?=$topic->title;?></h3></a></li>
          
-		</div>
+		
     <? if($counter==3){ ?>
-	</div>
-	<div class='row' style="margin-left: 0px;  margin-bottom: 10px">
+
     <? $counter=1; } else { $counter++;} ?> 
 		<? endforeach;?>
 	</ul>
