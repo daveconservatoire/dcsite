@@ -108,4 +108,3 @@ $this->pageTitle='Home | '.Yii::app()->name ;
 <? $coursecounter++;?>
 <? endforeach;?>
 	</div>
-</div>
