@@ -103,20 +103,7 @@ position: relative;
 			<div class="pad25 hidden-phone"></div>	
 			
 			<script type="text/javascript" src="<?=bu()."/js/jquery.carouFredSel-6.2.1-packed.js";?>"></script>
-<script type="text/javascript">
-//<![CDATA
-$(document).ready(function($) {
-	$("#slider_home").carouFredSel({ width : "100%", height : "400px",
-	responsive : true,  circular : true, infinite	: false, auto : false,
-	items : { width : 231, visible: { min: 1, max: 3 }
-	},
-	scroll: { items: 3 },
-	prev : { button : "#sl-prev", key : "left"},
-	next : { button : "#sl-next", key : "right" }
-	});
-		});
-		//]]>
-	</script>
+
 			
 			<div class="span4">
 			<h1>Latest Content</h1>
