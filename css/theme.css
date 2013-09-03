@@ -1867,6 +1867,8 @@ border:0px solid #34495E;
 }
 #desktopbrand {visibility: visible; position: relative}
 
+#desktopbrand {max-width: none}
+
 #mobilebrand {visibility: hidden; position: absolute; float:none}
 .loginbutton {float:right}
 
