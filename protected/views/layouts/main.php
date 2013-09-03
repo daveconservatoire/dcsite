@@ -89,35 +89,26 @@
 	</div>
 </div>
 
-
-
-
-
-
-
-
-
 <?php echo $content; ?>
 
 <!-- Example row of columns -->
 <!--footer-->
 <div id="footer2">
-<div class="container">
-<div class="row">
-<div class="span12">
-<div class="copyright">
-&copy; Dave Conservatoire
-<script type="text/javascript">
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				<div class="copyright"> &copy; Dave Conservatoire
+					<script type="text/javascript">
 //<![CDATA[
 var d = new Date()
 document.write(d.getFullYear())
 //]]>
 </script>
 . Except where noted, All Rights Reserved.
-</div>
-</div>
-</div>
-</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 <!-- up to top -->
 <a href="#"><i class="go-top hidden-phone hidden-tablet icon-double-angle-up"></i></a>
