@@ -1,22 +1,15 @@
 /**
  * Utility for displaying messages to users of old, unsupported versions of IE.
  *
- * While this is basically a third-party piece of code taken from
- * http://code.google.com/p/ie6-upgrade-warning/, we've customized it to do
- * things such as tell the user when they're running in IE7 compatibility mode
- * (and how to get out of compatibility mode).
- *
- * As such, we've taken ownership of this file, and we cannot drop in
- * a replacement from http://code.google.com/p/ie6-upgrade-warning/ without a
- * careful diff.
+ * Borrowed from khanacademy.org
  */
 
 var imgPath;
 
 function e(str) {
-    var msg1 = $._("Did you know that your Internet Explorer is out of date?");
-    var msg2 = $._("To use Dave Conservatoire you need to upgrade to a newer version or another web browser.");
-    var msg3 = $._("Just click one of the icons below to start upgrading.");
+    var msg1 = "Did you know that your Internet Explorer is out of date?";
+    var msg2 = "To use Dave Conservatoire you need to upgrade to a newer version or another web browser.";
+    var msg3 = "Just click one of the icons below to start upgrading.";
     var br1 = "Chrome";
     var br2 = "Firefox";
     var br3 = "Safari";
@@ -41,9 +34,9 @@ function e(str) {
 
         // If this file is executing (IE7) and Trident is in the useragent (IE8/9),
         // we're in compatibility mode.
-        msg1 = $._("Your Internet Explorer is running in compatibility mode.");
-        msg2 = $._("To use Dave Conservatoire you need to disable compatibility mode by <a href='https://sites.google.com/a/khanacademy.org/forge/technical/how-to-disable-internet-explorer-compatibility-view'>following these instructions</a>.");
-        msg3 = $._("Or, you can upgrade to a newer version or another web browser.");
+        msg1 = "Your Internet Explorer is running in compatibility mode.";
+        msg2 = "To use Dave Conservatoire you need to disable compatibility mode by <a href='https://sites.google.com/a/khanacademy.org/forge/technical/how-to-disable-internet-explorer-compatibility-view'>following these instructions</a>.";
+        msg3 = "Or, you can upgrade to a newer version or another web browser.";
 
     }
 
