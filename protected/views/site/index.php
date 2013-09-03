@@ -151,4 +151,4 @@ $this->pageTitle='Home | '.Yii::app()->name ;
 <? endforeach;?>
 	</div>
 	</div>
-	
+	</div>
