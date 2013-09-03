@@ -4,7 +4,7 @@
  * Borrowed from khanacademy.org
  */
 
-var imgPath;
+var imgPath = "./";
 
 function e(str) {
     var msg1 = "Did you know that your Internet Explorer is out of date?";
