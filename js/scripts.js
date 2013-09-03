@@ -2,6 +2,8 @@ $(document).ready(function(){
 
 
 
+
+
 /***************************************************
 	MENU
 ***************************************************/
@@ -122,6 +124,9 @@ $('.intro_sections h6').show().addClass("animated fadeInUp");
 $('.fadeinup').show().addClass("animated fadeInUp");
 $('.fadeindown').show().addClass("animated fadeInDown");
 }); 
+
+
+
 
 
 

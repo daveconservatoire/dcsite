@@ -54,7 +54,7 @@ position: relative;
 	<!--info boxes-->
 	<div class="row">
 		<div class="span3">
-			<div class="tile">
+			<div class="tile introboxes">
 			<div class="intro-icon-disc cont-large"><i class="icon-film intro-icon-large dc-text-yellow"></i></div>
 			<h6><small>WATCH</small></h6>
 			<p>Join Dave, your friendly guide, in over 100 video music lessons, introducing how music works from the very beginning.</p>
@@ -64,7 +64,7 @@ position: relative;
 				</div> 
 				
 			<div class="span3">
-				<div class="tile">
+				<div class="tile introboxes">
 				<div class="intro-icon-disc cont-large"><i class="icon-star intro-icon-large dc-text-orange"></i></div>
 				<h6><small>PRACTICE</small></h6>
 				<p>Test your understanding as you go, with interactive exercises designed to enhance your awareness and sensitivity to music.</p>
@@ -74,7 +74,7 @@ position: relative;
 					</div> 
 					
 			<div class="span3">
-				<div class="tile">
+				<div class="tile introboxes">
 				<div class="intro-icon-disc cont-large"><i class="icon-info intro-icon-large dc-text-redorange"></i></div>
 				<h6><small>ABOUT</small></h6>
 				
@@ -85,7 +85,7 @@ position: relative;
 					</div> 
 				
 			<div class="span3">
-				<div class="tile">
+				<div class="tile introboxes">
 				<div class="intro-icon-disc cont-large"><i class="icon-money  intro-icon-large dc-text-red"></i></div>
 				<h6> <small>DONATE</small></h6>
 				<p>Dave Conservatoire will be totally free forever.  Our dream is that no-one should miss out on having music in their life. </p>

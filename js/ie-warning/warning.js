@@ -19,26 +19,6 @@ function e(str) {
     var url3 = "http://www.apple.com/safari/download/";
     var url4 = "http://www.microsoft.com/windows/Internet-explorer/default.aspx";
 
-    // If this script is running from an IE browser that's in compatibility mode,
-    // explain to the user how to disable compatibility mode.
-    // IE7 compatibility mode exists for both IE8 and IE9.
-    //
-    // Note: the only way we are executing this file is if IE7 rendering mode has
-    // been detected, because it's protected with a conditional "if lte IE7" comment.
-    //
-    // The "Trident/N.0" piece of the useragent was first introduced in IE8, so it's
-    // missing from IE7.
-    // See http://stackoverflow.com/questions/5825385/javascript-can-i-detect-ie9-if-its-in-ie7-or-ie8-compatibility-mode
-    if (navigator.userAgent && 
-        navigator.userAgent.indexOf("Trident/") > -1) {
-
-        // If this file is executing (IE7) and Trident is in the useragent (IE8/9),
-        // we're in compatibility mode.
-        msg1 = "Your Internet Explorer is running in compatibility mode.";
-        msg2 = "To use Dave Conservatoire you need to disable compatibility mode by <a href='https://sites.google.com/a/khanacademy.org/forge/technical/how-to-disable-internet-explorer-compatibility-view'>following these instructions</a>.";
-        msg3 = "Or, you can upgrade to a newer version or another web browser.";
-
-    }
 
     imgPath = str;
     var _body = document.getElementsByTagName('body')[0];
