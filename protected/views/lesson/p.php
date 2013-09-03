@@ -120,8 +120,7 @@ endforeach;
 					</div>
 				
 				</div>
-			</div>
-		</div>
+	
 	<!--//page-->
 		        <script type="text/javascript">
     
