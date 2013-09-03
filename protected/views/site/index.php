@@ -90,11 +90,11 @@ $this->pageTitle='Home | '.Yii::app()->name ;
 		<div class="pad30"></div>
 		<div class="container wrapper">
 			<div class="thumbnails tabbable">
-				<ul class="nav nav-tabs" style="width: 100%">
+				<ul class="courselist" style="width: 100%">
 
 					<? foreach($topics as $topic): ?>
 	
-					<li class="span4 dc-btn-<?=$colourarray[$coursecounter];?>" style="margin-bottom:5px"><a class="btn btn-large btn-block btn-primary dc-btn-<?=$colourarray[$coursecounter];?>" href="<?=bu();?>/topic/<?=$topic->urltitle;?>"><h3><?=$topic->title;?></h3></a></li>
+					<li class="span4 dc-btn-<?=$colourarray[$coursecounter];?>" style="margin-bottom:5px"><a class="btn btn-large btn-block dc-btn-<?=$colourarray[$coursecounter];?>" href="<?=bu();?>/topic/<?=$topic->urltitle;?>"><h3><?=$topic->title;?></h3></a></li>
          
 		
     <? if($counter==3){ ?>
