@@ -102,7 +102,6 @@ position: relative;
 			<div class="row">
 			<div class="pad25 hidden-phone"></div>	
 			
-			<script type="text/javascript" src="<?=bu()."/js/jquery.carouFredSel-6.2.1-packed.js";?>"></script>
 
 			
 			<div class="span4">
