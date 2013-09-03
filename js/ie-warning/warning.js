@@ -168,7 +168,7 @@ document.body.clientHeight ) ) {
     var _li2ds = _li2d.style;
     var _li3ds = _li3d.style;
     var _li4ds = _li4d.style;
-    _li1ds.background = _li2ds.background = _li3ds.background = _li4ds.background = "transparent url('" + imgPath + "background_browser.png') no-repeat scroll left top";
+    _li1ds.background = _li2ds.background = _li3ds.background = _li4ds.background = "transparent url('" + imgPath + "background_browser.gif') no-repeat scroll left top";
     _li1ds.cursor = _li2ds.cursor = _li3ds.cursor = _li4ds.cursor = "pointer";
     _li1d.onclick = function () {
         window.location = url1
@@ -197,10 +197,10 @@ document.body.clientHeight ) ) {
     _ico1ds.width = _ico2ds.width = _ico3ds.width = _ico4ds.width = "100px";
     _ico1ds.height = _ico2ds.height = _ico3ds.height = _ico4ds.height = "100px";
     _ico1ds.margin = _ico2ds.margin = _ico3ds.margin = _ico4ds.margin = "1px auto";
-    _ico1ds.background = "transparent url('" + imgPath + "browser_chrome.png') no-repeat scroll left top";
-    _ico2ds.background = "transparent url('" + imgPath + "browser_firefox.png') no-repeat scroll left top";
-    _ico3ds.background = "transparent url('" + imgPath + "browser_safari.png') no-repeat scroll left top";
-    _ico4ds.background = "transparent url('" + imgPath + "browser_ie.png') no-repeat scroll left top";
+    _ico1ds.background = "transparent url('" + imgPath + "browser_chrome.gif') no-repeat scroll left top";
+    _ico2ds.background = "transparent url('" + imgPath + "browser_firefox.gif') no-repeat scroll left top";
+    _ico3ds.background = "transparent url('" + imgPath + "browser_safari.gif') no-repeat scroll left top";
+    _ico4ds.background = "transparent url('" + imgPath + "browser_ie.gif') no-repeat scroll left top";
     _lit1.appendChild(document.createTextNode(br1));
     _lit2.appendChild(document.createTextNode(br2));
     _lit3.appendChild(document.createTextNode(br3));
