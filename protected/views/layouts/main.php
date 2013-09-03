@@ -58,8 +58,8 @@
  <div class="navbar">
 	<div class="navbar-inner">
 		<div class="container">
-			<a id="desktopbrand" class="brand" href="<?=bu();?>"><img src="<?=bu()."/img/dclogo3.png";?>" style="width:180px" /></a>
-			<a class="brand" id="mobilebrand" href="<?=bu();?>"><img src="<?=bu()."/img/dcvert.png";?>" style="width:400px" /></a>
+			<a id="desktopbrand" class="brand" href="<?=bu();?>"><img src="<?=bu()."/img/dclogo3.png";?>" alt="Dave Conservatoire" style="width:180px" /></a>
+			<a class="brand" id="mobilebrand" href="<?=bu();?>"><img src="<?=bu()."/img/dcvert.png";?>" alt="Dave Conservatoire" style="width:400px" /></a>
 			<div class="navbar">
 			<div class="navbuttons">
 			
