@@ -110,7 +110,7 @@ jQuery(document).ready(function($) {
 	responsive : true,  circular : true, infinite	: false, auto : false,
 	items : { width : 231, visible: { min: 1, max: 3 }
 	},
-	scroll: { items: 3, },
+	scroll: { items: 3 },
 	prev : { button : "#sl-prev", key : "left"},
 	next : { button : "#sl-next", key : "right" }
 	});
