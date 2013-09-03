@@ -1865,6 +1865,7 @@ border:0px solid #34495E;
 	-o-animation-name: shake;
 	animation-name: shake;
 }
+#desktopbrand {visibility: visible; position: relative}
 
 #mobilebrand {visibility: hidden; position: absolute; float:none}
 .loginbutton {float:right}
