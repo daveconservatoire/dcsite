@@ -35,8 +35,7 @@
 <script src="<?=bu();?>/js/ie-warning.js"></script>
 <![endif]>
 
- <!--[if lte IE 7]><script src="<?=bu();?>/js/ie-warning/warning.js"></script><script>window.onload=function(){e("<?=bu();?>/js/ie-warning/")}</script><![endif]-->
-<!--timeline-->
+
 
 <script src="<?=bu();?>/js/modernizr.custom.js"></script>
 
@@ -45,6 +44,9 @@
 <script src="<?=bu();?>/js/bootstrap.min.js"></script>
 <script src="<?=bu();?>/js/superfish.js"></script>
 <script type="text/javascript" src="<?=bu();?>/js/scripts.js"></script>
+
+ <!--[if lte IE 7]><script src="<?=bu();?>/js/ie-warning/warning.js"></script><script>window.onload=function(){e("<?=bu();?>/js/ie-warning/")}</script><![endif]-->
+<!--timeline-->
 
 </head>
 
