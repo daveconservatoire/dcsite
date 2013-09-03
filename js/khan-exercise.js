@@ -237,7 +237,7 @@ var Khan = (function() {
     },
 
     // The ul#examples (keep in a global because we need to modify it even when it's out of the DOM)
-    examples = null;
+    fakeexamples = null;
 
     // Add in the site stylesheets
     if (localMode) {
