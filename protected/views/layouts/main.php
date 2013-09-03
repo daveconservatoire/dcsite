@@ -28,8 +28,12 @@
 <![endif]-->
 <!--[if IE 7]>
 <link rel="stylesheet" href="css/font-awesome-ie7.min.css">
+
 <![endif]-->
 
+<!--[if lte IE 7]>
+<script src="<?=bu();?>/js/ie-warning.js"></script>
+<![endif]>
 <!--timeline-->
 
 <script src="<?=bu();?>/js/modernizr.custom.js"></script>
