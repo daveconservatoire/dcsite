@@ -1,5 +1,7 @@
 if (!window.console) console = {log: function() {}};
 
+var urlBase = document.location.hostname =="localhost" ? "/dcsite/" : "/dcdev/";
+
 var lowLag = new function(){
 	this.someVariable = undefined;
 	this.showNeedInit = function(){ lowLag.msg("lowLag: you must call lowLag.init() first!"); }
@@ -10,7 +12,7 @@ var lowLag = new function(){
 	this.audioTagTimeToLive = 5000;
 	
 
-	this.sm2url = '/swf/';
+	this.sm2url = urlBase+'swf/';
 
 	this.soundUrl = "";
 

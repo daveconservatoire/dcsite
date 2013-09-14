@@ -967,12 +967,6 @@ var Khan = (function() {
                 var src = initScripts.shift();
                 Khan.loadScript(src, loadInitScripts);
             } else {
-                     soundManager.setup({
-  url: urlBase+'swf/',
-  flashVersion: 9, // optional: shiny features (default = 8)
-  // optional: ignore Flash where possible, use 100% HTML5 mode
-  // preferFlash: false,
-  onready: function() {
    var firstsound=$("#FIRSTSOUND").text(); 
     var lastsound=$("#LASTSOUND").text(); 
 lowLag.init();	
@@ -981,12 +975,12 @@ lowLag.load(urlBase+"sounds/"+exerciseUrlTitle+"/"+i+".wav", 'sound'+i);
 
 
 }
+
   
      onjQueryLoaded();
-  }
-});
-            }
-        })();
+  
+}
+            })();
     } else {
         soundManager.setup({
   url: urlBase+'swf/',
