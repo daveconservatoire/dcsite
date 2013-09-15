@@ -1,8 +1,9 @@
  <?
 
   $cs = Yii::app()->getClientScript();
+    $cs->registerScriptFile(bu().'/js/lowlag.js');
   $cs->registerScriptFile(bu().'/js/soundmanager2.js');
-   $cs->registerScriptFile(bu().'/js/lowlag.js');
+ 
 
   
   ?>
