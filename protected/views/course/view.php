@@ -1,22 +1,9 @@
 
 <div class="container wrapper">
     <div class="inner_content">
-      
-            <div class="row">
-				<div class="span4">
-					<div class="tabbable tabs-left">
-						<ul class="nav nav-tabs" style="width: 100%">
-						<li><a href="#topic-all" data-toggle="tab">View All</a></li>
-						<? $topics=Topic::model()->findAll("courseId=".$model->id ." ORDER BY sortorder");
-							foreach($topics as $topic) {?>
-							<li><a href="#topic-<?=$topic->id;?>" data-toggle="tab"><?=$topic->title;?></a></li>
-							<?
-							}
-							?>
-				
-						</ul>
-					</div>
-				</div>
+   <? $topics=Topic::model()->findAll("courseId=".$model->id ." ORDER BY sortorder");?>
+      <? $this->renderPartial("//layouts/components/coursesidebar", array('model'=>$model));?>
+
 	            <div class="span8">
 		            <div class="tab-content">
 		             	<div class="tab-pane active" id="topic-all">

@@ -160,7 +160,7 @@ video { width:100%; height:auto; }
 
 /**** LINKS ****/
 a {
-	color:#19C1C3; 
+	color:#bf1e2d; 
 	text-decoration:none;
 	-moz-transition: all 0.3s ease;
 	-webkit-transition: all 0.3s ease;
@@ -275,6 +275,7 @@ h1.intro {  line-height:40px; font-weight:300;}
 	margin:0 auto;
 	color:#474747;
 	text-align:center;
+	font-weight: bold;
 }
 
 /**** DROP CAPS ****/
@@ -877,7 +878,7 @@ input[type="text"], input[type="search"] {
 	padding:5px 10px;
 	border:0;
 	color: #fff;
-	background:#19C1C3; 
+	background:#ef3e36; 
 }
 .pager li > a:hover,
 .pager li > a:focus,
@@ -1461,7 +1462,7 @@ ul#itemContainer { list-style: none; padding:0 0; margin:0 0; width:100%; }
   opacity: .25;
 }
 .bs-docs-sidenav > li > a:hover {
-  background-color: #f5f5f5;
+  background-color: #F7941E;
 }
 .bs-docs-sidenav a:hover .icon-chevron-right {
   opacity: .5;
@@ -1487,15 +1488,6 @@ ul#itemContainer { list-style: none; padding:0 0; margin:0 0; width:100%; }
   position: absolute;
   top: auto;
   bottom: 200px;  //height of the footer
-}
-
-.sidebar-selected {
-	background-color: #f1592a;
-
-}
-
-.sidebar-selected-link {
-	color: #fff;
 }
 
 
@@ -1530,20 +1522,21 @@ border:0px solid #34495E;
 .tabbable.tabs-left .nav-tabs li { border-radius:0; margin:10px 0 -2px 0; }
 .tabbable.tabs-left .nav-tabs a {
 	border:0 none;
-	font-size:12px;
+	font-size:15px;
+	font-weight: bold;
 	padding:6px 0 6px 10px;
 	-webkit-border-radius: 0px;
 	-moz-border-radius: 0px;
 	border-radius:0;
-	border-left:#2980B9 3px solid;
-	color:#eee;
-	background:#34495E;
+	border-left:#bf1e2d 5px solid;
+	color:#fff;
+	background:#f1592a;
 }
 .tabbable.tabs-left .nav-tabs .active a, .tabbable.tabs-left .nav-tabs a:hover {
 	border:0 none;
-	border-left:3px solid #2980B9;  
+	border-left:5px solid #bf1e2d;  
 	color:#fff;
-	background: #2BA6CB;  
+	background: #F7941E;  
 }
 .tabbable.tabs-left .tab-content { padding: 0 0 20px 15px; }
 
@@ -1887,7 +1880,7 @@ border:0px solid #34495E;
 @media (min-width: 1200px) {
 
   .bs-docs-sidenav {
-    width: 258px;
+ 
   }
   .bs-docs-sidenav > li > a {
     width: 230px \9; /* Override the previous IE8-9 hack */
@@ -2052,4 +2045,49 @@ background-color: #ffffff;
 
 .courselist {
 	margin: 0px;
+}
+
+.courselist li h3 {
+	font-weight: bold;
+}
+
+.bs-docs-sidenav li a {
+
+text-shadow: none;
+	color: #555;
+	font-weight: bold;
+}
+
+.bs-docs-sidenav li a:hover {
+	color: #fff;	
+}
+
+.sidebar-selected {
+	background-color: #f1592a;
+	
+
+}
+
+.sidebar-selected a {
+	color: #fff;
+}
+
+.bs-docs-sidenav .sidebar-selected a {
+	color: #fff;
+}
+
+a.thumbnail:hover {
+	border-color: #F7941E;
+}
+
+a.thumbnail:focus {
+	border-color: #F7941E;
+}
+
+.nav-list > .active > a,
+.nav-list > .active > a:hover,
+.nav-list > .active > a:focus {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-color: #F7941E;
 }

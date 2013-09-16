@@ -4,7 +4,7 @@
 	
 	<!--welcome-->
 			<div class="welcome_index animated fadeInDown">
-				Welcome to <span>Dave Conservatoire</span> - a free online music school, <br />aiming to provide a world-class music education for <span>everyone</span>.
+				Welcome to <span class="dc-text-orange">Dave Conservatoire</span> - a free online music school, <br />aiming to provide a world-class music education for <span class="dc-text-orange">everyone</span>.
 			</div>
 	<!--//welcome-->
 		</div>

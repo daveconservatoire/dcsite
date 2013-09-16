@@ -3,12 +3,15 @@
 	<?
 	    $course=Course::model()->findByPk($model->seriesno);
 	    $topic=Topic::model()->findByPk($model->topicno); ?>
+	    <h6>Course:</h6>
 		<ul class="nav nav-list bs-docs-sidenav" style="margin-bottom: 10px">
 		    <li><a href="<?=bu()."/course/".$course->urltitle;?>"><?=$course->title;?></a></li>  
 		</ul>
+		<h6>Topic:</h6>
 		<ul class="nav nav-list bs-docs-sidenav" style="margin-bottom: 10px">
 		      <li><a href="<?=bu()."/topic/".$topic->urltitle;?>"><?=$topic->title;?></a></li>  
 		</ul>
+		<h6>Lessons:</h6>
 		<ul class="nav nav-list bs-docs-sidenav">
 	    <? $lessonsinthiscourse=Lesson::model()->findAll("topicno=".$model->topicno." ORDER BY lessonno");
 	       foreach($lessonsinthiscourse as $lesson){

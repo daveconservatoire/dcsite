@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" data-require="math math-format graphie graphie-helpers-arithmetic music" >
+<html lang="en" data-require="music math math-format graphie graphie-helpers-arithmetic" >
 <head>
 <meta charset="utf-8">
 <title>Dave Conservatoire</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="<?=bu();?>/img/dcfavicon.ico" type="image/x-icon" /> 
 <meta name="description" content="<?php echo CHtml::encode($this->extraDesc); ?>Dave Conservatoire offers free lessons and interactive exercises on music theory." >
 <meta name="keywords" content="<?php echo CHtml::encode($this->extraKeywords); ?>free music lessons, free music theory, open learning, music history, music notation lessons" />
 <meta property="fb:page_id" content="199558400134104" />
@@ -91,13 +92,14 @@
 
 <?php echo $content; ?>
 
-<!-- Example row of columns -->
-<!--footer-->
-<div id="footer2">
-	<div class="container">
-		<div class="row">
+
+		
+		<div class="navbar" style="margin-bottom: 0px; text-align: center; ">
+		<div class="navbar-inner">
+			<div class="container">
+					<div class="row">
 			<div class="span12">
-				<div class="copyright"> &copy; Dave Conservatoire
+				<div class="copyright" style="padding-top:10px"> &copy; Dave Conservatoire
 					<script type="text/javascript">
 //<![CDATA[
 var d = new Date()
@@ -108,8 +110,13 @@ document.write(d.getFullYear())
 				</div>
 			</div>
 		</div>
+			</div>
+			</div>
+		</div>
 	</div>
-</div>
+
+		
+		
 <!-- up to top -->
 <a href="#"><i class="go-top hidden-phone hidden-tablet icon-double-angle-up"></i></a>
 <!--//end-->
