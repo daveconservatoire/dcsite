@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-require="music math math-format graphie graphie-helpers-arithmetic" >
+<html lang="en" data-require="music math" >
 <head>
 <meta charset="utf-8">
 <title>Dave Conservatoire</title>
