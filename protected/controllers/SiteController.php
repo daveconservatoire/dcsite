@@ -40,7 +40,7 @@ class SiteController extends Controller
 		// using the default layout 'protected/views/layouts/main.php'
 		
 	      Yii::app()->clientScript->registerMetaTag('http://daverees4.webfactional.com/dcdev/images/dclogo.jpg',null,null,array('property'=>'og:image'));
-	      Yii::app()->clientScript->registerMetaTag('http://daverees4.webfactional.com/dcdev',null,null,array('property'=>'og:url'));
+	      Yii::app()->clientScript->registerMetaTag('http://daverees4.webfactional.com/dcdev/',null,null,array('property'=>'og:url'));
 	      Yii::app()->clientScript->registerMetaTag('Dave Conservatoire',null,null,array('property'=>'og:title'));
 	      Yii::app()->clientScript->registerMetaTag('Welcome to Dave Conservatoire - a free online music school, 
 aiming to provide a world-class music education for everyone.' ,null,null,array('property'=>'og:description'));
