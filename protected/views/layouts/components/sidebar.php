@@ -26,6 +26,7 @@
 	    </ul>
     </div>
 	<div class="span9">
+	<div style="height:43px"></div>		
 	<div class="lesson-content">
 
 	 
