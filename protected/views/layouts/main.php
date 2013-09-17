@@ -11,6 +11,7 @@
 <meta property="og:title" content="Dave Conservatoire"/>
 <meta property="og:type" content="non_profit"/>
 <meta property="og:site_name" content="daveconservatoire.org"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
 <link href='http://fonts.googleapis.com/css?family=Lato:400,700,300' rel='stylesheet' type='text/css'>
 <!--[if IE]>
 <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
