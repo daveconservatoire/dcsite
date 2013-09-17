@@ -11,7 +11,6 @@
 <meta property="og:title" content="Dave Conservatoire"/>
 <meta property="og:type" content="non_profit"/>
 <meta property="og:site_name" content="daveconservatoire.org"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
 <link href='http://fonts.googleapis.com/css?family=Lato:400,700,300' rel='stylesheet' type='text/css'>
 <!--[if IE]>
 <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
@@ -34,9 +33,6 @@
 
 <![endif]-->
 
-<!--[if lte IE 7]>
-<script src="<?=bu();?>/js/ie-warning.js"></script>
-<![endif]-->
 
 
 
@@ -44,10 +40,9 @@
 
 <script src="<?=bu();?>/js/jquery.js"></script>	
 <script src="<?=bu();?>/js/bootstrap.min.js"></script>
-<script src="<?=bu();?>/js/superfish.js"></script>
+
 <script type="text/javascript" src="<?=bu();?>/js/scripts.js"></script>
 
- <!--[if lte IE 7]><script src="<?=bu();?>/js/ie-warning/warning.js"></script><script>window.onload=function(){e("<?=bu();?>/js/ie-warning/")}</script><![endif]-->
 <!--timeline-->
 
 </head>

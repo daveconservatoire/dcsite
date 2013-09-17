@@ -252,6 +252,9 @@ background-color:#bf1e2d;; border:0; color:#ffffff;
 	background-color: #990007; color:#ffffff;
 	}
 	
+	.navbar {
+		margin-bottom: 0px;
+	}
 
 
 /**** TYPOGRAPHY ****/
