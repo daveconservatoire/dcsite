@@ -39,17 +39,19 @@ class SiteController extends Controller
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
 		
-	      Yii::app()->clientScript->registerMetaTag('http://www.daveconservatoire.org/images/logo.png',null,null,array('property'=>'og:image'));
-	      Yii::app()->clientScript->registerMetaTag('http://www.daveconservatoire.org/',null,null,array('property'=>'og:url'));
-	      Yii::app()->clientScript->registerMetaTag('Dave Conservatoire - Learn about music for free',null,null,array('property'=>'og:title'));
-	      Yii::app()->clientScript->registerMetaTag('Over 100 free music lessons and interactive exercises to help to find out how music works!' ,null,null,array('property'=>'og:description'));
+	      Yii::app()->clientScript->registerMetaTag(<?=bu();?>.'/images/logo.png',null,null,array('property'=>'og:image'));
+	      Yii::app()->clientScript->registerMetaTag(<?=bu();?>,null,null,array('property'=>'og:url'));
+	      Yii::app()->clientScript->registerMetaTag('Dave Conservatoire',null,null,array('property'=>'og:title'));
+	      Yii::app()->clientScript->registerMetaTag('Welcome to Dave Conservatoire - a free online music school, 
+aiming to provide a world-class music education for everyone.' ,null,null,array('property'=>'og:description'));
 	      Yii::app()->clientScript->registerMetaTag('website' ,null,null,array('property'=>'og:type'));
 	      
 	      
 	      // Twitter Meta 
 	      Yii::app()->clientScript->registerMetaTag('summary' ,null,null,array('name'=>'twitter:card'));
 	      Yii::app()->clientScript->registerMetaTag('Dave Conservatoire' ,null,null,array('name'=>'twitter:url'));
-	      Yii::app()->clientScript->registerMetaTag('Over 100 free music lessons and interactive exercises to help to find out how music works!' ,null,null,array('name'=>'twitter:description'));
+	      Yii::app()->clientScript->registerMetaTag('Welcome to Dave Conservatoire - a free online music school, 
+aiming to provide a world-class music education for everyone.' ,null,null,array('name'=>'twitter:description'));
 	      Yii::app()->clientScript->registerMetaTag('http://www.daveconservatoire.org/images/logo.png',null,null,array('name'=>'twitter:image'));
 	      Yii::app()->clientScript->registerMetaTag('@dconservatoire' ,null,null,array('name'=>'twitter:creator'));
 	      Yii::app()->clientScript->registerMetaTag('@dconservatoire' ,null,null,array('name'=>'twitter:site'));
