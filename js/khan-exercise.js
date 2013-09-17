@@ -972,7 +972,7 @@ var Khan = (function() {
     var lastsound=$("#LASTSOUND").text(); 
 lowLag.init();	
 for(var i=firstsound; i<=lastsound;i++){
-lowLag.load(urlBase+"sounds/"+exerciseUrlTitle+"/"+i+".wav", 'sound'+i);
+lowLag.load([urlBase+"sounds/"+exerciseUrlTitle+"/"+i+".mp3",urlBase+"sounds/"+exerciseUrlTitle+"/"+i+".wav"], 'sound'+i);
 
 
 }
