@@ -42,7 +42,7 @@
 					<h6><small>ABOUT</small></h6>
 					
 					<p>Find out all about Dave Conservatoire; the story so far, where we hope to head in the future and how you can lend a hand.</p>	
-					<a href="#" class="btn btn-primary  btn-custom btn-rounded btn-block dc-btn-redorange">Find out more</a>
+					<a href="<?=bu();?>/about" class="btn btn-primary  btn-custom btn-rounded btn-block dc-btn-redorange">Find out more</a>
 					</div> 
 						<div class="pad25"></div>
 						</div> 
@@ -52,7 +52,7 @@
 					<div class="intro-icon-disc cont-large"><i class="icon-money  intro-icon-large dc-text-red"></i></div>
 					<h6> <small>DONATE</small></h6>
 					<p>Dave Conservatoire will be totally free forever.  Our dream is that no-one should miss out on having music in their life. </p>
-					<a href="#" class="btn btn-primary  btn-custom btn-rounded btn-block dc-btn-red">How you can help</a>
+					<a href="<?=bu();?>/site/support" class="btn btn-primary  btn-custom btn-rounded btn-block dc-btn-red">How you can help</a>
 					</div>
 						<div class="pad25"></div>	
 					</div> 
