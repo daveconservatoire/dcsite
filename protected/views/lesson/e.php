@@ -1,8 +1,6 @@
  <?
 
-  $cs = Yii::app()->getClientScript();
-  $cs->registerScriptFile(bu().'/js/soundmanager2.js');
-   $cs->registerScriptFile(bu().'/js/lowlag.js');
+
 
   
   ?>
@@ -54,7 +52,7 @@
                     <input class="simple-button green" id="check-answer-button" type="button" value="Check Answer">
                 </div>
                 <input class="simple-button green" id="next-question-button" name="correctnextbutton" style="display:none;" type="button" value="Correct! Next Question...">
-                <div id="positive-reinforcement"><img src="/images/face-smiley.png" ></div>
+                <div id="positive-reinforcement"><img src="<?=bu();?>/images/face-smiley.png" ></div>
                 <span id="show-solution-button-container"></span>
                 <div id="check-answer-results"><p class="check-answer-message info-box-sub-description"></p></div>
                 </div>

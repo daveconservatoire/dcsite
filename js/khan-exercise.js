@@ -939,7 +939,6 @@ var Khan = (function() {
         // TODO(cbhl): Don't load history.js if we aren't in readOnly mode.
         var initScripts = [
                 urlBase+"local-only/jquery.js",
-                urlBase+"local-only/jquery-migrate-1.1.1.js",
                 urlBase+"local-only/jquery.ui.core.js",
                 urlBase+"local-only/jquery.ui.widget.js",
                 urlBase+"local-only/jquery.ui.mouse.js",
@@ -959,7 +958,9 @@ var Khan = (function() {
                 urlBase+"local-only/i18n.js",
                 urlBase+"js/exercises-stub.js",
                 urlBase+"js/history.js",
-                urlBase+"js/interface.js"
+                urlBase+"js/interface.js",
+                urlBase+"js/soundmanager2.js",
+                urlBase+"js/lowlag.js"
             ];
 
         (function loadInitScripts() {
@@ -982,21 +983,13 @@ lowLag.load(urlBase+"sounds/"+exerciseUrlTitle+"/"+i+".wav", 'sound'+i);
 }
             })();
     } else {
-        soundManager.setup({
-  url: urlBase+'swf/',
-  flashVersion: 9, // optional: shiny features (default = 8)
-  // optional: ignore Flash where possible, use 100% HTML5 mode
-  // preferFlash: false,
-  onready: function() {
-    var soundtoload=$("#SOUNDSTOLOAD").text(); 
- 
+         var firstsound=$("#FIRSTSOUND").text(); 
+    var lastsound=$("#LASTSOUND").text(); 
+lowLag.init();	
+for(var i=firstsound; i<=lastsound;i++){
+lowLag.load(urlBase+"sounds/"+exerciseUrlTitle+"/"+i+".wav", 'sound'+i);
 
-   
-  
-  
-     onjQueryLoaded();
-  }
-});
+}
     
      
     }
