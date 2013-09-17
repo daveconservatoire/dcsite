@@ -6,6 +6,7 @@
              <? $topics=Topic::model()->findAll("courseId=".$model->courseId ." ORDER BY sortorder");?>
 			    <? $this->renderPartial("//layouts/components/topicsidebar", array('model'=>$model));?>	         
 			       <div class="span8">
+			       <div style="height:32px"></div>	
 		            <div class="tab-content">
 		             	<div class="tab-pane active" id="topic-all">
          <div class="thumbnails">

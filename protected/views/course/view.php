@@ -5,6 +5,7 @@
       <? $this->renderPartial("//layouts/components/coursesidebar", array('model'=>$model));?>
 
 	            <div class="span8">
+	            <div style="height:32px"></div>	
 		            <div class="tab-content">
 		             	<div class="tab-pane active" id="topic-all">
          <div class="thumbnails">
