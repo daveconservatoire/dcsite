@@ -1885,10 +1885,7 @@ border:0px solid #34495E;
   .bs-docs-sidenav {
  
   }
-  .bs-docs-sidenav > li > a {
-    width: 230px \9; /* Override the previous IE8-9 hack */
-  }
-  
+S  
   .coda-slider-wrapper.arrows .coda-slider, .coda-slider-wrapper.arrows .coda-slider .panel { width: 770px }
   
   #accordion2 {display: none}
