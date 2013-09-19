@@ -1432,7 +1432,6 @@ ul#itemContainer { list-style: none; padding:0 0; margin:0 0; width:100%; }
 }
 .bs-docs-sidenav > li > a {
   display: block;
-  width: 190px \9;
   margin: 0 0 -1px;
   padding: 8px 14px;
   border: 1px solid #e5e5e5;
@@ -1883,9 +1882,9 @@ border:0px solid #34495E;
 @media (min-width: 1200px) {
 
   .bs-docs-sidenav {
- 
+width: 100%; 
   }
-S  
+
   .coda-slider-wrapper.arrows .coda-slider, .coda-slider-wrapper.arrows .coda-slider .panel { width: 770px }
   
   #accordion2 {display: none}
