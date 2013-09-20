@@ -216,7 +216,7 @@ var Khan = (function() {
     // Promise that gets resolved when MathJax is loaded
     mathJaxLoaded,
 
-    urlBase = document.location.hostname =="localhost" ? "/dcsite/" : "/dcdev/",
+    urlBase = document.location.hostname =="localhost" ? "/dcsite/" : "/",
     
     exerciseUrlTitle=document.location.pathname.substring(document.location.pathname.lastIndexOf('/')+1);
     
