@@ -172,7 +172,7 @@
 
     <div class="push"></div>
 
-    
+
 
 </div>
 
@@ -197,11 +197,13 @@ include($address.bu()."/exercises/".$end.".html");
 ?>
     <!-- End exercise code -->
 
+
 					</div>
 						</div>
 					</div>
 				
 				</div>
 			</div>
-		</div>
+						</div>
 	<!--//page-->
+	
