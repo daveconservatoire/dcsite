@@ -268,6 +268,12 @@ lowLag.msg(tag);
 var holder;
 
 function playSound(sound){
+   if (typeof lowLag.play != 'function') { 
+      console.log("lowLag not exist") 
+	   setTimeout(playSound(sound), 1000);
+   } else {
+	   console.log("Lowlag exists");
+   }
 	lowLag.play(sound);
 	holder=sound;
 }
