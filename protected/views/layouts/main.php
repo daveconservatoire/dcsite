@@ -70,7 +70,7 @@
 						<? $user=User::model()->findByPk(Yii::app()->user->dcid);?>
 						
 						<div class="btn-group loginbutton">
-								<a class="btn btn-success " href="<? echo Yii::app()->request->baseUrl; ?>/profile"><i class="icon-user icon-white"></i> <? echo Yii::app()->user->name;?> (<?=$user->points;?> Points)</a>
+								<a class="btn btn-success " href="<? echo Yii::app()->request->baseUrl; ?>/profile"><i class="icon-user icon-white"></i> <? echo Yii::app()->user->name;?> (<span id="pointstotal"><?=$user->points;?></span> Points)</a>
 								<a class="btn btn-success dropdown-toggle" data-toggle="dropdown" href="#profilemenu"><span class="caret"></span></a>
 								<ul class="dropdown-menu">
 								<li><a href="<? echo Yii::app()->request->baseUrl; ?>/profile"><i class="icon-pencil"></i> My Profile</a></li>

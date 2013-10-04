@@ -4,7 +4,6 @@ $(document).ready(function(){
 
 
 
-
 	
 /***************************************************
 		TOOLTIP & POPOVER
@@ -72,6 +71,16 @@ $('.intro_sections h6').show().addClass("animated fadeInUp");
 $('.fadeinup').show().addClass("animated fadeInUp");
 $('.fadeindown').show().addClass("animated fadeInDown");
 }); 
+
+
+function increaseScore(howmuch) {
+	$('#pointstotal').fadeOut(function () {
+       $("#pointstotal").text(parseInt($("#pointstotal").text(),10)+howmuch);
+		$('#pointstotal').fadeIn();
+	});
+
+
+}
 
 
 
