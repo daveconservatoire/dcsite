@@ -199,7 +199,7 @@ function handleAttempt(data) {
     if (score.correct){correctAnswer=1; attemptNumber++;} else {correctAnswer=0; attemptNumber++;}
     
     		    $.ajax({
-        url: "/dcsite/api/exerciseanswer",
+        url: "/api/exerciseanswer",
         type: "post",
         data: "exerciseId="+url+"&complete="+correctAnswer+"&countHints="+hintsUsed+"&timeTaken="+timeTaken+"&attemptNumber="+attemptNumber,
         // callback handler that will be called on success
