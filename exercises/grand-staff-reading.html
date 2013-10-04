@@ -1,17 +1,12 @@
- <!DOCTYPE html>
-    <html data-require="word-problems music">
-        <head>
-            <title>Grand Staff Note Reading</title>
-            <script src="../exercises/khan-exercise.js"></script>
-          
-        </head>
-        <body>
+
             <div class="exercise">
                 <div class="vars">
+                    <var id="FIRSTSOUND">1</var>
+                    <var id="LASTSOUND">21</var>
                     <var id="NOTE">randRange( 0, 20)</var>
                     <var id ="LETTERS">new Array("g","a","b","c","d","e","f","g","a","b","c","d","e","f","g","a","b","c","d","e","f")</var>
                     <var id = "ANSWER">LETTERS[NOTE]</var>
-                    <var id ="PLAYSOUND">playSound((NOTE+1))</var>
+                    <var id ="PLAYSOUND">playSound("sound"+(NOTE+1))</var>
                     
                 </div>
 
