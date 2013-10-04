@@ -1,17 +1,12 @@
- <!DOCTYPE html>
-    <html data-require="word-problems music">
-        <head>
-            <title>Bass Clef Note Reading</title>
-            <script src="../exercises/khan-exercise.js"></script>
-          
-        </head>
-        <body>
+
             <div class="exercise">
                 <div class="vars">
+                   <var id="FIRSTSOUND">1</var>
+                    <var id="LASTSOUND">9</var>
                     <var id="NOTE">randRange( 0, 8)</var>
                     <var id ="LETTERS">new Array("g","a","b","c","d","e","f","g","a")</var>
                     <var id = "ANSWER">LETTERS[NOTE]</var>
-                    <var id = "MYSOUND">playSound((NOTE+1))</var>
+                    <var id = "MYSOUND">playSound("sound"+(NOTE+1))</var>
                 </div>
 
                 <div class="problems">
@@ -41,5 +36,3 @@
                     <p>This note is <var>ANSWER</var></p>
                 </div>
             </div>
-        </body>
-    </html>
