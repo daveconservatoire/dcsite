@@ -31,7 +31,11 @@
 					<div class="intro-icon-disc cont-large"><i class="icon-star intro-icon-large dc-text-orange"></i></div>
 					<h6><small>PRACTICE</small></h6>
 					<p>Test your understanding as you go, with interactive exercises designed to enhance your awareness and sensitivity to music.</p>
+					<?php if (Yii::app()->user->isGuest): ?>
 					<a href="<?=bu();?>/login" class="btn btn-primary  btn-custom btn-rounded btn-block dc-btn-orange">Sign in to track your progress</a>
+					<? else:?>
+					<a href="<?=bu();?>/profile" class="btn btn-primary  btn-custom btn-rounded btn-block dc-btn-orange">View My Profile</a>
+					<? endif;?>
 					</div> 
 						<div class="pad25"></div>
 						</div> 

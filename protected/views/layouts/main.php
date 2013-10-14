@@ -95,14 +95,14 @@
 			<div class="container">
 					<div class="row">
 			<div class="span12">
-				<div class="copyright" style="padding-top:10px"> &copy; Dave Conservatoire
+				<div class="copyright" style="padding-top:10px"> Dave Conservatoire
 					<script type="text/javascript">
 //<![CDATA[
 var d = new Date()
 document.write(d.getFullYear())
 //]]>
 </script>
-. Except where noted, All Rights Reserved.
+. The videos and exercises on this site are available under a <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">CC BY-NC-SA Licence</a>.  Exercises powered by the <a href="https://github.com/Khan/khan-exercises" target="_blank">Khan Academy Exercise Framework</a>
 				</div>
 			</div>
 		</div>

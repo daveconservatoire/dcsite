@@ -1047,6 +1047,12 @@ h3.follow {
 	font-size:13px;
 	font-weight:400;
 }
+.copyright {
+	font-size: 12px;
+}
+#solutionarea select{
+	width: auto;
+}
 
 .copyright a {color:#888; }
 .copyright a:hover {color:#777; }

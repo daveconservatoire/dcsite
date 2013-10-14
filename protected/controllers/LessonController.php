@@ -29,7 +29,7 @@ class LessonController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'view' actions
-				'actions'=>array('view', 'index'),
+				'actions'=>array('view', 'index', 'testexercise'),
 				'users'=>array('*'),
 			),
 
@@ -89,6 +89,11 @@ class LessonController extends Controller
 		));
 		
 		
+	}
+	
+	public function actionTestExercise ($urltitle) {
+		
+			$this->render("etest",array('title'=>$urltitle));
 	}
 
    public function actionIndex(){
