@@ -62,11 +62,7 @@
 						<a href="<? echo Yii::app()->request->baseUrl;?>/site/support" class="btn dc-btn-orange">Donate</a>
 						<a href="<? echo Yii::app()->request->baseUrl;?>/site/contact" class="btn   dc-btn-redorange">Contact</a>
 						
-						<span id="socialmediaicons">
-						<a href="http://www.youtube.com/daveconservatoire" target="_blank"><img class="socialicon" src="<?=bu()."/img/socialicons/youtube.png";?>" /></a>
-						<a href="http://www.twitter.com/dconservatoire" target="_blank"><img class="socialicon" src="<?=bu()."/img/socialicons/twitter.png";?>" /></a>
-						<a href="http://www.facebook.com/daveconservatoire" target="_blank"><img class="socialicon" src="<?=bu()."/img/socialicons/facebook.png";?>" /></a>
-						</span>
+					
 						
 						<?php if (Yii::app()->user->isGuest): ?>
 						
@@ -85,6 +81,12 @@
 								</ul>
 						</div>
 					  <?php endif;?>
+					  
+					  	<span id="socialmediaicons">
+						<a href="http://www.youtube.com/daveconservatoire" target="_blank"><img class="socialicon" src="<?=bu()."/img/socialicons/youtube.png";?>" /></a>
+						<a href="http://www.twitter.com/dconservatoire" target="_blank"><img class="socialicon" src="<?=bu()."/img/socialicons/twitter.png";?>" /></a>
+						<a href="http://www.facebook.com/daveconservatoire" target="_blank"><img class="socialicon" src="<?=bu()."/img/socialicons/facebook.png";?>" /></a>
+						</span>
 		            </div>
 				</div>
 			</div>
