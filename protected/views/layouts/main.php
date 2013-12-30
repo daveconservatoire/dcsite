@@ -61,7 +61,7 @@
 						<a href="<? echo Yii::app()->request->baseUrl;?>/site/about" class="btn dc-btn-yellow">About</a>
 						<a href="<? echo Yii::app()->request->baseUrl;?>/site/support" class="btn dc-btn-orange">Donate</a>
 						<a href="<? echo Yii::app()->request->baseUrl;?>/site/contact" class="btn   dc-btn-redorange">Contact</a>
-						<a href="<? echo Yii::app()->request->baseUrl;?>/login" class="btn dc-btn-red loginbutton">Login</a>
+						
 						<span id="socialmediaicons">
 						<a href="http://www.youtube.com/daveconservatoire" target="_blank"><img class="socialicon" src="<?=bu()."/img/socialicons/youtube.png";?>" /></a>
 						<a href="http://www.twitter.com/dconservatoire" target="_blank"><img class="socialicon" src="<?=bu()."/img/socialicons/twitter.png";?>" /></a>
@@ -70,7 +70,7 @@
 						
 						<?php if (Yii::app()->user->isGuest): ?>
 						
-						
+						<a href="<? echo Yii::app()->request->baseUrl;?>/login" class="btn dc-btn-red loginbutton">Login</a>
 						
 						<?php else: ?>
 						<? $user=User::model()->findByPk(Yii::app()->user->dcid);?>
