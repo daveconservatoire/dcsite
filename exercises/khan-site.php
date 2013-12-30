@@ -10,62 +10,42 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-  
+    <title>Dave Conservatoire - Learn about music for free!</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    <title><?php echo CHtml::encode($this->pageTitle); ?></title>
-
-        <meta name="description" content="<?php echo CHtml::encode($this->extraDesc); ?>Dave Conservatoire offers free lessons and interactive exercises on music theory." />
-        <meta name="keywords" content="<?php echo CHtml::encode($this->extraKeywords); ?>free music lessons, free music theory, open learning, music history, music notation lessons" />
-
-        <meta property="fb:page_id" content="199558400134104" />
-        <meta property="og:title" content="Dave Conservatoire"/>
-        <meta property="og:type" content="non_profit"/>
-        <meta property="og:url" content="http://www.daveconservatoire.org"/>
-
-        <meta property="og:site_name" content="daveconservatoire.org"/>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
     <!-- Le styles -->
-    <link href="<?php echo Yii::app()->request->baseUrl; ?>/keyboard/style.css" rel="stylesheet">
-    <link href="<?php echo Yii::app()->request->baseUrl; ?>/style/css/bootstrap.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="/style/css/bootstrap.css">
+    <link rel="stylesheet" href="/keyboard/style.css">
     <style type="text/css">
       body {
         padding-top: 60px;
-        padding-bottom: 40px;
       }
       
-           .span3 {
+      .span4 {
       background-color: whiteSmoke;
       text-align: center;
      
       }
       
-      .row {     
+      .row {
       padding-bottom: 20px;
+      
       }
-
-
     </style>
-    
-        <!-- Le javascript
-    ================================================== -->
-   
-    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-    <script src="<?php echo Yii::app()->request->baseUrl; ?>/style/js/bootstrap.js"></script>
-     <script src="<?php echo Yii::app()->request->baseUrl; ?>/style/js/functions.js"></script>
 
-    
-
-    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <!-- Le fav and touch icons NEEDED -->
-   
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    <script type="text/javascript" src="/style/js/functions.js"></script>
   </head>
-
-
 
   <body>
 
@@ -83,17 +63,20 @@
 			<br />			
     		<div id="page-container">
 					<div id="page-container-inner">
-					  <div class="well">
-						  <h4>Today's Streak</h4>
-						  
-					  </div>
+						
 						<div id="fb-root"></div>	
 						<div id="container" class="single-exercise visited-no-recolor" style="overflow: hidden"></div>
 						<div style="padding: 10px;">&nbsp;</div>
 					</div>
 			</div>
-		<div class="push"></div>
 		
+			  <div class="well">
+						  <h4 class="pull-left">Streak: &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+						   <div id="progress" class="progress progress-striped active progress-danger">
+  <div class="bar bar-danger" id="bar" style="width: 0%;"></div>
+  </div>
+						  
+					  </div>
 
 <? include('/home/daverees4/webapps/dcdev/protected/views/layouts/components/footer.php'); ?>
 

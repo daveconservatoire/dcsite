@@ -30,10 +30,14 @@ $recentexs=UserExerciseAnswer::Model()->findAll(array("select"=>"t.exerciseId", 
 
 ?>
 
+			<div class="container wrapper">
+		<div class="inner_content">
+<div class="banner">
 
+		
 <div class='row'>
 <div class='span3'>
-<h2><?=$model->name;?></h2>
+<h1><?=$model->name;?></h1>
 <p>Joined: <? echo humanTiming($model->joinDate);?> ago</p>
 </div>
 
@@ -46,6 +50,7 @@ $recentexs=UserExerciseAnswer::Model()->findAll(array("select"=>"t.exerciseId", 
 <div class='span3'>
 <h2><?=$exercisesanswered;?></h2>
 <p>exercises correctly answered</p>
+</div>
 </div>
 
 </div>
@@ -90,11 +95,11 @@ $recentexs=UserExerciseAnswer::Model()->findAll(array("select"=>"t.exerciseId", 
    
         <li class="span3">
           <div class="thumbnail">
-      <a href="/exercise/<?=$exinfo->urltitle?>" class="thumbnail"> <img src='images/exercise.jpg' style="width:210px; height: 168px"/></a>
+      <a href="<? echo Yii::app()->request->baseUrl; ?>/lesson/<?=$exinfo->urltitle?>" class="thumbnail"> <img src='images/exercise.jpg' style="width:210px; height: 168px"/></a>
             <div class="caption">
               <h5><?=$exinfo->title?></h5>
 
-              <p><a href="<? echo Yii::app()->request->baseUrl; ?>/exercise/<?=$exinfo->urltitle?>" class="btn btn-primary">Practice More</a></p>
+              <p><a href="<? echo Yii::app()->request->baseUrl; ?>/lesson/<?=$exinfo->urltitle?>" class="btn btn-primary">Practice More</a></p>
             </div>
           </div>
         </li>
@@ -105,3 +110,5 @@ $recentexs=UserExerciseAnswer::Model()->findAll(array("select"=>"t.exerciseId", 
                 </ul>
     </div>
   </div>
+		</div>
+			</div>

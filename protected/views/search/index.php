@@ -1,12 +1,28 @@
-<h1>Search</h1>
-<hr />
+<div id="banner">
+	<div class="container intro_wrapper">
+	<div class="inner_content">
+
+	<h1 class="title">Search</h1>
+	
+
+	</div>
+		</div>
+			</div>
+
+
+				<div class="container wrapper">
+	<div class="inner_content">
 
 <form class="form-search" method="get" action="<? echo Yii::app()->request->baseUrl;?>/search">
-  <input type="text" name="searchquery" class="input-xxlarge search-query topsearch" placeholder="
-  <? if (isset($_GET['searchquery'])){ echo $_GET['searchquery'];} else {echo "Enter your search term here";}?>
-  
-  ">
-  <button type="submit" class="btn"><i class="icon-search"></i> Search</button>
+
+<div class="input-append  input-block-level">
+  <input type="text" name="searchquery" class="input-xxlarge search-query topsearch " 
+  <? if (isset($_GET['searchquery'])){ echo "value='".$_GET['searchquery']."'";} else {echo "placeholder='Enter your search term here'";}?>"  />
+    <button type="submit" class="btn">Search</button>
+  </div>
+
+
+
 </form>
 <hr />
 
@@ -66,3 +82,5 @@ $empty=true;
 <? endif;?>  
 
 <? endif; ?>
+
+	</div></div>

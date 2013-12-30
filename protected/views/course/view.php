@@ -1,26 +1,118 @@
-<?php
-$this->breadcrumbs=array(
-	'Courses'=>array('index'),
-	$model->title,
-);
 
-$this->menu=array(
-	array('label'=>'List Course', 'url'=>array('index')),
-	array('label'=>'Create Course', 'url'=>array('create')),
-	array('label'=>'Update Course', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Course', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Course', 'url'=>array('admin')),
-);
-?>
+<div class="container wrapper">
+    <div class="inner_content">
+   <? $topics=Topic::model()->findAll("courseId=".$model->id ." ORDER BY sortorder");?>
+      <? $this->renderPartial("//layouts/components/coursesidebar", array('model'=>$model));?>
 
-<h1>View Course #<?php echo $model->id; ?></h1>
+	            <div class="span8">
+	            <div style="height:32px"></div>	
+		            <div class="tab-content">
+		             	<div class="tab-pane active" id="topic-all">
+         <div class="thumbnails">
+	        <div class="row"  style="margin: 0 0 20px 0">    
+		          
+<? $lessons=Lesson::model()->findAll("seriesno=".$model->id ." ORDER BY lessonno"); 
+$counter=1; 
+foreach ($lessons as $lesson){
 
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'id',
-		'title',
-		'urltitle',
-		'author',
-	),
-)); ?>
+ ?>
+		
+		       <div class='span2'>
+			<?php if ($lesson->filetype == "l"): ?>
+			
+				<a href='<?=bu();?>/lesson/<?=$lesson->urltitle;?>' class='thumbnail vertical-shadow suggested-action'>
+				<img src='http://img.youtube.com/vi/<?=$lesson->youtubeid;?>/default.jpg'/>
+				<p><?=$lesson->title;?></p>
+				</a>
+
+
+
+			<? endif;?>
+			<?php if ($lesson->filetype == "p"): ?>
+	<a href='<?=bu();?>/lesson/<?=$lesson->urltitle;?>' class='thumbnail vertical-shadow suggested-action'>
+				<img src='<?=bu();?>/images/playlist.jpg'/>
+				<p><?=$lesson->title;?></p>
+				</a>
+
+			<? endif;?>
+			<?php if ($lesson->filetype == "e"): ?>
+	<a href='<?=bu();?>/lesson/<?=$lesson->urltitle;?>' class='thumbnail vertical-shadow suggested-action'>
+				<img src='<?=bu();?>/images/exercise.jpg'/>
+			<p><?=$lesson->title;?></p>
+				</a>
+
+
+</a>
+			<? endif;?>
+		</div>
+    <? if($counter==4){ ?>
+	</div>
+	<div class="row"  style="margin: 0 0 20px 0">
+    <? $counter=1; } else { $counter++;} ?> 
+   
+
+	 <? };?>	
+	</div>
+</div></div>
+<?
+
+
+		            
+foreach ($topics as $topic) : 
+?>               
+   	<div class="tab-pane" id="topic-<?=$topic->id;?>">
+         <div class="thumbnails">
+	        <div class="row"  style="margin: 0 0 20px 0">                    
+
+<? $lessons=Lesson::model()->findAll("topicno=".$topic->id ." ORDER BY lessonno");
+$counter=1;
+foreach($lessons as $lesson): ?>
+
+
+		
+		       <div class='span2'>
+			<?php if ($lesson->filetype == "l"): ?>
+			
+				<a href='<?=bu();?>/lesson/<?=$lesson->urltitle;?>' class='thumbnail vertical-shadow suggested-action'>
+				<img src='http://img.youtube.com/vi/<?=$lesson->youtubeid;?>/default.jpg'/>
+				<p><?=$lesson->title;?></p>
+				</a>
+
+
+
+			<? endif;?>
+			<?php if ($lesson->filetype == "p"): ?>
+	<a href='<?=bu();?>/lesson/<?=$lesson->urltitle;?>' class='thumbnail vertical-shadow suggested-action'>
+				<img src='<?=bu();?>/images/playlist.jpg'/>
+				<p><?=$lesson->title;?></p>
+				</a>
+
+			<? endif;?>
+			<?php if ($lesson->filetype == "e"): ?>
+	<a href='<?=bu();?>/lesson/<?=$lesson->urltitle;?>' class='thumbnail vertical-shadow suggested-action'>
+				<img src='<?=bu();?>/images/exercise.jpg'/>
+			<p><?=$lesson->title;?></p>
+				</a>
+
+
+</a>
+			<? endif;?>
+		</div>
+    <? if($counter==4){ ?>
+	</div>
+	<div class="row"  style="margin: 0 0 20px 0">
+    <? $counter=1; } else { $counter++;} ?> 
+    <? endforeach;?>
+	</div></div></div>
+	 <? endforeach;?>	
+	</div>
+</div>
+
+						</div>
+			
+					</div>
+	            </div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,6 +1,10 @@
 <?
 $this->pageTitle="Scale Dictionary | "."Dave Conservatoire";
 ?>
+
+<div class="container wrapper">
+	<div class="inner_content">
+	<div class="pad30"></div>
 <h2>Scale Dictionary</h2>
 <p>Here you can look up all the major and minor scales.  Don't know what a scale is?  Then look <a href="http://daveconservatoire.org/lesson/major-scales">here</a>.  Otherwise enjoy exploring - I've even thrown in some bonus wholetone and diminished scales for you to try!</p>
 <div id="keyboard"></div>
@@ -64,3 +68,5 @@ $this->pageTitle="Scale Dictionary | "."Dave Conservatoire";
       </form>
    <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/keyboard/script/soundmanager2.js" ></script>
     <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/keyboard/keyboard.js" /></script>
+    
+    </div></div>

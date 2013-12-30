@@ -2,6 +2,12 @@
 $this->pageTitle="Chord Dictionary | "."Dave Conservatoire";
 ?>
 
+			
+	<div class="container wrapper">
+	<div class="inner_content">
+	<div class="pad30"></div>
+	
+
 <h2>Chord Dictionary</h2>
 <p>Here you can look up all of the basic major and minor triads.  Don't know what a triad is?  Then look <a href="http://daveconservatoire.org/lesson/what-is-harmony">here</a>.  Otherwise enjoy exploring!</p>
 <div id="keyboard"></div>
@@ -56,3 +62,5 @@ $this->pageTitle="Chord Dictionary | "."Dave Conservatoire";
       
    <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/keyboard/script/soundmanager2.js" ></script>
     <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/keyboard/keyboard.js" /></script>
+    
+    </div></div>

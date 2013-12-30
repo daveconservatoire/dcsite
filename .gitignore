@@ -5,4 +5,9 @@ assets/*
 protected/runtime/*
 !protected/runtime/.gitignore
 protected/data/*.db
+<<<<<<< HEAD
 .DS_Store
+=======
+.htaccess
+
+>>>>>>> Supertonic-Layout
