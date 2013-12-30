@@ -1022,6 +1022,16 @@ input[type="text"], input[type="search"] {
 }
 .follow_us a.zocial:hover {opacity:1.0; background:transparent; }
 
+.socialicon {
+	width:27px;
+	margin-top: 5px;
+}
+
+#socialmediaicons {
+	float: right;
+	margin-right: 20px;
+}
+
 #footer h1 { 
 	letter-spacing:0.25em;
 	font-size:20px;
@@ -1947,6 +1957,7 @@ a.pp_close { right: 10px!important; top: 12px!important; }
 #mobilebrand {visibility: visible; position: relative; margin:0 auto; margin-top: 5px; padding:0; padding-top:5px}
 #desktopbrand {visibility: hidden; position: absolute}
 .loginbutton {float:none}
+#socialmediaicons {visibility: hidden; position:absolute}
 .navbuttons {margin-left:0;}
 
   .bs-docs-sidenav {
@@ -2009,8 +2020,7 @@ background-color: #ffffff;
 
 .dc-bg-yellow {
 	background-color: #F7941E;
-	background: #F7941E;
-	
+	background: #F7941E;	
 	}
 	
 .dc-text-yellow {
@@ -2069,8 +2079,6 @@ text-shadow: none;
 
 .sidebar-selected {
 	background-color: #f1592a;
-	
-
 }
 
 .sidebar-selected a {

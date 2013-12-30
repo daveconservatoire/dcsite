@@ -2275,6 +2275,7 @@ lowLag.load([urlBase+"sounds/"+exerciseUrlTitle+"/"+i+".mp3",urlBase+"sounds/"+e
         if (Khan.query.problem == null) {
             weighExercises(problems);
             problemBag = makeProblemBag(problems, 10);
+           
         }
   
         // Generate the initial problem when dependencies are done being loaded
