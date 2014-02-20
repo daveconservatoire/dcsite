@@ -1,5 +1,6 @@
-/index.php
-protected/config/main.php
+
+protected/config/secrets.php
+
 assets/*
 !assets/.gitignore
 protected/runtime/*
@@ -11,3 +12,4 @@ protected/data/*.db
 .htaccess
 
 >>>>>>> Supertonic-Layout
+

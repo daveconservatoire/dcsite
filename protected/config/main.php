@@ -3,6 +3,17 @@
 // uncomment the following to define a path alias
 // Yii::setPathOfAlias('local','path/to/local-folder');
 
+
+
+
+//Loading senstive variables
+
+$secrets='secrets.php';	
+include($secrets);
+
+
+
+
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
 return array(
@@ -59,8 +70,8 @@ return array(
              'google' => array(
                     // register your app here: https://code.google.com/apis/console/
                     'class' => 'GoogleOAuthService',
-                    'client_id' => 'GOOGLE CLIENT ID',
-                    'client_secret' => 'GOOGLE SECRET',
+                    'client_id' => $googleclientid,
+                    'client_secret' => $googlesecret,
                     'title' => 'Google',
                 ),
 //This is the test local Facebook app I created for testing - it assumes you are running the site at http://localhost/dcsite
@@ -112,10 +123,10 @@ return array(
 		//Add you own DB info!
 	
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=DB NAME',
+			'connectionString' => 'mysql:host=localhost;dbname='.$dbname,
 			'emulatePrepare' => true,
-			'username' => 'DB USERNAME',
-			'password' => 'DB PASSWORD',
+			'username' => $dbusername,
+			'password' => $dbpassword,
 			'charset' => 'utf8',
 		),
 	
