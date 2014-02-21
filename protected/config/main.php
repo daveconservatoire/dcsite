@@ -74,13 +74,13 @@ return array(
                     'client_secret' => $googlesecret,
                     'title' => 'Google',
                 ),
-//This is the test local Facebook app I created for testing - it assumes you are running the site at http://localhost/dcsite
+
 
 
             'facebook' => array(
                 'class' => 'FacebookOAuthService',
-                'client_id' => '447944221964271',
-                'client_secret' => 'a3c07c37463cbd5f32cd7561328289a2',
+                'client_id' => $facebookclientid,
+                'client_secret' => $facebookclientid,
             ),
 
 
@@ -94,19 +94,21 @@ return array(
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'rules'=>array(
-			    'index'=>'site/index',
+			       'index'=>'site/index',
 			    'support'=>'site/support',
 			    'profile'=>'site/profile',
-			    'officehours'=>'site/officehours',
+		
+			     'about'=>'site/about',
 			    'login'=>'site/login',
 			    'exercise/<urltitle>'=>'exercise/view',
+			    'topic/<urltitle>'=>'topic/view',
+			    'course/<urltitle>'=>'course/view',
 			    'testexercise/<urltitle>'=>'exercise/test',
 			    'lesson/create'=>'lesson/create',
 			    'lesson/<urltitle>'=> 'lesson/view',
+			    'questions/<question>'=> 'questions/index',
+			    '*'=>'site/index',
 			    array('api/create', 'pattern'=>'api/<model:\w+>', 'verb'=>'POST'),
-				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
-				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
-				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 				
 			),
 			'showScriptName'=>false,

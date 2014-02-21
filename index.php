@@ -25,10 +25,7 @@ require_once($yii);
 Yii::createWebApplication($config)->run();
 } else {
 
-echo "To get the site up and running you will need to change /protected/config/secrets.example.php to reflect your local environment";
-
-	
-	
+echo "To get the site up and running you will need to change /protected/config/secrets.example.php to /protected/config/secrets.php and reflect your local environment.";
 }
 
 
