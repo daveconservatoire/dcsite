@@ -1,7 +1,12 @@
 RewriteEngine on
 
+RewriteCond %{HTTP HOST} = localhost
+RewriteBase /dcsite
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . index.php
 
+<IfModule mod_php5.c>
+php_value short_open_tag 1
+</IfModule>
