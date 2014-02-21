@@ -1,9 +1,8 @@
 RewriteEngine on
-RewriteBase /dcsite
+
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
- 
 RewriteRule . index.php
 
 php_value short_open_tag 1
