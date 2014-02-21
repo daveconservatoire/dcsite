@@ -1,6 +1,6 @@
 RewriteEngine on
 
-RewriteCond %{HTTP HOST} = localhost
+
 RewriteBase /dcsite
 
 RewriteCond %{REQUEST_FILENAME} !-f

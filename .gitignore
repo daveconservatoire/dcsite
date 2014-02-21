@@ -1,13 +1,14 @@
 
 protected/config/secrets.php
-
+.htaccess
+.DS_Store
 assets/*
 !assets/.gitignore
 protected/runtime/*
 !protected/runtime/.gitignore
 protected/data/*.db
 <<<<<<< HEAD
-.DS_Store
+
 =======
 .htaccess
 
