@@ -50,8 +50,6 @@ class CourseController extends Controller
 	}
 
 
-
-
 	/**
 	 * Lists all models.
 	 */

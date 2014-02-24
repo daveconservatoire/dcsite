@@ -3,15 +3,10 @@
 // uncomment the following to define a path alias
 // Yii::setPathOfAlias('local','path/to/local-folder');
 
-
-
-
 //Loading senstive variables
 
 $secrets='secrets.php';	
 include($secrets);
-
-
 
 
 // This is the main Web application configuration. Any writable
@@ -94,19 +89,15 @@ return array(
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'rules'=>array(
-			       'index'=>'site/index',
+			    'index'=>'site/index',
 			    'support'=>'site/support',
 			    'profile'=>'site/profile',
-		
-			     'about'=>'site/about',
+			    'contact'=>'site/contact',
+			    'about'=>'site/about',
 			    'login'=>'site/login',
-			    'exercise/<urltitle>'=>'exercise/view',
 			    'topic/<urltitle>'=>'topic/view',
 			    'course/<urltitle>'=>'course/view',
-			    'testexercise/<urltitle>'=>'exercise/test',
-			    'lesson/create'=>'lesson/create',
 			    'lesson/<urltitle>'=> 'lesson/view',
-			    'questions/<question>'=> 'questions/index',
 			    '*'=>'site/index',
 			    array('api/create', 'pattern'=>'api/<model:\w+>', 'verb'=>'POST'),
 				

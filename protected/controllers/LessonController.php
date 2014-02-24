@@ -45,8 +45,7 @@ class LessonController extends Controller
 	 */
 	public function actionView($urltitle)
 	{
-	   
-	   
+	   	   
 	   $lessonmodel=Lesson::model()->find("urltitle = '".$urltitle."'");
 	   //Add in special Facebook, Twitter and Google metadata for video pages. 
 	   
@@ -74,16 +73,10 @@ class LessonController extends Controller
 	      Yii::app()->clientScript->registerMetaTag('@dconservatoire' ,null,null,array('name'=>'twitter:site'));
 	      Yii::app()->clientScript->registerMetaTag('https://www.youtube.com/embed/'.$lessonmodel->youtubeid ,null,null,array('name'=>'twitter:player'));
 	      Yii::app()->clientScript->registerMetaTag('316' ,null,null,array('name'=>'twitter:player:height'));
-	      Yii::app()->clientScript->registerMetaTag('560' ,null,null,array('name'=>'twitter:player:width'));
-
-     
-	         
-	      
+	      Yii::app()->clientScript->registerMetaTag('560' ,null,null,array('name'=>'twitter:player:width'));	      
 	   }
 	   
-	
-	
-	
+
 		$this->render($lessonmodel->filetype,array(
 			'model'=>$lessonmodel
 		));
@@ -91,10 +84,7 @@ class LessonController extends Controller
 		
 	}
 	
-	public function actionTestExercise ($urltitle) {
-		
-			$this->render("etest",array('title'=>$urltitle));
-	}
+
 
    public function actionIndex(){
 	   $this->redirect(bu());
