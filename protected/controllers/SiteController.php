@@ -194,6 +194,6 @@ aiming to provide a world-class music education for everyone.' ,null,null,array(
 	public function actionLogout()
 	{
 		Yii::app()->user->logout();
-		$this->redirect(bu());
+		$this->redirect('http://www.daveconservatoire.org');
 	}
 }
