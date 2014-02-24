@@ -95,7 +95,7 @@ $recentexs=UserExerciseAnswer::Model()->findAll(array("select"=>"t.exerciseId", 
    
         <li class="span3">
           <div class="thumbnail">
-      <a href="<? echo Yii::app()->request->baseUrl; ?>/lesson/<?=$exinfo->urltitle?>" class="thumbnail"> <img src='images/exercise.jpg' style="width:210px; height: 168px"/></a>
+      <a href="<? echo Yii::app()->request->baseUrl; ?>/lesson/<?=$exinfo->urltitle?>" class="thumbnail"> <img src='img/exercise.jpg' style="width:210px; height: 168px"/></a>
             <div class="caption">
               <h5><?=$exinfo->title?></h5>
 
