@@ -31,14 +31,14 @@ foreach ($lessons as $lesson){
 			<? endif;?>
 			<?php if ($lesson->filetype == "p"): ?>
 	<a href='<?=bu();?>/lesson/<?=$lesson->urltitle;?>' class='thumbnail vertical-shadow suggested-action'>
-				<img src='<?=bu();?>/images/playlist.jpg'/>
+				<img src='<?=bu();?>/img/playlist.jpg'/>
 				<p><?=$lesson->title;?></p>
 				</a>
 
 			<? endif;?>
 			<?php if ($lesson->filetype == "e"): ?>
 	<a href='<?=bu();?>/lesson/<?=$lesson->urltitle;?>' class='thumbnail vertical-shadow suggested-action'>
-				<img src='<?=bu();?>/images/exercise.jpg'/>
+				<img src='<?=bu();?>/img/exercise.jpg'/>
 			<p><?=$lesson->title;?></p>
 				</a>
 
@@ -84,14 +84,14 @@ foreach($lessons as $lesson): ?>
 			<? endif;?>
 			<?php if ($lesson->filetype == "p"): ?>
 	<a href='<?=bu();?>/lesson/<?=$lesson->urltitle;?>' class='thumbnail vertical-shadow suggested-action'>
-				<img src='<?=bu();?>/images/playlist.jpg'/>
+				<img src='<?=bu();?>/img/playlist.jpg'/>
 				<p><?=$lesson->title;?></p>
 				</a>
 
 			<? endif;?>
 			<?php if ($lesson->filetype == "e"): ?>
 	<a href='<?=bu();?>/lesson/<?=$lesson->urltitle;?>' class='thumbnail vertical-shadow suggested-action'>
-				<img src='<?=bu();?>/images/exercise.jpg'/>
+				<img src='<?=bu();?>/img/exercise.jpg'/>
 			<p><?=$lesson->title;?></p>
 				</a>
 
