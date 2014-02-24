@@ -344,7 +344,7 @@ var Khan = (function() {
             // was a dependency of 'math' so this isn't really any different.
             mods.push("answer-types", "tmpl", "jquery.adhesion", "calculator",
                 {
-                    src: urlBase + "utils/MathJax/2.1/MathJax.js?config=KAthJax-da9a7f53e588f3837b045a600e1dc439"
+                    src: urlBase + "exercises/utils/MathJax/2.1/MathJax.js?config=KAthJax-da9a7f53e588f3837b045a600e1dc439"
                 });
 
             return mods;
@@ -938,24 +938,24 @@ var Khan = (function() {
         // Load in jQuery and underscore, as well as the interface glue code
         // TODO(cbhl): Don't load history.js if we aren't in readOnly mode.
         var initScripts = [
-                urlBase+"local-only/jquery.js",
-                urlBase+"local-only/jquery.ui.core.js",
-                urlBase+"local-only/jquery.ui.widget.js",
-                urlBase+"local-only/jquery.ui.mouse.js",
-                urlBase+"local-only/jquery.ui.position.js",
-                urlBase+"local-only/jquery.ui.effect.js",
-                urlBase+"local-only/jquery.ui.effect-shake.js",
-                urlBase+"local-only/jquery.ui.button.js",
-                urlBase+"local-only/jquery.ui.draggable.js",
-                urlBase+"local-only/jquery.ui.resizable.js",
-                urlBase+"local-only/jquery.ui.dialog.js",
-                urlBase+"local-only/jquery.qtip.js",
-                urlBase+"local-only/underscore.js",
-                urlBase+"local-only/jed.js",
-                urlBase+"local-only/i18n.js",
+                urlBase+"exercises/local-only/jquery.js",
+                urlBase+"exercises/local-only/jquery.ui.core.js",
+                urlBase+"exercises/local-only/jquery.ui.widget.js",
+                urlBase+"exercises/local-only/jquery.ui.mouse.js",
+                urlBase+"exercises/local-only/jquery.ui.position.js",
+                urlBase+"exercises/local-only/jquery.ui.effect.js",
+                urlBase+"exercises/local-only/jquery.ui.effect-shake.js",
+                urlBase+"exercises/local-only/jquery.ui.button.js",
+                urlBase+"exercises/local-only/jquery.ui.draggable.js",
+                urlBase+"exercises/local-only/jquery.ui.resizable.js",
+                urlBase+"exercises/local-only/jquery.ui.dialog.js",
+                urlBase+"exercises/local-only/jquery.qtip.js",
+                urlBase+"exercises/local-only/underscore.js",
+                urlBase+"exercises/local-only/jed.js",
+                urlBase+"exercises/local-only/i18n.js",
                 // TODO(csilvers): I18N: pick the file based on lang=XX param
-                urlBase+"local-only/localeplanet/icu.en-US.js",
-                urlBase+"local-only/i18n.js",
+                urlBase+"exercises/local-only/localeplanet/icu.en-US.js",
+                urlBase+"exercises/local-only/i18n.js",
                 urlBase+"js/exercises-stub.js",
                 urlBase+"js/history.js",
                 urlBase+"js/interface.js",
@@ -972,7 +972,7 @@ var Khan = (function() {
     var lastsound=$("#LASTSOUND").text(); 
 lowLag.init();	
 for(var i=firstsound; i<=lastsound;i++){
-lowLag.load([urlBase+"sounds/"+exerciseUrlTitle+"/"+i+".mp3",urlBase+"sounds/"+exerciseUrlTitle+"/"+i+".wav"], 'sound'+i);
+lowLag.load([urlBase+"exercises/sounds/"+exerciseUrlTitle+"/"+i+".mp3",urlBase+"exercises/sounds/"+exerciseUrlTitle+"/"+i+".wav"], 'sound'+i);
 
 
 }
@@ -987,7 +987,7 @@ lowLag.load([urlBase+"sounds/"+exerciseUrlTitle+"/"+i+".mp3",urlBase+"sounds/"+e
     var lastsound=$("#LASTSOUND").text(); 
 lowLag.init();	
 for(var i=firstsound; i<=lastsound;i++){
-lowLag.load([urlBase+"sounds/"+exerciseUrlTitle+"/"+i+".mp3",urlBase+"sounds/"+exerciseUrlTitle+"/"+i+".wav"], 'sound'+i);
+lowLag.load([urlBase+"exercises/sounds/"+exerciseUrlTitle+"/"+i+".mp3",urlBase+"exercises/sounds/"+exerciseUrlTitle+"/"+i+".wav"], 'sound'+i);
 
 }
     
@@ -2210,7 +2210,7 @@ lowLag.load([urlBase+"sounds/"+exerciseUrlTitle+"/"+i+".mp3",urlBase+"sounds/"+e
         var src, deps = [];
 
         if (typeof modNameOrObject === "string") {
-            src = urlBase + "/utils/" + modNameOrObject + ".js";
+            src = urlBase + "/exercises/utils/" + modNameOrObject + ".js";
             deps = Khan.moduleDependencies[modNameOrObject] || [];
         } else {
             src = modNameOrObject.src;

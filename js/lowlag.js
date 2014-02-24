@@ -12,7 +12,7 @@ var lowLag = new function(){
 	this.audioTagTimeToLive = 5000;
 	
 
-	this.sm2url = urlBase+'swf/';
+	this.sm2url = urlBase+'exercises/swf/';
 
 	this.soundUrl = "";
 
