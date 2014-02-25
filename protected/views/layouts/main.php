@@ -58,9 +58,9 @@
 				<a class="brand" id="mobilebrand" href="http://www.daveconservatoire.org"><img src="<?=bu()."/img/dcvert.png";?>" alt="Dave Conservatoire" style="width:400px" /></a>
 				<div class="navbar">
 					<div class="navbuttons">
-						<a href="<? echo Yii::app()->request->baseUrl;?>/site/about" class="btn dc-btn-yellow">About</a>
-						<a href="<? echo Yii::app()->request->baseUrl;?>/site/support" class="btn dc-btn-orange">Donate</a>
-						<a href="<? echo Yii::app()->request->baseUrl;?>/site/contact" class="btn   dc-btn-redorange">Contact</a>
+						<a href="<? echo Yii::app()->request->baseUrl;?>/about" class="btn dc-btn-yellow">About</a>
+						<a href="<? echo Yii::app()->request->baseUrl;?>/support" class="btn dc-btn-orange">Donate</a>
+						<a href="<? echo Yii::app()->request->baseUrl;?>/contact" class="btn dc-btn-redorange">Contact</a>
 						
 					
 						
