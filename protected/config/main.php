@@ -90,7 +90,7 @@ return array(
 			'urlFormat'=>'path',
 			'rules'=>array(
 			    'index'=>'site/index',
-			    'support'=>'site/support',
+			    'donate'=>'site/donate',
 			    'profile'=>'site/profile',
 			    'contact'=>'site/contact',
 			    'about'=>'site/about',

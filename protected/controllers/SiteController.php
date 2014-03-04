@@ -79,7 +79,7 @@ aiming to provide a world-class music education for everyone.' ,null,null,array(
 
 	
 	
-		public function actionsupport()
+		public function actionDonate()
 	{
 	
 		$this->render('support');
