@@ -78,6 +78,9 @@ blockquote { border-left:3px solid #2BA6CB; }
 .media-body a:hover { color:#777; }
 .big {font-size:100px; }
 .myslider{ display:none; }
+#twitter-widget-0 {
+width: 115px !important;
+}
 
 .well {
 	background-color:#D3CDC4;

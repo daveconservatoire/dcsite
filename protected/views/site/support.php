@@ -1,42 +1,50 @@
 <?php
 $this->pageTitle='Support Us | '.Yii::app()->name ;
 ?>
-	<div class="banner">
+<div class="banner">
 	<div class="container intro_wrapper">
-	<div class="inner_content">
-	<h1>This is Cool!  How can I help?</h1>
-	<h1 class="title">Support</h1>
-	
-
-	</div>
+		<div class="inner_content">
+			<h1>Dave Conservatoire helps over 30,000 people each month on their musical journey.</h1>
+			<h1 class="title">Donate and Support</h1>
+			<h1>Here's how you can us help increase our impact:</h1>
 		</div>
-			</div>
-			
-				<div class="container wrapper">
+	</div>
+</div>
+<div class="container wrapper">
 	<div class="inner_content">
 	<div class="pad30"></div>
 
-<p>Music is so very important as it helps us to express ourselves, communicate with those around us and form friendships with others.  Perhaps, most importantly, along with other arts, music makes us human.  It is for everyone and will mean something different for everyone. </p>
+					<div class="row">
+			<div class="span8">
+<h2>Become a Patron</h2>
+<p>If you have benefitted from using this website then becoming a Dave Conservatoire patron is the best possible way to say thanks and help us in our mission to make music education free for everyone. </p>
+<p>Via funding platform Patreon.com, you are able to donate a small amount of money every time a new lesson is created for the site.  Your pledge could be anything from cents to dollars, but any amount given will help support and extend the site's mission.</p>
+<p>Depending on how much you decide to pledge, you can access perks including one-to-one music tuition, monthly hangouts and more.</p>
+<p>You can find out more about becoming a Patron on the <a href="http://www.patreon.com/daveconservatoire" target="_blank">Dave Conservatoire Patreon page</a>.</p>
+			</div>
+			<div class="span3 offset1">
+			<div style="text-align:center; padding-top:8px">
+<a href="http://patreon.com/daveconservatoire" target="_blank" class="btn btn-block dc-btn-yellow">
+	<h2>Support Dave Conservatoire on Patreon.com</h2>
+</a>
+			</div>
+</div>
 
-<p>In spite of this, there are times when, for lots of reasons, people don't get access to the help they need to make music a part of their lives.  </p>
-
-<h3 style="padding:10px 15px 15px 15px; "><em>I have massive plans for Dave Conservatoire.  Its main purpose is to ensure that no-one misses out on the excitement, joy and fun of learning about music, wherever they are or whatever their situation.</em></h3>  
-
-
-
-<p>Regardless of whether someone wants to try a motivic analysis of Beethoven, learn to compose or just play their favourite songs on the guitar, I want to help them achieve those goals.  My plan is to cover as much as possible from music theory to performance, composition, improvisation, musical analysis and lots more.</p>
-
-<p>Thanks to supportive feedback from <a href="http://www.khanacademy.org" target="_blank">Khan Academy</a>, <a href="http://www.openculture.com" target="_blank">Open Culture</a>, <a href="http://www.rcm.ac.uk/" target="_blank">The Royal College of Music</a> and the <a href="http://www.reddit.com/r/musictheory" target="_blank">Music Theory group on Reddit</a> - I'm more confident than ever that I'm heading in the right direction to achieving some of these aims.</p>
-
-<p>This is a very exciting prospect, but it is not something I'm going to be able to achieve on my own. </p>
-
-<p>If you think I might be on to something here, have learned something or are excited about this project and would like to help; here's what you can do:</p>
-<p>&nbsp;</p>
+		
+			</div></div>
+				<hr />
+				
 <div class="row">
-<div class="span4">
-<h3>Help financially</h3>
-<div style="text-align:center; padding-top:8px">
+			<div class="span8">
+			<h2>Give a one-time or recurring donation</h2>
+			<p>If you prefer to make a one-off or recurring contribution to the development of the site, any amount donated via Paypal is greatly received.</p>
+			<p>Paypal securely accepts all major credit and debit cards in all currencies.</p>
 
+<p>&nbsp;</p>
+			</div>
+			<div class="span3 offset1">
+			<div style="text-align:center; padding-top:8px">
+<div class="btn btn-block dc-btn-orange">
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 <input type="hidden" name="cmd" value="_s-xclick">
 <input type="hidden" name="hosted_button_id" value="UNU8E3PLEYG3N">
@@ -44,22 +52,63 @@ $this->pageTitle='Support Us | '.Yii::app()->name ;
 <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
 </form>
 </div>
-<p>Your donation will go towards hosting costs and the future development of the site.  Clicking on this button will take you to a secure Paypal donation page.</p>
+</div>
 
-</div>
-<div class="span4">
-<h3>Tell everyone you know!</h3>
-<p>Please help get the word out on <a href="http://www.facebook.com" target="_blank">Facebook</a>, <a href="http://www.twitter.com" target="_blank">Twitter</a> and <a href="http://www.youtube.com" target="_blank">Youtube</a>.  Oh, and in the real world too (I can't hyperlink to that)!</p>
-</div>
-<div class="span4">
+		
+			</div></div>
+				<hr />
+				
+									<div class="row">
+			<div class="span8">
+			<h2>Donate your skills and expertise</h2>
+			<p>No matter what your skills: amazing beatboxer, composer, vocal coach, bassoonist, programming ninja; if you'd like to contribute some of your time, energy and skills to the site, we want to hear from you!</p>
+			<p>We'd particularly like to get to know you if you enjoy contributing software to open source projects, are interested in machine learning, can make sense of large datasets, are a whizz at Google Analytics or are a keen filmmaker.</p>
 
-<h3>Donate your time and skills.</h3>
-<p>If you think you have skills that might be helpful to the project please get in touch. (web design/development ninjas, particularly welcome!)</p>
-<div style="text-align:center; padding-top:10px">
-          <a class="btn btn-large" href="/site/contact">
-      Get in touch!
-       </a>
-       </div>
-</div>
-</div>
+<p>&nbsp;</p>
+			</div>
+		<div class="span3 offset1">
+			<div style="text-align:center; padding-top:8px">
+			<a href="contact" class="btn btn-block dc-btn-redorange">
+	<h2>Get in Touch!</h2>
+</a></div>
+			
 	</div></div>
+				<hr />
+				
+													<div class="row">
+			<div class="span8">
+			<h2>Spread the word</h2>
+			<p>Even if you tell those you meet about the site and what is has to offer, you'd be helping a great deal spread the word about the project.</p>
+			<p>A like, follow or any mention in the real world would be fantastic!</p>
+
+<p>&nbsp;</p>
+			</div>
+		<div class="span3 offset1">
+			<div style="text-align:center; padding-top:8px">
+						<div style="text-align:center; padding-top:8px; margin: 0 auto">
+						<div class="btn btn-block dc-btn-red">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=447944221964271";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script><div class="fb-like" data-href="http://www.daveconservatoire.org" data-layout="box_count" data-action="recommend" data-show-faces="true" data-share="true"></div></div>
+
+</div></div>
+
+			<div style="text-align:center; padding-top:8px">
+			<div href="" class="btn btn-block dc-btn-red">
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.daveconservatoire.org" data-width="115" data-text="Dave Conservatoire - an online school where you can learn music for free" data-via="dconservatoire" data-size="large">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</div></div>
+			
+	</div></div>
+				<hr />
+
+    
+	   			</div>
+</div>
+</div>
+	</div>
