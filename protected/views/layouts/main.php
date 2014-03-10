@@ -86,6 +86,7 @@
 						<a href="http://www.youtube.com/daveconservatoire" target="_blank"><img class="socialicon" src="<?=bu()."/img/socialicons/youtube.png";?>" /></a>
 						<a href="http://www.twitter.com/dconservatoire" target="_blank"><img class="socialicon" src="<?=bu()."/img/socialicons/twitter.png";?>" /></a>
 						<a href="http://www.facebook.com/daveconservatoire" target="_blank"><img class="socialicon" src="<?=bu()."/img/socialicons/facebook.png";?>" /></a>
+						<a href="https://plus.google.com/113803255247330342246" rel ="publisher" target="_blank"><img class="socialicon" src="<?=bu()."/img/socialicons/gplus.png";?>" /></a>
 						</span>
 		            </div>
 				</div>
