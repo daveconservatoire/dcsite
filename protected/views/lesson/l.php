@@ -115,38 +115,11 @@ if (!empty($this->pageDescription))
  </div>
 					<ul class="pager">
   <li class="previous">
-  <? if(isset($prev)){ ?> 
-		<? if($prev->filetype=="l" || $prev->filetype=="p") {
-		?>
-		<a href="<? echo Yii::app()->request->baseUrl;?>/lesson/<?=$prev->urltitle;?>">	
-		<?			
-		} else {
-			?>
-			<a href="<? echo Yii::app()->request->baseUrl;?>/exercise/<?=$prev->urltitle;?>">	
-			<?
-		}
-		
-		?>
-		&larr; Previous Lesson
-		</a>
-		<? }?>
+<? $this->renderPartial("//layouts/components/prev", array('model'=>$model));?>
 
   </li>
   <li class="next">
-  <? if(isset($next)){?> 
-		<? if($next->filetype=="l" || $next->filetype=="p") {
-		?>
-		<a href="<? echo Yii::app()->request->baseUrl;?>/lesson/<?=$next->urltitle;?>">	
-		<?			
-		} else {
-			?>
-			<a href="<? echo Yii::app()->request->baseUrl;?>/exercise/<?=$next->urltitle;?>">	
-			<?
-		}
-		?>
-		Next Lesson &rarr;
-		</a>
-		<? };?>
+<? $this->renderPartial("//layouts/components/next", array('model'=>$model));?>
   </li>
 </ul>
 		  <? if($model->description!=""):?>

@@ -5,7 +5,7 @@
 		<div class="inner_content">
 
 <? $this->renderPartial("//layouts/components/sidebar", array('model'=>$model));?>
-		
+
 						
 <div style="text-align:center;">			
 <div id="starterdiv">					
@@ -137,6 +137,7 @@
         </div>
     </div></div>
     <div style="clear: both;"></div>
+
 </div>
 
                                         </div>
@@ -157,10 +158,21 @@
                         </div>
                         </article>
                     </div>
+
                   
                     <div class="badge-award-container" id="badge-notification-container" style="display:none;"></div>
         </div>
+                                    																		<ul class="pager">
+  <li class="previous">
+<? $this->renderPartial("//layouts/components/prev", array('model'=>$model));?>
+
+  </li>
+  <li class="next">
+<? $this->renderPartial("//layouts/components/next", array('model'=>$model));?>
+  </li>
+</ul>	
     </div>
+
 
     <div class="push"></div>
 
@@ -195,7 +207,11 @@ include($address.bu()."/exercises/".$end.".html");
 					</div>
 				
 				</div>
+
+				
 			</div>
+
 						</div>
+	
 	<!--//page-->
 	

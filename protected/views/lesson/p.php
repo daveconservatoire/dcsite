@@ -101,6 +101,15 @@ endforeach;
 ?> 	 
 	</div></div>
 	 	<div style="clear:both"></div>
+	 					                            																		<ul class="pager">
+  <li class="previous">
+<? $this->renderPartial("//layouts/components/prev", array('model'=>$model));?>
+
+  </li>
+  <li class="next">
+<? $this->renderPartial("//layouts/components/next", array('model'=>$model));?>
+  </li>
+</ul>	
 	 	
 	 		<!-- Begin Slider JavaScript -->
 		<script type="text/javascript" src="<? echo Yii::app()->request->baseUrl;?>/js/jquery.easing.1.3.js"></script>
@@ -120,6 +129,7 @@ endforeach;
 					</div>
 				
 				</div>
+
 	
 	<!--//page-->
 		        <script type="text/javascript">
