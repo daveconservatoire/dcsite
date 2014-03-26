@@ -91,7 +91,6 @@ return array(
 			'rules'=>array(
 			    'index'=>'site/index',
 			    'donate'=>'site/donate',
-			    'profile'=>'site/profile',
 			    'contact'=>'site/contact',
 			    'about'=>'site/about',
 			    'login'=>'site/login',

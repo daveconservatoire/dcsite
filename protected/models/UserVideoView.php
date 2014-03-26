@@ -63,6 +63,7 @@ class UserVideoView extends CActiveRecord
 		return array(
 			'user' => array(self::BELONGS_TO, 'User', 'userId'),
 			'lesson' => array(self::BELONGS_TO, 'Lesson', 'lessonId'),
+		
 		);
 	}
 

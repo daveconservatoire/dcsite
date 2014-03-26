@@ -64,23 +64,13 @@
 			</div>
 		</div>
 
-<? $counter=1;?>
+
 	<!--banner-->
 
 		<div id="courses">
+<? foreach($courses as $course):
 
-<?
-// Getting the lessons for each course - would like to move this controller but not sure how!
-$courses=Course::model()->findAll(array('order'=>'id DESC'));
-$coursecounter = 0;
-foreach($courses as $course): 
-$course=Course::model()->findByPk($course->id);
-$topics=Topic::model()->findAll("courseId=".$course->id ." ORDER BY sortorder");
-$counter=1;
-
-$colourarray =array("yellow", "orange", "orangered","red");
-$this->pageTitle='Home | '.Yii::app()->name ;
-?>
+$counter=0; ?>
 
 		<div class="banner">
 			<div class="container intro_wrapper">
@@ -96,9 +86,13 @@ $this->pageTitle='Home | '.Yii::app()->name ;
 			<div class="thumbnails tabbable">
 				<ul class="courselist" style="width: 100%">
 
-					<? foreach($topics as $topic): ?>
+					<? foreach($course->topics as $topic): ?>
 	
-					<li class="span4 dc-btn-<?=$colourarray[$coursecounter];?>" style="margin-bottom:5px"><a class="btn btn-large btn-block dc-btn-<?=$colourarray[$coursecounter];?>" href="<?=bu();?>/topic/<?=$topic->urltitle;?>"><h3><?=$topic->title;?></h3></a></li>
+					<li class="span4 
+					
+					<? if (in_array($topic->id,$videosviewedarray) || in_array($topic->id,$exercisesansweredarray)):?> 
+					ribbon ribbon-inprogress 
+					<? endif;?>" style="margin-bottom:5px"><a class="btn btn-large btn-block dc-btn-yellow" href="<?=bu();?>/topic/<?=$topic->urltitle;?>"><h3><?=$topic->title;?></h3></a></li>
          
 		
     <? if($counter==3){ ?>
@@ -109,6 +103,6 @@ $this->pageTitle='Home | '.Yii::app()->name ;
 			</div>
 		</div>
 		<div class="pad30"></div>
-<? $coursecounter++;?>
+
 <? endforeach;?>
 	</div>

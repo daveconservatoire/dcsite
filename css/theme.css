@@ -512,15 +512,35 @@ h1.intro {  line-height:40px; font-weight:300;}
 	text-align: center;
 	margin-bottom:25px;
 }
-.tile.tile-hot:before {
+.ribbon {
+
+
+
+	position: relative;
+	text-align: center;
+	margin-bottom:25px;
+}
+.ribbon.ribbon-inprogress:before {
     background: url("../img/ribbon.png") 0 0 no-repeat;
-    background-size: 82px 82px;
+    background-size: 72px 72px;
     content: "";
-    height: 82px;
+    height: 72px;
     position: absolute;
     right: -4px;
     top: -4px;
-    width: 82px;
+    width: 72px;
+}
+
+
+.ribbon.ribbon-viewed:before {
+    background: url("../img/ribbon-viewed.png") 0 0 no-repeat;
+    background-size: 72px 72px;
+    content: "";
+    height: 72px;
+    position: absolute;
+    right: -4px;
+    top: -4px;
+    width: 72px;
 }
 .tile p { margin: 10px 0 22px 0; }
 .tile-image {
@@ -1482,6 +1502,13 @@ ul#itemContainer { list-style: none; padding:0 0; margin:0 0; width:100%; }
   margin-right: -6px;
   opacity: .25;
 }
+
+.bs-docs-sidenav .icon-adjust {
+  float: right;
+  margin-top: 2px;
+  margin-right: -6px;
+
+}
 .bs-docs-sidenav > li > a:hover {
   background-color: #F7941E;
 }
@@ -2014,6 +2041,12 @@ padding: 12px 10px;
 position: relative;
 background-color: #ffffff;
 
+}
+
+.profile-page {
+	
+
+background-color: #ffffff;
 }
 
 	

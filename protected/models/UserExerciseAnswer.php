@@ -62,6 +62,7 @@ class UserExerciseAnswer extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'user' => array(self::BELONGS_TO, 'User', 'userId'),
+			'exercise' => array(self::BELONGS_TO, 'Lesson', 'exerciseId'),
 		);
 	}
 

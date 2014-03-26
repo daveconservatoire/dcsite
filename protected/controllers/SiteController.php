@@ -55,15 +55,32 @@ aiming to provide a world-class music education for everyone.' ,null,null,array(
 	      Yii::app()->clientScript->registerMetaTag('http://www.daveconservatoire.org/images/logo.png',null,null,array('name'=>'twitter:image'));
 	      Yii::app()->clientScript->registerMetaTag('@dconservatoire' ,null,null,array('name'=>'twitter:creator'));
 	      Yii::app()->clientScript->registerMetaTag('@dconservatoire' ,null,null,array('name'=>'twitter:site'));
+	      
+$courses=Course::model()->findAll(array('order'=>'id DESC'));
+$this->pageTitle='Home | '.Yii::app()->name ;
 
-		if(!Yii::app()->user->isGuest):	
-			$recentvids=UserVideoView::Model()->findAll(array("condition"=>"userId = ".Yii::app()->user->dcid, "limit"=>4, "order"=>"timestamp DESC"));
-			$recentexs=UserExerciseAnswer::Model()->findAll(array("select"=>"t.exerciseId", "condition"=>"userId = ".Yii::app()->user->dcid, "limit"=>4, "order"=>"timestamp DESC", "distinct"=>true));
-			$newlessons=Lesson::model()->findAll(array('condition'=>'filetype="l"', 'order'=>'timestamp DESC', 'limit'=>'10'));  
-			$this->render('index',array('recentvids'=>$recentvids,'recentexs'=>$recentexs,'newlessons'=>$newlessons));
+
+		if(Yii::app()->user->isGuest):	
+            
+			$this->render('index',array('courses'=>$courses));
 	    else:
-			$newlessons=Lesson::model()->findAll(array('condition'=>'filetype="l"', 'order'=>'timestamp DESC', 'limit'=>'10'));  
-			$this->render('index', array('newlessons'=>$newlessons));
+	    $user=User::model()->findByPk(Yii::app()->user->dcid);
+	    $videosviewedarray = array();
+	    	foreach ($user->videosviewed as $videoviewed):
+	    		   if(!in_array($videoviewed->lesson->topicno, $videosviewedarray)){
+                         $videosviewedarray[]=$videoviewed->lesson->topicno;
+                   }
+	    	endforeach;
+	    	
+	   
+	   $exercisesansweredarray = array();
+	    	foreach ($user->exercisesanswered as $exerciseanswered):
+	    		   if(!in_array($exerciseanswered->exercise->topicno, $exercisesansweredarray)){
+                         $exercisesansweredarray[]=$exerciseanswered->exercise->topicno;
+                   }
+	    	endforeach;
+	    	
+		$this->render('index', array('courses'=>$courses,'videosviewedarray'=>$videosviewedarray,'exercisesansweredarray'=>$exercisesansweredarray));
 		endif;
 	}
 	
