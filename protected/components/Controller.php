@@ -22,4 +22,35 @@ class Controller extends CController
 	public $breadcrumbs=array();
 	public $extraDesc="";
 	public $extraKeywords="";
-}
+	
+	public $tempuserid="";
+	
+	public function init() {
+	
+			
+		
+			    
+			
+		
+		if (Yii::app()->user->isGuest&& !isset($_COOKIE['dc_tempusername'])):
+			$tempusername=genRandomString(20);
+			$tempuser=new User();
+			$tempuser->username=$tempusername;
+			$tempuser->email="noemailyet@tempuser.com";
+			$tempuser->name="Temp User - ".$tempusername;
+			$tempuser->points=1;
+			if($tempuser->validate()){
+			setcookie("dc_tempusername",$tempusername, time() + (10 * 365 * 24 * 60 * 60));
+			$tempuser->save();
+			}
+			else{
+				echo CHtml::errorSummary($tempuser);
+			}
+		endif;
+
+echo $_COOKIE['dc_tempusername'];	
+		
+	
+		}
+		
+		}

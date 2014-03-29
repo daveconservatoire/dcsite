@@ -90,9 +90,13 @@ $counter=0; ?>
 	
 					<li class="span4 
 					
-					<? if (in_array($topic->id,$videosviewedarray) || in_array($topic->id,$exercisesansweredarray)):?> 
+					<? 
+					if (!Yii::app()->user->isGuest) {
+					if (in_array($topic->id,$videosviewedarray) || in_array($topic->id,$exercisesansweredarray)):?> 
 					ribbon ribbon-inprogress 
-					<? endif;?>" style="margin-bottom:5px"><a class="btn btn-large btn-block dc-btn-yellow" href="<?=bu();?>/topic/<?=$topic->urltitle;?>"><h3><?=$topic->title;?></h3></a></li>
+					<? 
+				endif;
+				}?>" style="margin-bottom:5px"><a class="btn btn-large btn-block dc-btn-yellow" href="<?=bu();?>/topic/<?=$topic->urltitle;?>"><h3><?=$topic->title;?></h3></a></li>
          
 		
     <? if($counter==3){ ?>

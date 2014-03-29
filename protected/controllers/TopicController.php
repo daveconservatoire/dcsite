@@ -76,33 +76,53 @@ class TopicController extends Controller
 	
 	    //$model=loadModel();
 	    //$course=loadCourse($model->courseId;);
+	   $topic=$this->loadModel($urltitle);
+	   
+	   
+	    $videosviewedarray = array();
+	    $videolistarray = array();
+	       $exercisesansweredarray = array();
+	    $exerciselistarray = array();
+	    if(!Yii::app()->user->isGuest){	
+	    $user=User::model()->findByPk(Yii::app()->user->dcid);
+	   
+	    	foreach ($user->videosviewed as $videoviewed):
+	    		   if(!in_array($videoviewed->lesson->topicno, $videosviewedarray)){
+                         $videosviewedarray[]=$videoviewed->lesson->topicno;
+                   }
+                   $videolistarray[]=$videoviewed->lesson->id;
+	    	endforeach;
+	    	
+	   
 	
+	    	foreach ($user->exercisesanswered as $exerciseanswered):
+	    		   if(!in_array($exerciseanswered->exercise->topicno, $exercisesansweredarray)){
+                         $exercisesansweredarray[]=$exerciseanswered->exercise->topicno;
+                   }
+                   if(!in_array($exerciseanswered->exercise->id, $exerciselistarray)){
+                   $exerciselistarray[]=$exerciseanswered->exercise->id;
+                   }
+	    	endforeach;
+	    	}
+       
 	
 		$this->render('view',array(
-			'model'=>$this->loadModel($urltitle)
-		));
-		
-		
+			'topic'=>$topic, 'videosviewedarray'=>$videosviewedarray,'videolistarray'=>$videolistarray, 'exercisesansweredarray'=>$exercisesansweredarray, 'exerciselistarray'=>$exerciselistarray)
+		);
+			
+	
 	}
 	
 		public function loadModel($urltitle)
 	{
-		$model=Topic::model()->find("urltitle = '".$urltitle."'");
-		if($model===null) {
+		$topic=Topic::model()->find("urltitle = '".$urltitle."'");
+		if($topic===null) {
 			$this->redirect(bu());
 			}
-		return $model;
+		return $topic;
 	}
 	
-	public function loadCourse($courseId){
-		$course=Course::model()->find("id = '".$courseId."'");
-		if($course===null){
-			$this->redirect(bu());
-			}
-			return $course;
-		}
-	
-	
+ 
 	public function actionIndex() {
 		$this->redirect(bu());
 	}

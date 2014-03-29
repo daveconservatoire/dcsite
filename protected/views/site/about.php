@@ -18,7 +18,7 @@
 		<div class="span4">
 	
 		<h2>The story so far</h2>
-			<p>Hello, my name's Dave, and I'm a musician from London, UK.  I started Dave Conservatoire in 2011 to help people to learn music, no matter what their circumstances.  </p><p>Inspired by non-profit educational sites like <a href="href://www.khanacademy.org" target="_blank">Khan Academy</a> who teach millions of people for free, I wanted to see if I could do the same for people who wanted to learn, not just how to play music, but more importantly how music works.</a> 
+			<p>Hello, my name's Dave, and I'm a musician from London, UK.  I started Dave Conservatoire in 2011 to help people to learn music, no matter what their circumstances.  </p><p>Inspired by non-profit educational sites like <a href="http://www.khanacademy.org" target="_blank">Khan Academy</a> who teach millions of people for free, I wanted to see if I could do the same for people who wanted to learn, not just how to play music, but more importantly how music works.</a> 
 			</p>
 			<p>Music, to me, is the most wonderful and interesting thing in the world, it brings us together and teaches us about ourselves and the world around us.  Music helps to heal and helps people to grow in confidence and express their ideas.  Everyone should have the opportunity to learn about music and explore this wonderful world.  Whether you are lucky enough to have a music teacher or are learning by yourself, I'm here to help you on your journey!
 			
