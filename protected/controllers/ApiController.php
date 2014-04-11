@@ -61,15 +61,23 @@ public function actionCreate()
 	 $model->exerciseId=$exerciseinfo->id;
 	 
 	 //Increment user's points score
-	 if($model->complete==1){
+	if(!Yii::app()->user->isGuest){
 	 $user=User::model()->findByPk(Yii::app()->user->dcid);
+	 } 
+	
+	 if(Yii::app()->user->isGuest && isset($_COOKIE['dc_tempusername'])){
+	 $user=User::model()->findByAttributes(array('username'=>$_COOKIE['dc_tempusername']));
+	 }
+	 
+	 if($model->complete>0){
 	 $user->points=$user->points+1;
+	 }
 	 $user->save();
 	 }
-    }
+    
     
     if ($case=='videoview'){
-    
+    /*
     //If the video has already been marked complete we want to update status and the timestamp so it appears on latest videos. 
     if(UserVideoView::model()->exists('userId="'.Yii::app()->user->dcid.'" AND lessonId="'.$model->lessonId.'"')&& $model->status==1)
     {	
@@ -86,9 +94,18 @@ public function actionCreate()
       $model=$oldmodel;
     }	
   
-
+*/
     }
-    $model->userId=Yii::app()->user->dcid;   
+    
+    if(!Yii::app()->user->isGuest) {
+    $model->userId=Yii::app()->user->dcid; 
+    }
+    
+    if(Yii::app()->user->isGuest && $_COOKIE['dc_tempuser']) {
+	$user=User::model()->findByAttributes(array('username'=>$_COOKIE['dc_tempusername']));
+	$model->userId=$user->id;
+	
+    }  
     $model->timestamp=time();
 // Try to save the model
 

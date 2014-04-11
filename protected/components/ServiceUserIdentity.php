@@ -34,6 +34,12 @@ class ServiceUserIdentity extends CUserIdentity {
             
             $n=User::model()->count('username=:username', array(':username'=>$this->service->id));
             if($n<1){
+            
+            // This means this Facebook/Google/Email account hasn't logged in before.         
+           
+            if(!isset($_COOKIE['dc_tempusername'])) {
+            
+             // This code is for if there is no dctempusername set - should be rare. 
             $user=new User;
             $user->username=$this->service->id;
             $user->name= $this->username;
@@ -41,6 +47,45 @@ class ServiceUserIdentity extends CUserIdentity {
             $user->joinDate=time();
             $user->points=1;
             $user->save();
+            }  else {
+            
+            // This will convert existing temp account to belong to this Facebook/Google/Email account
+             
+	        $user=User::model()->findByAttributes(array('username'=>$_COOKIE['dc_tempusername']));
+	        $user->username=$this->service->id;
+	        $user->name= $this->username;
+            $user->email= $this->service->email;
+            $user->save();
+	        // unset cookie
+	        setcookie("dc_tempusername", "", time()-3600);
+	                       
+            }
+            
+            }
+            
+            if($n==1) {
+            $user = User::model()->findByAttributes(array('username'=>$this->service->id));
+            $tempuser= User::model()->findByAttributes(array('username'=>$_COOKIE['dc_tempusername']));
+            
+	            //updating temp records to join to user profile
+	            UserVideoView::model()->updateAll(array('userId'=>$user->id), 'userId='.$tempuser->id);
+	            UserExerciseAnswer::model()->updateAll(array('userId'=>$user->id), 'userId='.$tempuser->id);
+	            
+	             
+	            
+	            //also need to add points to existing total 
+	            if($tempuser->points>1){
+	            $user->points = ($user->points + $tempuser->points) -1;
+	            $user->save();
+	            }
+	            
+	            //unset cookie and delete tempuser account
+	            
+	            $tempuser->delete();
+	           
+	           setcookie("dc_tempusername", "", time()-3600);
+	            
+	            
             }
             
             $criteria=new CDbCriteria;

@@ -64,11 +64,24 @@
 						
 					
 						
-						<?php if (Yii::app()->user->isGuest): ?>
+						<?php if (Yii::app()->user->isGuest &&  !isset($_COOKIE['dc_tempusername'])): ?>
 						
 						<a href="<? echo Yii::app()->request->baseUrl;?>/login" class="btn dc-btn-red loginbutton">Login</a>
 						
-						<?php else: ?>
+						<?php 
+						endif;
+						if (Yii::app()->user->isGuest &&  isset($_COOKIE['dc_tempusername'])): 
+						 $user=User::model()->findByAttributes(array('username'=>$_COOKIE['dc_tempusername']));
+						 if ($user->points>1):
+						 ?>
+						 <a class="btn btn-success loginbutton" href="<? echo Yii::app()->request->baseUrl; ?>/login"><i class="icon-exclamation-sign icon-white"></i> Unclaimed points. Login to save your progress</a>
+						 <? else: ?>
+						 <a href="<? echo Yii::app()->request->baseUrl;?>/login" class="btn dc-btn-red loginbutton">Login</a>
+						 <? endif; 
+							 endif; ?>
+						 
+						
+						<? if(!Yii::app()->user->isGuest): ?>
 						<? $user=User::model()->findByPk(Yii::app()->user->dcid);?>
 						
 						<div class="btn-group loginbutton">

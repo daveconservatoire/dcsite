@@ -136,6 +136,9 @@ position: relative;
 .pad10 { padding-top:10px; }
 .pad5 { padding-top:5px; }
 
+
+.padding {padding: 10px}
+
 /* Margins */
 .marg-bottom5 { margin-bottom:5px; }
 .marg-left5 { margin-left:5px; }
@@ -2043,12 +2046,16 @@ background-color: #ffffff;
 
 }
 
-.profile-page {
-	
 
-background-color: #ffffff;
+
+
+.whiteback {
+background-color: #ffffff;	
 }
 
+ #user-form textarea,  #user-form input{
+	 width:96%;
+ }
 	
 
 

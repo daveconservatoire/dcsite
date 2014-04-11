@@ -45,17 +45,14 @@ class CourseController extends Controller
 	public function actionView($urltitle)
 	{
 	 $model=Course::model()->find("urltitle = '".$urltitle."'");
-	
-	if(Yii::app()->user->isGuest):	
-	       
-            $topics=Topic::model()->findAll("courseId=".$model->id ." ORDER BY sortorder");
-				$this->render('view',array(
-			'course'=>$model
-		));
-	    else:
-	    $user=User::model()->findByPk(Yii::app()->user->dcid);
-	    $videosviewedarray = array();
+	   $exercisesansweredarray = array();
+	    $exerciselistarray = array();
+	     $videosviewedarray = array();
 	    $videolistarray = array();
+	
+       if(!Yii::app()->user->isGuest):
+	    $user=User::model()->findByPk(Yii::app()->user->dcid);
+
 	    	foreach ($user->videosviewed as $videoviewed):
 	    		   if(!in_array($videoviewed->lesson->topicno, $videosviewedarray)){
                          $videosviewedarray[]=$videoviewed->lesson->topicno;
@@ -64,8 +61,7 @@ class CourseController extends Controller
 	    	endforeach;
 	    	
 	   
-	   $exercisesansweredarray = array();
-	    $exerciselistarray = array();
+	 
 	    	foreach ($user->exercisesanswered as $exerciseanswered):
 	    		   if(!in_array($exerciseanswered->exercise->topicno, $exercisesansweredarray)){
                          $exercisesansweredarray[]=$exerciseanswered->exercise->topicno;
@@ -74,12 +70,13 @@ class CourseController extends Controller
                    $exerciselistarray[]=$exerciseanswered->exercise->id;
                    }
 	    	endforeach;
+	    	endif;
 
 	
 		$this->render('view',array(
 			'course'=>$model, 'videosviewedarray'=>$videosviewedarray,'videolistarray'=>$videolistarray, 'exercisesansweredarray'=>$exercisesansweredarray, 'exerciselistarray'=>$exerciselistarray)
 		);
-		endif;
+	
 	}
 
 

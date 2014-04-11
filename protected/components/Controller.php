@@ -48,7 +48,7 @@ class Controller extends CController
 			}
 		endif;
 
-echo $_COOKIE['dc_tempusername'];	
+
 		
 	
 		}

@@ -35,4 +35,14 @@ function genRandomString ($l, $c = 'abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGH
     for ($s = '', $cl = strlen($c)-1, $i = 0; $i < $l; $s .= $c[mt_rand(0, $cl)], ++$i);
     return $s;
 }
+
+function array_sort_by_column(&$array, $column, $direction = SORT_ASC) {
+    $reference_array = array();
+
+    foreach($array as $key => $row) {
+        $reference_array[$key] = $row[$column];
+    }
+
+    array_multisort($reference_array, $direction, $array);
+}
 ?>

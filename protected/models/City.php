@@ -1,23 +1,25 @@
 <?php
 
 /**
- * This is the model class for table "Lesson".
+ * This is the model class for table "City".
  *
- * The followings are the available columns in table 'Lesson':
- * @property string $filetype
+ * The followings are the available columns in table 'City':
  * @property integer $id
- * @property integer $seriesno
- * @property integer $lessonno
- * @property string $title
- * @property string $urltitle
- * @property string $youtubeid
+ * @property integer $countryId
+ * @property integer $regionId
+ * @property string $city
+ * @property string $latitude
+ * @property string $longitude
+ * @property string $timeZone
+ * @property integer $dmaId
+ * @property string $code
  */
-class Lesson extends CActiveRecord
+class City extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return Lesson the static model class
+	 * @return City the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -29,7 +31,7 @@ class Lesson extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'Lesson';
+		return 'City';
 	}
 
 	/**
@@ -40,14 +42,15 @@ class Lesson extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('seriesno, lessonno, title, urltitle, youtubeid', 'required'),
-			array('seriesno, lessonno', 'numerical', 'integerOnly'=>true),
-			array('filetype', 'length', 'max'=>1),
-			array('title, urltitle', 'length', 'max'=>150),
-			array('youtubeid', 'length', 'max'=>70),
+			array('id, countryId, regionId, dmaId', 'numerical', 'integerOnly'=>true),
+			array('city', 'length', 'max'=>30),
+			array('latitude', 'length', 'max'=>11),
+			array('longitude', 'length', 'max'=>10),
+			array('timeZone', 'length', 'max'=>6),
+			array('code', 'length', 'max'=>4),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('filetype, id, seriesno, lessonno, title, urltitle, youtubeid', 'safe', 'on'=>'search'),
+			array('id, countryId, regionId, city, latitude, longitude, timeZone, dmaId, code', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -59,7 +62,8 @@ class Lesson extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-		'topic' => array(self::BELONGS_TO, 'Topic', 'topicno'));
+		
+		);
 	}
 
 	/**
@@ -68,13 +72,15 @@ class Lesson extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'filetype' => 'Filetype',
 			'id' => 'ID',
-			'seriesno' => 'Seriesno',
-			'lessonno' => 'Lessonno',
-			'title' => 'Title',
-			'urltitle' => 'Urltitle',
-			'youtubeid' => 'Youtubeid',
+			'countryId' => 'Country',
+			'regionId' => 'Region',
+			'city' => 'City',
+			'latitude' => 'Latitude',
+			'longitude' => 'Longitude',
+			'timeZone' => 'Time Zone',
+			'dmaId' => 'Dma',
+			'code' => 'Code',
 		);
 	}
 
@@ -89,13 +95,15 @@ class Lesson extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('filetype',$this->filetype,true);
 		$criteria->compare('id',$this->id);
-		$criteria->compare('seriesno',$this->seriesno);
-		$criteria->compare('lessonno',$this->lessonno);
-		$criteria->compare('title',$this->title,true);
-		$criteria->compare('urltitle',$this->urltitle,true);
-		$criteria->compare('youtubeid',$this->youtubeid,true);
+		$criteria->compare('countryId',$this->countryId);
+		$criteria->compare('regionId',$this->regionId);
+		$criteria->compare('city',$this->city,true);
+		$criteria->compare('latitude',$this->latitude,true);
+		$criteria->compare('longitude',$this->longitude,true);
+		$criteria->compare('timeZone',$this->timeZone,true);
+		$criteria->compare('dmaId',$this->dmaId);
+		$criteria->compare('code',$this->code,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

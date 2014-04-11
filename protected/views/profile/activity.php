@@ -1,35 +1,55 @@
 <div class="container wrapper">
    <div class="inner_content">
-   <? $this->renderPartial("//layouts/components/profilesidebar");?>
+   <div style="height:13px"></div>		
+<div class="row">
+	<div class="span2" >
+	   <? $this->renderPartial("//layouts/components/profilesidebar");?>
+	</div>
+	<div class="span10">
+	<h2>Here's what you've been working on:</h2>
+	<br />
+<table class="table ">
+      <tbody>
+<?
 
-
-<? 
 $date="";
 $olddate="";
 $first=0;
-foreach($videos as $video): 
-$date=date("Y-m-d", $video->timestamp);
-if($date != $olddate) { 
-  if ($first!=0) {
-	  echo "</tbody></table>";
-	  $first=1;	  
-  }	
-	
-?>
+foreach($activitylog as $alitem): 
 
-<table class="table ">
-      <tbody>
-<h2><?=$date;?></h2>
-<? }
-$olddate=date("Y-m-d", $video->timestamp); ?>
-     <tr>
+echo "<tr>";
+$date=date("Y-m-d", $alitem['timestamp']);
+if($date != $olddate) { 
+
+ echo "<td>".date("l jS F Y", $alitem['timestamp'])."</td>";
+} else {
+	
+echo "<td>&nbsp;</td>";	
+}
+$olddate=date("Y-m-d", $alitem['timestamp']); 
+   
+    if($alitem['type']=='video') {?>
                         <td><i class="icon-facetime-video"></i></td>
-                        <td><strong>Watched:</strong> <a href="<?=bu();?>/lesson/<?=$video->lesson->urltitle;?>"><?=$video->lesson->title;?></a></td>
-                        <td>2 minutes 34 seconds</td>
+                        <td><strong>Watched:</strong> 
+                        <?
+                        } 
+                        if ($alitem['type']=='exercise') {
+                        ?>
+	                        
+	                       <td><i class="icon-list-alt"></i></td>
+                        <td><strong>Practiced:</strong>   
+                        <?
+                        }
+                        ?>
+                        
+                        <a href="<?=bu();?>/lesson/<?=$alitem['urltitle'];?>"><?=$alitem['title']?></a></td>
+                       
                       </tr>
 
 <? endforeach;?>
-
+      </tbody>
+</table>
+	
 
 
 <!--
@@ -61,8 +81,8 @@ $olddate=date("Y-m-d", $video->timestamp); ?>
                     </tbody>
                   </table>
 
-->
-
+-->
+     
    </div>
 </div>
 </div>

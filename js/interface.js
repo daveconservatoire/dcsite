@@ -198,14 +198,17 @@ function handleAttempt(data) {
    
     if (score.correct){correctAnswer=1; attemptNumber++;} else {correctAnswer=0; attemptNumber++;}
     
+     if (correctAnswer==1){
+        increaseScore(1);
+          }
+    
     		    $.ajax({
-        url: "/api/exerciseanswer",
+        url: "/dcsite/api/exerciseanswer",
         type: "post",
         data: "exerciseId="+url+"&complete="+correctAnswer+"&countHints="+hintsUsed+"&timeTaken="+timeTaken+"&attemptNumber="+attemptNumber,
         // callback handler that will be called on success
         success: function(response, textStatus, jqXHR){
-        increaseScore(1);
-          
+       
         }});
 
     Exercises.guessLog.push(score.guess);
