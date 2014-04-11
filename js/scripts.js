@@ -83,6 +83,19 @@ function increaseScore(howmuch) {
 }
 
 
+/***************************************************
+	TYPEAHEAD
+***************************************************/
+$(function() { 	
+$('.typeahead').typeahead({
+    source: function (query, process) {
+        return $.get('/dcsite/country/typeahead', { query: query }, function (data) {
+            return process(data.options);
+        });
+    }
+});
+});
+
 
 
 

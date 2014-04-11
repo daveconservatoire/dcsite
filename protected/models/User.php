@@ -8,7 +8,11 @@
  * @property string $username
  * @property string $name
  * @property string $email
- * @property string $joinDate
+ * @property stringinteger $joinDate
+ * @property integer $lastActivity
+ * @property integer $points
+ * @property string $biog
+ * @property integer $cityId
  *
  * The followings are the available model relations:
  * @property UserExerciseAnswer[] $userExerciseAnswers
@@ -45,6 +49,7 @@ class User extends CActiveRecord
 			array('username, name, email', 'required'),
 			array('username, name', 'length', 'max'=>100),
 			array('email', 'length', 'max'=>200),
+			array('biog', 'length', 'max'=>160),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			
@@ -60,8 +65,8 @@ class User extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'exercisesanswered' => array(self::HAS_MANY, 'UserExerciseAnswer', 'userId'),
-			'videosviewed' => array(self::HAS_MANY, 'UserVideoView', 'userId'),
-		);
+			'videosviewed' => array(self::HAS_MANY, 'UserVideoView', 'userId'));
+		
 	}
 
 	/**
@@ -75,6 +80,7 @@ class User extends CActiveRecord
 			'name' => 'Name',
 			'email' => 'Email',
 			'joinDate' => 'Join Date',
+			'biog'=>'<h3>About you</h3>Who are you? What are your musical goals? What instruments do you play? <br />(max. 160 characters)<br /><br />',
 		);
 	}
 
