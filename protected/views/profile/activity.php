@@ -1,3 +1,5 @@
+
+
 <div class="container wrapper">
    <div class="inner_content">
    <div style="height:13px"></div>		
@@ -14,19 +16,28 @@
 
 $date="";
 $olddate="";
+$oldtitle="";
+$newday=true;
 $first=0;
 foreach($activitylog as $alitem): 
+
+
 
 echo "<tr>";
 $date=date("Y-m-d", $alitem['timestamp']);
 if($date != $olddate) { 
-
+$newday=true;
  echo "<td>".date("l jS F Y", $alitem['timestamp'])."</td>";
 } else {
-	
+if ($alitem['title']!=$oldtitle ) {	
 echo "<td>&nbsp;</td>";	
+
+}
 }
 $olddate=date("Y-m-d", $alitem['timestamp']); 
+
+if ($alitem['title']!=$oldtitle || $newday ) {
+
    
     if($alitem['type']=='video') {?>
                         <td><i class="icon-facetime-video"></i></td>
@@ -40,13 +51,24 @@ $olddate=date("Y-m-d", $alitem['timestamp']);
                         <td><strong>Practiced:</strong>   
                         <?
                         }
+                          if ($alitem['type']=='mastery') {
+                        ?>
+	                        
+	                       <td><i class="icon-star-empty"></i></td>
+                        <td><strong>Mastered:</strong>   
+                        <?
+                        }
                         ?>
                         
                         <a href="<?=bu();?>/lesson/<?=$alitem['urltitle'];?>"><?=$alitem['title']?></a></td>
                        
                       </tr>
 
-<? endforeach;?>
+<? 
+$newday=false;
+}
+$oldtitle=$alitem['title'];
+endforeach;?>
       </tbody>
 </table>
 	

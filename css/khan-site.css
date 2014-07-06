@@ -6137,7 +6137,7 @@ ul.inline-list li {
   border: 1px solid #000;
   padding: 2px;
 }
-.bar {
+/*.bar {
   position: absolute;
   top: 0;
   left: 0;
@@ -6146,6 +6146,7 @@ ul.inline-list li {
   background: #c7e5f7;
   z-index: -1;
 }
+*/
 .student-goals-filter {
   display: block;
 }

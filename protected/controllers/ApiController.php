@@ -37,6 +37,10 @@ public function actionCreate()
         	$model= new UserVideoView;
         	$case = 'videoview';  
         	break;
+        case 'singleexmastery':
+        	$model= new UserExSingleMastery;
+        	$case = 'singleexmastery';
+        	break;
         default:
             $this->_sendResponse(501, 
                 sprintf('Mode <b>create</b> is not implemented for model <b>%s</b>',
@@ -57,22 +61,41 @@ public function actionCreate()
     //special things we need to do to each type of record!
     
     if ($case=='exerciseanswer'){
-	 $exerciseinfo=Lesson::model()->findByAttributes(array('youtubeid'=>$model->exerciseId));
-	 $model->exerciseId=$exerciseinfo->id;
+	 	$exerciseinfo=Lesson::model()->findByAttributes(array('youtubeid'=>$model->exerciseId));
+	 	$model->exerciseId=$exerciseinfo->id;
 	 
-	 //Increment user's points score
-	if(!Yii::app()->user->isGuest){
-	 $user=User::model()->findByPk(Yii::app()->user->dcid);
-	 } 
+	 	//Increment user's points score
+	 	if(!Yii::app()->user->isGuest){
+		 	$user=User::model()->findByPk(Yii::app()->user->dcid);
+		 	} 
+		 	
+		 if(Yii::app()->user->isGuest && isset($_COOKIE['dc_tempusername'])){
+			 $user=User::model()->findByAttributes(array('username'=>$_COOKIE['dc_tempusername']));
+			 }
+	 
+		if($model->complete>0){
+			$user->points=$user->points+1;
+		}
+		$user->save();
+	 }
+	 
+	   if ($case=='singleexmastery'){
+	 	$exerciseinfo=Lesson::model()->findByAttributes(array('youtubeid'=>$model->exerciseId));
+	 	$model->exerciseId=$exerciseinfo->id;
+	 
+	 	//Increment user's points score
+	 	if(!Yii::app()->user->isGuest){
+		 	$user=User::model()->findByPk(Yii::app()->user->dcid);
+		 	} 
+		 	
+		 if(Yii::app()->user->isGuest && isset($_COOKIE['dc_tempusername'])){
+			 $user=User::model()->findByAttributes(array('username'=>$_COOKIE['dc_tempusername']));
+			 }
+	 
 	
-	 if(Yii::app()->user->isGuest && isset($_COOKIE['dc_tempusername'])){
-	 $user=User::model()->findByAttributes(array('username'=>$_COOKIE['dc_tempusername']));
-	 }
-	 
-	 if($model->complete>0){
-	 $user->points=$user->points+1;
-	 }
-	 $user->save();
+			$user->points=$user->points+100;
+		
+		$user->save();
 	 }
     
     
@@ -96,6 +119,8 @@ public function actionCreate()
   
 */
     }
+    
+    
     
     if(!Yii::app()->user->isGuest) {
     $model->userId=Yii::app()->user->dcid; 

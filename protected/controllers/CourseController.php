@@ -45,14 +45,17 @@ class CourseController extends Controller
 	public function actionView($urltitle)
 	{
 	 $model=Course::model()->find("urltitle = '".$urltitle."'");
-	   $exercisesansweredarray = array();
-	    $exerciselistarray = array();
-	     $videosviewedarray = array();
+	  
+	    $videosviewedarray = array();
 	    $videolistarray = array();
-	
-       if(!Yii::app()->user->isGuest):
+	    $exercisesansweredarray = array();
+	    $exerciselistarray = array();
+	    $exercisesmasteredarray = array();
+	    $exercisesmasteredlist = array();
+	    
+	    if(!Yii::app()->user->isGuest){	
 	    $user=User::model()->findByPk(Yii::app()->user->dcid);
-
+	   
 	    	foreach ($user->videosviewed as $videoviewed):
 	    		   if(!in_array($videoviewed->lesson->topicno, $videosviewedarray)){
                          $videosviewedarray[]=$videoviewed->lesson->topicno;
@@ -61,7 +64,7 @@ class CourseController extends Controller
 	    	endforeach;
 	    	
 	   
-	 
+	
 	    	foreach ($user->exercisesanswered as $exerciseanswered):
 	    		   if(!in_array($exerciseanswered->exercise->topicno, $exercisesansweredarray)){
                          $exercisesansweredarray[]=$exerciseanswered->exercise->topicno;
@@ -70,11 +73,22 @@ class CourseController extends Controller
                    $exerciselistarray[]=$exerciseanswered->exercise->id;
                    }
 	    	endforeach;
-	    	endif;
-
+	    	
+	    	foreach ($user->exercisesmastered as $exercisemastered):
+	    	         if(!in_array($exercisemastered->exercise->topicno, $exercisesmasteredarray)){
+                         $exercisesansweredarray[]=$exercisemastered->exercise->topicno;
+                   }
+                   if(!in_array($exercisemastered->exercise->id, $exercisesmasteredlist)){
+                   $exercisesmasteredlist[]=$exercisemastered->exercise->id;
+                   }
+            endforeach;
+	    	}
+       
+       
+       
 	
 		$this->render('view',array(
-			'course'=>$model, 'videosviewedarray'=>$videosviewedarray,'videolistarray'=>$videolistarray, 'exercisesansweredarray'=>$exercisesansweredarray, 'exerciselistarray'=>$exerciselistarray)
+			'course'=>$model, 'videosviewedarray'=>$videosviewedarray,'videolistarray'=>$videolistarray, 'exercisesansweredarray'=>$exercisesansweredarray, 'exerciselistarray'=>$exerciselistarray, 'exercisesmasteredarray'=>$exerciselistarray, 'exercisesmasteredlist'=>$exercisesmasteredlist)
 		);
 	
 	}

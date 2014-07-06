@@ -545,6 +545,18 @@ h1.intro {  line-height:40px; font-weight:300;}
     top: -4px;
     width: 72px;
 }
+
+
+.ribbon.ribbon-mastered:before {
+    background: url("../img/ribbon-mastered.png") 0 0 no-repeat;
+    background-size: 72px 72px;
+    content: "";
+    height: 72px;
+    position: absolute;
+    right: -4px;
+    top: -4px;
+    width: 72px;
+}
 .tile p { margin: 10px 0 22px 0; }
 .tile-image {
   height: 100px;

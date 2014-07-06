@@ -58,6 +58,9 @@ foreach ($lessons as $lesson){
 				
 				<? if(in_array($lesson->id,$videolistarray)):?>
 				ribbon ribbon-viewed
+				<? elseif (in_array($lesson->id, $exercisesmasteredlist)):?>
+				ribbon ribbon-mastered
+	
 				<? elseif (in_array($lesson->id,$exerciselistarray)):?>
 				ribbon ribbon-inprogress
 				<? endif;?>

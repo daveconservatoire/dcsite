@@ -197,6 +197,7 @@ var Khan = (function() {
     problemCount = 10,
 
     hintsUsed,
+   
 
     // Bug-hunting "undefined" attempt content
     debugLogLog = ["start of log"],
@@ -383,14 +384,9 @@ var Khan = (function() {
             // This is also used as a PRNG in the V8 benchmark suite
             random: function() {
                 // Robert Jenkins' 32 bit integer hash function.
-                var seed = randomSeed;
-                seed = ((seed + 0x7ed55d16) + (seed << 12)) & 0xffffffff;
-                seed = ((seed ^ 0xc761c23c) ^ (seed >>> 19)) & 0xffffffff;
-                seed = ((seed + 0x165667b1) + (seed << 5)) & 0xffffffff;
-                seed = ((seed + 0xd3a2646c) ^ (seed << 9)) & 0xffffffff;
-                seed = ((seed + 0xfd7046c5) + (seed << 3)) & 0xffffffff;
-                seed = ((seed ^ 0xb55a4f09) ^ (seed >>> 16)) & 0xffffffff;
-                return (randomSeed = (seed & 0xfffffff)) / 0x10000000;
+              randomSeed = Math.random();
+         
+                return randomSeed;
             },
 
             crc32: crc32
@@ -1103,6 +1099,7 @@ lowLag.load([urlBase+"exercises/sounds/"+exerciseUrlTitle+"/"+i+".mp3",urlBase+"
     // (still usually a little bit random).
     // There has got to be a better way to do this.
     function makeProblemBag(problems, n) {
+    console.log("problems"+problems+" n "+n);
       
         var bag = [], totalWeight = 0;
 
@@ -1279,7 +1276,7 @@ lowLag.load([urlBase+"exercises/sounds/"+exerciseUrlTitle+"/"+i+".mp3",urlBase+"
     }
 
     function makeProblem(id, seed) {
-        debugLog("start of makeProblem");
+        console.log("start of makeProblem");
         
         // Enable scratchpad (unless the exercise explicitly disables it later)
         Khan.scratchpad.enable();
@@ -1315,6 +1312,7 @@ lowLag.load([urlBase+"exercises/sounds/"+exerciseUrlTitle+"/"+i+".mp3",urlBase+"
         // we made earlier to ensure that every problem gets shown the
         // appropriate number of times
         } else if (problemBag.length > 0) {
+        
             problem = problemBag[problemBagIndex];
             id = problem.data("id");
 

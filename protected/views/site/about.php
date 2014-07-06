@@ -90,7 +90,7 @@
 				<h3 class="center about_strip">Everyone is musical and everyone can learn to play, compose and enjoy music.  All you need to do is . . . </h3>
 				<div class="pad45"></div>
 			
-				<a href="<? echo Yii::app()->request->baseUrl;?>" class="big_button">Get Started!</a>
+				<a href="<? echo Yii::app()->request->baseUrl;?>/course/music-theory" class="big_button">Get Started!</a>
 				<div class="pad25"></div>
 				</div>
 				<!--/strip-->

@@ -4,7 +4,38 @@
 		<div class="container wrapper">
 		<div class="inner_content">
 
-<? $this->renderPartial("//layouts/components/sidebar", array('model'=>$model));?>
+		  				<div class="span4">
+
+			<h6>Course:</h6>	
+		<ul class="nav nav-list bs-docs-sidenav activetopic" style="margin-bottom: 10px">
+		    <li class="dc-bg-yellow active activetopiclink"><a class="activetopiclink" href="<?=bu()."/course/".$topic->course->urltitle;?>"><?=$topic->course->title;?></a></li>  
+		</ul>
+          <h6>Topics:</h6>
+		<ul class="nav nav-list bs-docs-sidenav">
+	    <? foreach($topic->course->topics as $thistopic){ ?>
+
+	               <li><a href="<? echo Yii::app()->request->baseUrl.'/topic/'.$thistopic->urltitle;?>">
+	               
+	              <? if (in_array($thistopic->id,$videosviewedarray) || in_array($thistopic->id,$exercisesansweredarray)):?> 
+	                    <i class="icon-adjust"></i>
+	              <? else:?>
+	              <i class="icon-chevron-right"></i>
+	              
+	              <? endif;?>
+	              <?=$thistopic->title;?></a>
+	               </li>  
+	<?    
+	}	
+	
+	?>	
+	    </ul>
+					
+					
+					
+					
+					
+					
+				</div>
 
 						
 <div style="text-align:center;">			
@@ -98,7 +129,7 @@
                     <a href="#" class="dark">7</a><a href="#" class="dark">8</a><a href="#" class="dark">9</a><a href="#">(</a><a href="#">)</a>
                     </div>
                     <div class="calc-row">
-                    <a href="#" class="dark">4</a><a href="#" class="dark">5</a><a href="#" class="dark">6</a><a href="#" data-text="*">?</a><a href="#" data-text="/">÷</a>
+                    <a href="#" class="dark">4</a><a href="#" class="dark">5</a><a href="#" class="dark">6</a><a href="#" data-text="*">?</a><a href="#" data-text="/">Ö</a>
                     </div>
                     <div class="calc-row">
                     <a href="#" class="dark">1</a><a href="#" class="dark">2</a><a href="#" class="dark">3</a><a href="#">+</a><a href="#" data-text="-">?</a>
@@ -168,15 +199,7 @@
                   
                     <div class="badge-award-container" id="badge-notification-container" style="display:none;"></div>
         </div>
-                                    																		<ul class="pager">
-  <li class="previous">
-<? $this->renderPartial("//layouts/components/prev", array('model'=>$model));?>
-
-  </li>
-  <li class="next">
-<? $this->renderPartial("//layouts/components/next", array('model'=>$model));?>
-  </li>
-</ul>	
+   
     </div>
 
 

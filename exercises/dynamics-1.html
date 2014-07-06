@@ -1,0 +1,35 @@
+            <div class="vars">
+                   <var id="QUESTIONA">randRange( 0, 9)</var>
+                    <var id="AANSWERS">new Array("Get Louder","Get Quieter","Play Loudly","Play Very Loudly","Play Moderately Loud","Play Moderately Quiet","Play Quietly","Play Very Quietly", "Play Suddenly Loud", "Play Suddenly Quiet")</var>
+                   </div>
+                   	<div class = "problem">
+                    	<p>If we see this symbol in a piece of music it is telling us to . . . </p>
+                    </div>
+                    <div class="question">
+                        <span data-if="QUESTIONA === 0"><img src="../exercises/images/dynamicsquiz/cresc.jpg" /></span>
+                        <span data-if="QUESTIONA === 1"><img src="../exercises/images/dynamicsquiz/dim.jpg" /></span>
+                        <span data-if="QUESTIONA === 2"><img src="../exercises/images/dynamicsquiz/f.jpg" /></span>
+                        <span data-if="QUESTIONA === 3"><img src="../exercises/images/dynamicsquiz/ff.jpg" /></span>
+                        <span data-if="QUESTIONA === 4"><img src="../exercises/images/dynamicsquiz/mf.jpg" /></span>
+                        <span data-if="QUESTIONA === 5"><img src="../exercises/images/dynamicsquiz/mp.jpg" /></span>
+                        <span data-if="QUESTIONA === 6"><img src="../exercises/images/dynamicsquiz/p.jpg" /></span>
+                        <span data-if="QUESTIONA === 7"><img src="../exercises/images/dynamicsquiz/pp.jpg" /></span>
+                        <span data-if="QUESTIONA === 8"><img src="../exercises/images/dynamicsquiz/subf.jpg" /></span>
+                        <span data-if="QUESTIONA === 9"><img src="../exercises/images/dynamicsquiz/subp.jpg" /></span>
+                    </div>
+  
+                
+                  
+                    <div class="solution"><var>AANSWERS[QUESTIONA]</var></div>
+						<ul class="choices" data-category="true">
+    					<li>Get Louder</li>
+    					<li>Get Quieter</li>
+    					<li>Play Loudly</li>
+    					<li>Play Very Loudly</li>
+    					<li>Play Moderately Loud</li>
+    					<li>Play Moderately Quiet</li>
+    					<li>Play Quietly</li>
+    					<li>Play Very Quietly</li>
+    					<li>Play Suddenly Loud</li>
+    					<li>Play Suddenly Quiet</li>
+						</ul>

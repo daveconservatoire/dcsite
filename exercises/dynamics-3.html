@@ -1,0 +1,16 @@
+<div class="vars">
+	<var id="QUESTIONC">randRange( 0, 5)</var>
+	<var id="CANSWERS">new Array("pp","p","mp","mf","f","ff")</var>
+</div>
+<div class = "problem">
+	 <p>How do we represent this instruction in standard music notation? Use lowercase (eg. ff for "Play Very Loudly")</p>
+</div>
+<div class="question">
+    <span data-if="QUESTIONC === 0"><h2>Play Very Quietly</h2></span>
+    <span data-if="QUESTIONC === 1"><h2>Play Quietly</h2></span>
+    <span data-if="QUESTIONC === 2"><h2>Play Moderately Quiet</h2></span>
+    <span data-if="QUESTIONC === 3"><h2>Play Moderately Loud</h2></span>
+    <span data-if="QUESTIONC === 4"><h2>Play Loudly</h2></span>
+    <span data-if="QUESTIONC === 5"><h2>Play Very Loudly</h2></span>
+</div> 
+<p class="solution" data-type="text"><var>CANSWERS[QUESTIONC]</var></p>

@@ -34,7 +34,9 @@ var PerseusBridge = Exercises.PerseusBridge,
 
     userExercise,
     problemNum,
-
+    streak=0,
+    mastery=false,
+    
     canAttempt,
     hintsAreFree,
     attempts,
@@ -200,6 +202,31 @@ function handleAttempt(data) {
     
      if (correctAnswer==1){
         increaseScore(1);
+        streak=streak+1;
+        $('.bar').css("width", streak*10+"%");
+        if (streak===10){
+        mastery=true;
+        alert("mastery");
+       		    $.ajax({
+        url: "/dcsite/api/singleexmastery",
+        type: "post",
+        data: "exerciseId="+url,
+        // callback handler that will be called on success
+        success: function(response, textStatus, jqXHR){
+       
+        }});
+           $('.progress, .masterymsg').slideToggle('3000');
+          increaseScore(100);
+        }
+     
+     
+          }
+          
+          else {
+          streak=0;
+          if(!mastery){
+          $('.bar').css("width", "0%");
+          }
           }
     
     		    $.ajax({

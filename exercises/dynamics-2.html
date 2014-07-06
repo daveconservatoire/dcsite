@@ -1,0 +1,34 @@
+           <div class="vars">
+                   <var id="QUESTIONB">randRange( 0, 9)</var>
+                  <var id="BANSWERS">new Array("Crescendo","Diminuendo","Forte","Fortissimo","Mezzo Forte","Mezzo Piano","Piano","Pianissimo","Subito Forte","Subito Piano")</var>
+                   </div>
+                   	<div class = "problem">
+                    	<p>The italian musical term described by this symbol is?</p>
+                    </div>
+                    <div class="question">
+                        <span data-if="QUESTIONB === 0"><img src="../exercises/images/dynamicsquiz/cresc.jpg" /></span>
+                        <span data-if="QUESTIONB === 1"><img src="../exercises/images/dynamicsquiz/dim.jpg" /></span>
+                        <span data-if="QUESTIONB === 2"><img src="../exercises/images/dynamicsquiz/f.jpg" /></span>
+                        <span data-if="QUESTIONB === 3"><img src="../exercises/images/dynamicsquiz/ff.jpg" /></span>
+                        <span data-if="QUESTIONB === 4"><img src="../exercises/images/dynamicsquiz/mf.jpg" /></span>
+                        <span data-if="QUESTIONB === 5"><img src="../exercises/images/dynamicsquiz/mp.jpg" /></span>
+                        <span data-if="QUESTIONB === 6"><img src="../exercises/images/dynamicsquiz/p.jpg" /></span>
+                        <span data-if="QUESTIONB === 7"><img src="../exercises/images/dynamicsquiz/pp.jpg" /></span>
+                        <span data-if="QUESTIONB === 8"><img src="../exercises/images/dynamicsquiz/subf.jpg" /></span>
+                        <span data-if="QUESTIONB === 9"><img src="../exercises/images/dynamicsquiz/subp.jpg" /></span>
+                    </div> 
+					<div class="solution">
+						<var>BANSWERS[QUESTIONB]</var>
+					</div>
+					<ul class="choices" data-category="true">
+    					<li>Crescendo</li>
+    					<li>Diminuendo</li>
+    					<li>Forte</li>
+    					<li>Fortissimo</li>
+    					<li>Mezzo Forte</li>
+    					<li>Mezzo Piano</li>
+    					<li>Piano</li>
+    					<li>Pianissimo</li>
+    					<li>Subito Forte</li>
+    					<li>Subito Piano</li>
+					</ul>

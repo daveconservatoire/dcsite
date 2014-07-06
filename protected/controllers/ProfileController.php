@@ -19,6 +19,10 @@ public function actionIndex() {
        
        $videos = UserVideoView::model()->findAll(array('condition'=>'userid ='.Yii::app()->user->dcid, 'order'=>'timestamp DESC', 'limit'=>5));
 	   $exercises = UserExerciseAnswer::model()->findAll(array('condition'=>'userid ='.Yii::app()->user->dcid, 'order'=>'timestamp DESC', 'limit'=>5));
+	   $masters = UserExSingleMastery::model()->findAll(array('condition'=>'userid ='.Yii::app()->user->dcid, 'order'=>'timestamp DESC', 'limit'=>5));
+	   
+	
+
 	   $videoscount= UserVideoView::model()->count(array('condition'=>'userid ='.Yii::app()->user->dcid));
 	   $excount = UserExerciseAnswer::model()->count(array('condition'=>'userid ='.Yii::app()->user->dcid));
 	$activitylog=array();
@@ -28,11 +32,18 @@ public function actionIndex() {
 	foreach($exercises as $exercise):
 		//avoid endless listings of the same exercise!  Only add if different or next day
 		$end=end($activitylog);
-		if($end['type']=='exercise'&&(date("Y-m-d", $exercise->timestamp)!=date("Y-m-d", $end['timestamp'])) || $end['type']!='exercise'):
+		//if($end['type']=='exercise'&&(date("Y-m-d", $exercise->timestamp)!=date("Y-m-d", $end['timestamp'])) || $end['type']!='exercise'):
 			$activitylog[]=array('type'=>'exercise','urltitle'=>$exercise->exercise->urltitle,'title'=>$exercise->exercise->title,'timestamp'=>$exercise->timestamp);
-		endif;
+		//endif;
 	endforeach;
+	foreach ($masters as $master):
+		$activitylog[]=array('type'=>'mastery','urltitle'=>$master->exercise->urltitle,'title'=>$master->exercise->title,'timestamp'=>$master->timestamp);
+	endforeach;
+	
+	
 	array_sort_by_column($activitylog, 'timestamp', SORT_DESC);
+	
+	
 
 
 	
@@ -44,20 +55,28 @@ public function actionIndex() {
 public function actionActivity() {
 	$videos = UserVideoView::model()->findAll(array('condition'=>'userid ='.Yii::app()->user->dcid, 'order'=>'timestamp DESC'));
 	$exercises = UserExerciseAnswer::model()->findAll(array('condition'=>'userid ='.Yii::app()->user->dcid, 'order'=>'timestamp DESC'));
+	   $masters = UserExSingleMastery::model()->findAll(array('condition'=>'userid ='.Yii::app()->user->dcid, 'order'=>'timestamp DESC'));
+
 	
 	$activitylog=array();
 	foreach ($videos as $video):
 	$end=end($activitylog);
-	if(date("Y-m-d", $video->timestamp)!=date("Y-m-d", $end['timestamp']) && $end['urltitle']!=$video->lesson->urltitle):
+
+	    
 		$activitylog[]=array('type'=>'video','urltitle'=>$video->lesson->urltitle,'title'=>$video->lesson->title,'timestamp'=>$video->timestamp);
-		endif;
+		
+		
 	endforeach;
 	foreach($exercises as $exercise):
 		//avoid endless listings of the same exercise!  Only add if different or next day
 		$end=end($activitylog);
-		if($end['type']=='exercise'&&(date("Y-m-d", $exercise->timestamp)!=date("Y-m-d", $end['timestamp'])) || $end['type']!='exercise'):
+		//if($end['type']=='exercise'&&(date("Y-m-d", $exercise->timestamp)!=date("Y-m-d", $end['timestamp'])) || $end['type']!='exercise'):
 			$activitylog[]=array('type'=>'exercise','urltitle'=>$exercise->exercise->urltitle,'title'=>$exercise->exercise->title,'timestamp'=>$exercise->timestamp);
-		endif;
+		//endif;
+	endforeach;
+	
+		foreach ($masters as $master):
+		$activitylog[]=array('type'=>'mastery','urltitle'=>$master->exercise->urltitle,'title'=>$master->exercise->title,'timestamp'=>$master->timestamp);
 	endforeach;
 	array_sort_by_column($activitylog, 'timestamp', SORT_DESC);
 

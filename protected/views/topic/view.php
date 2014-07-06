@@ -53,11 +53,13 @@ foreach ($topic->lessons as $lesson){
 	
 		       <div class='span2'>
 		
-			
+		
 				<a href='<?=bu();?>/lesson/<?=$lesson->urltitle;?>' class='thumbnail vertical-shadow suggested-action 
 				
 				<? if(in_array($lesson->id,$videolistarray)):?>
 				ribbon ribbon-viewed
+				<? elseif (in_array($lesson->id, $exercisesmasteredlist)):?>
+				ribbon ribbon-mastered
 				<? elseif (in_array($lesson->id,$exerciselistarray)):?>
 				ribbon ribbon-inprogress
 				<? endif;?>
@@ -90,8 +92,11 @@ foreach ($topic->lessons as $lesson){
 
 
 	</div>
+	
 </div></div>
-
+<!--
+<a class="btn btn-primary btn-block" href="<?=$topic->urltitle;?>/mastery"><h2>Feeling Confident?  Take this topic's completion test!</h2></a>
+-->
 						</div>
 			
 					</div>

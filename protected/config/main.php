@@ -94,6 +94,7 @@ return array(
 			    'contact'=>'site/contact',
 			    'about'=>'site/about',
 			    'login'=>'site/login',
+			    'topic/<urltitle>/mastery'=>'topic/mastery',
 			    'topic/<urltitle>'=>'topic/view',
 			    'course/<urltitle>'=>'course/view',
 			    'lesson/<urltitle>'=> 'lesson/view',

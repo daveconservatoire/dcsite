@@ -36,11 +36,12 @@
 <?
 
 $oldlesson="";
+$oldtype="";
 $counter=0;
 foreach($activitylog as $alitem): 
 
 echo "<tr>";
-if($alitem['urltitle']!=$oldlesson && $counter<6) {
+if($alitem['urltitle']!=$oldlesson || $alitem['type']!=$oldtype) {
  
     if($alitem['type']=='video') {?>
                         <td><i class="icon-facetime-video"></i></td>
@@ -54,6 +55,14 @@ if($alitem['urltitle']!=$oldlesson && $counter<6) {
                         <td><strong>Practiced:</strong>   
                         <?
                         }
+                        
+                           if ($alitem['type']=='mastery') {
+                        ?>
+	                        
+	                       <td><i class="icon-star-empty"></i></td>
+                        <td><strong>Mastered:</strong>   
+                        <?
+                        }
                         ?>
                         
                         <a href="<?=bu();?>/lesson/<?=$alitem['urltitle'];?>"><?=$alitem['title']?></a></td>
@@ -62,7 +71,8 @@ if($alitem['urltitle']!=$oldlesson && $counter<6) {
                       <?
                       }
                       $oldlesson=$alitem['urltitle'];
-                      $counter++;
+                      $oldtype=$alitem['type'];
+                    
 
 endforeach;?>
       </tbody>
