@@ -7,6 +7,23 @@
  */
 (function() {
 
+if (document.location.hostname =="localhost") {
+var localBase = "/dcsite/"; 
+} 
+
+if (document.location.hostname =="daverees4.webfactional.com") {
+	
+var localBase ="/dcdev/";
+}
+
+if (document.location.hostname =="www.daveconservatoire.org" || document.location.hostname =="daveconservatoire.org") {
+var localBase = "http://www.daveconservatoire.org/";	
+	
+}
+
+
+
+
 // If any of these properties have already been defined, then leave them --
 // this happens in local mode
 _.defaults(Exercises, {
@@ -208,7 +225,7 @@ function handleAttempt(data) {
         mastery=true;
         alert("mastery");
        		    $.ajax({
-        url: "/dcsite/api/singleexmastery",
+        url: localBase+"api/singleexmastery",
         type: "post",
         data: "exerciseId="+url,
         // callback handler that will be called on success
@@ -230,7 +247,7 @@ function handleAttempt(data) {
           }
     
     		    $.ajax({
-        url: "/dcsite/api/exerciseanswer",
+        url: localBase+"api/exerciseanswer",
         type: "post",
         data: "exerciseId="+url+"&complete="+correctAnswer+"&countHints="+hintsUsed+"&timeTaken="+timeTaken+"&attemptNumber="+attemptNumber,
         // callback handler that will be called on success
