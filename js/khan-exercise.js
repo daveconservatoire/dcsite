@@ -57,6 +57,22 @@
       history mode
 */
 
+if (document.location.hostname =="localhost") {
+var localBase = "/dcsite/"; 
+} 
+
+if (document.location.hostname =="daverees4.webfactional.com") {
+	
+var localBase ="/dcdev/";
+}
+
+if (document.location.hostname =="www.daveconservatoire.org" || document.location.hostname =="daveconservatoire.org") {
+var localBase = "http://www.daveconservatoire.org/";	
+	
+}
+
+
+
 var Khan = (function() {
     // Numbers which are coprime to the number of bins, used for jumping through
     // exercises.  To quickly test a number in python use code like:
@@ -216,8 +232,10 @@ var Khan = (function() {
 
     // Promise that gets resolved when MathJax is loaded
     mathJaxLoaded,
+    
+  
 
-    urlBase = document.location.hostname =="localhost" ? "/dcsite/" : "http://www.daveconservatoire.org/",
+    urlBase = localBase,
     
     exerciseUrlTitle=document.location.pathname.substring(document.location.pathname.lastIndexOf('/')+1);
     
