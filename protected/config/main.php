@@ -98,6 +98,7 @@ return array(
 			    'topic/<urltitle>'=>'topic/view',
 			    'course/<urltitle>'=>'course/view',
 			    'lesson/<urltitle>'=> 'lesson/view',
+			    'lesson/testexercise/<urltitle>'=>'lesson/testexercise',
 			    '*'=>'site/index',
 			    array('api/create', 'pattern'=>'api/<model:\w+>', 'verb'=>'POST'),
 				

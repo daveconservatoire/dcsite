@@ -149,6 +149,7 @@ var lowLag = new function(){
 
 
 
+	this.webkitPendingRequest = {};
 
 
 	this.webkitAudioContext = undefined;
@@ -166,6 +167,10 @@ lowLag.msg('webkitAudio loading '+url+' as tag ' + tag);
 		request.onload = function() {
 		    lowLag.webkitAudioContext.decodeAudioData(request.response, function(buffer) {
 				lowLag.webkitAudioBuffers[tag] = buffer;
+				
+				if(lowLag.webkitPendingRequest[tag]){ //a request might have come in, try playing it now
+					lowLag.playSoundWebkitAudio(tag);
+				}
 			}, lowLag.errorLoadWebkitAudtioFile);
 		};
 		request.send();
@@ -178,11 +183,15 @@ lowLag.msg('webkitAudio loading '+url+' as tag ' + tag);
 	this.playSoundWebkitAudio= function(tag){
 		lowLag.msg("playSoundWebkitAudio "+tag);
 		var buffer = lowLag.webkitAudioBuffers[tag];
+		if(buffer == undefined) { //possibly not loaded; put in a request to play onload
+			lowLag.webkitPendingRequest[tag] = true;
+			return;
+		}
 		var context = lowLag.webkitAudioContext;
 		var source = context.createBufferSource(); // creates a sound source
 		source.buffer = buffer;                    // tell the source which sound to play
 		source.connect(context.destination);       // connect the source to the context's destination (the speakers)
-		source.noteOn(0);                          // play the source now
+		source.start ? source.start(0) : source.noteOn(0);                         // play the source now
 	}
 
 
@@ -264,7 +273,6 @@ lowLag.msg(tag);
 
 
 }
-
 var holder;
 
 function playSound(sound){

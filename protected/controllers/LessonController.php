@@ -84,6 +84,14 @@ class LessonController extends Controller
 		
 	}
 	
+	public function actionTestexercise() {
+		$this->render('testex');
+		
+	
+		
+	}
+	
+	
 
 
    public function actionIndex(){

@@ -126,7 +126,7 @@ public function actionCreate()
     $model->userId=Yii::app()->user->dcid; 
     }
     
-    if(Yii::app()->user->isGuest && $_COOKIE['dc_tempuser']) {
+    if(Yii::app()->user->isGuest && $_COOKIE['dc_tempusername']) {
 	$user=User::model()->findByAttributes(array('username'=>$_COOKIE['dc_tempusername']));
 	$model->userId=$user->id;
 	

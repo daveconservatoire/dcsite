@@ -1,0 +1,37 @@
+            <div class="exercise">
+                <div class="vars">
+                    <var id="FIRSTSOUND">0</var>
+                    <var id="LASTSOUND">19</var>
+                    <var id="NOTE">randRange(0, 19)</var>
+                    <var id ="RESULTS">new Array("Octave","Perfect 5th","Major 3rd","Perfect 4th","Major 6th")</var>                   
+ 					<var id = "ANSWER">RESULTS[Math.floor(NOTE/4)]</var>
+                  	<var id = "MYSOUND">playSound("sound"+NOTE)</var>
+                  	<var id="SOUNDFOLDER">intervalsl1</var>
+                </div>
+
+                <div class="problems">
+                   <div id="problem-type-or-description"> 
+                   	<div class = "problem">
+                    <p>You will hear two notes - what is their interval?</p>
+                    <a class="btn_primary" id="playagain" onclick="playAgain()">Play Again</a>
+                   	</div>
+                  
+                       <div class="solution"><var>ANSWER</var></div>
+					<ul class="choices" data-category="true">
+    					<li>Octave</li>
+    					<li>Perfect 5th</li>
+    					<li>Major 3rd</li>
+    					<li>Pefect 4th</li>
+    					<li>Major 6th</li>
+    					
+    				
+
+					</ul>
+
+                   
+                    </div>
+                </div>
+
+                <div class="hints">
+                </div>
+            </div>

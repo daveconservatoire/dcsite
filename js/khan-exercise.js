@@ -237,7 +237,9 @@ var Khan = (function() {
 
     urlBase = localBase,
     
-    exerciseUrlTitle=document.location.pathname.substring(document.location.pathname.lastIndexOf('/')+1);
+    
+    
+    
     
 
     
@@ -985,6 +987,7 @@ var Khan = (function() {
    var firstsound=$("#FIRSTSOUND").text(); 
     var lastsound=$("#LASTSOUND").text(); 
 lowLag.init();	
+var exerciseUrlTitle=$("#SOUNDFOLDER").text()!=='' ? $("#SOUNDFOLDER").text() : document.location.pathname.substring(document.location.pathname.lastIndexOf('/')+1);
 for(var i=firstsound; i<=lastsound;i++){
 lowLag.load([urlBase+"exercises/sounds/"+exerciseUrlTitle+"/"+i+".mp3",urlBase+"exercises/sounds/"+exerciseUrlTitle+"/"+i+".wav"], 'sound'+i);
 
