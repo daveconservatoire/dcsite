@@ -223,7 +223,7 @@ function handleAttempt(data) {
         $('.bar').css("width", streak*10+"%");
         if (streak===10){
         mastery=true;
-        alert("mastery");
+      
        		    $.ajax({
         url: localBase+"api/singleexmastery",
         type: "post",
