@@ -13,10 +13,10 @@
 <meta property="og:site_name" content="daveconservatoire.org"/>
 <link href='http://fonts.googleapis.com/css?family=Lato:400,700,300' rel='stylesheet' type='text/css'>
 <!--[if IE]>
-<link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=Lato:400" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=Lato:700" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato:400" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato:700" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet" type="text/css">
 <![endif]-->
 
 <link href="<?=bu();?>/css/bootstrap.css" rel="stylesheet">
@@ -25,7 +25,7 @@
 <link href="<?=bu();?>/css/prettyPhoto.css" rel="stylesheet" type="text/css"/>
 
 <!--[if lt IE 9]>
-<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<script src="<?=bu();?>/js/html5shim.js"></script>
 <![endif]-->
 
 <!--[if IE 7]>
