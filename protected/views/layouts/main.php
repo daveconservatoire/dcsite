@@ -53,7 +53,8 @@
 <?
 $controller = Yii::app()->getController();
 $isHome = $controller->getId() === 'site' && $controller->getAction()->getId() === 'index';
-if (!$isHome):?>
+$isDonate = $controller->getId() === 'site' && $controller->getAction()->getId() === 'donate';
+if (!$isHome && !$isDonate):?>
 <div class="dropdown-notification text-center hidden">
    <button class="close pull-right"><span class="icon-remove"></span></button>
    <div class="container">
