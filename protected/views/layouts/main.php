@@ -59,7 +59,7 @@ if (!$isHome):?>
    <div class="container">
       <div class="row">
          <div class="span6">
-            <h3>We are a non-profit that survives on donations</h3>
+            <h3>This website survives on donations</h3>
             <h3>We never run ads and will be free forever</h3>
          </div>
          <div class="span6">
