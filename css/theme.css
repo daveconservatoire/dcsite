@@ -2159,3 +2159,28 @@ a.thumbnail:focus {
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
   background-color: #F7941E;
 }
+
+/* Donation Banner */
+
+.dropdown-notification {
+   height: 100%;
+   line-height: 40px;
+   transition: top .2s; 
+   background-color: rgba(248, 107, 30, 0.42);
+   box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.dropdown-notification h3 {
+	font-weight: bold;
+	color: #BF1E2D;
+	font-size: 24px;
+}
+
+
+.close {
+margin: 10px 20px 10px 10px;
+position: absolute;
+right: 0px;	
+
+}
+

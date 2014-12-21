@@ -40,6 +40,8 @@
 
 <script src="<?=bu();?>/js/jquery.js"></script>	
 <script src="<?=bu();?>/js/bootstrap.min.js"></script>
+<script src="<?=bu();?>/js/cookie.js"></script>
+<script src="https://checkout.stripe.com/checkout.js"></script>
 
 <script type="text/javascript" src="<?=bu();?>/js/scripts.js"></script>
 
@@ -48,6 +50,39 @@
 </head>
 
 <body>
+<?
+$controller = Yii::app()->getController();
+$isHome = $controller->getId() === 'site' && $controller->getAction()->getId() === 'index';
+if (!$isHome):?>
+<div class="dropdown-notification text-center hidden">
+   <button class="close pull-right"><span class="icon-remove"></span></button>
+   <div class="container">
+      <div class="row">
+         <div class="span6">
+            <h3>We are a non-profit that survives on donations</h3>
+            <h3>We never run ads and will be free forever</h3>
+         </div>
+         <div class="span6">
+	       <? if (false):?>
+            <p>If you have found this site useful, <b>make it available for future music students by donating:</b>
+               <a class="btn btn-large dc-btn-yellow" id="10Button">$10</a> 
+               <a class="btn btn-large dc-btn-orange" id="20Button">$20</a> 
+               <a class="btn btn-large dc-btn-redorange" id="50Button">$50</a> 
+            <form action="<? echo Yii::app()->request->baseUrl;?>/charge" method="POST" id="payment-form">
+               <input type="hidden" name="amount" value="0" id="chargeamount">
+            </form>
+            <? endif;?>
+             <p>If you've found this site useful, <b>make it available for future students by donating via Patreon:</b>
+	                <a class="btn btn-large dc-btn-orange" href="http://patreon.com/daveconservatoire" target="_blank" id="patreonbutton">Give to Dave Conservatoire via Patreon.com</a> 
+	             
+         </div>
+      </div>
+   </div>
+</div>
+<? endif;?>
+      
+      
+   </div>
 <!--header-->
 <div class="header">
 <!--logo-->
@@ -150,6 +185,8 @@ document.write(d.getFullYear())
   ga('send', 'pageview');
 
 </script>
+
+
 
 </body>
 </html>

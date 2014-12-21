@@ -92,6 +92,7 @@ return array(
 			    'index'=>'site/index',
 			    'donate'=>'site/donate',
 			    'contact'=>'site/contact',
+			    'charge'=>'site/charge',
 			    'about'=>'site/about',
 			    'login'=>'site/login',
 			    'topic/<urltitle>/mastery'=>'topic/mastery',

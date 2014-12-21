@@ -19,6 +19,28 @@ class SiteController extends Controller
 		);
 	}
 	
+	public function actionCharge() {
+		include('stripelib/Stripe.php');
+	Stripe::setApiKey("HBxbZabSo7gIf1WzZ0YNy9LEKI6Ek1mu");
+
+// Get the credit card details submitted by the form
+$token = $_POST['stripeToken'];
+
+// Create the charge on Stripe's servers - this will charge the user's card
+try {
+$charge = Stripe_Charge::create(array(
+  "amount" => $_POST['amount'], // amount in cents, again
+  "currency" => "usd",
+  "card" => $token,
+  "description" => "d.w.rees.03@gmail.com")
+);
+} catch(Stripe_CardError $e) {
+  // The card has been declined
+}
+print_r($_POST);
+$this->render('thanks');
+	}
+	
 	public function actionProfile()
 	{
 	if (!Yii::app()->user->isGuest){
