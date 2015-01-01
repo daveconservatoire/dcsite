@@ -113,7 +113,7 @@ if ($.cookie("noti") !== "closed") { // or you could just check for cookie exist
 
 // On button click close and add cookie (expires in 100 days)
 $('.close').on('click', function(){
-   $.cookie("noti", "closed", { expires : 7 });
+   $.cookie("noti", "closed", { expires : 1 });
    $('.dropdown-notification').addClass('hidden');
     $('.dropdown-notification').removeClass('visible-desktop');
     ga('send', 'event', 'button', 'click', 'patreonbannerclose');
@@ -121,7 +121,7 @@ $('.close').on('click', function(){
 
 
 $('#patreonbutton').on('click', function(){
-   $.cookie("noti", "closed", { expires : 50 });
+   $.cookie("noti", "closed", { expires : 1 });
       $('.dropdown-notification').addClass('hidden');
     $('.dropdown-notification').removeClass('visible-desktop');
     ga('send', 'event', 'button', 'click', 'patreonopen');
