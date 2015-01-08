@@ -1710,7 +1710,7 @@ border:0px solid #34495E;
 
 
 
-#keyboard { width:549px; position: absolute; top: 160px; left: 50%; margin-left: -275px;}
+#keyboard { width:549px; position: relative;  left: 50%; margin-left: -275px;}
 #keyboardspacer { height:210px}
 .whitenote, .blacknote {position: absolute; background-image: url("images/keyboard_small.png")}
 .whitenote {height: 150px; width: 24px}
