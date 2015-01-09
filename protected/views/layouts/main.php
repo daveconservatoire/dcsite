@@ -55,8 +55,8 @@ $controller = Yii::app()->getController();
 $isHome = $controller->getId() === 'site' && $controller->getAction()->getId() === 'index';
 $isDonate = $controller->getId() === 'site' && $controller->getAction()->getId() === 'donate';
 if (!$isHome && !$isDonate):?>
-<div class="dropdown-notification text-center hidden">
-   <button class="close pull-right"><span class="icon-remove"></span></button>
+<div class="dropdown-notification text-center hidden" id="patreonbanner">
+  <button class="close pull-right"><span class="icon-remove"></span></button>
    <div class="container">
       <div class="row">
          <div class="span6">
@@ -65,7 +65,7 @@ if (!$isHome && !$isDonate):?>
          </div>
          <div class="span6">
 	       <? if (false):?>
-            <p>If you have found this site useful, <b>make it available for future music students by donating:</b>
+            <p id="patreonpitch">If you have found this site useful, <b>make it available for future music students by donating:</b>
                <a class="btn btn-large dc-btn-yellow" id="10Button">$10</a> 
                <a class="btn btn-large dc-btn-orange" id="20Button">$20</a> 
                <a class="btn btn-large dc-btn-redorange" id="50Button">$50</a> 
@@ -73,7 +73,7 @@ if (!$isHome && !$isDonate):?>
                <input type="hidden" name="amount" value="0" id="chargeamount">
             </form>
             <? endif;?>
-             <p>If you've found this site useful, <b>make it available for future students by donating via Patreon:</b>
+             <p>If you've found this site useful, <b>make it available for future students <br />(and remove these annoying banners) by donating via Patreon:</b>
 	                <a class="btn btn-large dc-btn-orange" href="http://patreon.com/daveconservatoire" target="_blank" id="patreonbutton">Give to Dave Conservatoire via Patreon.com</a> 
 	             
          </div>
