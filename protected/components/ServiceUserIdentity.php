@@ -55,6 +55,7 @@ class ServiceUserIdentity extends CUserIdentity {
 	        $user->username=$this->service->id;
 	        $user->name= $this->username;
             $user->email= $this->service->email;
+            $user->joinDate=time();
             $user->save();
 	        // unset cookie
 	        setcookie("dc_tempusername", "", time()-3600);
