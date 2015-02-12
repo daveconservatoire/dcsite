@@ -56,6 +56,7 @@ class ServiceUserIdentity extends CUserIdentity {
 	        $user->name= $this->username;
             $user->email= $this->service->email;
             $user->joinDate=time();
+            $user->biog="Please tell us about your musical interests and goals.  This will help develop the site to better support your learning.  It will not be made public."
             $user->save();
 	        // unset cookie
 	        setcookie("dc_tempusername", "", time()-3600);
