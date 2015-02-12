@@ -56,7 +56,7 @@ $isHome = $controller->getId() === 'site' && $controller->getAction()->getId() =
 $isDonate = $controller->getId() === 'site' && $controller->getAction()->getId() === 'donate';
 if (!$isHome && !$isDonate):?>
 <div class="dropdown-notification text-center hidden" id="patreonbanner">
-  <button class="close pull-right"><span class="icon-remove"></span></button>
+ <!-- <button class="close pull-right"><span class="icon-remove"></span></button> -->
    <div class="container">
       <div class="row">
          <div class="span6">
