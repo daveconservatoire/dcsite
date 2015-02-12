@@ -56,8 +56,9 @@ $isHome = $controller->getId() === 'site' && $controller->getAction()->getId() =
 $isDonate = $controller->getId() === 'site' && $controller->getAction()->getId() === 'donate';
 $isProfile = $controller->getId() === 'profile';
 $isLogin = $controller->getId() === 'site' && $controller->getAction()->getId() === 'login';
+$isContact =$controller->getId() === 'site' && $controller->getAction()->getId() === 'contact';
 
-if (!$isHome && !$isDonate && !$isLogin && !$isProfile):?>
+if (!$isHome && !$isDonate && !$isLogin && !$isProfile && !$isContact):?>
 <div class="dropdown-notification text-center hidden" id="patreonbanner">
  <!-- <button class="close pull-right"><span class="icon-remove"></span></button> -->
    <div class="container">
