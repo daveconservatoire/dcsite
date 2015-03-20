@@ -128,6 +128,12 @@ $this->pageTitle='Home | '.Yii::app()->name ;
 	
 		$this->render('thanks');
 	}
+	
+				public function actionPatronthanks()
+	{
+	
+		$this->render('thanks');
+	}
 
 
 	/**

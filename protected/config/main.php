@@ -95,6 +95,7 @@ return array(
 			    'charge'=>'site/charge',
 			    'about'=>'site/about',
 			    'login'=>'site/login',
+			    'patronthanks'=>'site/patronthanks',
 			    'topic/<urltitle>/mastery'=>'topic/mastery',
 			    'topic/<urltitle>'=>'topic/view',
 			    'course/<urltitle>'=>'course/view',
