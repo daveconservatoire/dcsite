@@ -107,6 +107,8 @@ $counter=0; ?>
 				</ul>
 			</div>
 		</div>
+		<? else: ?>
+		<p>Videos here</p>
 		<? endif;?>
 		<div class="pad30"></div>
 
