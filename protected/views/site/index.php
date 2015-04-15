@@ -157,7 +157,9 @@ foreach ($course->topics[0]->lessons as $lesson){
 
 	</div>
 	
-
+         </div>
+		             	</div>
+			    </div>
 
 		<? endif;?>
 		<div class="pad30"></div>
