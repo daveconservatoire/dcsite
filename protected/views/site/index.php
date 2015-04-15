@@ -81,6 +81,7 @@ $counter=0; ?>
 				</div>
 			</div>
 		</div>	
+<? if ($course->id != 8) : ?>
 		<div class="pad30"></div>
 		<div class="container wrapper">
 			<div class="thumbnails tabbable">
@@ -106,6 +107,7 @@ $counter=0; ?>
 				</ul>
 			</div>
 		</div>
+		<? endif;?>
 		<div class="pad30"></div>
 
 <? endforeach;?>
