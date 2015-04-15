@@ -119,6 +119,10 @@ $counter=1;
 foreach ($course->topics[0]->lessons as $lesson){
 
  ?>
+ 		            <div class="tab-content">
+		             	<div class="tab-pane active" id="topic-all">
+         <div class="thumbnails">
+	        <div class="row"  style="margin: 0 0 20px 0">    
 		
 	
 		       <div class='span2'>
