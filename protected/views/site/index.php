@@ -124,17 +124,7 @@ foreach ($course->topics[0]->lessons as $lesson){
 		       <div class='span2'>
 		
 		
-				<a href='<?=bu();?>/lesson/<?=$lesson->urltitle;?>' class='thumbnail vertical-shadow suggested-action 
-				
-				<? if(in_array($lesson->id,$videolistarray)):?>
-				ribbon ribbon-viewed
-				<? elseif (in_array($lesson->id, $exercisesmasteredlist)):?>
-				ribbon ribbon-mastered
-				<? elseif (in_array($lesson->id,$exerciselistarray)):?>
-				ribbon ribbon-inprogress
-				<? endif;?>
-				
-				'>
+				<a href='<?=bu();?>/lesson/<?=$lesson->urltitle;?>' class='thumbnail vertical-shadow suggested-action'>
 				<?php if ($lesson->filetype == "l"): ?>
 					<img src='http://img.youtube.com/vi/<?=$lesson->youtubeid;?>/default.jpg'/>
 				<?php elseif ($lesson->filetype == "p"): ?>
