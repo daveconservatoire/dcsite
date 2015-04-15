@@ -136,7 +136,7 @@ foreach ($course->topics[0]->lessons as $lesson){
 				</a>
 
 		</div>
-    <? if($counter==4){ ?>
+    <? if($counter==6){ ?>
 	</div>
 	<div class="row"  style="margin: 0 0 20px 0">
     <? $counter=1; } else { $counter++;} ?> 
@@ -144,7 +144,7 @@ foreach ($course->topics[0]->lessons as $lesson){
 
 	 <? };?>	
 
-    <? if($counter==4){ ?>
+    <? if($counter==6){ ?>
 	</div>
 	<div class="row"  style="margin: 0 0 20px 0">
     <? $counter=1; } else { $counter++;} ?> 
