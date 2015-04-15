@@ -116,7 +116,7 @@ $counter=0; ?>
 		          
 <? 
 $counter=1; 
-foreach ($course->topic[0]->lessons as $lesson){
+foreach ($course->topics[0]->lessons as $lesson){
 
  ?>
 		
