@@ -108,7 +108,63 @@ $counter=0; ?>
 			</div>
 		</div>
 		<? else: ?>
-		<p>Videos here</p>
+		<div class="pad30"></div>
+		<div class="container wrapper">
+			
+			
+
+		          
+<? 
+$counter=1; 
+foreach ($course->topic[0]->lessons as $lesson){
+
+ ?>
+		
+	
+		       <div class='span2'>
+		
+		
+				<a href='<?=bu();?>/lesson/<?=$lesson->urltitle;?>' class='thumbnail vertical-shadow suggested-action 
+				
+				<? if(in_array($lesson->id,$videolistarray)):?>
+				ribbon ribbon-viewed
+				<? elseif (in_array($lesson->id, $exercisesmasteredlist)):?>
+				ribbon ribbon-mastered
+				<? elseif (in_array($lesson->id,$exerciselistarray)):?>
+				ribbon ribbon-inprogress
+				<? endif;?>
+				
+				'>
+				<?php if ($lesson->filetype == "l"): ?>
+					<img src='http://img.youtube.com/vi/<?=$lesson->youtubeid;?>/default.jpg'/>
+				<?php elseif ($lesson->filetype == "p"): ?>
+					<img src='<?=bu();?>/img/playlist.jpg'/>
+			    <?php elseif ($lesson->filetype == "e"): ?>
+					<img src='<?=bu();?>/img/exercise.jpg'/>
+				<? endif;?>
+				<p><?=$lesson->title;?></p>
+				</a>
+
+		</div>
+    <? if($counter==4){ ?>
+	</div>
+	<div class="row"  style="margin: 0 0 20px 0">
+    <? $counter=1; } else { $counter++;} ?> 
+   
+
+	 <? };?>	
+
+    <? if($counter==4){ ?>
+	</div>
+	<div class="row"  style="margin: 0 0 20px 0">
+    <? $counter=1; } else { $counter++;} ?> 
+   
+
+
+	</div>
+	
+
+
 		<? endif;?>
 		<div class="pad30"></div>
 
