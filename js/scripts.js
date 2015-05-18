@@ -128,6 +128,12 @@ $('#patreonbutton').on('click', function(){
 
 });
 
+$('.paypalform').on('click', function(){
+   
+    ga('send', 'event', 'button', 'click', 'paypalsubbuttonclick');
+
+});
+
 });
 /***************************************************
 	DONATIONS HANDLER

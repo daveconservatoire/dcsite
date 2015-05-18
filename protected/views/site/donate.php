@@ -13,7 +13,7 @@ $this->pageTitle='Support Us | '.Yii::app()->name ;
 <div class="container wrapper">
 	<div class="inner_content">
 	<div class="pad30"></div>
-
+<!--
 					<div class="row">
 			<div class="span8">
 <h2>Become a Patron</h2>
@@ -33,11 +33,12 @@ $this->pageTitle='Support Us | '.Yii::app()->name ;
 		
 			</div></div>
 				<hr />
+				-->
 				
 <div class="row">
 			<div class="span8">
 			<h2>Give a one-time or recurring donation</h2>
-			<p>If you prefer to make a one-off or recurring contribution to the development of the site, any amount donated via Paypal is greatly received.</p>
+			<p>Any amount donated via Paypal is greatly received.</p>
 			<p>Paypal securely accepts all major credit and debit cards in all currencies.</p>
 
 <p>&nbsp;</p>

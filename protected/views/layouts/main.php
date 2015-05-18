@@ -61,11 +61,12 @@ if ($showBanner):?>
  <!-- <button class="close pull-right"><span class="icon-remove"></span></button> -->
    <div class="container">
       <div class="row">
-         <div class="span6">
-            <h3>This website survives on donations</h3>
-            <h3>We never run ads and will be free forever</h3>
+         <div class="span8">
+            <h3>Love our lessons?</h3>
+            <h3>Help us reach more students just like you!</h3>
+            <p>We never run ads and will be free forever.  A monthly voluntary subscription will help us continue to power music learning around the world!  When you do we'll remove these annoying banners and you can cancel anytime.</p>
          </div>
-         <div class="span6">
+         <div class="span4">
 	       <? if (false):?>
             <p id="patreonpitch">If you have found this site useful, <b>make it available for future music students by donating:</b>
                <a class="btn btn-large dc-btn-yellow" id="10Button">$10</a> 
@@ -75,8 +76,89 @@ if ($showBanner):?>
                <input type="hidden" name="amount" value="0" id="chargeamount">
             </form>
             <? endif;?>
+            <!--
              <p>If you've found this site useful, <b>make it available for future students <br />(and remove these annoying banners) by donating via Patreon:</b>
 	                <a class="btn btn-large dc-btn-orange" href="http://patreon.com/daveconservatoire" target="_blank" id="patreonbutton">Give to Dave Conservatoire via Patreon.com</a> 
+	                
+
+	                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="paypalform">
+<input type="hidden" name="cmd" value="_xclick-subscriptions">
+<input type="hidden" name="business" value="dave@daveconservatoire.org">
+<input type="hidden" name="lc" value="GB">
+<input type="hidden" name="no_note" value="1">
+<input type="hidden" name="src" value="1">
+<input type="hidden" name="currency_code" value="GBP">
+<input type="hidden" name="bn" value="PP-SubscriptionsBF:btn_subscribeCC_LG.gif:NonHostedGuest">
+<table class="paypalbuttontable">
+<tr><td><input type="hidden" name="on0" value="Voluntary Subscription">Voluntary Subscription</td></tr><tr><td><select name="os0">
+	<option value="&#9835;&#9835;">&#9835;&#9835; : &pound;5.00 GBP - monthly</option>
+	<option value="&#9835;">&#9835; : &pound;3.00 GBP - monthly</option>
+	<option value="&#9835;&#9835;&#9835;">&#9835;&#9835;&#9835; : &pound;10.00 GBP - monthly</option>
+	<option value="&#9835;&#9835;&#9835;&#9835;">&#9835;&#9835;&#9835;&#9835; : &pound;25.00 GBP - monthly</option>
+</select> </td></tr>
+</table>
+<input type="hidden" name="currency_code" value="GBP">
+<input type="hidden" name="option_select0" value="&#9835;&#9835;">
+<input type="hidden" name="option_amount0" value="5.00">
+<input type="hidden" name="option_period0" value="M">
+<input type="hidden" name="option_frequency0" value="1">
+<input type="hidden" name="option_select1" value="&#9835;">
+<input type="hidden" name="option_amount1" value="3.00">
+<input type="hidden" name="option_period1" value="M">
+<input type="hidden" name="option_frequency1" value="1">
+<input type="hidden" name="option_select2" value="&#9835;&#9835;&#9835;">
+<input type="hidden" name="option_amount2" value="10.00">
+<input type="hidden" name="option_period2" value="M">
+<input type="hidden" name="option_frequency2" value="1">
+<input type="hidden" name="option_select3" value="&#9835;&#9835;&#9835;&#9835;">
+<input type="hidden" name="option_amount3" value="25.00">
+<input type="hidden" name="option_period3" value="M">
+<input type="hidden" name="option_frequency3" value="1">
+<input type="hidden" name="option_index" value="0">
+<input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal ? The safer, easier way to pay online." id="paypalsubgbp">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+</form>
+-->
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="paypalform">
+<input type="hidden" name="cmd" value="_xclick-subscriptions">
+<input type="hidden" name="business" value="dave@daveconservatoire.org">
+<input type="hidden" name="lc" value="GB">
+<input type="hidden" name="no_note" value="1">
+<input type="hidden" name="src" value="1">
+<input type="hidden" name="currency_code" value="USD">
+<input type="hidden" name="bn" value="PP-SubscriptionsBF:btn_subscribeCC_LG.gif:NonHostedGuest">
+<table class="paypalbuttontable">
+<tr><td><input type="hidden" name="on0" value="Voluntary Subscription">Voluntary Subscription</td></tr><tr><td><select name="os0">
+	<option value="&#9835;&#9835;">&#9835;&#9835; : $7.00 USD - monthly</option>
+	<option value="&#9835;">&#9835; : $3.00 USD - monthly</option>
+	<option value="&#9835;&#9835;&#9835;">&#9835;&#9835;&#9835; : $15.00 USD - monthly</option>
+	<option value="&#9835;&#9835;&#9835;&#9835;">&#9835;&#9835;&#9835;&#9835; : $30.00 USD - monthly</option>
+</select> </td></tr>
+</table>
+<input type="hidden" name="currency_code" value="USD">
+<input type="hidden" name="option_select0" value="&#9835;&#9835;">
+<input type="hidden" name="option_amount0" value="7.00">
+<input type="hidden" name="option_period0" value="M">
+<input type="hidden" name="option_frequency0" value="1">
+<input type="hidden" name="option_select1" value="&#9835;">
+<input type="hidden" name="option_amount1" value="3.00">
+<input type="hidden" name="option_period1" value="M">
+<input type="hidden" name="option_frequency1" value="1">
+<input type="hidden" name="option_select2" value="&#9835;&#9835;&#9835;">
+<input type="hidden" name="option_amount2" value="15.00">
+<input type="hidden" name="option_period2" value="M">
+<input type="hidden" name="option_frequency2" value="1">
+<input type="hidden" name="option_select3" value="&#9835;&#9835;&#9835;&#9835;">
+<input type="hidden" name="option_amount3" value="30.00">
+<input type="hidden" name="option_period3" value="M">
+<input type="hidden" name="option_frequency3" value="1">
+<input type="hidden" name="option_index" value="0">
+<input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+	                </div>
 	             
          </div>
       </div>
