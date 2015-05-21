@@ -6,6 +6,7 @@
 		<ul class="nav nav-list bs-docs-sidenav" style="margin-bottom: 10px">
 		    <li><a href="<?=bu()."/course/".$course->urltitle;?>" class="white"><?=$course->title;?></a></li>  
 		</ul>
+	
 			<h6>Topics:</h6>
 		<ul class="nav nav-list bs-docs-sidenav">
 	   

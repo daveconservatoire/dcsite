@@ -169,7 +169,63 @@ if ($showBanner):?>
       
    </div>
 <!--header-->
-<div class="header">
+<div class="navbar">
+  <div class="navbar-inner visible-phone">
+    <div class="container">
+ 
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <a class="btn btn-navbar" data-toggle="collapse" data-target="#mainfoldout">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+     
+      <!-- Be sure to leave the brand out there if you want it shown -->
+      <a class="brand mobilenav" href="http://www.daveconservatoire.org">  <span class="mobiledc">Dave Conservatoire</span></a>
+ 
+      <!-- Everything you want hidden at 940px or less, place within here -->
+  <div class="nav-collapse collapse navbar-responsive-collapse" id="mainfoldout">
+                    <ul class="nav">
+                        <a href="/dcsite/about" class="btn btn-block dc-btn-yellow">About</a>
+						<a href="/dcsite/donate" class="btn btn-block dc-btn-orange">Donate</a>
+						<a href="/dcsite/contact" class="btn btn-block dc-btn-redorange">Contact</a>
+						<?php if (Yii::app()->user->isGuest &&  !isset($_COOKIE['dc_tempusername'])): ?>
+						
+						<a href="<? echo Yii::app()->request->baseUrl;?>/login" class="btn btn-block dc-btn-red loginbutton">Login</a>
+						
+						<?php 
+						endif;
+						if (Yii::app()->user->isGuest &&  isset($_COOKIE['dc_tempusername'])): 
+						 $user=User::model()->findByAttributes(array('username'=>$_COOKIE['dc_tempusername']));
+						 if ($user->points>1):
+						 ?>
+						 <a class="btn btn-success btn-block loginbutton" href="<? echo Yii::app()->request->baseUrl; ?>/login"><i class="icon-exclamation-sign icon-white"></i> Unclaimed points. Login to save your progress</a>
+						 <? else: ?>
+						 <a href="<? echo Yii::app()->request->baseUrl;?>/login" class="btn dc-btn-red btn-block loginbutton">Login</a>
+						 <? endif; 
+							 endif; ?>
+						 
+						
+						<? if(!Yii::app()->user->isGuest): ?>
+						<? $user=User::model()->findByPk(Yii::app()->user->dcid);?>
+						
+						<div class="btn-group loginbutton">
+								<a class="btn btn-success " href="<? echo Yii::app()->request->baseUrl; ?>/profile"><i class="icon-user icon-white"></i> <? echo Yii::app()->user->name;?> (<span id="pointstotal"><?=$user->points;?></span> Points)</a>
+								<a class="btn btn-success dropdown-toggle" data-toggle="dropdown" href="#profilemenu"><span class="caret"></span></a>
+								<ul class="dropdown-menu profilemenudd" >
+								<li><a href="<? echo Yii::app()->request->baseUrl; ?>/profile"><i class="icon-pencil"></i> My Profile</a></li>
+								<li class="divider"></li>
+								<li><a href="<? echo Yii::app()->request->baseUrl; ?>/site/logout"><i class="icon-share-alt"></i>Logout</a></li>
+								</ul>
+						</div>
+					  <?php endif;?>
+               </ul>
+                  </div>
+ 
+    </div>
+  </div>
+</div>
+<div class="header hidden-phone">
 <!--logo-->
 	<div class="navbar">
 		<div class="navbar-inner">
@@ -207,7 +263,7 @@ if ($showBanner):?>
 						<div class="btn-group loginbutton">
 								<a class="btn btn-success " href="<? echo Yii::app()->request->baseUrl; ?>/profile"><i class="icon-user icon-white"></i> <? echo Yii::app()->user->name;?> (<span id="pointstotal"><?=$user->points;?></span> Points)</a>
 								<a class="btn btn-success dropdown-toggle" data-toggle="dropdown" href="#profilemenu"><span class="caret"></span></a>
-								<ul class="dropdown-menu">
+								<ul class="dropdown-menu profilemenudd">
 								<li><a href="<? echo Yii::app()->request->baseUrl; ?>/profile"><i class="icon-pencil"></i> My Profile</a></li>
 								<li class="divider"></li>
 								<li><a href="<? echo Yii::app()->request->baseUrl; ?>/site/logout"><i class="icon-share-alt"></i>Logout</a></li>

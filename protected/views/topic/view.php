@@ -10,11 +10,17 @@
 		<ul class="nav nav-list bs-docs-sidenav activetopic" style="margin-bottom: 10px">
 		    <li class="dc-bg-yellow active activetopiclink"><a class="activetopiclink" href="<?=bu()."/course/".$topic->course->urltitle;?>"><?=$topic->course->title;?></a></li>  
 		</ul>
+		<div class="hidden-phone">
           <h6>Topics:</h6>
 		<ul class="nav nav-list bs-docs-sidenav">
 	    <? foreach($topic->course->topics as $thistopic){ ?>
 
-	               <li><a href="<? echo Yii::app()->request->baseUrl.'/topic/'.$thistopic->urltitle;?>">
+	               <li 
+	               <? if ($topic->urltitle==$thistopic->urltitle): ?>
+	               class="dc-bg-orange active"
+	               <? endif;?>
+	               
+	               ><a href="<? echo Yii::app()->request->baseUrl.'/topic/'.$thistopic->urltitle;?>">
 	               
 	              <? if (in_array($thistopic->id,$videosviewedarray) || in_array($thistopic->id,$exercisesansweredarray)):?> 
 	                    <i class="icon-adjust"></i>
@@ -29,8 +35,57 @@
 	
 	?>	
 	    </ul>
+	    
 					
-					
+		</div>
+		<div class="visible-phone">
+			<h6>Current topic:</h6>
+			
+					<ul class="nav nav-list bs-docs-sidenav activetopic" style="margin-bottom: 10px">
+		    <li class="dc-bg-yellow active activetopiclink"><a class="activetopiclink" href="<?=bu()."/topic/".$topic->urltitle;?>"><?=$topic->title;?></a></li>  
+		</ul>
+		
+		<div class="navbar">
+						<div class="navbar-inner">
+							<div class="container">
+								<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+								<a class="btn btn-navbar" data-toggle="collapse" data-target="#topic-collapse">
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								</a>
+								<!-- Be sure to leave the brand out there if you want it shown -->
+								Other topics in this course							<!-- Everything you want hidden at 940px or less, place within here -->
+								<div id="topic-collapse" class="nav-collapse collapse">
+									<ul class="nav nav-list bs-docs-sidenav">
+	    <? foreach($topic->course->topics as $thistopic){ ?>
+
+	               <li 
+	               <? if ($topic->urltitle==$thistopic->urltitle): ?>
+	               class="dc-bg-orange active"
+	               <? endif;?>
+	               
+	               ><a href="<? echo Yii::app()->request->baseUrl.'/topic/'.$thistopic->urltitle;?>">
+	               
+	              <? if (in_array($thistopic->id,$videosviewedarray) || in_array($thistopic->id,$exercisesansweredarray)):?> 
+	                    <i class="icon-adjust"></i>
+	              <? else:?>
+	              <i class="icon-chevron-right"></i>
+	              
+	              <? endif;?>
+	              <?=$thistopic->title;?></a>
+	               </li>  
+	<?    
+	}	
+	
+	?>	
+	    </ul>
+								</div>
+							</div>
+						</div>
+					</div>
+
+		</div>
 					
 					
 					
