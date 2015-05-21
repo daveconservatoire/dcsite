@@ -12,11 +12,11 @@
 	<h6>Lessons in this topic:</h6>
 	<ul class="nav nav-list bs-docs-sidenav">
 		<? $lessonsinthiscourse=Lesson::model()->findAll("topicno=".$model->topicno." ORDER BY lessonno");
-			foreach($lessonsinthiscourse as $lesson){
-			   if($lesson->id==$model->id) {?>
-		<li class="sidebar-selected"><a class="sidebar-selected-link" href="<? echo Yii::app()->request->baseUrl.'/lesson/'.$lesson->urltitle;?>"><i class="icon-chevron-right"></i><?=$lesson->title;?></a></li>
+			foreach($lessonsinthiscourse as $thislesson){
+			   if($thislesson->id==$model->id) {?>
+		<li class="sidebar-selected"><a class="sidebar-selected-link" href="<? echo Yii::app()->request->baseUrl.'/lesson/'.$thislesson->urltitle;?>"><i class="icon-chevron-right"></i><?=$thislesson->title;?></a></li>
 		<? } else { ?>
-		<li><a href="<? echo Yii::app()->request->baseUrl.'/lesson/'.$lesson->urltitle;?>"><i class="icon-chevron-right"></i><?=$lesson->title;?></a></li>
+		<li><a href="<? echo Yii::app()->request->baseUrl.'/lesson/'.$thislesson->urltitle;?>"><i class="icon-chevron-right"></i><?=$thislesson->title;?></a></li>
 		<?    
 			}	
 			}
@@ -26,7 +26,7 @@
 <div class="visible-phone">
 		<h6>Current lesson:</h6>
 	<ul class="nav nav-list bs-docs-sidenav activetopic" style="margin-bottom: 10px">
-		<li class="sidebar-selected"><a class="activetopiclink" href="<?=bu()."/topic/".$lesson->urltitle;?>"><?=$lesson->title;?></a></li>
+		<li class="sidebar-selected"><a class="activetopiclink" href="<?=bu()."/topic/".$model->urltitle;?>"><?=$model->title;?></a></li>
 	</ul>
 	<div class="navbar">
 		<div class="navbar-inner">
