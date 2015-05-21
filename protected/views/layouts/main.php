@@ -186,9 +186,9 @@ if ($showBanner):?>
       <!-- Everything you want hidden at 940px or less, place within here -->
   <div class="nav-collapse collapse navbar-responsive-collapse" id="mainfoldout">
                     <ul class="nav">
-                        <a href="/dcsite/about" class="btn btn-block dc-btn-yellow">About</a>
-						<a href="/dcsite/donate" class="btn btn-block dc-btn-orange">Donate</a>
-						<a href="/dcsite/contact" class="btn btn-block dc-btn-redorange">Contact</a>
+                        <a href="/about" class="btn btn-block dc-btn-yellow">About</a>
+						<a href="/donate" class="btn btn-block dc-btn-orange">Donate</a>
+						<a href="/contact" class="btn btn-block dc-btn-redorange">Contact</a>
 						<?php if (Yii::app()->user->isGuest &&  !isset($_COOKIE['dc_tempusername'])): ?>
 						
 						<a href="<? echo Yii::app()->request->baseUrl;?>/login" class="btn btn-block dc-btn-red loginbutton">Login</a>
