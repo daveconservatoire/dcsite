@@ -50,6 +50,7 @@ class User extends CActiveRecord
 			array('username, name', 'length', 'max'=>100),
 			array('email', 'length', 'max'=>200),
 			array('biog', 'length', 'max'=>160),
+			array('firstip', 'length', 'max'=>100),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			
