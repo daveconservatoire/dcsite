@@ -153,4 +153,7 @@ return array(
 		// this is used in contact page
 		'adminEmail'=>'dave@daveconservatoire.org',
 	),
-);
+	'behaviors'=>array(
+    'class'=>'application.components.ApplicationBehavior',
+      ),
+	);

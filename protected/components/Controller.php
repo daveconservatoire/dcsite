@@ -25,35 +25,5 @@ class Controller extends CController
 	
 	public $tempuserid="";
 	
-	public function init() {
-	
-			    
-			
-		
-		if (Yii::app()->user->isGuest && !isset(Yii::app()->request->cookies['dc_tempusername'])):
-			$tempusername=genRandomString(20);
-			
-			$tempuser=new User();
-			$tempuser->username=$tempusername;
-			$tempuser->email="noemailyet@tempuser.com";
-			$tempuser->name="Temp User - ".$tempusername;
-			$tempuser->points=1;
-			$tempuser->firstip=$_SERVER['REMOTE_ADDR'];
-			if($tempuser->validate()){
-			Yii::app()->request->cookies['dc_tempusername'] = new CHttpCookie('dc_tempusername', $tempusername);
-			$cookie = new CHttpCookie('dc_tempusername', $tempusername);
-            $cookie->expire = time()+60*60*24*180; 
-            Yii::app()->request->cookies['dc_tempusername'] = $cookie;
-			$tempuser->save();
-			}
-			else{
-				echo CHtml::errorSummary($tempuser);
-			}
-		endif;
-
-
-		
-	
-		}
 		
 		}
