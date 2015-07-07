@@ -36,7 +36,7 @@ class ApplicationBehavior extends CBehavior
 				echo CHtml::errorSummary($tempuser);
 			}
 		endif;
-		echo Yii::app()->request->cookies['dc_tempusername']->value;
+		
        }
 }
 ?>
