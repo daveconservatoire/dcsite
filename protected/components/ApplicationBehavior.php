@@ -22,7 +22,7 @@ class ApplicationBehavior extends CBehavior
 			$tempuser=new User();
 			$tempuser->username=$tempusername;
 			$tempuser->email="noemailyet@tempuser.com";
-			$tempuser->name=Yii::app()->request->cookies['dc_tempusername']->value;;
+			$tempuser->name=Yii::app()->request->cookies['dc_tempusername']->value;
 			$tempuser->points=1;
 			$tempuser->firstip=$_SERVER['REMOTE_ADDR'];
 			if($tempuser->validate()){
