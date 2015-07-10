@@ -15,8 +15,12 @@ class ApplicationBehavior extends CBehavior
        {
 
                 $owner=$this->getOwner();
+                
+           
              
-                       if ($owner->user->getIsGuest() && !isset(Yii::app()->request->cookies['dc_tempusername'])):
+                       if ($owner->user->getIsGuest() && !isset(Yii::app()->request->cookies['dc_tempusername']) && isset(Yii::app()->request->cookies['PHPSESSID'])):
+          
+
 			$tempusername=genRandomString(20);
 			
 			$tempuser=new User();
@@ -41,6 +45,7 @@ class ApplicationBehavior extends CBehavior
 				echo CHtml::errorSummary($tempuser);
 			}
 		endif;
+	
 		
        }
 }
