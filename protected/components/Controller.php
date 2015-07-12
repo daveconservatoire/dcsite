@@ -28,7 +28,7 @@ class Controller extends CController
 	public function init() {
 				if(!Yii::app()->user->isGuest):
 		     $user = User::model()->findByAttributes(array('id'=>Yii::app()->user->dcid));
-		   if(Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/socialmedia" || Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/thanks"):
+		   if(Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/socialmedia" && Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/thanks"):
 		     if($user->subamount=="" && Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/subrequest"):
 		     
 		       $this->redirect(array("site/subrequest"));
