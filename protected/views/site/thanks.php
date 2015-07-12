@@ -1,4 +1,4 @@
 <h2>Thanks</h2>
 <?
-	print_r($_POST);
+	print_r($_GET);
 	?>
