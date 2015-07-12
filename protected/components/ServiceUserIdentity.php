@@ -59,7 +59,7 @@ class ServiceUserIdentity extends CUserIdentity {
             $user->biog="Please tell us about your musical interests and goals.  This will help develop the site to better support your learning.  It will not be made public.";
             $user->save();
 	        // unset cookie
-	        setcookie("dc_tempusername", "", time()-3600);
+	      	unset(Yii::app()->request->cookies['dc_tempusername']);
 	                       
             }
             
@@ -85,7 +85,7 @@ class ServiceUserIdentity extends CUserIdentity {
 	            
 	            $tempuser->delete();
 	           
-	           setcookie("dc_tempusername", "", time()-3600);
+	          	unset(Yii::app()->request->cookies['dc_tempusername']);
 	            
 	            
             }

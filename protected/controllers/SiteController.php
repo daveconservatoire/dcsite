@@ -266,6 +266,8 @@ $this->pageTitle='Home | '.Yii::app()->name ;
 	public function actionLogout()
 	{
 		Yii::app()->user->logout();
-		$this->redirect('http://www.daveconservatoire.org');
+		$this->redirect(Yii::app()->request->baseUrl);
+		setcookie("dc_tempusername", "", 1);
+	                       
 	}
 }

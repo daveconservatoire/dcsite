@@ -1,3 +1,4 @@
+<? print_r($_COOKIE);?>
 <!DOCTYPE html>
 <html lang="en" data-require="music math" >
 <head>
@@ -197,7 +198,8 @@ if ($showBanner):?>
 						
 						<?php 
 						endif;
-						if (Yii::app()->user->isGuest &&  isset($_COOKIE['dc_tempusername'])): 
+						if (Yii::app()->user->isGuest &&  isset($_COOKIE['dc_tempusername'])
+						): 
 						 $user=User::model()->findByAttributes(array('username'=>$_COOKIE['dc_tempusername']));
 						 if ($user->points>1):
 						 ?>
