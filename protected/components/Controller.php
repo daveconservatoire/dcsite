@@ -25,5 +25,17 @@ class Controller extends CController
 	
 	public $tempuserid="";
 	
+	public function init() {
+				if(!Yii::app()->user->isGuest):
+		     $user = User::model()->findByAttributes(array('id'=>Yii::app()->user->dcid));
+		   if(Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/socialmedia"):
+		     if($user->subamount=="" && Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/subrequest"):
+		     
+		       $this->redirect(array("site/subrequest"));
+		       endif;
+		    endif;
+		endif;
+	}
+	
 		
 		}

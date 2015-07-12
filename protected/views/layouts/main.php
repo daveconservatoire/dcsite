@@ -238,6 +238,8 @@ if ($showBanner):?>
 				<a class="brand" id="mobilebrand" href="http://www.daveconservatoire.org"><img src="<?=bu()."/img/dcvert.png";?>" alt="Dave Conservatoire" style="width:400px" /></a>
 				<div class="navbar">
 					<div class="navbuttons">
+						
+						<? if(Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/subrequest"):?>
 						<a href="<? echo Yii::app()->request->baseUrl;?>/about" class="btn dc-btn-yellow">About</a>
 						<a href="<? echo Yii::app()->request->baseUrl;?>/donate" class="btn dc-btn-orange">Donate</a>
 						<a href="<? echo Yii::app()->request->baseUrl;?>/contact" class="btn dc-btn-redorange">Contact</a>
@@ -258,7 +260,8 @@ if ($showBanner):?>
 						 <? else: ?>
 						 <a href="<? echo Yii::app()->request->baseUrl;?>/login" class="btn dc-btn-red loginbutton">Login</a>
 						 <? endif; 
-							 endif; ?>
+							 endif;
+						?>
 						 
 						
 						<? if(!Yii::app()->user->isGuest): ?>
@@ -273,7 +276,10 @@ if ($showBanner):?>
 								<li><a href="<? echo Yii::app()->request->baseUrl; ?>/site/logout"><i class="icon-share-alt"></i>Logout</a></li>
 								</ul>
 						</div>
-					  <?php endif;?>
+					  <?php endif;
+						  endif;
+					  ?>
+					  
 					  
 					  	<span id="socialmediaicons">
 						<a href="http://www.youtube.com/daveconservatoire" target="_blank"><img class="socialicon" src="<?=bu()."/img/socialicons/youtube.png";?>" /></a>

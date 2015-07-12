@@ -45,6 +45,8 @@ class ApplicationBehavior extends CBehavior
 				echo CHtml::errorSummary($tempuser);
 			}
 		endif;
+		
+
 	
 		
        }
