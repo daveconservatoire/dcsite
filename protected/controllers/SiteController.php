@@ -300,7 +300,13 @@ $this->pageTitle='Home | '.Yii::app()->name ;
 	{
 		Yii::app()->user->logout();
 		unset(Yii::app()->request->cookies['dc_tempusername']);
+		
+		if (Yii::app()->request->baseUrl=="/dcsite"):
 		$this->redirect(Yii::app()->request->baseUrl);
+		else:
+		$this->redirect('http://www.daveconservatoire.org');
+		endif;
+		
 	
 	                       
 	}
