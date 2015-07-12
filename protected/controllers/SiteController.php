@@ -181,14 +181,18 @@ $this->pageTitle='Home | '.Yii::app()->name ;
 	{
 		if(Yii::app()->user->isGuest && isset(Yii::app()->request->cookies['dc_tempusername'])):	
 		     $user=User::model()->findByAttributes(array('username'=>$_COOKIE['dc_tempusername']));
+		     if($user->subamount==""):
 		     $user->subamount=0;
+		     endif;
 		     $user->subupdated=date("Y-m-d H:i:s");
 		     $user->save();
 		endif;
 		
 		if(!Yii::app()->user->isGuest):	
 		     $user=User::model()->findByPk(Yii::app()->user->dcid);
+		        if($user->subamount==""):
 		     $user->subamount=0;
+		     endif;
 		    
 		     $user->subupdated=date("Y-m-d H:i:s");
 		     $user->save();
