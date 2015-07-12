@@ -19,27 +19,7 @@ class SiteController extends Controller
 		);
 	}
 	
-	public function actionCharge() {
-		include('stripelib/Stripe.php');
-	Stripe::setApiKey("HBxbZabSo7gIf1WzZ0YNy9LEKI6Ek1mu");
 
-// Get the credit card details submitted by the form
-$token = $_POST['stripeToken'];
-
-// Create the charge on Stripe's servers - this will charge the user's card
-try {
-$charge = Stripe_Charge::create(array(
-  "amount" => $_POST['amount'], // amount in cents, again
-  "currency" => "usd",
-  "card" => $token,
-  "description" => "d.w.rees.03@gmail.com")
-);
-} catch(Stripe_CardError $e) {
-  // The card has been declined
-}
-print_r($_POST);
-$this->render('thanks');
-	}
 	
 	public function actionProfile()
 	{
@@ -128,12 +108,14 @@ $this->pageTitle='Home | '.Yii::app()->name ;
 			if(Yii::app()->user->isGuest && isset(Yii::app()->request->cookies['dc_tempusername']) && $_GET['st']=="Completed"):	
 		     $user=User::model()->findByAttributes(array('username'=>$_COOKIE['dc_tempusername']));
 		     $user->subamount=$_GET['amt'];
+		     $user->subupdated=date("Y-m-d H:i:s");
 		     $user->save();
 		endif;
 		
 		if(!Yii::app()->user->isGuest && $_GET['st']=="Completed"):	
 		     $user=User::model()->findByPk(Yii::app()->user->dcid);
 		     $user->subamount=$_GET['amt'];
+		     $user->subupdated=date("Y-m-d H:i:s"); 
 		     $user->save();
 		endif;
 	
@@ -200,12 +182,15 @@ $this->pageTitle='Home | '.Yii::app()->name ;
 		if(Yii::app()->user->isGuest && isset(Yii::app()->request->cookies['dc_tempusername'])):	
 		     $user=User::model()->findByAttributes(array('username'=>$_COOKIE['dc_tempusername']));
 		     $user->subamount=0;
+		     $user->subupdated=date("Y-m-d H:i:s");
 		     $user->save();
 		endif;
 		
 		if(!Yii::app()->user->isGuest):	
 		     $user=User::model()->findByPk(Yii::app()->user->dcid);
 		     $user->subamount=0;
+		    
+		     $user->subupdated=date("Y-m-d H:i:s");
 		     $user->save();
 		endif;
 		
