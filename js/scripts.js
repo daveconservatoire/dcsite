@@ -230,7 +230,7 @@ $("#ex1").on("slide", function(slideEvt) {
 $(".subbutton").on("click", function() {
 	
 if ($('#ex1').val()!=0) {
-window.location.href = "https://www.paypal.com/cgi-bin/webscr?business=dave@daveconservatoire.org&cmd=_xclick-subscriptions&currency_code=USD&p3=1&t3=M&no_shipping=1&src=1&sra=1&a3="+$('#ex1').val()+"&item_name=Dave%20Conservatoire%20Subscription%20&return_url=http://localohost:8888/dcsite/thanks&cancel_return=http://www.daveconservatoire.org/subrequest&rm=2";
+window.location.href = "https://www.paypal.com/cgi-bin/webscr?business=dave@daveconservatoire.org&cmd=_xclick-subscriptions&currency_code=USD&p3=1&t3=M&no_shipping=1&src=1&sra=1&a3="+$('#ex1').val()+"&item_name=Dave%20Conservatoire%20Subscription%20&return_url=http://localohost:8888/dcsite/thanks&cancel_return=http://www.daveconservatoire.org/subrequest";
 } else {
 	
 	$('#suremodal').modal('show');
