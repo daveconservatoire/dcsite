@@ -2,42 +2,22 @@
 <div class="banner">
    <div class="container intro_wrapper">
       <div class="inner_content">
-         <h1>Thanks for becoming a Dave Conservatoire subscriber</h1>
-         <h1 class="title">Why not share the site with your friends?</h1>
+         <h1>You've just become part of something huge!</h1>
+         <h1 class="title">Thankyou!</h1>
       </div>
    </div>
 </div>
 
 <div class="container wrapper">
 <div class="inner_content">
-<div class="pad45"></div>
+<div class="pad15"></div>
 <!--info boxes-->
-<div class="row">
-   <div class="span4">
-      <div class="tile introboxes">
-         <div class="intro-icon-disc  social-share"><img src="<? echo Yii::app()->request->baseUrl;?>/img/facebook.png" /></div>
-         <a  href="https://www.facebook.com/sharer/sharer.php?u=www.daveconservatoire.org" class="btn btn-primary  btn-custom btn-rounded btn-block dc-btn-yellow">Share Dave Conservatoire on Facebook</a>
-      </div>
-      <div class="pad25"></div>
-   </div>
-   <div class="span4">
-      <div class="tile introboxes">
-        <div class="intro-icon-disc  social-share"><img src="<? echo Yii::app()->request->baseUrl;?>/img/twitter.png" /></div>
-         <a href="https://twitter.com/home?status=Learn%20music%20for%20free%20online%20at%20www.daveconservatoire.org%20-%20more%20at%20%40dconservatoire" class="btn btn-primary  btn-custom btn-rounded btn-block dc-btn-orange">Share Dave Conservatoire on Twitter</a>
-      </div>
-      <div class="pad25"></div>
-   </div>
-   <div class="span4">
-      <div class="tile introboxes">
-            <div class="intro-icon-disc  social-share"><img src="<? echo Yii::app()->request->baseUrl;?>/img/googleplus.png" /></div>
-         <a href="https://plus.google.com/share?url=www.daveconservatoire.org" class="btn btn-primary  btn-custom btn-rounded btn-block dc-btn-redorange">Share Dave Conservatoire on Google Plus</a>
-      </div>
-      <div class="pad25"></div>
-   </div>
-</div>
+
 <!--strip-->
 <div class="strip">
-   <h1 class="center">Thanks for taking the time to do this!<h1>
+
+   <h1 class="center">Thanks for your support!<h1>
+   <h3 class="center about_strip">You are now officially a Dave Conservatoire subscriber. </h3><h3 class="center about_strip">You are playing a role in making a world class music education available to everyone everywhere!</h3>   
    <h3 class="center about_strip"> Ready to get back to learning? </h3>
    <div class="pad45"></div>
    <a href="<? echo Yii::app()->request->baseUrl;?>/" class="big_button">Let's go!</a>

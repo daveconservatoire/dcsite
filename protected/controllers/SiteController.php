@@ -125,6 +125,17 @@ $this->pageTitle='Home | '.Yii::app()->name ;
 	}
 			public function actionThanks()
 	{
+			if(Yii::app()->user->isGuest && isset(Yii::app()->request->cookies['dc_tempusername']) && $_GET['st']=="Completed"):	
+		     $user=User::model()->findByAttributes(array('username'=>$_COOKIE['dc_tempusername']));
+		     $user->subamount=$_GET['amt'];
+		     $user->save();
+		endif;
+		
+		if(!Yii::app()->user->isGuest && $_GET['st']=="Completed"):	
+		     $user=User::model()->findByPk(Yii::app()->user->dcid);
+		     $user->subamount=$_GET['amt'];
+		     $user->save();
+		endif;
 	
 		$this->render('thanks');
 	}
@@ -266,8 +277,9 @@ $this->pageTitle='Home | '.Yii::app()->name ;
 	public function actionLogout()
 	{
 		Yii::app()->user->logout();
+		unset(Yii::app()->request->cookies['dc_tempusername']);
 		$this->redirect(Yii::app()->request->baseUrl);
-		setcookie("dc_tempusername", "", 1);
+	
 	                       
 	}
 }
