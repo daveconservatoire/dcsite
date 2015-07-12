@@ -73,7 +73,9 @@ class ServiceUserIdentity extends CUserIdentity {
 	            UserVideoView::model()->updateAll(array('userId'=>$user->id), 'userId='.$tempuser->id);
 	            UserExerciseAnswer::model()->updateAll(array('userId'=>$user->id), 'userId='.$tempuser->id);
 	            
-	             
+	            if($tempuser->subamount!=""):
+	                $user->subamount=$tempuser->subamount;
+	            endif;
 	            
 	            //also need to add points to existing total 
 	            if($tempuser->points>1){

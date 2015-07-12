@@ -98,6 +98,7 @@ return array(
 			    'subrequest'=>'site/subrequest',
 			    'socialmedia'=>'site/socialmedia',
 			    'patronthanks'=>'site/patronthanks',
+			    'socialloader/<service>'=>'site/socialloader',
 			    'thanks'=>'site/thanks',
 			    'topic/<urltitle>/mastery'=>'topic/mastery',
 			    'topic/<urltitle>'=>'topic/view',

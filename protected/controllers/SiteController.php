@@ -197,6 +197,39 @@ $this->pageTitle='Home | '.Yii::app()->name ;
 	
 		$this->render('socialmedia');
 	}
+	
+				public function actionSocialloader($service)
+	{
+		if(Yii::app()->user->isGuest && isset(Yii::app()->request->cookies['dc_tempusername'])):	
+		    $user=User::model()->findByAttributes(array('username'=>$_COOKIE['dc_tempusername']));
+		endif;
+
+		
+		if(!Yii::app()->user->isGuest):	
+		     $user=User::model()->findByPk(Yii::app()->user->dcid);
+		endif;
+		
+		if (isset($user)):
+		     $user->socialshare=$service;
+		     $user->save();
+		     
+		endif;
+
+		
+		if($service=="facebook"):
+		    $this->redirect('https://www.facebook.com/sharer/sharer.php?u=www.daveconservatoire.org');
+		endif;
+		
+			if($service=="twitter"):
+		    $this->redirect('https://twitter.com/home?status=Learn%20music%20for%20free%20online%20at%20www.daveconservatoire.org%20-%20more%20at%20%40dconservatoire');
+		endif;
+		
+			if($service=="gplus"):
+		    $this->redirect('https://plus.google.com/share?url=www.daveconservatoire.org');
+		endif;
+	
+	}
+
 
 
 

@@ -16,21 +16,21 @@
    <div class="span4">
       <div class="tile introboxes">
          <div class="intro-icon-disc  social-share"><img src="<? echo Yii::app()->request->baseUrl;?>/img/facebook.png" /></div>
-         <a  href="https://www.facebook.com/sharer/sharer.php?u=www.daveconservatoire.org" class="btn btn-primary  btn-custom btn-rounded btn-block dc-btn-yellow">Share Dave Conservatoire on Facebook</a>
+         <a  href="<? echo Yii::app()->request->baseUrl;?>/socialloader/facebook" target="_blank" class="btn btn-primary  btn-custom btn-rounded btn-block dc-btn-yellow">Share Dave Conservatoire on Facebook</a>
       </div>
       <div class="pad25"></div>
    </div>
    <div class="span4">
       <div class="tile introboxes">
         <div class="intro-icon-disc  social-share"><img src="<? echo Yii::app()->request->baseUrl;?>/img/twitter.png" /></div>
-         <a href="https://twitter.com/home?status=Learn%20music%20for%20free%20online%20at%20www.daveconservatoire.org%20-%20more%20at%20%40dconservatoire" class="btn btn-primary  btn-custom btn-rounded btn-block dc-btn-orange">Share Dave Conservatoire on Twitter</a>
+         <a href="<? echo Yii::app()->request->baseUrl;?>/socialloader/twitter" target="_blank" class="btn btn-primary  btn-custom btn-rounded btn-block dc-btn-orange">Share Dave Conservatoire on Twitter</a>
       </div>
       <div class="pad25"></div>
    </div>
    <div class="span4">
       <div class="tile introboxes">
             <div class="intro-icon-disc  social-share"><img src="<? echo Yii::app()->request->baseUrl;?>/img/googleplus.png" /></div>
-         <a href="https://plus.google.com/share?url=www.daveconservatoire.org" class="btn btn-primary  btn-custom btn-rounded btn-block dc-btn-redorange">Share Dave Conservatoire on Google Plus</a>
+         <a href="<? echo Yii::app()->request->baseUrl;?>/socialloader/gplus" target="_blank" class="btn btn-primary  btn-custom btn-rounded btn-block dc-btn-redorange">Share Dave Conservatoire on Google Plus</a>
       </div>
       <div class="pad25"></div>
    </div>
