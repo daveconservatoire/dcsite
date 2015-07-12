@@ -29,7 +29,7 @@
 	
 		<h2>Where we're at</h2>
 			<p>
-				So far I've made over 150 video music lessons and exercises.  But I feel like I'm only just scratching the surface of what's possible. </p><p> Every day I get emails for students excited by the fact the site is help them to learn about music.  Teachers are using the site's tools as homework or assignments and while others are using them to learn by themselves.</p><p>  So far I've been able to deliver over 200,000 lessons and exercises to over 50,000 students in over 100 countries. 
+				So far I've made over 250 video music lessons and exercises.  But I feel like I'm only just scratching the surface of what's possible. </p><p> Every day I get emails for students excited by the fact the site is help them to learn about music.  Teachers are using the site's tools as homework or assignments and while others are using them to learn by themselves.</p><p>  So far I've been able to deliver over 1,500,000 lessons and exercises to over 250,000 students in over 100 countries. 
 			</p>
 	
 		</div>	

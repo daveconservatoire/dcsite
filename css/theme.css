@@ -26,7 +26,7 @@ Purchase:  http://themeforest.net/user/josweb
 
 body {
 	margin:0; padding:0;
-	font:14px/22px 'Lato', sans-serif;
+	font:15px/22px 'Lato', sans-serif;
 	color:#555;
 	background: #f0f0f0;  
 	-webkit-backface-visibility:hidden; 
@@ -2232,3 +2232,28 @@ right: 0px;
 .paypalform {
 	padding-top: 15px;
 }
+
+.subbenefits {
+	
+	list-style-type: circle;
+}
+.subbenefits>li {
+	
+	padding: 10px 0px;
+}
+
+.donationslider {
+	width: 100%;
+}
+
+#ex1Slider .slider-selection {
+	background: #BABABA;
+}
+
+.social-share {
+	padding:0;
+	height: 60px;
+	width: 60px;
+	margin: 0 auto;
+}
+

@@ -23,6 +23,7 @@
 <link href="<?=bu();?>/css/font-awesome.min.css" rel="stylesheet">
 <link href="<?=bu();?>/css/theme.css" rel="stylesheet">
 <link href="<?=bu();?>/css/prettyPhoto.css" rel="stylesheet" type="text/css"/>
+<link href="<?=bu();?>/css/rangeslider.css" rel="stylesheet" type="text/css"/>
 
 <!--[if lt IE 9]>
 <script src="<?=bu();?>/js/html5shim.js"></script>
@@ -41,6 +42,7 @@
 <script src="<?=bu();?>/js/jquery.js"></script>	
 <script src="<?=bu();?>/js/bootstrap.min.js"></script>
 <script src="<?=bu();?>/js/cookie.js"></script>
+<script src="<?=bu();?>/js/bootstrap-slider.js"></script>
 <script src="https://checkout.stripe.com/checkout.js"></script>
 
 <script type="text/javascript" src="<?=bu();?>/js/scripts.js"></script>

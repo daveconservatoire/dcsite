@@ -123,7 +123,7 @@ $this->pageTitle='Home | '.Yii::app()->name ;
 	
 		$this->render('donate');
 	}
-			public function actionthankyou()
+			public function actionThanks()
 	{
 	
 		$this->render('thanks');
@@ -132,7 +132,7 @@ $this->pageTitle='Home | '.Yii::app()->name ;
 				public function actionPatronthanks()
 	{
 	
-		$this->render('thanks');
+		$this->render('patreonthanks');
 	}
 
 
@@ -175,6 +175,33 @@ $this->pageTitle='Home | '.Yii::app()->name ;
 	
 		$this->renderPartial('videositemap');
 	}
+	
+			public function actionSubrequest()
+	{
+	
+		$this->render('subrequest');
+	}
+	
+	
+
+			public function actionSocialmedia()
+	{
+		if(Yii::app()->user->isGuest && isset(Yii::app()->request->cookies['dc_tempusername'])):	
+		     $user=User::model()->findByAttributes(array('username'=>$_COOKIE['dc_tempusername']));
+		     $user->subamount=0;
+		     $user->save();
+		endif;
+		
+		if(!Yii::app()->user->isGuest):	
+		     $user=User::model()->findByPk(Yii::app()->user->dcid);
+		     $user->subamount=0;
+		     $user->save();
+		endif;
+		
+	
+		$this->render('socialmedia');
+	}
+
 
 
 	/**

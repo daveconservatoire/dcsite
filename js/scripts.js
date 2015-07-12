@@ -206,4 +206,38 @@ $(function() {
   });
 
 
+// Subscription Slider
+
+$(function() { 
+$('#ex1').slider({
+	formatter: function(value) {
+		return 'Current value: ' + value;
+		
+	}
+});
+$("#ex1").on("slide", function(slideEvt) {
+	if(slideEvt.value=="0") {
+	    $("#subamount").text("I'm not able to help right now.");	
+	    $(".subchange").removeClass("alert-success").addClass("alert-danger");
+	}
+	else {
+	$("#subamount").text("I would like to subscribe to Dave Conservatoire for $"+ slideEvt.value +" per month.");
+	$(".subchange").removeClass("alert-danger").addClass("alert-success");
+	}
+
+});
+
+$(".subbutton").on("click", function() {
+	
+if ($('#ex1').val()!=0) {
+window.location.href = "https://www.sandbox.paypal.com/cgi-bin/webscr?business=dave@daveconservatoire.org&cmd=_xclick-subscriptions&currency_code=USD&p3=1&t3=M&no_shipping=1&src=1&sra=1&a3="+$('#ex1').val()+"&item_name=Dave%20Conservatoire%20Subscription%20&return_url=http://www.daveconservatoire.org/thanks&cancel_return=http://www.daveconservatoire.org/subrequest";
+} else {
+	
+	$('#suremodal').modal('show');
+	}
+
+})
+
+});
+
 
