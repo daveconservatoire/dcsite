@@ -80,8 +80,9 @@ class ServiceUserIdentity extends CUserIdentity {
 	            //also need to add points to existing total 
 	            if($tempuser->points>1){
 	            $user->points = ($user->points + $tempuser->points) -1;
-	            $user->save();
 	            }
+	            $user->save();
+	            
 	            
 	            //unset cookie and delete tempuser account
 	            
