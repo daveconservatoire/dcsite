@@ -57,6 +57,24 @@
 $controller = Yii::app()->getController();
 $showBanner = $controller->getId() === 'topic' || $controller->getId() === 'course' || $controller->getId() === 'lesson';
 
+if (Yii::app()->user->isGuest &&  isset($_COOKIE['dc_tempusername'])):
+$user=User::model()->findByAttributes(array('username'=>$_COOKIE['dc_tempusername']));
+if($user->subamount!=0 || $user->subamount!=null):
+$showBanner=False;
+endif;
+endif;
+
+if (!Yii::app()->user->isGuest):
+$user=User::model()->findByAttributes(array('id'=>Yii::app()->user->dcid));
+if($user->subamount!=0 || $user->subamount!=null):
+$showBanner=False;
+endif;
+endif;
+						
+
+
+
+
 
 
 if ($showBanner):?>
