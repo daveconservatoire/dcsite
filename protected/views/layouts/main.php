@@ -59,14 +59,14 @@ $showBanner = $controller->getId() === 'topic' || $controller->getId() === 'cour
 
 if (Yii::app()->user->isGuest &&  isset($_COOKIE['dc_tempusername'])):
 $user=User::model()->findByAttributes(array('username'=>$_COOKIE['dc_tempusername']));
-if($user->subamount!=0 || $user->subamount!=null):
+if($user->subamount>0):
 $showBanner=False;
 endif;
 endif;
 
 if (!Yii::app()->user->isGuest):
 $user=User::model()->findByAttributes(array('id'=>Yii::app()->user->dcid));
-if($user->subamount!=0 || $user->subamount!=null):
+if($user->subamount>0):
 $showBanner=False;
 endif;
 endif;
