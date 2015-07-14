@@ -37,7 +37,7 @@ class Controller extends CController
 		endif;
 		
 				if(Yii::app()->user->isGuest):
-		     $user = User::model()->findByAttributes(array('username'=>Yii::app()->request->cookies['dc_tempusername']));
+		     $user = User::model()->findByAttributes(array('username'=>Yii::app()->request->cookies['dc_tempusername']->value));
 		   if(Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/socialmedia" && Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/thanks" ):
 		 
 		     if($user->subamount=="" && Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/subrequest"&& count($user->videosviewed)>5):
