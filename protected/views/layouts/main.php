@@ -228,7 +228,7 @@ if ($showBanner):?>
 						<a href="<? echo Yii::app()->request->baseUrl;?>/donate" class="btn dc-btn-orange">Donate</a>
 						<a href="<? echo Yii::app()->request->baseUrl;?>/contact" class="btn dc-btn-redorange">Contact</a>
 						
-					
+					<? endif;?>
 						
 						<?php if (Yii::app()->user->isGuest &&  !isset($_COOKIE['dc_tempusername'])): ?>
 						
@@ -261,7 +261,7 @@ if ($showBanner):?>
 								</ul>
 						</div>
 					  <?php endif;
-						  endif;
+						
 					  ?>
 					  
 					  
