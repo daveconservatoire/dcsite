@@ -35,6 +35,17 @@ class Controller extends CController
 		       endif;
 		    endif;
 		endif;
+		
+				if(Yii::app()->user->isGuest):
+		     $user = User::model()->findByAttributes(array('username'=>Yii::app()->request->cookies['dc_tempusername']));
+		   if(Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/socialmedia" && Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/thanks" ):
+		 
+		     if($user->subamount=="" && Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/subrequest"&& count($user->videosviewed)>5):
+		     
+		       $this->redirect(array("site/subrequest"));
+		       endif;
+		    endif;
+		endif;
 	}
 	
 		

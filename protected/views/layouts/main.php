@@ -102,44 +102,6 @@ if ($showBanner):?>
 	                <a class="btn btn-large dc-btn-orange" href="http://patreon.com/daveconservatoire" target="_blank" id="patreonbutton">Give to Dave Conservatoire via Patreon.com</a> 
 	                
 
-	                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="paypalform">
-<input type="hidden" name="cmd" value="_xclick-subscriptions">
-<input type="hidden" name="business" value="dave@daveconservatoire.org">
-<input type="hidden" name="lc" value="GB">
-<input type="hidden" name="no_note" value="1">
-<input type="hidden" name="src" value="1">
-<input type="hidden" name="currency_code" value="GBP">
-<input type="hidden" name="bn" value="PP-SubscriptionsBF:btn_subscribeCC_LG.gif:NonHostedGuest">
-<table class="paypalbuttontable">
-<tr><td><input type="hidden" name="on0" value="Voluntary Subscription">Voluntary Subscription</td></tr><tr><td><select name="os0">
-	<option value="&#9835;&#9835;">&#9835;&#9835; : &pound;5.00 GBP - monthly</option>
-	<option value="&#9835;">&#9835; : &pound;3.00 GBP - monthly</option>
-	<option value="&#9835;&#9835;&#9835;">&#9835;&#9835;&#9835; : &pound;10.00 GBP - monthly</option>
-	<option value="&#9835;&#9835;&#9835;&#9835;">&#9835;&#9835;&#9835;&#9835; : &pound;25.00 GBP - monthly</option>
-</select> </td></tr>
-</table>
-<input type="hidden" name="currency_code" value="GBP">
-<input type="hidden" name="option_select0" value="&#9835;&#9835;">
-<input type="hidden" name="option_amount0" value="5.00">
-<input type="hidden" name="option_period0" value="M">
-<input type="hidden" name="option_frequency0" value="1">
-<input type="hidden" name="option_select1" value="&#9835;">
-<input type="hidden" name="option_amount1" value="3.00">
-<input type="hidden" name="option_period1" value="M">
-<input type="hidden" name="option_frequency1" value="1">
-<input type="hidden" name="option_select2" value="&#9835;&#9835;&#9835;">
-<input type="hidden" name="option_amount2" value="10.00">
-<input type="hidden" name="option_period2" value="M">
-<input type="hidden" name="option_frequency2" value="1">
-<input type="hidden" name="option_select3" value="&#9835;&#9835;&#9835;&#9835;">
-<input type="hidden" name="option_amount3" value="25.00">
-<input type="hidden" name="option_period3" value="M">
-<input type="hidden" name="option_frequency3" value="1">
-<input type="hidden" name="option_index" value="0">
-<input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal ? The safer, easier way to pay online." id="paypalsubgbp">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
-</form>
--->
 
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="paypalform">
 <input type="hidden" name="cmd" value="_xclick-subscriptions">
@@ -178,7 +140,11 @@ if ($showBanner):?>
 <input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
 <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
 </form>
+-->
+<a href="<? echo Yii::app()->request->baseUrl; ?>/subrequest" class="btn btn-primary" style="margin-top: 43px"><h2>Click to Subscribe!</h2>
+            
 
+</a>
 	                </div>
 	             
          </div>
