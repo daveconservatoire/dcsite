@@ -80,6 +80,9 @@ class ServiceUserIdentity extends CUserIdentity {
 	            //also need to add points to existing total 
 	            if($tempuser->points>1){
 	            $user->points = ($user->points + $tempuser->points) -1;
+	              $tempuser->delete();
+	           
+	          	unset(Yii::app()->request->cookies['dc_tempusername']);
 	            }
 	            endif;
 	            $user->save();
@@ -87,9 +90,7 @@ class ServiceUserIdentity extends CUserIdentity {
 	            
 	            //unset cookie and delete tempuser account
 	            
-	            $tempuser->delete();
-	           
-	          	unset(Yii::app()->request->cookies['dc_tempusername']);
+	          
 	            
 	            
             }
