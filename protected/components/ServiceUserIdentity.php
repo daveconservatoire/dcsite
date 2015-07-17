@@ -46,6 +46,7 @@ class ServiceUserIdentity extends CUserIdentity {
             $user->email= $this->service->email;
             $user->joinDate=time();
             $user->points=1;
+            $user->biog="Please tell us about your musical interests and goals.  This will help develop the site to better support your learning.  It will not be made public.";
             $user->save();
             }  else {
             
@@ -54,7 +55,11 @@ class ServiceUserIdentity extends CUserIdentity {
 	        $user=User::model()->findByAttributes(array('username'=>$_COOKIE['dc_tempusername']));
 	        $user->username=$this->service->id;
 	        $user->name= $this->username;
+	        if($this->service->email):
             $user->email= $this->service->email;
+            else:
+            $user->email= "no email defined";
+            endif;
             $user->joinDate=time();
             $user->biog="Please tell us about your musical interests and goals.  This will help develop the site to better support your learning.  It will not be made public.";
             $user->save();
