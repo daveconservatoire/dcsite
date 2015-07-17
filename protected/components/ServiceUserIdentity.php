@@ -68,7 +68,7 @@ class ServiceUserIdentity extends CUserIdentity {
             if($n==1) {
             $user = User::model()->findByAttributes(array('username'=>$this->service->id));
             $tempuser= User::model()->findByAttributes(array('username'=>$_COOKIE['dc_tempusername']));
-            
+            if($tempuser):
 	            //updating temp records to join to user profile
 	            UserVideoView::model()->updateAll(array('userId'=>$user->id), 'userId='.$tempuser->id);
 	            UserExerciseAnswer::model()->updateAll(array('userId'=>$user->id), 'userId='.$tempuser->id);
@@ -81,6 +81,7 @@ class ServiceUserIdentity extends CUserIdentity {
 	            if($tempuser->points>1){
 	            $user->points = ($user->points + $tempuser->points) -1;
 	            }
+	            endif;
 	            $user->save();
 	            
 	            
