@@ -24,7 +24,9 @@
           <p>Not able to help out right now?  Just set the slider to 0 and let's get back to learning music.</p>
          </div>
          <div class="span8">	
-	         <img src="img/subtitle.jpg" />
+	       <div class="vendor">
+	        <iframe width="560" height="315" src="https://www.youtube.com/embed/LAlkiNaERKE?autoplay=1&showinfo=0&rel=0" id="player" frameborder="0" allowfullscreen></iframe>
+	         </div>
 	         <div class="alert alert-success subchange">
             <input class="donationslider" value ="9" id="ex1" width="100%" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="50" data-slider-step="1" data-slider-value="9"/>
 	         </div>
