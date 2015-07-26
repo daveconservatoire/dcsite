@@ -52,7 +52,7 @@
     <p>A hard-up student?  No worries, we're still cool.</p>
   </div>
   <div class="modal-footer">
-    <a href="<? echo Yii::app()->request->baseUrl;?>/feedback" class="btn btn-danger">Still a no, sorry. </a>
+    <a href="<? echo Yii::app()->request->baseUrl;?>/socialmedia" class="btn btn-danger">Still a no, sorry. </a>
     <a href="https://www.paypal.com/cgi-bin/webscr?business=dave@daveconservatoire.org&cmd=_xclick-subscriptions&currency_code=USD&p3=1&t3=M&no_shipping=1&src=1&sra=1&a3=1&item_name=Dave%20Conservatoire%20Subscription%20&return_url=http://www.daveconservatoire.org/thanks&cancel_return=http://www.daveconservatoire.org/subrequest" class="btn btn-success">Okay!  Let's do this! ($1/month subscription)</a>
   </div>
 </div>
