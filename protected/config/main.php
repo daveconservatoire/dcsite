@@ -96,6 +96,7 @@ return array(
 			    'about'=>'site/about',
 			    'login'=>'site/login',
 			    'subrequest'=>'site/subrequest',
+			    'feedback'=>'site/feedback',
 			    'socialmedia'=>'site/socialmedia',
 			    'patronthanks'=>'site/patronthanks',
 			    'socialloader/<service>'=>'site/socialloader',

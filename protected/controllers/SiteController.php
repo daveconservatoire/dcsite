@@ -175,6 +175,12 @@ $this->pageTitle='Home | '.Yii::app()->name ;
 		$this->render('subrequest');
 	}
 	
+				public function actionFeedback()
+	{
+	
+		$this->render('feedback');
+	}
+	
 	
 
 			public function actionSocialmedia()
