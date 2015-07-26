@@ -58,7 +58,7 @@ aiming to provide a world-class music education for everyone.' ,null,null,array(
 	      Yii::app()->clientScript->registerMetaTag('@dconservatoire' ,null,null,array('name'=>'twitter:creator'));
 	      Yii::app()->clientScript->registerMetaTag('@dconservatoire' ,null,null,array('name'=>'twitter:site'));
 	      
-$courses=Course::model()->findAll(array('order'=>'id ASC'));
+$courses=Course::model()->findAll(array('order'=>'homepage_order ASC'));
 $this->pageTitle='Home | '.Yii::app()->name ;
 
 
