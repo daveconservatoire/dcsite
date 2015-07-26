@@ -223,7 +223,7 @@ $this->pageTitle='Home | '.Yii::app()->name ;
 		endif;
 		
 	
-		$this->render('socialmedia');
+		$this->render('feedback');
 	}
 	
 				public function actionSocialloader($service)
