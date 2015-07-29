@@ -141,7 +141,7 @@ if ($showBanner):?>
 <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
 </form>
 -->
-<a href="<? echo Yii::app()->request->baseUrl; ?>/subrequest" class="btn btn-primary" style="margin-top: 43px"><h2>Click to Subscribe!</h2>
+<a href="<? echo Yii::app()->request->baseUrl; ?>/subscribe" class="btn btn-primary" style="margin-top: 43px"><h2>Click to Subscribe!</h2>
             
 
 </a>
@@ -223,7 +223,7 @@ if ($showBanner):?>
 				<div class="navbar">
 					<div class="navbuttons">
 						
-						<? if(Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/subrequest"):?>
+						<? if(Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/subscribe"):?>
 						<a href="<? echo Yii::app()->request->baseUrl;?>/about" class="btn dc-btn-yellow">About</a>
 						<a href="<? echo Yii::app()->request->baseUrl;?>/donate" class="btn dc-btn-orange">Donate</a>
 						<a href="<? echo Yii::app()->request->baseUrl;?>/contact" class="btn dc-btn-redorange">Contact</a>

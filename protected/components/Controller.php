@@ -30,9 +30,9 @@ class Controller extends CController
 				if(!Yii::app()->user->isGuest):
 		     $user = User::model()->findByAttributes(array('id'=>Yii::app()->user->dcid));
 		   if(Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/socialmedia" && Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/thanks" && Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/login"):
-		     if($user->subamount=="" && Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/subrequest"):
+		     if($user->subamount=="" && Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/subscribe"):
 		     
-		       $this->redirect(array("site/subrequest"));
+		       $this->redirect(array("site/subscribe"));
 		       endif;
 		    endif;
 		endif;
@@ -41,9 +41,9 @@ class Controller extends CController
 		     $user = User::model()->findByAttributes(array('username'=>Yii::app()->request->cookies['dc_tempusername']->value));
 		   if(Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/socialmedia" && Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/feedback" && Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/thanks" && Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/feedback" && Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/login"):
 		 
-		     if($user->subamount=="" && Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/subrequest"&& count($user->videosviewed)>5):
+		     if($user->subamount=="" && Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/subscribe"&& count($user->videosviewed)>5):
 		     
-		       $this->redirect(array("site/subrequest"));
+		       $this->redirect(array("site/subscribe"));
 		       endif;
 		    endif;
 		endif;

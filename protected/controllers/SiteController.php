@@ -169,10 +169,10 @@ $this->pageTitle='Home | '.Yii::app()->name ;
 		$this->renderPartial('videositemap');
 	}
 	
-			public function actionSubrequest()
+			public function actionSubscribe()
 	{
 	
-		$this->render('subrequest');
+		$this->render('subscribe');
 	}
 	
 				public function actionFeedback()

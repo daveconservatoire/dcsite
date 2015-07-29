@@ -95,7 +95,7 @@ return array(
 			    'charge'=>'site/charge',
 			    'about'=>'site/about',
 			    'login'=>'site/login',
-			    'subrequest'=>'site/subrequest',
+			    'subscribe'=>'site/subscribe',
 			    'feedback'=>'site/feedback',
 			    'socialmedia'=>'site/socialmedia',
 			    'patronthanks'=>'site/patronthanks',
