@@ -39,7 +39,7 @@ class Controller extends CController
 		       endif;
 		       
 		       
-		       if((date('U')-strtotime($user->subupdated)>259200) && Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/subscribe"):
+		       if((date('U')-strtotime($user->subupdated)>259200) && $user->subamount=="0" &&Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/subscribe"):
 		          $this->redirect(array("site/subscribe"));
 		       
 		       endif;
