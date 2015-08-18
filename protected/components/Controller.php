@@ -26,18 +26,29 @@ class Controller extends CController
 	public $tempuserid="";
 	
 	public function init() {
+	
+	
 
 				if(!Yii::app()->user->isGuest):
 		     $user = User::model()->findByAttributes(array('id'=>Yii::app()->user->dcid));
+		     
 		   if(Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/socialmedia" && Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/thanks" && Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/login"):
 		     if($user->subamount=="" && Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/subscribe"):
 		     
 		       $this->redirect(array("site/subscribe"));
 		       endif;
+		       
+		       
+		       if((date('U')-strtotime($user->subupdated)>259200) && Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/subscribe"):
+		          $this->redirect(array("site/subscribe"));
+		       
+		       endif;
+		       
+		    
 		    endif;
 		endif;
 		
-				if(Yii::app()->user->isGuest):
+				if(Yii::app()->user->isGuest && isset(Yii::app()->request->cookies['dc_tempusername'])):
 		     $user = User::model()->findByAttributes(array('username'=>Yii::app()->request->cookies['dc_tempusername']->value));
 		   if(Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/socialmedia" && Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/feedback" && Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/thanks" && Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/feedback" && Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/login"):
 		 
@@ -45,6 +56,9 @@ class Controller extends CController
 		     
 		       $this->redirect(array("site/subscribe"));
 		       endif;
+		       
+		       
+		       
 		    endif;
 		endif;
 	}
