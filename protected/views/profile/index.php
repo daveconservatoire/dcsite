@@ -10,15 +10,36 @@
 					<div class="profile-topbar">
 						<div class="span5 whiteback">
 						<div class="padding">
+							<a href="#myModal" role="button" class="btn dc-btn-red pull-right" data-toggle="modal">Update your info</a>
 							<h1 style="margin: 0px"><?=$user->name;?></h1>
+						
 							<h3>About me</h3>
 							<p><?=$user->biog;?></p>
 						
 						</div> 
 						</div>
-						<div class="span2 offset3">
-							<a href="#myModal" role="button" class="btn dc-btn-red pull-right" data-toggle="modal">Update your info</a>
+						
+							<div class="span5 whiteback">
+						<div class="padding">
+						<? if($user->subamount=="0"):?>
+							<a href="<?=bu();?>/subscribe" role="button" class="btn dc-btn-red pull-right">Update your subscription</a>
+							<? else:?>
+							<i class="icon-star intro-icon-large dc-text-orange pull-right"></i>
+						<? endif;?>
+							
+						
+							<h1 style="margin: 0px">My Subscription</h1>
+						
+							<h1>$<?=$user->subamount;?> per month</h1>
+							<? if($user->subamount=="0"):?>
+							<p>Dave Conservatoire will be free forever, but if you are in a position to, subscribing will help us serve music students around the world.</p>
+							<? else: ?>
+							<p>Thankyou so much for your subscription. Your support is vital in helping us serve music students around the world.</p>
+							<? endif;?>
+						
+						</div> 
 						</div>
+					
 					</div>
 					</div>
 				<div class="pad30"></div>
