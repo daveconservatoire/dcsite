@@ -26,16 +26,16 @@ The best way to get started with this would be:
 
 Dave Conservatoire website app uses the following technologies:
 
-* [PHP] (www.php.net) (sorry)
-* [Yii] (www.yiiframework.com) - an MVC PHP framework which attempts to bring a level of good design to PHP web applications. 
-* [MySQL] (www.mysql.com) - database for storing content structure and user data
-* [Youtube] (www.youtube.com)- for video playback and storage
-* [Khan Academy Exercises Framework] (www.github.com/khan/khan-exercises) - a modified version of [Khan Academy's](www.khanacademy.org) javascript framework for generating randomised exercises from simple HTML templates. 
+* [PHP] (http://www.php.net) (sorry)
+* [Yii] (http://www.yiiframework.com) - an MVC PHP framework which attempts to bring a level of good design to PHP web applications. 
+* [MySQL] (http://www.mysql.com) - database for storing content structure and user data
+* [Youtube] (http://www.youtube.com)- for video playback and storage
+* [Khan Academy Exercises Framework] (http://www.github.com/khan/khan-exercises) - a modified version of [Khan Academy's](http://www.khanacademy.org) javascript framework for generating randomised exercises from simple HTML templates. 
 
 If you want to run a local copy - you'll probably need something like: 
 
-* [WAMP] (http://www.wampserver.com/en/) - (Windows, Apache, MySQL and PHP)
-* [MAMP] (https://www.mamp.info/en/) (Mac, Apache, MySQL and PHP)
+* [WAMP] (http://http://www.wampserver.com/en/) - (Windows, Apache, MySQL and PHP)
+* [MAMP] (http://https://www.mamp.info/en/) (Mac, Apache, MySQL and PHP)
 
 ## Installation 
 
