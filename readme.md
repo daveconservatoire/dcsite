@@ -36,3 +36,28 @@ If you want to run a local copy - you'll probably need something like:
 
 * [WAMP] (http://www.wampserver.com/en/) - (Windows, Apache, MySQL and PHP)
 * [MAMP] (https://www.mamp.info/en/) (Mac, Apache, MySQL and PHP)
+
+## Installation 
+
+This could definitely be a *lot* easier, but for now here's how to install the Dave Conservatoire webapp on your local machine.  You need to have PHP, Yii, Apache, MySQL installed.  
+
+I made a video where I install the application - http://www.youtube.com/watch?v=7y-1gs6RmTc
+
+1. Make sure you have git installed (for me the desktop gui for Mac or Windows is the way to go!)
+
+2. Clone a copy of http://www.github.com/daveconservatoire/dcsite.git
+
+3. Create a MySQL database.
+
+4. Import - [this file](https://github.com/daveconservatoire/dcsite/blob/master/dbschema/dbschema.sql) - to get hold the DB table structure and some test data.
+
+5. Rename /.htaccess.example to /.htaccess - this file assumes you are running the site from a directory called /dcsite - you can change this or remove the line altogether if you're running at root. 
+
+7. Change the file /protected/config/secrets.example.php to /protected/config/secrets.php
+
+8. Update secrets.php with your yii.php location, DB information and (optionally) Google/Facebook Authentication apps.  I keep my yii directory outside my public folder, so I put in '/../../Library/yii/yii.php'
+
+9.  Change the permissions on /protected/runtime to be written by the server.
+
+10.  Fire up your webserver and you should be up and running!
+
