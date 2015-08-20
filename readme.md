@@ -2,7 +2,7 @@ Hello!  Welcome to the repository for Dave Conservatoire main website app.
 
 ### Mission
 
-Dave Conservatoire aims to provide a world class music education for the world for free.  It is a non-profit organisation established in 2011 by musician and teacher David Rees.  Since then the site has delivered over 200,000 video music lessons and 500,000 interactive exercises to students in over 50 countries (January 2014).  
+Dave Conservatoire aims to provide a world class music education for the world for free.  It is a non-profit organisation established in 2011 by musician and teacher David Rees.  Since then the site has delivered over 750,000 video music lessons and 1,200,000 interactive exercises to students in over 50 countries (August 2015).  
 
 ### How can I get involved?
 
