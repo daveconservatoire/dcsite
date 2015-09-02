@@ -6,6 +6,9 @@
 
 $yiilocation = '/../../Library/yii/yii.php';
 
+// Turns debug mode off/on - you want it on for development and off for production
+$debugmode=true; 
+
 
 // Enter your MYSQL database name and your database username and password
 
