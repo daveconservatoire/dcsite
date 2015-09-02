@@ -37,7 +37,7 @@ class ServiceUserIdentity extends CUserIdentity {
             
             // This means this Facebook/Google/Email account hasn't logged in before.         
            
-            if(!isset($_COOKIE['dc_tempusername'])) {
+            if(User::model()->count('username=:username', array(':username'=>$_COOKIE['dc_tempusername']))<1) {
             
              // This code is for if there is no dctempusername set - should be rare. 
             $user=new User;
