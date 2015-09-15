@@ -70,7 +70,7 @@
 					<div class="thumbnails">
 						<div class="row"  style="margin: 0 0 20px 0">
 							<? 
-							$lessons=Lesson::model()->findAll("seriesno=".$course->id ." ORDER BY topicno, lessonno"); 
+							$lessons=Lesson::model()->findAll("seriesno=".$course->id ." ORDER BY topicno, id"); 
 								$counter=1; 
 								foreach ($lessons as $lesson){
 								
