@@ -69,9 +69,12 @@
 				<div class="tab-pane active" id="topic-all">
 					<div class="thumbnails">
 						<div class="row"  style="margin: 0 0 20px 0">
-							<? 
-							$lessons=Lesson::model()->findAll("seriesno=".$course->id ." ORDER BY topicno, id"); 
+							<? $lessons=Lesson::model()->findAll("seriesno=".$course->id ." ORDER BY lessonno"); 
+							   
 								$counter=1; 
+								foreach($topicsinthiscourse as $topic){
+								$lessons=Lesson::model()->findAll("topicno=".$topic->id ." ORDER BY lessonno"); 
+								
 								foreach ($lessons as $lesson){
 								
 								 ?>
@@ -99,7 +102,7 @@
 						</div>
 						<div class="row"  style="margin: 0 0 20px 0">
 							<? $counter=1; } else { $counter++;} ?> 
-							<? };?>	
+							<? }};?>	
 						</div>
 					</div>
 				</div>
