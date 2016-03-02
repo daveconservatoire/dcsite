@@ -44,11 +44,10 @@
 <script src="<?=bu();?>/js/bootstrap.min.js"></script>
 <script src="<?=bu();?>/js/cookie.js"></script>
 <script src="<?=bu();?>/js/bootstrap-slider.js"></script>
-<script src="https://checkout.stripe.com/checkout.js"></script>
+
 
 <script type="text/javascript" src="<?=bu();?>/js/scripts.js"></script>
-
-<!--timeline-->
+<script src='https://www.google.com/recaptcha/api.js'></script>
 
 </head>
 

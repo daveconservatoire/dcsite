@@ -93,6 +93,23 @@ $this->pageTitle='Home | '.Yii::app()->name ;
 		$this->render('about');
 	}
 	
+		public function actionTuition()
+	{
+				$model=new ContactForm;
+		if(isset($_POST['ContactForm']))
+		{
+			$model->attributes=$_POST['ContactForm'];
+			if($model->validate())
+			{
+				$headers="From: {$model->email}\r\nReply-To: {$model->email}";
+				mail(Yii::app()->params['adminEmail'],'Tuition Enquiry',$model->body,$headers);
+				Yii::app()->user->setFlash('contact','Thank you for contacting us. We will respond to you as soon as possible.');
+				$this->refresh();
+			}
+		}
+		$this->render('tuition',array('model'=>$model));
+	}
+	
 
 	
 

@@ -135,75 +135,7 @@ $('.paypalform').on('click', function(){
 });
 
 });
-/***************************************************
-	DONATIONS HANDLER
-***************************************************/
 
-$(function() { 
-	
-	var chargeamount;
-
-  var handler = StripeCheckout.configure({
-    key: 'pk_0UX1ZN0mYrHD4A4ir530xL3LEryjh',
-    image: '/dcsite/img/stripelogo.png',
-    token: function(token) {
-	
-      // Use the token to create the charge with a server-side script.
-      // You can access the token ID with `token.id`
-      
-       var $form = $('#payment-form');
-      // response contains id and card, which contains additional card details
-       var token = token.id;
-       var email = token.email;
-      // Insert the token into the form so it gets submitted to the server
-    $form.append($('<input type="hidden" name="stripeToken" />').val(token));
- 
-     $.cookie("noti", "closed", { expires : 100 });
-     
-    // and submit
-    $form.get(0).submit();  
-    }
-  });
-
-  $('#10Button').on('click', function(e) {
-	  $("#chargeamount").val("1000");
-    // Open Checkout with further options
-    handler.open({
-      name: 'Dave Conservatoire',
-      description: 'Donation ($10.00)',
-      panelLabel: 'Donate',
-      amount: 1000
-    });
-    e.preventDefault();
-  });
-    $('#20Button').on('click', function(e) {
-	   $("#chargeamount").val("2000");
-    // Open Checkout with further options
-    handler.open({
-      name: 'Dave Conservatoire',
-      description: 'Donation ($20.00)',
-      panelLabel: 'Donate',
-      amount: 2000
-    });
-    e.preventDefault();
-  });
-    $('#50Button').on('click', function(e) {
-	   $("#chargeamount").val("5000");
-    // Open Checkout with further options
-    handler.open({
-      name: 'Dave Conservatoire',
-      description: 'Donation ($50.00)',
-      panelLabel: 'Donate',
-      amount: 5000
-    });
-    e.preventDefault();
-  });
-
-  // Close Checkout on page navigation
-  $(window).on('popstate', function() {
-    handler.close();
-  });
-  });
 
 
 // Subscription Slider

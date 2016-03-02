@@ -92,7 +92,7 @@ return array(
 			    'index'=>'site/index',
 			    'donate'=>'site/donate',
 			    'contact'=>'site/contact',
-			    'charge'=>'site/charge',
+			    'tuition'=>'site/tuition',
 			    'about'=>'site/about',
 			    'login'=>'site/login',
 			    'subscribe'=>'site/subscribe',
