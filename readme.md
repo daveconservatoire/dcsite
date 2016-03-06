@@ -43,21 +43,25 @@ This could definitely be a *lot* easier, but for now here's how to install the D
 
 I made a video where I install the application - http://www.youtube.com/watch?v=7y-1gs6RmTc
 
-1. Make sure you have git installed (for me the desktop gui for Mac or Windows is the way to go!)
+1. Make sure you have git installed (for me the desktop gui for Mac or Windows is the way to go!).
 
-2. Clone a copy of http://www.github.com/daveconservatoire/dcsite.git
+2. Clone a copy of `http://www.github.com/daveconservatoire/dcsite.git`
 
 3. Create a MySQL database.
 
 4. Import - [this file](https://github.com/daveconservatoire/dcsite/blob/master/dbschema/dbschema.sql) - to get hold the DB table structure and some test data.
 
-5. Rename /.htaccess.example to /.htaccess - this file assumes you are running the site from a directory called /dcsite - you can change this or remove the line altogether if you're running at root. 
+5. Download the [YiiFramework](https://github.com/yiisoft/yii/releases/download/1.1.17/yii-1.1.17.467ff50.zip).
 
-7. Change the file /protected/config/secrets.example.php to /protected/config/secrets.php
+6. Extract the YiiFramework into some folder, if you are using MAMP you may wanna place at it Library folder (check the video for more details).
 
-8. Update secrets.php with your yii.php location, DB information and (optionally) Google/Facebook Authentication apps.  I keep my yii directory outside my public folder, so I put in '/../../Library/yii/yii.php'
+7. Rename `/.htaccess.example` to `/.htaccess` - this file assumes you are running the site from a directory called /dcsite - you can change this or remove the line altogether if you're running at root. 
 
-9.  Change the permissions on /protected/runtime to be written by the server.
+8. Change the file `/protected/config/secrets.example.php` to `/protected/config/secrets.php`.
 
-10.  Fire up your webserver and you should be up and running!
+9. Update `secrets.php` with your `yii.php` location, DB information and (optionally) Google/Facebook Authentication apps.  I keep my yii directory outside my public folder, so I put in `/../../Library/yii/framework/yii.php`.
+
+10.  Change the permissions on `/protected/runtime` to be written by the server.
+
+11.  Fire up your webserver and you should be up and running!
 
