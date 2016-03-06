@@ -34,8 +34,8 @@ Dave Conservatoire website app uses the following technologies:
 
 If you want to run a local copy - you'll probably need something like: 
 
-* [WAMP] (http://http://www.wampserver.com/en/) - (Windows, Apache, MySQL and PHP)
-* [MAMP] (http://https://www.mamp.info/en/) (Mac, Apache, MySQL and PHP)
+* [WAMP] (http://www.wampserver.com/en/) - (Windows, Apache, MySQL and PHP)
+* [MAMP] (https://www.mamp.info/en/) (Mac, Apache, MySQL and PHP)
 
 ## Installation 
 
