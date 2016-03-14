@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.7
+-- version 4.4.15.1
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 14, 2014 at 05:15 PM
--- Server version: 5.5.29
--- PHP Version: 5.4.10
+-- Generation Time: Mar 14, 2016 at 02:58 PM
+-- Server version: 5.0.95
+-- PHP Version: 5.5.32
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -20,28 +20,69 @@ SET time_zone = "+00:00";
 -- Database: `davecontest`
 --
 
+CREATE DATABASE IF NOT EXISTS davecontest;
+USE davecontest;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `City`
+--
+
+CREATE TABLE IF NOT EXISTS `City` (
+  `CityId` int(5) default NULL,
+  `CountryID` int(3) default NULL,
+  `RegionID` int(4) default NULL,
+  `City` varchar(30) default NULL,
+  `Latitude` decimal(11,5) default NULL,
+  `Longitude` decimal(10,6) default NULL,
+  `TimeZone` varchar(6) default NULL,
+  `DmaId` int(3) default NULL,
+  `Code` varchar(4) default NULL,
+  PRIMARY KEY (CityId)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Country`
+--
+
+CREATE TABLE IF NOT EXISTS `Country` (
+  `CountryId` int(3) default NULL,
+  `Country` varchar(44) default NULL,
+  `FIPS104` varchar(2) default NULL,
+  `ISO2` varchar(2) default NULL,
+  `ISO3` varchar(3) default NULL,
+  `ISON` varchar(3) default NULL,
+  `Internet` varchar(2) default NULL,
+  `Capital` varchar(17) default NULL,
+  `MapReference` varchar(49) default NULL,
+  `NationalitySingular` varchar(26) default NULL,
+  `NationalityPlural` varchar(28) default NULL,
+  `Currency` varchar(30) default NULL,
+  `CurrencyCode` varchar(3) default NULL,
+  `Population` int(10) default NULL,
+  `Title` varchar(48) default NULL,
+  `Comment` varchar(224) default NULL,
+   PRIMARY KEY (CountryId)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `Course`
 --
 
-CREATE TABLE `Course` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `Course` (
+  `id` int(11) NOT NULL auto_increment,
   `title` varchar(150) NOT NULL,
   `urltitle` varchar(150) NOT NULL,
   `author` varchar(150) NOT NULL,
   `description` varchar(500) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
-
---
--- Dumping data for table `Course`
---
-
-INSERT INTO `Course` (`id`, `title`, `urltitle`, `author`, `description`) VALUES
-(4, 'Reading Music', 'reading-music', 'David Rees', 'How can learning to read some lines and squiggles help me learn other people''s music?  Find out here!'),
-(7, 'Music:  A Beginner''s Guide', 'music-theory', 'David Rees', 'Love music? Want to learn about how it works? This is the place to start!');
+  `homepage_order` int(10) NOT NULL,
+   PRIMARY KEY (id)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -49,9 +90,9 @@ INSERT INTO `Course` (`id`, `title`, `urltitle`, `author`, `description`) VALUES
 -- Table structure for table `Lesson`
 --
 
-CREATE TABLE `Lesson` (
-  `filetype` varchar(1) NOT NULL DEFAULT 'l',
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `Lesson` (
+  `filetype` varchar(1) NOT NULL default 'l',
+  `id` int(11) NOT NULL auto_increment,
   `seriesno` int(11) NOT NULL,
   `topicno` int(11) NOT NULL,
   `lessonno` int(11) NOT NULL,
@@ -60,9 +101,166 @@ CREATE TABLE `Lesson` (
   `keywords` varchar(200) NOT NULL,
   `urltitle` varchar(150) NOT NULL,
   `youtubeid` varchar(70) NOT NULL,
-  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=167 ;
+  `timestamp` timestamp NOT NULL default CURRENT_TIMESTAMP,
+    PRIMARY KEY (id)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `PlaylistItem`
+--
+
+CREATE TABLE IF NOT EXISTS `PlaylistItem` (
+  `id` int(11) NOT NULL auto_increment,
+  `title` varchar(75) NOT NULL,
+  `text` varchar(5000) NOT NULL,
+  `relid` int(10) NOT NULL,
+  `youtubeid` varchar(20) NOT NULL,
+  `credit` varchar(50) NOT NULL,
+  `sort` tinyint(4) NOT NULL,
+    PRIMARY KEY (id)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `SearchTerm`
+--
+
+CREATE TABLE IF NOT EXISTS `SearchTerm` (
+  `id` int(11) NOT NULL auto_increment,
+  `term` varchar(300) NOT NULL,
+  `frequency` int(11) NOT NULL default '1',
+    PRIMARY KEY (id)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Topic`
+--
+
+CREATE TABLE IF NOT EXISTS `Topic` (
+  `id` int(11) NOT NULL auto_increment,
+  `title` varchar(300) NOT NULL,
+  `urltitle` varchar(30) NOT NULL,
+  `colour` varchar(10) NOT NULL default '#000000',
+  `courseId` int(11) NOT NULL,
+  `sortorder` int(11) NOT NULL,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `User`
+--
+
+CREATE TABLE IF NOT EXISTS `User` (
+  `id` int(11) NOT NULL auto_increment,
+  `username` varchar(100) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `joinDate` int(11) NOT NULL,
+  `lastActivity` int(11) default NULL,
+  `points` int(11) default NULL,
+  `biog` varchar(160) default NULL,
+  `timestamp` timestamp NOT NULL default CURRENT_TIMESTAMP,
+  `firstip` varchar(100) NOT NULL,
+  `subamount` varchar(10) NOT NULL,
+  `subupdated` timestamp NOT NULL default '0000-00-00 00:00:00',
+  `socialshare` varchar(100) NOT NULL,
+    PRIMARY KEY (id)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `UserExerciseAnswer`
+--
+
+CREATE TABLE IF NOT EXISTS `UserExerciseAnswer` (
+  `id` mediumint(8) unsigned NOT NULL auto_increment,
+  `userId` int(10) unsigned NOT NULL COMMENT 'CONSTRAINT FOREIGN KEY (userId) REFERENCES User(id)',
+  `exerciseId` int(10) unsigned NOT NULL,
+  `complete` tinyint(4) NOT NULL,
+  `countHints` tinyint(4) NOT NULL,
+  `timeTaken` smallint(5) unsigned default NULL,
+  `attemptNumber` mediumint(8) unsigned default NULL,
+  `timestamp` int(11) NOT NULL,
+    PRIMARY KEY (id)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `UserExSingleMastery`
+--
+
+CREATE TABLE IF NOT EXISTS `UserExSingleMastery` (
+  `id` int(11) NOT NULL auto_increment,
+  `userId` int(11) NOT NULL COMMENT 'CONSTRAINT FOREIGN KEY (userId) REFERENCES User(id)',
+  `exerciseId` int(11) NOT NULL COMMENT 'CONSTRAINT FOREIGN KEY (exericseId) REFERENCES Lesson(id)',
+  `timestamp` int(11) NOT NULL,
+    PRIMARY KEY (id)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `UserVideoView`
+--
+
+CREATE TABLE IF NOT EXISTS `UserVideoView` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `userId` int(10) unsigned NOT NULL COMMENT 'CONSTRAINT FOREIGN KEY (userId) REFERENCES User(id)',
+  `lessonId` int(10) unsigned NOT NULL COMMENT 'CONSTRAINT FOREIGN KEY (lessonId) REFERENCES Lesson(id)',
+  `status` tinyint(4) NOT NULL,
+  `position` varchar(100) default NULL,
+  `timestamp` int(11) NOT NULL,
+    PRIMARY KEY (id)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+-- phpMyAdmin SQL Dump
+-- version 4.4.15.1
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Mar 14, 2016 at 02:59 PM
+-- Server version: 5.0.95
+-- PHP Version: 5.5.32
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `daverees4_con`
+--
+
+--
+-- Dumping data for table `Course`
+--
+
+INSERT INTO `Course` (`id`, `title`, `urltitle`, `author`, `description`, `homepage_order`) VALUES
+(4, 'Reading Music', 'reading-music', 'David Rees', 'How can learning to read some lines and squiggles help me learn other people''s music?  Find out here!', 2),
+(7, 'Music:  A Beginner''s Guide', 'music-theory', 'David Rees', 'Love music? Want to learn about how it works? This is the place to start!', 1),
+(2, 'Ear Training', 'ear-training', 'David Rees', 'Learning to Listen!', 3),
+(1, 'Test Preparation ', 'test-prep', 'David Rees', 'Exam Papers provided by <a href="http://musictheoryhelp.co.uk">www.musictheoryhelp.co.uk</a>', 4),
+(8, 'Improvisation with Harry the Piano', 'improvisation-with-harry-the-piano', 'Harry the Piano', 'Do you know how to play C major?  Want to improvise in over 20 styles? Check out our fantastic new course with piano superstar <a href="http://youtube.com/harrythepiano" target="_blank">Harry the Piano</a>', 5),
+(9, 'Introduction to Sonic Pi', 'introduction-to-sonic-pi', 'David Rees', 'Compose music with your computer using a piece of software called Sonic Pi (<a href="http://www.sonic-pi.net" target="_blank">www.sonic-pi.net</a>)', 6);
 
 --
 -- Dumping data for table `Lesson`
@@ -85,21 +283,21 @@ INSERT INTO `Lesson` (`filetype`, `id`, `seriesno`, `topicno`, `lessonno`, `titl
 ('p', 24, 7, 15, 84, 'The Orchestra Playlist', '', '', 'the-orchestra-playlist', '', '0000-00-00 00:00:00'),
 ('l', 25, 7, 15, 87, 'Modern Ensembles', '', '', 'modern-ensembles', 'XXj9joGOJS8', '0000-00-00 00:00:00'),
 ('p', 26, 7, 15, 88, 'Modern Ensembles Playlist', '', '', 'modern-ensembles-playlist', '', '0000-00-00 00:00:00'),
-('l', 27, 7, 10, 48, 'Form in European Music', '', '', 'western-forms', 'TFs5yvzc7Sw', '0000-00-00 00:00:00'),
-('l', 28, 7, 10, 50, 'Form in American Music', '', '', 'american-forms', 'lBkzmMMC7yY', '0000-00-00 00:00:00'),
+('l', 27, 7, 10, 2, 'Form in European Music', '', '', 'western-forms', 'TFs5yvzc7Sw', '0000-00-00 00:00:00'),
+('l', 28, 7, 10, 18, 'Form in American Music', '', '', 'american-forms', 'lBkzmMMC7yY', '0000-00-00 00:00:00'),
 ('l', 29, 7, 0, 91, 'European Music History', '', '', 'euro-music-history', 'x6ev4z6pZ_4', '0000-00-00 00:00:00'),
 ('p', 30, 7, 0, 92, 'European Music History Playlist', '', '', 'euro-music-playlist', '', '0000-00-00 00:00:00'),
-('p', 32, 7, 10, 51, 'American Music Forms Playlist', '', '', 'usa-forms-playlist', '', '0000-00-00 00:00:00'),
+('p', 32, 7, 10, 19, 'American Music Forms Playlist', '', '', 'usa-forms-playlist', '', '0000-00-00 00:00:00'),
 ('l', 33, 7, 15, 89, 'American Music History', '', '', 'usa-music-history', '9f91UGqqkto', '0000-00-00 00:00:00'),
 ('p', 34, 7, 17, 90, 'American Music History Playlist', '', '', 'usa-history-playlist', '', '0000-00-00 00:00:00'),
 ('l', 158, 7, 9, 46, 'Transposing the Modes', 'Sometimes we''d like to be able to move the modes around to be based on different pitches, a dorian mode starting on G, for example.  \r\n\r\nIn lesson we learn that''s not quite as tough as it sounds!', 'modes, transposition, scale degrees', 'transposing-modes', '-SWEL2LyPkU', '2013-06-02 12:39:52'),
 ('p', 36, 7, 0, 93, '"What Next?" Playlist', '', '', 'what-next', '', '0000-00-00 00:00:00'),
-('p', 45, 7, 10, 49, 'European Forms Playlist', '', '', 'european-forms-playlist', '', '0000-00-00 00:00:00'),
+('p', 45, 7, 10, 3, 'European Forms Playlist', '', '', 'european-forms-playlist', '', '0000-00-00 00:00:00'),
 ('p', 38, 7, 5, 21, 'Beat Playlist', '', '', 'beat-playlist', '', '0000-00-00 00:00:00'),
 ('p', 39, 7, 5, 19, 'Rhythm Playlist', '', '', 'rhythm-playlist', '', '0000-00-00 00:00:00'),
 ('p', 41, 7, 2, 2, 'What is Music? Playlist', '', '', 'what-is-music-playlist', '', '0000-00-00 00:00:00'),
 ('p', 42, 7, 3, 9, 'Pitch Playlist', '', '', 'pitch-playlist', '', '0000-00-00 00:00:00'),
-('p', 47, 7, 7, 32, 'Harmony Playlist', '', '', 'harmony-playlist', '', '0000-00-00 00:00:00'),
+('p', 47, 7, 7, 2, 'Harmony Playlist', '', '', 'harmony-playlist', '', '0000-00-00 00:00:00'),
 ('e', 48, 4, 19, 3, 'Exercise: Reading the Treble Clef', '', '', 'treble-clef-reading', 'treble-clef-reading', '0000-00-00 00:00:00'),
 ('l', 49, 4, 19, 4, 'The Bass Clef', '', '', 'bassclef', 'htM489ztcZI', '0000-00-00 00:00:00'),
 ('l', 50, 4, 19, 6, 'The Grand Staff', '', '', 'thegrandstaff', 'Nlup-VDbjI0', '0000-00-00 00:00:00'),
@@ -153,23 +351,23 @@ INSERT INTO `Lesson` (`filetype`, `id`, `seriesno`, `topicno`, `lessonno`, `titl
 ('l', 105, 7, 5, 26, 'Note Length Names (Eighth and Sixteenth)', 'Some more note lengths to learn here with this lesson covering eighth notes (which last for just half and beat) and sixteenth notes (which last for a quarter of a beat).\r\n\r\nThese notes are called eighth and sixteenth notes because we can fit 8 eighth notes into one whole note and 16 sixteenth notes into one whole note.\r\n\r\nIt is these shorter notes that often help a piece of music to have a groove and make us want to dance.  ', 'rhythm, eighth notes, sixteenth notes', 'note-lengths-2', 'MObtxuZHK3c', '0000-00-00 00:00:00'),
 ('l', 106, 7, 5, 28, 'Introducing Meter', 'Meter is a term used by musicians to describe larger groups that repeat throughout a piece of music.  \r\n\r\nYou might have sometimes tried to count along with a piece of music, for a lot of music you''ll be able to this by counting 1, 2, 3 and 4 over and over again.  \r\n\r\nThe reason this works is that the music is built on repeating patterns of four beats.  When this is the case the music can be said to have a meter of 4.  In this video we look at some other examples of music with a meter of 2 (meaning the music is split into two-beat groups) and 3 (meaning the music is divided up into three-beat groups). ', 'rhythm, meter, in 4, 4/4 time, 3/4 time, 2/4 time', 'introducing-meter', 'yHUyFI5Tcmw', '2012-05-02 20:09:31'),
 ('l', 107, 7, 3, 30, 'Introducing Melody', 'Melody is such a central element of almost all music.  I probably don''t even need to explain what a melody is, you probably already know. \r\n\r\nA melody is a series of notes brought together in a particular rhythm to produce a memorable tune. \r\n\r\nThe melody is perhaps the most important element of any piece of music and so composers spend a lot of time thinking up the best melodies they can.', 'melody, tune, air, composition', 'introducing-melody', 'WESQHuwOizM', '2012-05-02 20:09:46'),
-('l', 108, 7, 7, 31, 'What is Harmony?', 'Harmony happens in music when two or more pitches are combined.  Combining pitches together can add sophistication and interest to music and there are almost infinite possible combinations to explore!\r\n\r\nWhen two notes are brought together to produce harmony, this is called a chord.  Learning about all of the different types and flavours of chord is really important in becoming a good musician.  \r\n\r\nWith a good understanding of harmony we can make a good melody even more effective!', 'harmony, chords, what is harmony', 'what-is-harmony', '-OX1FyfZHWM', '2012-05-02 20:10:16'),
-('l', 109, 7, 7, 33, 'Major Triads', 'Some of the most basic chords that are used all the time in music are called triads.  As the name suggests, triads are chords made up of three different pitches.  \r\n\r\nWe have several different flavours of triad.  In this lesson we take a look at the major triad, which is very closely related to the major scale.', 'major triad, harmony, chords', 'major-triads', '81Zbg9wyuZ0', '2012-05-02 20:10:29'),
-('l', 110, 7, 7, 34, 'Minor Triads', 'Another commonly used triad in almost all western music is the minor triad.  It is based on the minor scale and has a similarly darker colour to its major counterpart.  \r\n\r\nYou can build a minor triad if you know the first, third and fifth degrees of a minor scale.  Add these three pitches together and you''ve got your triad.', 'minor triad, minor scale', 'minor-triads', 'zuL9fkRGV3g', '2012-05-02 20:10:43'),
-('l', 113, 7, 10, 47, 'Introducing Musical Form', '', '', 'introducing-form', 'V8JK-iXTuRg', '2012-05-06 20:05:30'),
-('l', 112, 7, 7, 38, 'Building Chords from Triads', 'We''ve got a good understanding of triads now, but of course harmony would be pretty boring if all we ever did was use these triads in only their basic form.  \r\n\r\nIn this lesson we have a look at how we can turn basic triads into fuller chords by either spreading their notes out over different octaves, doubling up the notes of a triad or a combination of the two!\r\n\r\nThere are lots of different possible ways to turn a basic triad into a fuller chord.  Your job is to find the ones you like! ', 'chords, harmony, triads, voicings', 'building-chords-from-triads', 'mLnkQ_fMh28', '2012-05-04 11:13:31'),
-('l', 114, 7, 7, 37, 'The Primary Triads', 'Have you met someone with the magical ability to play along with any song or tune they like?\r\n\r\nThese people have probably not done a deal with the devil, but have instead learned about the primary triads.\r\n\r\nAs long as you know the three primary triads belonging to a particular scale or key, you can successfully harmonize any melody based on that scale/key. \r\n\r\nFor both major and minor scales/keys the primary triads are those build on the first, fourth and fifth scale degrees of that scale.', 'primary triads, tonic, subdominant, dominant', 'primary-triads', 'tpD_QUElZUQ', '2012-05-07 20:44:39'),
+('l', 108, 7, 7, 1, 'What is Harmony?', 'Harmony happens in music when two or more pitches are combined.  Combining pitches together can add sophistication and interest to music and there are almost infinite possible combinations to explore!\r\n\r\nWhen two notes are brought together to produce harmony, this is called a chord.  Learning about all of the different types and flavours of chord is really important in becoming a good musician.  \r\n\r\nWith a good understanding of harmony we can make a good melody even more effective!', 'harmony, chords, what is harmony', 'what-is-harmony', '-OX1FyfZHWM', '2012-05-02 20:10:16'),
+('l', 109, 7, 7, 3, 'Major Triads', 'Some of the most basic chords that are used all the time in music are called triads.  As the name suggests, triads are chords made up of three different pitches.  \r\n\r\nWe have several different flavours of triad.  In this lesson we take a look at the major triad, which is very closely related to the major scale.', 'major triad, harmony, chords', 'major-triads', '81Zbg9wyuZ0', '2012-05-02 20:10:29'),
+('l', 110, 7, 7, 4, 'Minor Triads', 'Another commonly used triad in almost all western music is the minor triad.  It is based on the minor scale and has a similarly darker colour to its major counterpart.  \r\n\r\nYou can build a minor triad if you know the first, third and fifth degrees of a minor scale.  Add these three pitches together and you''ve got your triad.', 'minor triad, minor scale', 'minor-triads', 'zuL9fkRGV3g', '2012-05-02 20:10:43'),
+('l', 113, 7, 10, 1, 'Introducing Musical Form', '', '', 'introducing-form', 'V8JK-iXTuRg', '2012-05-06 20:05:30'),
+('l', 112, 7, 7, 8, 'Building Chords from Triads', 'We''ve got a good understanding of triads now, but of course harmony would be pretty boring if all we ever did was use these triads in only their basic form.  \r\n\r\nIn this lesson we have a look at how we can turn basic triads into fuller chords by either spreading their notes out over different octaves, doubling up the notes of a triad or a combination of the two!\r\n\r\nThere are lots of different possible ways to turn a basic triad into a fuller chord.  Your job is to find the ones you like! ', 'chords, harmony, triads, voicings', 'building-chords-from-triads', 'mLnkQ_fMh28', '2012-05-04 11:13:31'),
+('l', 114, 7, 7, 7, 'The Primary Triads', 'Have you met someone with the magical ability to play along with any song or tune they like?\r\n\r\nThese people have probably not done a deal with the devil, but have instead learned about the primary triads.\r\n\r\nAs long as you know the three primary triads belonging to a particular scale or key, you can successfully harmonize any melody based on that scale/key. \r\n\r\nFor both major and minor scales/keys the primary triads are those build on the first, fourth and fifth scale degrees of that scale.', 'primary triads, tonic, subdominant, dominant', 'primary-triads', 'tpD_QUElZUQ', '2012-05-07 20:44:39'),
 ('l', 115, 7, 12, 55, 'What is Timbre?', '', '', 'timbre-intro', '7k5Ml7HoVoQ', '2012-05-23 20:23:53'),
 ('l', 116, 7, 13, 64, 'Introducing Texture', '', '', 'introducing-texture', 'Ak4qezdv4ZU', '2012-06-29 15:22:04'),
-('l', 117, 7, 16, 65, 'Monophonic Texture', '', '', 'monophonic-texture', 'hdyg7nYiMJM', '2012-06-29 15:23:36'),
-('l', 118, 7, 16, 66, 'Homophonic Texture', '', '', 'homophonic-texture', 'xpscshv3Exk', '2012-06-29 15:25:02'),
-('l', 119, 7, 16, 67, 'Polyphonic Texture', '', '', 'polyphonic-texture', '3jGkGvTJK7A', '2012-06-29 15:28:01'),
+('l', 117, 7, 16, 1, 'Monophonic Texture', '', '', 'monophonic-texture', 'hdyg7nYiMJM', '2012-06-29 15:23:36'),
+('l', 118, 7, 16, 3, 'Homophonic Texture', '', '', 'homophonic-texture', 'xpscshv3Exk', '2012-06-29 15:25:02'),
+('l', 119, 7, 16, 5, 'Polyphonic Texture', '', '', 'polyphonic-texture', '3jGkGvTJK7A', '2012-06-29 15:28:01'),
 ('e', 120, 7, 3, 4, 'Listening to Pitches - (Easy)', '', '', 'pitch-1', 'pitch-1', '2012-08-20 21:40:13'),
 ('e', 121, 7, 3, 5, 'Listening to Pitches - (Medium)', '', '', 'pitch-2', 'pitch-2', '2012-08-20 21:41:12'),
 ('e', 122, 7, 3, 6, 'Listening to Pitches - (Hard)', '', '', 'pitch-3', 'pitch-3', '2012-08-20 21:41:12'),
 ('e', 123, 7, 3, 7, 'Can you spot an Octave?', '', '', 'identifying-octaves', 'identifying-octaves', '2012-09-26 11:23:39'),
-('l', 124, 7, 7, 35, 'Diminished Triads', 'Not as common as the major or minor triads, but diminished triads can be used both as an interesting special effect or a way of connecting a series of triads. \r\n\r\nYou can build a diminished triad by stacking two minor thirds.  \r\n\r\nAlternatively just choose a note, count up three notes, play this note, count up three notes and play that note - then you''ve got your diminished triad!', 'diminished triad, diminished chord, minor thirds', 'diminished-triads', 'e2r3ZB06mFY', '2012-11-01 10:58:41'),
-('l', 125, 7, 7, 36, 'Augmented Triads', 'The last basic triad in music that we need to learn about is the augmented triad.  Again, this is not particularly common but allow us to create some interesting harmonies. \r\n\r\nAn augmented triad can be created by stacking two major third intervals.\r\n\r\nIt can also be created by choosing a note on the keyboard, counting up four notes, playing the note you land on, counting up four more notes and adding this note to the chord.  Then you''ve made you augmented triad!', 'augmented harmony, augmented triads', 'augmented-triads', 'LHNPJs3-1Bw', '2012-11-01 11:51:33'),
+('l', 124, 7, 7, 5, 'Diminished Triads', 'Not as common as the major or minor triads, but diminished triads can be used both as an interesting special effect or a way of connecting a series of triads. \r\n\r\nYou can build a diminished triad by stacking two minor thirds.  \r\n\r\nAlternatively just choose a note, count up three notes, play this note, count up three notes and play that note - then you''ve got your diminished triad!', 'diminished triad, diminished chord, minor thirds', 'diminished-triads', 'e2r3ZB06mFY', '2012-11-01 10:58:41'),
+('l', 125, 7, 7, 6, 'Augmented Triads', 'The last basic triad in music that we need to learn about is the augmented triad.  Again, this is not particularly common but allow us to create some interesting harmonies. \r\n\r\nAn augmented triad can be created by stacking two major third intervals.\r\n\r\nIt can also be created by choosing a note on the keyboard, counting up four notes, playing the note you land on, counting up four more notes and adding this note to the chord.  Then you''ve made you augmented triad!', 'augmented harmony, augmented triads', 'augmented-triads', 'LHNPJs3-1Bw', '2012-11-01 11:51:33'),
 ('l', 126, 7, 11, 52, 'What is Articulation?', '', '', 'articulation', 'O4Q_m7m9B58', '2012-11-05 18:30:26'),
 ('l', 127, 7, 11, 53, 'Articulation: Staccato', '', '', 'staccato', 'AaKTBKRNvoE', '2012-12-07 18:38:07'),
 ('l', 128, 7, 11, 54, 'Articulation: Tenuto', '', '', 'tenuto', 'nxfBzxiyG3c', '2012-12-07 18:38:54'),
@@ -201,24 +399,106 @@ INSERT INTO `Lesson` (`filetype`, `id`, `seriesno`, `topicno`, `lessonno`, `titl
 ('l', 162, 7, 8, 39, 'Introducing the Cycle of Fifths', 'The cycle (or circle) of fifths will blow your mind!  It is a way of representing the 12 pitches in a way that shows lots of the key ideas and relationships of Western music. ', 'cycle of fifths, circle of fifths, diatonicism, fifth relationship', 'cycle-of-fifths-introduction', 'SmoTrzmDktc', '2013-06-10 21:34:11'),
 ('l', 163, 7, 8, 40, 'Cool Things about the Cycle of Fifths: Scale Relationships', 'There are lots of cool things about the cycle or circle of fifths.  In this lesson, we look at the how the cycle sets out for us the relationships between the 12 major keys and scales.', 'circle of fifths, cycle of fifths, scales, keys, sharp keys, flat keys', 'cycle-of-fifths-scale-relationships', 'Kyy8miWMRtY', '2013-06-16 21:53:15'),
 ('l', 165, 7, 8, 41, 'Cool Things about the Cycle of Fifths: Minor Scales', 'We''ve looked at the major scales in the cycle of fifths, but what about the minor scales?  In this video, we look at how just the same the minor scales can be made into a cycle of fifths too, and can be connected up to their relative majors.', 'minor scales, cycle of fifths, circle of fifths, relative minors', 'cycle-of-fifths-minor-scales', 'Q69wcnHRJ2o', '2013-06-17 14:26:44'),
-('l', 166, 7, 8, 42, 'Cool Things about the Cycle of Fifths: Harmony', 'Need to know which chords are your primary and secondary triads in a particular key? It''s right there in the cycle of fifths!  Guaranteed to amaze. ', 'cycle of fifths, circle of fifths, harmony, primary triads, secondary triads', 'cycle-of-fifths-harmony', 'av6PwZ78zKY', '2013-06-26 21:20:26');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `PlaylistItem`
---
-
-CREATE TABLE `PlaylistItem` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(75) NOT NULL,
-  `text` varchar(5000) NOT NULL,
-  `relid` int(10) NOT NULL,
-  `youtubeid` varchar(20) NOT NULL,
-  `credit` varchar(50) NOT NULL,
-  `sort` tinyint(4) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=85 ;
+('l', 166, 7, 8, 42, 'Cool Things about the Cycle of Fifths: Harmony', 'Need to know which chords are your primary and secondary triads in a particular key? It''s right there in the cycle of fifths!  Guaranteed to amaze. ', 'cycle of fifths, circle of fifths, harmony, primary triads, secondary triads', 'cycle-of-fifths-harmony', 'av6PwZ78zKY', '2013-06-26 21:20:26'),
+('l', 167, 7, 7, 9, 'The Tierce de Picardie', '', '', 'tierce-de-picardie', 'nbNKrK0F2bk', '2014-01-04 14:28:24'),
+('l', 168, 7, 28, 0, 'What is a cadence?', '', '', 'what-is-a-cadence', '0L83JZW9-AU', '2014-01-11 21:13:53'),
+('l', 169, 7, 28, 0, 'Perfect Cadences', '', '', 'perfect-cadence', 'skKXwegnAfU', '2014-01-19 22:20:25'),
+('l', 170, 7, 28, 0, 'Plagal Cadences', '', '', 'plagal-cadences', 'SRkM2g6Jmh0', '2014-01-19 22:32:56'),
+('l', 171, 7, 28, 0, 'Imperfect Cadences', '', '', 'imperfect-cadences', 'zPflCQrWP84', '2014-01-19 22:33:38'),
+('l', 172, 7, 28, 0, 'Interrupted Cadences', '', '', 'interrupted-cadences', 'Z4HtdiqzlkE', '2014-01-19 22:34:18'),
+('l', 173, 7, 10, 4, 'Binary Form', '', '', 'binary-form', 'iWdYdDbDJ0A', '2014-02-16 20:17:00'),
+('l', 174, 7, 10, 5, 'Rounded Binary Form', '', '', 'rounded-binary-form', 'VIVQAmxlAY0', '2014-02-16 20:28:12'),
+('l', 175, 7, 10, 6, 'Ternary Form', '', '', 'ternary-form', 'RBvO0s1nkkM', '2014-02-16 20:29:30'),
+('l', 176, 7, 10, 7, 'Rondo Form', '', '', 'rondo-form', 'YYSoa5zERIU', '2014-02-16 20:31:21'),
+('l', 177, 7, 10, 8, 'Theme and Variation Form', '', '', 'theme-and-variations', 'JFkr8nCCvaw', '2014-02-16 20:36:01'),
+('l', 178, 7, 10, 9, 'Strophic Form', '', '', 'strophic-form', '0EG-HdGBV7U', '2014-02-23 19:34:50'),
+('l', 181, 7, 10, 13, 'Sonata Form: The Exposition', '', '', 'sonata-exposition', 'FjgLKCUsb0U', '2014-04-29 20:37:59'),
+('l', 179, 7, 10, 10, 'Through-composed Form', '', '', 'through-composed-form', 'jaQnug_oq38', '2014-02-23 19:36:20'),
+('l', 180, 7, 10, 11, 'Verse-chorus / Refrain form', '', '', 'verse-chorus-form', 'Yew4pzymcMM', '2014-02-23 19:38:07'),
+('l', 182, 7, 10, 12, 'Introducing Sonata Form', '', '', 'introducing-sonata-form', 'uzlbKdYf5bQ', '2014-04-29 20:40:30'),
+('l', 183, 7, 10, 14, 'Sonata Form: The Development', '', '', 'sonata-development', 'd2-ZGKb6ljc', '2014-04-29 20:43:38'),
+('l', 184, 7, 10, 15, 'Sonata Form: The Recapitulation', '', '', 'sonata-recapitulation', 'I2VmkCQETxM', '2014-04-29 20:44:47'),
+('l', 185, 7, 29, 1, 'What is a key?', '', '', 'introducing-key', '2woyzpFKTK0', '2014-05-12 21:01:33'),
+('l', 186, 7, 29, 5, 'Changing Key / Modulation', '', '', 'modulation', '5TehHuKbvvo', '2014-05-12 21:02:59'),
+('l', 187, 7, 29, 6, 'The Related Keys', '', '', 'related-keys', 'VYpKWYiGezM', '2014-05-13 15:18:18'),
+('l', 188, 7, 29, 7, 'Finding related keys to a minor tonic', '', '', 'minor-related-keys', '2OU9tHYkKys', '2014-05-13 16:37:46'),
+('l', 189, 2, 30, 1, 'Introduction ', '', '', 'introduction', '70Eyk6hQQLU', '2014-07-31 20:13:38'),
+('l', 190, 2, 30, 2, 'Octave and Perfect 5th', '', '', 'octave-perfect-fifth', '_Rg54Ie9zMQ', '2014-07-31 20:13:38'),
+('e', 193, 2, 30, 3, 'Exercise: Octave and Perfect 5th', '', '', 'intervals-1', 'intervals-1', '2014-07-31 20:29:23'),
+('l', 194, 2, 30, 4, 'Major 3rd', '', '', 'major-third', 'BjCfFGIB9-A', '2014-07-31 20:29:23'),
+('e', 195, 2, 30, 5, 'Exercise: Major 3rd', '', '', 'intervals-2', 'intervals-2', '2014-07-31 20:29:23'),
+('l', 196, 2, 30, 6, 'Perfect 4th', '', '', 'perfect-fourth', '_3szL9m7C_Q', '2014-07-31 20:29:23'),
+('e', 197, 2, 30, 7, 'Exercise: Perfect 4th', '', '', 'intervals-3', 'intervals-3', '2014-07-31 20:29:23'),
+('l', 198, 2, 30, 8, 'Major 6th', '', '', 'major-sixth', 'O8WFXOupw3Y', '2014-07-31 20:29:23'),
+('e', 199, 2, 30, 9, 'Exercise: Major 6th', '', '', 'intervals-4', 'intervals-4', '2014-07-31 20:29:23'),
+('l', 200, 2, 30, 10, 'Major 2nd', '', '', 'major-second', 'EX-pQ_DWxuE', '2014-07-31 20:29:23'),
+('e', 201, 2, 30, 11, 'Exercise: Major 2nd', '', '', 'intervals-5', 'intervals-5', '2014-07-31 20:29:23'),
+('l', 202, 2, 30, 12, 'Major 7th', '', '', 'major-seventh', 'Yjim9fRs2pY', '2014-07-31 20:31:59'),
+('e', 203, 2, 30, 13, 'Exercise: Major Seventh', '', '', 'intervals-6', 'intervals-6', '2014-07-31 20:31:59'),
+('l', 204, 7, 10, 16, 'The Twelve Bar Blues', '', '', 'twelve-bar-blues', 'OKyFA9Phwm0', '2014-07-31 21:00:22'),
+('l', 205, 7, 10, 17, 'Form in Jazz', '', '', 'jazz-form', 'WkkVROW2skQ', '2014-07-31 21:01:37'),
+('l', 206, 2, 34, 21, 'Different pitches', '', '', 'intervals-2-intro', '3YbyAN7NYwo', '2014-08-01 10:41:58'),
+('e', 207, 2, 34, 22, 'Exercise: Octave and Perfect 5th', '', '', 'intervals-7', 'intervals-7', '2014-08-01 10:44:43'),
+('e', 208, 2, 34, 23, 'Exercise: Major 3rd', '', '', 'intervals-8', 'intervals-8', '2014-08-01 10:44:43'),
+('e', 209, 2, 34, 24, 'Exercise: Perfect 4th', '', '', 'intervals-9', 'intervals-9', '2014-08-01 10:44:43'),
+('e', 210, 2, 34, 25, 'Exercise: Major 6th', '', '', 'intervals-10', 'intervals-10', '2014-08-01 10:44:43'),
+('e', 211, 2, 34, 26, 'Exercise: Major 2nd', '', '', 'intervals-11', 'intervals-11', '2014-08-01 10:44:43'),
+('e', 212, 2, 34, 26, 'Exercise: Major 7th', '', '', 'intervals-12', 'intervals-12', '2014-08-01 10:50:52'),
+('l', 213, 2, 35, 31, 'Descending Intervals', '', '', 'intervals-3-intro', 'xdQztbgyZ8Q', '2014-08-01 10:55:37'),
+('e', 214, 2, 35, 32, 'Exercise: Octave and Perfect 5th', '', '', 'intervals-13', 'intervals-13', '2014-08-01 10:55:37'),
+('e', 215, 2, 35, 33, 'Exercise: Major 3rd', '', '', 'intervals-14', 'intervals-14', '2014-08-01 10:58:03'),
+('e', 216, 2, 35, 34, 'Exercise: Perfect 4th', '', '', 'intervals-15', 'intervals-15', '2014-08-01 10:58:03'),
+('e', 217, 2, 35, 35, 'Exercise: Major 6th', '', '', 'intervals-16', 'intervals-16', '2014-08-01 11:45:59'),
+('e', 218, 2, 35, 36, 'Exercise: Major 2nd', '', '', 'intervals-17', 'intervals-17', '2014-08-01 11:45:59'),
+('e', 219, 2, 35, 37, 'Exercise: Major 7th', '', '', 'intervals-18', 'intervals-18', '2014-08-01 11:53:17'),
+('l', 220, 2, 36, 41, 'Our progress so far', '', '', 'intervals-4-intro', '0qWPD6t0iZ4', '2014-08-01 11:59:01'),
+('e', 221, 2, 36, 42, 'Exercise: Octave and Perfect 5th', '', '', 'intervals-19', 'intervals-19', '2014-08-01 12:03:29'),
+('e', 222, 2, 36, 43, 'Exercise: Major 3rd', '', '', 'intervals-20', 'intervals-20', '2014-08-01 12:03:29'),
+('e', 223, 2, 36, 44, 'Exercise: Perfect 4th', '', '', 'intervals-21', 'intervals-21', '2014-08-01 12:05:13'),
+('e', 224, 2, 36, 45, 'Exercise: Major 6th', '', '', 'intervals-22', 'intervals-22', '2014-08-01 12:05:13'),
+('e', 225, 2, 36, 46, 'Exercise: Major 2nd', '', '', 'intervals-23', 'intervals-23', '2014-08-01 12:08:03'),
+('e', 226, 2, 36, 47, 'Exercise: Major 7th', '', '', 'intervals-24', 'intervals-24', '2014-08-01 12:08:03'),
+('l', 227, 1, 37, 1, 'Question 1 - Extract Analysis', '', '', 'grade1-q1', 'VcI5jkFTlMs', '2014-08-26 21:28:39'),
+('l', 228, 1, 37, 2, 'Question 2 - Compose a Rhythm', '', '', 'grade1-q2', 'QpEn0cUwrns', '2014-08-26 21:28:39'),
+('l', 229, 1, 37, 3, 'Question 3 - Scales', '', '', 'grade1-q3', 'iENsqDqM-YQ', '2014-08-26 21:34:03'),
+('l', 230, 1, 37, 4, 'Question 4 - Extract Analysis', '', '', 'grade1-q4', '1Dipu3nKdQo', '2014-08-26 21:34:03'),
+('l', 231, 1, 38, 5, 'Question 1 - Extract Analysis', '', '', 'grade2-q1', 'tLFmcV1ZYoE', '2014-08-26 21:38:18'),
+('l', 232, 1, 38, 6, 'Question 2 - Compose a Rhythm ', '', '', 'grade2-q2', 'gl2Y8dqiD1k', '2014-08-26 21:38:18'),
+('l', 235, 1, 38, 7, 'Question 3 - Intervals', '', '', 'grade2-q3', '3CLC4JZxRPs', '2014-08-26 21:47:08'),
+('l', 236, 1, 38, 8, 'Question 4 - Scales', '', '', 'grade2-q4', 'hceK2dNcK_A', '2014-08-26 21:47:08'),
+('l', 237, 1, 38, 9, 'Question 5 - Chords', '', '', 'grade2-q5', 'XWXurNFdpYA', '2014-08-26 21:50:16'),
+('l', 238, 1, 39, 10, 'Question 1 - Extract Analysis', '', '', 'grade3-q1', 'WakNJ9iqbdY', '2014-08-26 21:50:16'),
+('l', 239, 1, 39, 11, 'Question 2 - Compose a Rhythm', '', '', 'grade3-q2', 'P62O7Xx0ZHo', '2014-08-26 21:51:45'),
+('l', 240, 1, 39, 12, 'Question 3 - Transposition', '', '', 'grade3-q3', 'ZKHmjtryprc', '2014-08-26 21:51:45'),
+('l', 241, 1, 39, 13, 'Question 4 - Scales', '', '', 'grade3-q4', 'XhCTZYLjTOs', '2014-08-26 21:53:13'),
+('l', 242, 1, 39, 14, 'Question 5 - Intervals', '', '', 'grade3-q5', 'mDF3xu0Akcg', '2014-08-26 21:53:13'),
+('l', 243, 8, 40, 0, 'Introduction ', '', '', 'htp-intro', '6gNQx8mRNZk', '2015-04-15 10:43:16'),
+('l', 244, 8, 40, 0, 'Three Styles in 30 Seconds', '', '', 'htp-threestyles', '3sG-POiY7Hw', '2015-04-15 10:44:48'),
+('l', 245, 8, 40, 0, 'Rhythmic Patterns', '', '', 'htp-rhythmpatterns', 'qaqAnVwNUZg', '2015-04-15 10:46:24'),
+('l', 246, 8, 40, 0, 'Waltz Time', '', '', 'htp-waltz', 'sa1tKT-Mfn0', '2015-04-15 10:46:56'),
+('l', 247, 8, 40, 0, 'Latin Dance Styles', '', '', 'htp-latin', '0xHu26dRyOk', '2015-04-15 10:47:32'),
+('l', 248, 8, 40, 0, 'Shuffle and Swing', '', '', 'htp-shuffle', 'zCm2I_rLH8A', '2015-04-15 10:48:31'),
+('l', 249, 8, 40, 0, 'The Blues', '', '', 'htp-blues', 'qb_KmnLrwlU', '2015-04-15 10:49:15'),
+('l', 250, 8, 40, 0, 'Whole Tone and Pentatonic Scales', '', '', 'htp-wholetone-pentatonic', 'YB3DUfbZsQ8', '2015-04-15 10:50:00'),
+('l', 251, 8, 40, 0, 'Major and Minor', '', '', 'htp-major-and-minor', 'BAJNYqWmglk', '2015-04-15 10:50:28'),
+('l', 252, 8, 40, 0, 'Where next?', '', '', 'htp-where-next', '-Ip8rWQjTwo', '2015-04-15 10:51:05'),
+('l', 253, 9, 41, 1, 'Introduction ', '', '', 'introduction-to-sonic-pi', '4BPKaHV7Q5U', '2015-05-30 19:55:36'),
+('l', 254, 9, 41, 2, 'The Play Command', '', '', 'the-play-command', 'DkbEWmg6oI0', '2015-05-30 20:00:05'),
+('l', 255, 9, 41, 3, 'Using Letter Names', '', '', 'using-letter-names', 'Yy00YaAfFTA', '2015-05-30 20:00:05'),
+('l', 256, 9, 41, 4, 'Exploring Synths', '', '', 'exploring-synths', 'Kt_zzWqH9Wc', '2015-05-30 20:04:15'),
+('l', 257, 9, 41, 5, 'Samples', '', '', 'using-samples', '8zYrD8nt7-g', '2015-05-30 20:04:15'),
+('l', 258, 9, 41, 6, 'Loops', '', '', 'loops', 'i-8Ei_fMI6s', '2015-05-30 20:07:32'),
+('l', 259, 9, 41, 7, 'Iterations', '', '', 'iterations', 'QoeS_fgA2Jw', '2015-05-30 20:07:32'),
+('l', 260, 9, 41, 8, 'Synth Parameters', '', '', 'synth-parameters', 'Nd_11e2GyHI', '2015-05-30 20:10:29'),
+('l', 261, 9, 41, 9, 'Random Numbers', '', '', 'random-numbers', 'q22ioCxvGVg', '2015-05-30 20:11:45'),
+('l', 262, 9, 41, 10, 'Analysing Haunted Bells', '', '', 'analysing-haunted-bells', 'K5jBwmjOsNQ', '2015-05-30 20:11:45'),
+('l', 263, 7, 16, 6, 'Antiphonal Texture', '', '', 'antiphonal-texture', '2PDDGzsNe58', '2015-09-19 11:53:57'),
+('l', 264, 7, 16, 4, 'Homophony Example', '', '', 'homophony-example', 'MA4inArolr0', '2015-09-19 14:02:15'),
+('l', 265, 7, 16, 2, 'Monophony Example ', '', '', 'monophony-example', 'y11Hwk9mCts', '2015-09-19 14:04:27'),
+('l', 266, 7, 16, 7, 'The difference between texture and timbre', '', '', 'texture-timbre-difference', 'GWIz6H4faSg', '2015-09-19 14:07:06'),
+('l', 267, 7, 29, 2, 'Relative Minors and Majors', '', '', 'relative-minors-majors', 'xbEer87lfdU', '2015-09-19 14:09:55'),
+('l', 268, 7, 29, 3, 'Finding Relative Majors and Minors', '', '', 'finding-relative-majors-minors', 'XhzhNhZRw9g', '2015-09-19 14:10:59'),
+('l', 269, 7, 29, 4, 'Practice finding relative majors/minors', '', '', 'practicing-finding-relative-majors-minors', 'gOBJy27w6K8', '2015-09-19 14:12:06');
 
 --
 -- Dumping data for table `PlaylistItem`
@@ -230,11 +510,11 @@ INSERT INTO `PlaylistItem` (`id`, `title`, `text`, `relid`, `youtubeid`, `credit
 (4, 'Dennis Solo', 'This is Dennis Chambers, one of my favourite jazz drummers.  In this solo, Dennis keeps things interesting combining complex rhythms with the full range of sounds on his kit.  You''ll hear sections in this piece where there is a clear beat, and others where the beat is much freer.  Controlling the groove in this way is central to jazz drumming style. ', 11, 'YdwCf2xIxOo', 'pihdrummer', 1),
 (5, 'Vibrating String', 'In these sections, I''ll be producing a playlist of videos that will illustrate the points I make in each lesson.  One of the fantastic things about exploring music, is that we need to do lots of listening, something you probably already do for fun!  Here we see vibrations passing through a string, they are much easier to see in slow motion.  These vibrations eventually reach our ears via the body of the instrument and the air around us.  ', 41, 'oyLfCPNf_hE', 'igiwarcraft', 1),
 (6, 'Vibrating Cymbal', 'While we can see a guitar string vibrating, vibrations in other instruments are not so clear until we really slow them down.  This is a cymbal being hit in super slow motion, you can see the waves of energy passing through the metal as the cymbal bends out of shape.', 41, 'tBZ8o0Kiz6w', 'thissiteishorrible', 2),
-(7, 'Not Just Nice Tunes', 'If you asked them, a lot of people might say that music was about producing things that are "good to listen to". But really, the definition of music is a lot wider than this.  I''ve talked about music being "Humanly Organised Sound", so if we take any sounds and choose to arrange them, then this becomes music.  This piece is arranges sounds in unconventional ways, was written by the Hungarian composer György Ligeti.  This is possibly not the piece to listen to after a hard day at work or school!', 41, 'qj9QlWltv8s', 'abbjorko', 3),
+(7, 'Not Just Nice Tunes', 'If you asked them, a lot of people might say that music was about producing things that are "good to listen to". But really, the definition of music is a lot wider than this.  I''ve talked about music being "Humanly Organised Sound", so if we take any sounds and choose to arrange them, then this becomes music.  This piece is arranges sounds in unconventional ways, was written by the Hungarian composer Gy�rgy Ligeti.  This is possibly not the piece to listen to after a hard day at work or school!', 41, 'qj9QlWltv8s', 'abbjorko', 3),
 (8, 'Do you get where I''m coming from?', 'Which sounds composers choose to organise into music tells you a huge amount about who they are, when they were alive and where they lived.  Many songwriters tell stories about the places they come from in their music, like this song by New York rapper Jay Z.', 41, '0UjsXo9l6I8', 'jayz', 4),
 (9, 'A World to Explore', 'There is music in every society in the world.  In some cultures, music is used to mark the changing of morning to afternoon and of summer to winter.  This piece of music from Japan is called "Sakura" and depicts the cherry blossoms that appear there every spring.', 41, 'N-dzfI3L5ic', 'michiganwinters', 5),
 (10, 'Metronome', 'This is a metronome.  They are helpful as we can use them to show us what a regular beat at a particular speed sounds like.  Musicians often practice along to the ticking of a metronome to make sure they are not speeding the music up, or slowing it down accidentally.  ', 38, 'Oop2kBOANW4', 'cloverinesalve', 1),
-(11, 'Spiegel Im Spiegel', 'This is a piece called <i>Spiegel Im Spiegel</i> by the Estonian composer Arvo Pärt.  It is incredibly simple and relaxing music.  The pianist''s right hand acts almost like a metronome, marking out the beat upon which the viola player can play long sustained notes. ', 38, 'TJ6Mzvh3XCc', 'playingmusiconmars', 1),
+(11, 'Spiegel Im Spiegel', 'This is a piece called <i>Spiegel Im Spiegel</i> by the Estonian composer Arvo P�rt.  It is incredibly simple and relaxing music.  The pianist''s right hand acts almost like a metronome, marking out the beat upon which the viola player can play long sustained notes. ', 38, 'TJ6Mzvh3XCc', 'playingmusiconmars', 1),
 (12, 'Four to the Floor', 'A large amount of dance music relies on a heavy beat to get people moving their feet.  This is a vocal arrangement of a well known dance track.  For the majority of the song, there is a constant thumping bass drum beat.  You can see how different the music sounds when this beat drops away at around 0:52. ', 38, 'UtBeobpTcmk', 'pbpproductions', 1),
 (13, 'Hiding the Beat', 'Sometimes music tries its best to hide the beat.  It is very slow and not very obvious but even this very free playing style does have some kind of underlying beat, moving the music forward.  In Eastern European music like this, slow, free playing is often followed by quick dances which are played to a very definite beat.', 38, 'OYzbyne58pk', 'tmjexpress', 1),
 (14, 'Clap to the Beat', 'A very natural reaction when we hear a piece of music is to want to clap along to the music''s beat.  In classical music this is normally not encouraged, but in this New Year''s Day concert, the orchestra made an exception!', 38, 'Tz34Pdi59_A', 'karajanviolin', 1),
@@ -309,186 +589,6 @@ INSERT INTO `PlaylistItem` (`id`, `title`, `text`, `relid`, `youtubeid`, `credit
 (83, 'Jazz ', 'Here is a masterclass in improvisation given to us by saxophonist Sonny Rollins.  Sonny starts by playing the calypso "St. Thomas" tune, but is improvising from 0:39.  Initially some features of the tune can be heard, but very quickly Sonny is composing brand new melodies.  Keeping all of this together is the chord scheme of "St. Thomas" which is repeated unchanged throughout the piece.  The members of the band also get a chance to try their skill at improvising, and then finally, at 9:51 the band returns to the "St. Thomas" tune to complete the piece. ', 32, 'v4DTR0I7xhA', 'bluesbebopper2000', 1),
 (84, 'Pop Song', 'While the Beatles may have come from England their music was inspired by the Blues, Soul and Rock and Roll musicians of the United States.  The form of this song - "I Wanna Hold Your Hand", unfolds as follows.  After a short introduction, verse 1 begins at 0:07, followed by the chorus at 0:23.  This is repeated with verse 2 (0:30) and a second chorus (0:44).  It was common in songs like this to add a new section towards the middle of the song to stop the verse and chorus structure becoming boring. This is a called a middle 8 and that''s what happens next from 0:52.  Next comes a third verse and chorus.  Then the middle 8 again.  The song is completed by a final verse and chorus.    ', 32, 'MKHFUKZ-IXE', 'spartan117halofreak', 1);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `SearchTerm`
---
-
-CREATE TABLE `SearchTerm` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `term` varchar(300) NOT NULL,
-  `frequency` int(11) NOT NULL DEFAULT '1',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=146 ;
-
---
--- Dumping data for table `SearchTerm`
---
-
-INSERT INTO `SearchTerm` (`id`, `term`, `frequency`) VALUES
-(1, 'Bob Marley', 1),
-(2, 'Grade 5 theory', 1),
-(3, 'C Major', 2),
-(4, 'E Major', 1),
-(5, 'aural', 2),
-(6, 'harmonize', 4),
-(7, 'theory', 1),
-(8, 'workshop', 1),
-(9, 'finishing phrase', 1),
-(10, 'rythem', 1),
-(11, 'circle of fifths', 2),
-(12, 'scale degrees', 2),
-(13, 'music curriculum early years', 1),
-(14, 'meter', 2),
-(15, 'tempo', 1),
-(16, 'ionian', 1),
-(17, 'guitar', 16),
-(18, 'dissionance', 1),
-(19, 'harmonizing', 1),
-(20, 'harmonization', 1),
-(21, 'harmony', 9),
-(22, 'Articulation ', 1),
-(23, 'clarinet', 1),
-(24, 'german sixth', 1),
-(25, 'rithm', 1),
-(26, 'sibelius', 2),
-(27, 'rudements', 1),
-(28, 'Secondary dominant s ', 1),
-(29, 'counterpoint', 4),
-(30, 'electronic', 1),
-(31, 'phrygian', 5),
-(32, 'intervals', 9),
-(33, 'cadences', 1),
-(34, 'cadenza', 1),
-(35, 'chord progression', 4),
-(36, 'b minor', 1),
-(37, 'd major', 1),
-(38, 'major', 8),
-(39, 'piano', 6),
-(40, 'development', 1),
-(41, 'dominant seventh', 1),
-(42, 'four part chords', 1),
-(43, 'guitar lessons', 1),
-(44, 'chords', 9),
-(45, 'triads', 2),
-(46, 'music', 1),
-(47, 'chord', 2),
-(48, 'rhythm', 14),
-(49, 'simple meter', 1),
-(50, 'primary triads', 1),
-(51, 'primary and secondary triads', 1),
-(52, 'grade 5', 1),
-(53, 'part writing', 1),
-(54, 'progressive', 1),
-(55, 'monteverdi', 2),
-(56, 'Sing', 14),
-(57, 'seventh', 2),
-(58, 'suspended', 1),
-(59, 'fourth', 1),
-(60, 'Pitch', 1),
-(61, 'basic music theory part 2', 1),
-(62, 'basic music theory', 1),
-(63, 'claves', 1),
-(64, 'orchestration', 2),
-(65, 'cadence', 1),
-(66, 'voice', 1),
-(67, 'vocal', 1),
-(68, 'software', 1),
-(69, 'composition', 2),
-(70, 'inversion', 2),
-(71, 'harmonic', 1),
-(72, 'cirlce of fifths', 1),
-(73, 'read music', 1),
-(74, 'time signature', 5),
-(75, 'modal', 1),
-(76, 'Intelrval', 1),
-(77, 'compose', 2),
-(78, 'tensions', 1),
-(79, 'Scales', 4),
-(80, 'analysis', 1),
-(81, 'chromatism', 1),
-(82, 'notas musicais no piano', 2),
-(83, 'como aprender a tocar piano', 1),
-(84, 'arpeggio', 1),
-(85, 'violin', 1),
-(86, 'Coldplay', 1),
-(87, 'politics', 1),
-(88, 'diatonic', 1),
-(89, 'semitone', 1),
-(90, 'chromatic', 1),
-(91, 'reggae', 1),
-(92, 'partiture', 3),
-(93, 'playing pino/organ ', 2),
-(94, 'lessons on organ playing', 3),
-(95, 'lessons on pino ', 1),
-(96, 'instrument lessons', 1),
-(97, 'part 8', 1),
-(98, 'jazz', 2),
-(99, 'arranging', 1),
-(100, 'ear', 3),
-(101, 'modes', 5),
-(102, 'score', 1),
-(103, 'sheet', 1),
-(104, 'gutiar', 1),
-(105, 'cadances', 1),
-(106, 'drums', 1),
-(107, 'tonality', 1),
-(108, 'violão', 1),
-(109, 'secondary triad', 1),
-(110, 'chromatic harmony', 1),
-(111, 'picardy', 1),
-(112, 'tenuto', 1),
-(113, 'what is music theory', 1),
-(114, 'opera ', 1),
-(115, 'sheet music', 2),
-(116, 'how to play guitar', 1),
-(117, 'trascription', 1),
-(118, 'nirvana', 1),
-(119, 'homophony', 1),
-(120, 'tv news', 2),
-(121, 'lessons', 2),
-(122, 'vocabulary', 1),
-(123, 'violoão', 1),
-(124, 'compound time', 1),
-(125, 'notation', 1),
-(126, '30', 1),
-(127, 'CGP Grey', 1),
-(128, 'Debt limit', 1),
-(129, 'structure', 1),
-(130, 'contrapuntal devices', 1),
-(131, 'melody', 1),
-(132, 'secondary triads', 1),
-(133, 'philnaldrett@google .com', 1),
-(134, 'Texas', 1),
-(135, 'Can Texas secede from the country', 1),
-(136, 'the staff', 2),
-(137, 'pedal', 1),
-(138, 'perfect', 1),
-(139, 'perfect intervals', 1),
-(140, 'Major intervals', 1),
-(141, 'major third', 1),
-(142, 'interval', 2),
-(143, 'Classic guitar', 1),
-(144, 'percussion', 1),
-(145, 'sonata', 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `Topic`
---
-
-CREATE TABLE `Topic` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(300) NOT NULL,
-  `urltitle` varchar(30) NOT NULL,
-  `colour` varchar(10) NOT NULL DEFAULT '#000000',
-  `courseId` int(11) NOT NULL,
-  `sortorder` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
-
 --
 -- Dumping data for table `Topic`
 --
@@ -497,19 +597,19 @@ INSERT INTO `Topic` (`id`, `title`, `urltitle`, `colour`, `courseId`, `sortorder
 (2, 'Getting Started', 'getting-started', '#000000', 7, 1),
 (3, 'Pitch', 'pitch', '#000000', 7, 2),
 (4, 'Scales', 'scales', '#000000', 7, 3),
-(5, 'Rhythm', 'rhythm', '#000000', 7, 4),
-(7, 'Harmony', 'harmony', '#000000', 7, 6),
-(8, 'The Circle of Fifths', 'the-circle-of-fifths', '#000000', 7, 7),
-(9, 'Modes', 'modes', '#000000', 7, 8),
-(10, 'Form', 'form', '#000000', 7, 9),
-(11, 'Articulation', 'articulation', '#000000', 7, 10),
-(12, 'Timbre', 'timbre', '#000000', 7, 11),
-(13, 'Instruments', 'instruments', '#000000', 7, 12),
-(14, 'Intervals', 'intervals', '#000000', 7, 14),
-(15, 'Ensembles', 'ensembles', '#000000', 7, 15),
-(16, 'Texture', 'texture', '#000000', 7, 13),
-(17, 'Music History', 'music-history', '#000000', 7, 16),
-(18, 'Getting Started', 'getting-started', '#000000', 4, 1),
+(5, 'Rhythm', 'rhythm', '#000000', 7, 5),
+(7, 'Harmony', 'harmony', '#000000', 7, 4),
+(8, 'The Circle of Fifths', 'the-circle-of-fifths', '#000000', 7, 8),
+(9, 'Modes', 'modes', '#000000', 7, 9),
+(10, 'Form', 'form', '#000000', 7, 11),
+(11, 'Articulation', 'articulation', '#000000', 7, 12),
+(12, 'Timbre', 'timbre', '#000000', 7, 13),
+(13, 'Instruments', 'instruments', '#000000', 7, 14),
+(14, 'Intervals', 'intervals', '#000000', 7, 7),
+(15, 'Ensembles', 'ensembles', '#000000', 7, 16),
+(16, 'Texture', 'texture', '#000000', 7, 15),
+(17, 'Music History', 'music-history', '#000000', 7, 17),
+(18, 'Getting Started', 'getting-started-reading', '#000000', 4, 1),
 (19, 'Staff and Clefs', 'staff-and-clefs', '#000000', 4, 2),
 (20, 'Reading Rhythm', 'reading-rhythm', '#000000', 4, 3),
 (21, 'Measures/Bars', 'measures-bars', '#000000', 4, 4),
@@ -517,60 +617,18 @@ INSERT INTO `Topic` (`id`, `title`, `urltitle`, `colour`, `courseId`, `sortorder
 (23, 'Guitar Tablature', 'guitar-tablature', '#000000', 4, 9),
 (24, 'Dynamics and Articulation', 'dynamics-and-articulation', '#000000', 4, 7),
 (26, 'Tempo', 'tempo', '#000000', 4, 8),
-(27, 'Sharps and Flats', 'sharps-and-flats', '#000000', 4, 6);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `User`
---
-
-CREATE TABLE `User` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(100) NOT NULL,
-  `name` varchar(100) NOT NULL,
-  `email` varchar(200) NOT NULL,
-  `joinDate` int(11) NOT NULL,
-  `lastActivity` int(11) DEFAULT NULL,
-  `points` int(11) DEFAULT NULL,
-  `l1badgeCount` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `username` (`username`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=720 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `UserExerciseAnswer`
---
-
-CREATE TABLE `UserExerciseAnswer` (
-  `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
-  `userId` int(10) unsigned NOT NULL COMMENT 'CONSTRAINT FOREIGN KEY (userId) REFERENCES User(id)',
-  `exerciseId` int(10) unsigned NOT NULL,
-  `complete` tinyint(4) NOT NULL,
-  `countHints` tinyint(4) NOT NULL,
-  `timeTaken` smallint(5) unsigned DEFAULT NULL,
-  `attemptNumber` mediumint(8) unsigned DEFAULT NULL,
-  `timestamp` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20635 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `UserVideoView`
---
-
-CREATE TABLE `UserVideoView` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `userId` int(10) unsigned NOT NULL COMMENT 'CONSTRAINT FOREIGN KEY (userId) REFERENCES User(id)',
-  `lessonId` int(10) unsigned NOT NULL COMMENT 'CONSTRAINT FOREIGN KEY (lessonId) REFERENCES Lesson(id)',
-  `status` tinyint(4) NOT NULL,
-  `position` varchar(100) DEFAULT NULL,
-  `timestamp` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4184 ;
+(27, 'Sharps and Flats', 'sharps-and-flats', '#000000', 4, 6),
+(28, 'Cadences', 'cadences', '#000000', 7, 10),
+(29, 'Key', 'key', '#000000', 7, 6),
+(30, 'Recognizing Intervals - Part 1', 'recognizing-intervals-1', '#000000', 2, 1),
+(34, 'Recognizing Intervals - Part 2', 'recognizing-intervals-2', '#000000', 2, 2),
+(35, 'Recognizing Intervals - Part 3', 'recognizing-intervals-3', '#000000', 2, 3),
+(36, 'Recognizing Intervals - Part 4', 'recognizing-intervals-4', '#000000', 2, 4),
+(37, 'ABRSM Theory Grade 1', 'abrsm-grade-1', '#000000', 1, 1),
+(38, 'ABRSM Theory Grade 2', 'abrsm-grade-2', '#000000', 1, 3),
+(39, 'ABRSM Theory Grade 3', 'abrsm-grade-3', '#000000', 1, 3),
+(40, 'Improvisation', 'improvisation', '#000000', 8, 0),
+(41, 'Sonic Pi', 'sonic-pi', '#000000', 9, 0);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
