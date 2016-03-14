@@ -4,7 +4,7 @@
 
 // Please enter the absolute path of your yii directory.  Because this folder lives in 
 
-$yiilocation = '/../../Library/yii/yii.php';
+$yiilocation = '/../../Library/yii/framework/yii.php';
 
 // Turns debug mode off/on - you want it on for development and off for production
 $debugmode=true; 
