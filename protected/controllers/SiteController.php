@@ -102,7 +102,7 @@ $this->pageTitle='Home | '.Yii::app()->name ;
 			if($model->validate())
 			{
 				$headers="From: {$model->email}\r\nReply-To: {$model->email}";
-				mail(Yii::app()->params['adminEmail'],'Tuition Enquiry',$model->body,$headers);
+				mail(Yii::app()->params['adminEmail'],'Tuition Enquiry from '.$model->name,$model->body,$headers);
 				Yii::app()->user->setFlash('contact','Thank you for contacting us. We will respond to you as soon as possible.</div>');
 				$this->refresh();
 			}
@@ -172,7 +172,7 @@ $this->pageTitle='Home | '.Yii::app()->name ;
 			if($model->validate())
 			{
 				$headers="From: {$model->email}\r\nReply-To: {$model->email}";
-				mail(Yii::app()->params['adminEmail'],'Dave Conservatoire Contact Form',$model->body,$headers);
+				mail(Yii::app()->params['adminEmail'],'Dave Conservatoire Contact Form from '.$model->name,$model->body,$headers);
 				Yii::app()->user->setFlash('contact','Thank you for contacting us. We will respond to you as soon as possible.</div>');
 				$this->refresh();
 			}
