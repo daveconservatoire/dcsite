@@ -254,7 +254,8 @@ if (rand(0, 1)==0):
                     <ul class="nav">
                         <a href="/about" class="btn btn-block dc-btn-yellow">About</a>
 						<a href="/donate" class="btn btn-block dc-btn-orange">Donate</a>
-						<a href="/contact" class="btn btn-block dc-btn-redorange">Contact</a>
+						<a href="/tuition" class="btn btn-block dc-btn-redorange">Personal Tuition</a>
+						<a href="/contact" class="btn btn-block dc-btn-red">Contact</a>
 						<?php if (Yii::app()->user->isGuest &&  !isset($_COOKIE['dc_tempusername'])): ?>
 						
 						<a href="<? echo Yii::app()->request->baseUrl;?>/login" class="btn btn-block dc-btn-red loginbutton">Login</a>
