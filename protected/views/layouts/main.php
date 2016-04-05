@@ -306,7 +306,8 @@ if (rand(0, 1)==0):
 						<? if(Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/subscribe"):?>
 						<a href="<? echo Yii::app()->request->baseUrl;?>/about" class="btn dc-btn-yellow">About</a>
 						<a href="<? echo Yii::app()->request->baseUrl;?>/donate" class="btn dc-btn-orange">Donate</a>
-						<a href="<? echo Yii::app()->request->baseUrl;?>/contact" class="btn dc-btn-redorange">Contact</a>
+						<a href="<? echo Yii::app()->request->baseUrl;?>/tuition" class="btn dc-btn-redorange">Donate</a>			
+						<a href="<? echo Yii::app()->request->baseUrl;?>/contact" class="btn dc-btn-red">Contact</a>
 						
 					<? endif;?>
 						
