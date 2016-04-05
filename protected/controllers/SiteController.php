@@ -180,7 +180,7 @@ $this->pageTitle='Home | '.Yii::app()->name ;
 		$this->render('contact',array('model'=>$model));
 	}
 	
-		public function actionVideositemap(
+		public function actionVideositemap()
 	{
 	
 		$this->renderPartial('videositemap');
