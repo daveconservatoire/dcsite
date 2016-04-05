@@ -67,7 +67,7 @@ foreach($playlistitems as $playlistitem):
     <div id="collapse_<?=$counter;?>" class="accordion-body collapse in">
       <div class="accordion-inner">
         	<p><?=$playlistitem->text;?> </p>
-		   
+		    <p>&nbsp;</p>
 		 
       </div>
     </div>
@@ -92,8 +92,7 @@ endforeach;
 			<div class="panel-wrapper">
 				<h2 class="title"><?=$playlistitem->title;?></h2>
 				<p><?=$playlistitem->text;?> </p>
-				<p>&nbsp;</p>
-				<p><small>Credit: <a href="http://www.youtube.com/<?=$playlistitem->credit;?>" target="_blank"><?=$playlistitem->credit;?></a></small></p>
+		
 			</div>
 		</div>
 <?	 
