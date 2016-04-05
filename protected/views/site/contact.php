@@ -63,11 +63,7 @@ $this->pageTitle='Contact | '.Yii::app()->name ;
 		<?php echo $form->textField($model,'email'); ?>
 		<?php echo $form->error($model,'email'); ?>
           </div>
-         <div class="control-group">
-     		<?php echo $form->labelEx($model,'subject'); ?>
-		<?php echo $form->textField($model,'subject'); ?>
-		<?php echo $form->error($model,'subject'); ?>
-          </div>
+
           <div class="control-group">
 		<?php echo $form->labelEx($model,'body'); ?>
 		<?php echo $form->textArea($model,'body',array('rows'=>6, 'cols'=>50)); ?>

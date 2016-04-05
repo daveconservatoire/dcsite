@@ -76,7 +76,9 @@ endif;
 
 
 
-if ($showBanner):?>
+if ($showBanner):
+if (rand(0, 1)==0):
+?>
 <div class="dropdown-notification text-center hidden" id="patreonbanner">
  <!-- <button class="close pull-right"><span class="icon-remove"></span></button> -->
    <div class="container">
@@ -150,6 +152,84 @@ if ($showBanner):?>
       </div>
    </div>
 </div>
+
+<? else: ?>
+<div class="dropdown-notification text-center hidden" id="patreonbanner">
+ <!-- <button class="close pull-right"><span class="icon-remove"></span></button> -->
+   <div class="container">
+      <div class="row">
+         <div class="span8">
+            <h3>Need some extra help, guidance or feedback?</h3>
+            <h3>We now offer personal tuition at all levels of ability</h3>
+            <p>Sometimes it is good to know you're on the track, book in a lesson with Dave Conservatoire founder David Rees!</p>
+         </div>
+         <div class="span4">
+	       <? if (false):?>
+            <p id="patreonpitch">If you have found this site useful, <b>make it available for future music students by donating:</b>
+               <a class="btn btn-large dc-btn-yellow" id="10Button">$10</a> 
+               <a class="btn btn-large dc-btn-orange" id="20Button">$20</a> 
+               <a class="btn btn-large dc-btn-redorange" id="50Button">$50</a> 
+            <form action="<? echo Yii::app()->request->baseUrl;?>/charge" method="POST" id="payment-form">
+               <input type="hidden" name="amount" value="0" id="chargeamount">
+            </form>
+            <? endif;?>
+            <!--
+             <p>If you've found this site useful, <b>make it available for future students <br />(and remove these annoying banners) by donating via Patreon:</b>
+	                <a class="btn btn-large dc-btn-orange" href="http://patreon.com/daveconservatoire" target="_blank" id="patreonbutton">Give to Dave Conservatoire via Patreon.com</a> 
+	                
+
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="paypalform">
+<input type="hidden" name="cmd" value="_xclick-subscriptions">
+<input type="hidden" name="business" value="dave@daveconservatoire.org">
+<input type="hidden" name="lc" value="GB">
+<input type="hidden" name="no_note" value="1">
+<input type="hidden" name="src" value="1">
+<input type="hidden" name="currency_code" value="USD">
+<input type="hidden" name="bn" value="PP-SubscriptionsBF:btn_subscribeCC_LG.gif:NonHostedGuest">
+<table class="paypalbuttontable">
+<tr><td><input type="hidden" name="on0" value="Voluntary Subscription">Voluntary Subscription</td></tr><tr><td><select name="os0">
+	<option value="&#9835;&#9835;">&#9835;&#9835; : $7.00 USD - monthly</option>
+	<option value="&#9835;">&#9835; : $3.00 USD - monthly</option>
+	<option value="&#9835;&#9835;&#9835;">&#9835;&#9835;&#9835; : $15.00 USD - monthly</option>
+	<option value="&#9835;&#9835;&#9835;&#9835;">&#9835;&#9835;&#9835;&#9835; : $30.00 USD - monthly</option>
+</select> </td></tr>
+</table>
+<input type="hidden" name="currency_code" value="USD">
+<input type="hidden" name="option_select0" value="&#9835;&#9835;">
+<input type="hidden" name="option_amount0" value="7.00">
+<input type="hidden" name="option_period0" value="M">
+<input type="hidden" name="option_frequency0" value="1">
+<input type="hidden" name="option_select1" value="&#9835;">
+<input type="hidden" name="option_amount1" value="3.00">
+<input type="hidden" name="option_period1" value="M">
+<input type="hidden" name="option_frequency1" value="1">
+<input type="hidden" name="option_select2" value="&#9835;&#9835;&#9835;">
+<input type="hidden" name="option_amount2" value="15.00">
+<input type="hidden" name="option_period2" value="M">
+<input type="hidden" name="option_frequency2" value="1">
+<input type="hidden" name="option_select3" value="&#9835;&#9835;&#9835;&#9835;">
+<input type="hidden" name="option_amount3" value="30.00">
+<input type="hidden" name="option_period3" value="M">
+<input type="hidden" name="option_frequency3" value="1">
+<input type="hidden" name="option_index" value="0">
+<input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+</form>
+-->
+<a href="<? echo Yii::app()->request->baseUrl; ?>/tuition" class="btn btn-primary" style="margin-top: 43px"><h2>Find out more!</h2>
+            
+
+</a>
+	                </div>
+	             
+         </div>
+      </div>
+   </div>
+</div>
+
+
+<? endif;?>
 <? endif;?>
       
       

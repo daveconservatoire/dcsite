@@ -41,7 +41,7 @@ $this->pageTitle='Contact | '.Yii::app()->name ;
 
 <p>For that reason, I am pleased to offer personal music tutoring via Skype or Google Hangout.  This works surprisingly well and allows anyone to access a music teacher at a time that suits them and at low cost.  Price start from $40 for a single 30 minute session and discounts for multiple bookings are available.</p>  
 
-<p>If you think a one-off session or a more regular lesson would be useful, please fill in the contact form with some details of what you would like some help with and we can discuss your requirements further via email or phone.  </p>
+<p>If you might find this useful, please complete the contact form and we can arrange a free consultation lesson to discuss your requirements.</p>
 </div>	
 <div class="span6">
 <div class="form">
@@ -71,11 +71,7 @@ $this->pageTitle='Contact | '.Yii::app()->name ;
 		<?php echo $form->textField($model,'email'); ?>
 		<?php echo $form->error($model,'email'); ?>
           </div>
-         <div class="control-group">
-     		<?php echo $form->labelEx($model,'subject'); ?>
-		<?php echo $form->textField($model,'subject'); ?>
-		<?php echo $form->error($model,'subject'); ?>
-          </div>
+
           <div class="control-group">
 		<?php echo $form->labelEx($model,'body'); ?>
 		<?php echo $form->textArea($model,'body',array('rows'=>6, 'cols'=>50)); ?>
