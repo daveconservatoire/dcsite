@@ -70,7 +70,7 @@
       </div>
    </div>
 </div>
-<? if ($course->id != 8 && $course->id !=9) : ?>
+<? if ($course->id != 8 && $course->id !=9 && $course->id !=10) : ?>
 <div class="pad30"></div>
 <div class="container wrapper">
    <div class="thumbnails tabbable">
