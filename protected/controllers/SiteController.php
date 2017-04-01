@@ -93,6 +93,21 @@ $this->pageTitle='Home | '.Yii::app()->name ;
 		$this->render('about');
 	}
 	
+		public function actionStagecast()
+	{
+		// renders the view file 'protected/views/site/index.php'
+		// using the default layout 'protected/views/layouts/main.php'
+		$this->render('stagecast');
+	}
+	
+			public function actionStagecastWatch()
+	{
+		// renders the view file 'protected/views/site/index.php'
+		// using the default layout 'protected/views/layouts/main.php'
+		$this->render('stagecastwatch');
+	}
+	
+	
 		public function actionTuition()
 	{
 				$model=new ContactForm;

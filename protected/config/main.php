@@ -96,6 +96,9 @@ return array(
 			    'about'=>'site/about',
 			    'login'=>'site/login',
 			    'subscribe'=>'site/subscribe',
+          'stagecast'=>'site/stagecast',
+          'stagecast/watch'=>'site/stagecastwatch',
+          
 			    'feedback'=>'site/feedback',
 			    'socialmedia'=>'site/socialmedia',
 			    'patronthanks'=>'site/patronthanks',
