@@ -44,7 +44,7 @@ $this->pageTitle='Contact | '.Yii::app()->name ;
     <h3>Your Email</h3>
     <input type="email" name="_replyto">
     <h3>Your Message</h3>
-    <textarea  name="message" ></textarea>  
+    <textarea  name="message" style="height:200px"></textarea>  
     <input type="submit" value="Send">
 </form>
 
