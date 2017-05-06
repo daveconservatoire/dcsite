@@ -31,75 +31,34 @@ $this->pageTitle='Contact | '.Yii::app()->name ;
 
 <?php else: ?>
 
-<p>
 
-</p>
 <div class="row">
 	
-<div class="span6">
+<div class="span9">
+  <p>&nbsp;</p>
 <p>	Students on Dave Conservatoire often ask for some extra help on their musical journey.  It is very reassuring to know you're on the right path, have that bit of guidance before the big test or get some regular honest feedback about your performance or composition work.  </p>
 
-<p>For that reason, I am pleased to offer personal music tutoring via Skype or Google Hangout.  This works surprisingly well and allows anyone to access a music teacher at a time that suits them and at low cost.  Price start from $40 for a single 30 minute session and discounts for multiple bookings are available.</p>  
+<p>For that reason, I am pleased to offer personal music tutoring via Skype or Google Hangout.  This works surprisingly well and allows anyone to access a music teacher at a time that suits them and at low cost.  Prices start from $40 for a single 30 minute session and discounts for multiple bookings are available.</p>  
 
 <p>If you might find this useful, please complete the contact form and we can arrange a free consultation lesson to discuss your requirements.</p>
-</div>	
-<div class="span6">
+
 <div class="form">
+    <form action="https://formspree.io/dave@daveconservatoire.org"
+      method="POST">
+        <h3>Your Name</h3>
+    <input type="text" name="name">
+    <h3>Your Email</h3>
+    <input type="email" name="_replyto">
+    <h3>Your Message</h3>
+    <textarea  name="message" ></textarea>  
+    <input type="submit" value="Send">
+</form>
+</div>
 
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'contact-form',
-	'enableClientValidation'=>true,
-	'clientOptions'=>array(
-		'validateOnSubmit'=>true,
-	),
-)); ?>
+    </div>
+  </div>
+</div>
 
-	<?php echo $form->errorSummary($model); ?>
-
-
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
-        <fieldset>
-          
-          <div class="control-group">
-         <?php echo $form->labelEx($model,'name'); ?>
-		<?php echo $form->textField($model,'name'); ?>
-		<?php echo $form->error($model,'name'); ?>
-          </div>
-          <div class="control-group">
-     		<?php echo $form->labelEx($model,'email'); ?>
-		<?php echo $form->textField($model,'email'); ?>
-		<?php echo $form->error($model,'email'); ?>
-          </div>
-
-          <div class="control-group">
-		<?php echo $form->labelEx($model,'body'); ?>
-		<?php echo $form->textArea($model,'body',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'body'); ?>
-            
-          </div>
-          
-          
-	<?php if(CCaptcha::checkRequirements()): ?>
-	 <div class="control-group">
-		<?php echo $form->labelEx($model,'verifyCode'); ?>
-		<div>
-		<?php $this->widget('CCaptcha'); ?>
-		<?php echo $form->textField($model,'verifyCode'); ?>
-		</div>
-		<div class="hint">Please enter the letters as they are shown in the image above.
-		<br/>Letters are not case-sensitive.</div>
-		<?php echo $form->error($model,'verifyCode'); ?>
-	</div>
-	<?php endif; ?>
-          <div class="form-actions">
-            <button type="submit" class="btn btn-primary">Send!</button>
-            <button type="reset" class="btn">Clear</button>
-          </div>
-        </fieldset>
-</div></div></div></div>
-
-<?php $this->endWidget(); ?>
 
 
 <?php endif; ?>
