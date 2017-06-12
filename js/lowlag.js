@@ -1,6 +1,6 @@
 if (!window.console) console = {log: function() {}};
 
-var urlBase = document.location.hostname =="localhost" ? "/dcsite/" : "/dcdev/";
+var urlBase = document.location.hostname =="localhost" ? "/dcsite/" : "/";
 
 var lowLag = new function(){
 	this.someVariable = undefined;
@@ -121,6 +121,7 @@ var lowLag = new function(){
 		lowLag.msg("playSoundSM2 "+tag);
 
 		soundManager.play(tag);
+		console.log('played sound');
 	}
 
 	
