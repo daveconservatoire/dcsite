@@ -23,11 +23,10 @@ class ServiceUserIdentity extends CUserIdentity {
     public function authenticate() {       
         if ($this->service->isAuthenticated) {
             $this->username = $this->service->getAttribute('name');
-            
+        
           
             $this->setState('username', $this->service->id);
             $this->setState('name', $this->username);
-        
             $this->setState('service', $this->service->serviceName);
            
             
@@ -55,6 +54,7 @@ class ServiceUserIdentity extends CUserIdentity {
 	        $user=User::model()->findByAttributes(array('username'=>$_COOKIE['dc_tempusername']));
 	        $user->username=$this->service->id;
 	        $user->name= $this->username;
+	     
 	        if($this->service->email):
             $user->email= $this->service->email;
             else:

@@ -1,5 +1,4 @@
-<?php
-
+<?php                                                                                                                                                                                   
 // YOU MIGHT NEED TO CHANGE THE LOCATION OF YOUR YII.PHP IF IT IS LOCATED ELSEWHERE
 
 if(file_exists(dirname(__FILE__).'/protected/config/secrets.php')){
@@ -14,6 +13,8 @@ require_once($secrets);
 $yii=dirname(__FILE__).$yiilocation;
 $config=dirname(__FILE__).'/protected/config/main.php';
 $globals=dirname(__FILE__).'/protected/config/globals.php';
+
+$debugmode=true;
 
 if ($debugmode) {
 
