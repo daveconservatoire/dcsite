@@ -31,15 +31,21 @@ public function actionCreate()
         // Get an instance of the respective model
         case 'exerciseanswer':
             $model = new UserExerciseAnswer;
-            $case = 'exerciseanswer';                    
+            $activity= new UserActivity;
+            $case = 'exerciseanswer';   
+            $activity->type="exans";                 
             break;
         case 'videoview':
         	$model= new UserVideoView;
+          $activity= new UserActivity;
         	$case = 'videoview';  
+        	$activity->type="vidview";   
         	break;
         case 'singleexmastery':
         	$model= new UserExSingleMastery;
+          $activity= new UserActivity;
         	$case = 'singleexmastery';
+        	$activity->type="exmaster";   
         	break;
         default:
             $this->_sendResponse(501, 
@@ -58,11 +64,22 @@ public function actionCreate()
                 $_GET['model']) );
     }
     
+      foreach($_POST as $var=>$value) {
+        // Does the model have this attribute? If not raise an error
+        if($activity->hasAttribute($var))
+            $activity->$var = $value;
+        else
+            $this->_sendResponse(500, 
+                sprintf('Parameter <b>%s</b> is not allowed for model <b>%s</b>', $var,
+                $_GET['model']) );
+    }
+    
     //special things we need to do to each type of record!
     
     if ($case=='exerciseanswer'){
 	 	$exerciseinfo=Lesson::model()->findByAttributes(array('youtubeid'=>$model->exerciseId));
 	 	$model->exerciseId=$exerciseinfo->id;
+	 	$activity->exerciseId=$exerciseinfo->id;
 	 
 	 	//Increment user's points score
 	 	if(!Yii::app()->user->isGuest){
@@ -82,6 +99,7 @@ public function actionCreate()
 	   if ($case=='singleexmastery'){
 	 	$exerciseinfo=Lesson::model()->findByAttributes(array('youtubeid'=>$model->exerciseId));
 	 	$model->exerciseId=$exerciseinfo->id;
+	  $activity->exerciseId=$exerciseinfo->id;
 	 
 	 	//Increment user's points score
 	 	if(!Yii::app()->user->isGuest){
@@ -124,18 +142,23 @@ public function actionCreate()
     
     if(!Yii::app()->user->isGuest) {
     $model->userId=Yii::app()->user->dcid; 
+    $activity->userId=$user->id;
+	
     }
     
     if(Yii::app()->user->isGuest && $_COOKIE['dc_tempusername']) {
 	$user=User::model()->findByAttributes(array('username'=>$_COOKIE['dc_tempusername']));
 	$model->userId=$user->id;
+	$activity->userId=$user->id;
 	
     }  
     $model->timestamp=time();
+    $activity->timestamp=time();
 // Try to save the model
 
     if($model->save()) {
       $feedback="Seems to have worked!";
+      $activity->save();
       
     
         $this->_sendResponse(200, CJSON::encode($feedback));
