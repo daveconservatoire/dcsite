@@ -127,7 +127,7 @@ return array(
 		//Add you own DB info!
 	
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname='.$dbname,
+			'connectionString' => "mysql:host={$dblocation};dbname={$dbname}",
 			'emulatePrepare' => true,
 			'username' => $dbusername,
 			'password' => $dbpassword,
