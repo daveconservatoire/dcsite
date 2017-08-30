@@ -83,7 +83,7 @@ public function actionCreate()
 	 
 	 	//Increment user's points score
 	 	if(!Yii::app()->user->isGuest){
-		 	$user=User::model()->findByPk(Yii::app()->user->id);
+		 	$user=User::model()->findByPk(Yii::app()->user->dcid);
 		 	} 
 		 	
 		 if(Yii::app()->user->isGuest && isset($_COOKIE['dc_tempusername'])){
@@ -103,7 +103,7 @@ public function actionCreate()
 	 
 	 	//Increment user's points score
 	 	if(!Yii::app()->user->isGuest){
-		 	$user=User::model()->findByPk(Yii::app()->user->id);
+		 	$user=User::model()->findByPk(Yii::app()->user->dcid);
 		 	} 
 		 	
 		 if(Yii::app()->user->isGuest && isset($_COOKIE['dc_tempusername'])){
@@ -120,18 +120,18 @@ public function actionCreate()
     if ($case=='videoview'){
     /*
     //If the video has already been marked complete we want to update status and the timestamp so it appears on latest videos. 
-    if(UserVideoView::model()->exists('userId="'.Yii::app()->user->id.'" AND lessonId="'.$model->lessonId.'"')&& $model->status==1)
+    if(UserVideoView::model()->exists('userId="'.Yii::app()->user->dcid.'" AND lessonId="'.$model->lessonId.'"')&& $model->status==1)
     {	
-      $oldmodel=UserVideoView::model()->findByAttributes(array('userId'=>Yii::app()->user->id, 'lessonId'=>$model->lessonId));
+      $oldmodel=UserVideoView::model()->findByAttributes(array('userId'=>Yii::app()->user->dcid, 'lessonId'=>$model->lessonId));
       $oldmodel->status=1;
       $model=$oldmodel;
     }	
       
     //If this video is not complete but record exists we want to update timestamp
-      else if(UserVideoView::model()->exists('userId="'.Yii::app()->user->id.'" AND lessonId="'.$model->lessonId.'"') && $model->status==2)
+      else if(UserVideoView::model()->exists('userId="'.Yii::app()->user->dcid.'" AND lessonId="'.$model->lessonId.'"') && $model->status==2)
     {	
       
-      $oldmodel=UserVideoView::model()->findByAttributes(array('userId'=>Yii::app()->user->id, 'lessonId'=>$model->lessonId));
+      $oldmodel=UserVideoView::model()->findByAttributes(array('userId'=>Yii::app()->user->dcid, 'lessonId'=>$model->lessonId));
       $model=$oldmodel;
     }	
   
@@ -141,7 +141,7 @@ public function actionCreate()
     
     
     if(!Yii::app()->user->isGuest) {
-    $model->userId=Yii::app()->user->id; 
+    $model->userId=Yii::app()->user->dcid; 
     $activity->userId=$user->id;
 	
     }

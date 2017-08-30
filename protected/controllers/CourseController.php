@@ -54,7 +54,7 @@ class CourseController extends Controller
 	    $exercisesmasteredlist = array();
 	    
 	    if(!Yii::app()->user->isGuest){	
-	    $user=User::model()->findByPk(Yii::app()->user->id);
+	    $user=User::model()->findByPk(Yii::app()->user->dcid);
 	   
 	    	foreach ($user->videosviewed as $videoviewed):
 	    		   if(!in_array($videoviewed->lesson->topicno, $videosviewedarray)){

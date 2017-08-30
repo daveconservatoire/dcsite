@@ -34,7 +34,7 @@
 						<li><a href="<? echo Yii::app()->request->baseUrl; ?>/site/logout"><i class="icon-share-alt"></i>Logout</a></li>
 					</ul>
 				</div>
-				<? $user=User::model()->findByPk(Yii::app()->user->id);?>
+				<? $user=User::model()->findByPk(Yii::app()->user->dcid);?>
 				<span id="points" class="badge pull-right" style="margin: 9px 5px"><?=$user->points;?></span>
 				<?php endif;?>
 			</div>

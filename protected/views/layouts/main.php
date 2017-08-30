@@ -64,7 +64,7 @@ endif;
 endif;
 
 if (!Yii::app()->user->isGuest):
-$user=User::model()->findByAttributes(array('id'=>Yii::app()->user->id));
+$user=User::model()->findByAttributes(array('id'=>Yii::app()->user->dcid));
 if($user->subamount>0):
 $showBanner=False;
 endif;
@@ -255,7 +255,7 @@ if ($randnumber==0):
 
 
 						<? if(!Yii::app()->user->isGuest): ?>
-						<? $user=User::model()->findByPk(Yii::app()->user->id);?>
+						<? $user=User::model()->findByPk(Yii::app()->user->dcid);?>
 
 						<div class="btn-group loginbutton">
 								<a class="btn btn-success " href="<? echo Yii::app()->request->baseUrl; ?>/profile"><i class="icon-user icon-white"></i> <? echo Yii::app()->user->name;?> (<span id="pointstotal"><?=$user->points;?></span> Points)</a>
@@ -310,7 +310,7 @@ if ($randnumber==0):
 
 
 						<? if(!Yii::app()->user->isGuest): ?>
-						<? $user=User::model()->findByPk(Yii::app()->user->id);?>
+						<? $user=User::model()->findByPk(Yii::app()->user->dcid);?>
 
 						<div class="btn-group loginbutton">
 								<a class="btn btn-success " href="<? echo Yii::app()->request->baseUrl; ?>/profile"><i class="icon-user icon-white"></i> <? echo Yii::app()->user->name;?> (<span id="pointstotal"><?=$user->points;?></span> Points)</a>
