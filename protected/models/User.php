@@ -46,14 +46,14 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('username, name, email', 'required'),
+			array('username, email', 'required'),
 			array('username, name', 'length', 'max'=>100),
 			array('email', 'length', 'max'=>200),
 			array('biog', 'length', 'max'=>160),
 			array('firstip', 'length', 'max'=>100),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			
+
 		);
 	}
 
@@ -68,8 +68,8 @@ class User extends CActiveRecord
 			'exercisesanswered' => array(self::HAS_MANY, 'UserExerciseAnswer', 'userId'),
 			'exercisesmastered' => array(self::HAS_MANY, 'UserExSingleMastery', 'userId'),
 			'videosviewed' => array(self::HAS_MANY, 'UserVideoView', 'userId'));
-			
-		
+
+
 	}
 
 	/**
