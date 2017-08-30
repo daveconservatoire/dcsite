@@ -15,16 +15,16 @@ public function init()
 
 public function actionIndex() {
 
-       $user=User::model()->find('id='.Yii::app()->user->dcid);
+       $user=User::model()->find('id='.Yii::app()->user->id);
        
-       $videos = UserVideoView::model()->findAll(array('condition'=>'userid ='.Yii::app()->user->dcid, 'order'=>'timestamp DESC', 'limit'=>5));
-	   $exercises = UserExerciseAnswer::model()->findAll(array('condition'=>'userid ='.Yii::app()->user->dcid, 'order'=>'timestamp DESC', 'limit'=>5));
-	   $masters = UserExSingleMastery::model()->findAll(array('condition'=>'userid ='.Yii::app()->user->dcid, 'order'=>'timestamp DESC', 'limit'=>5));
+       $videos = UserVideoView::model()->findAll(array('condition'=>'userid ='.Yii::app()->user->id, 'order'=>'timestamp DESC', 'limit'=>5));
+	   $exercises = UserExerciseAnswer::model()->findAll(array('condition'=>'userid ='.Yii::app()->user->id, 'order'=>'timestamp DESC', 'limit'=>5));
+	   $masters = UserExSingleMastery::model()->findAll(array('condition'=>'userid ='.Yii::app()->user->id, 'order'=>'timestamp DESC', 'limit'=>5));
 	   
 	
 
-	   $videoscount= UserVideoView::model()->count(array('condition'=>'userid ='.Yii::app()->user->dcid));
-	   $excount = UserExerciseAnswer::model()->count(array('condition'=>'userid ='.Yii::app()->user->dcid));
+	   $videoscount= UserVideoView::model()->count(array('condition'=>'userid ='.Yii::app()->user->id));
+	   $excount = UserExerciseAnswer::model()->count(array('condition'=>'userid ='.Yii::app()->user->id));
 	$activitylog=array();
 	foreach ($videos as $video):
 		$activitylog[]=array('type'=>'video','urltitle'=>$video->lesson->urltitle,'title'=>$video->lesson->title,'timestamp'=>$video->timestamp);
@@ -53,9 +53,9 @@ public function actionIndex() {
 }
 
 public function actionActivity() {
-	$videos = UserVideoView::model()->findAll(array('condition'=>'userid ='.Yii::app()->user->dcid, 'order'=>'timestamp DESC'));
-	$exercises = UserExerciseAnswer::model()->findAll(array('condition'=>'userid ='.Yii::app()->user->dcid, 'order'=>'timestamp DESC'));
-	   $masters = UserExSingleMastery::model()->findAll(array('condition'=>'userid ='.Yii::app()->user->dcid, 'order'=>'timestamp DESC'));
+	$videos = UserVideoView::model()->findAll(array('condition'=>'userid ='.Yii::app()->user->id, 'order'=>'timestamp DESC'));
+	$exercises = UserExerciseAnswer::model()->findAll(array('condition'=>'userid ='.Yii::app()->user->id, 'order'=>'timestamp DESC'));
+	   $masters = UserExSingleMastery::model()->findAll(array('condition'=>'userid ='.Yii::app()->user->id, 'order'=>'timestamp DESC'));
 
 	
 	$activitylog=array();
@@ -88,8 +88,8 @@ public function actionActivity() {
 public function actionFocus() {
 
 
-$videos = UserVideoView::model()->findAll(array('condition'=>'userid ='.Yii::app()->user->dcid, 'order'=>'timestamp DESC'));	
-$exercises = UserExerciseAnswer::model()->findAll(array('condition'=>'userid ='.Yii::app()->user->dcid, 'order'=>'timestamp DESC'));
+$videos = UserVideoView::model()->findAll(array('condition'=>'userid ='.Yii::app()->user->id, 'order'=>'timestamp DESC'));	
+$exercises = UserExerciseAnswer::model()->findAll(array('condition'=>'userid ='.Yii::app()->user->id, 'order'=>'timestamp DESC'));
 
 
 foreach ($videos as $video):
@@ -113,12 +113,12 @@ public function actionEngagement() {
 
 public function actionUpdate() {
 
-$user=User::model()->find("id=".Yii::app()->user->dcid);
+$user=User::model()->find("id=".Yii::app()->user->id);
 $user->biog=strip_tags($_POST['User']['biog']);
 
         
          
-            if ($user->id==Yii::app()->user->dcid) {
+            if ($user->id==Yii::app()->user->id) {
             if($user->save())
                 $this->redirect(bu().'/profile');
                 } else {

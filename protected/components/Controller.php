@@ -30,7 +30,7 @@ class Controller extends CController
 	
 
 				if(!Yii::app()->user->isGuest):
-		     $user = User::model()->findByAttributes(array('id'=>Yii::app()->user->dcid));
+		     $user = User::model()->findByAttributes(array('id'=>Yii::app()->user->id));
 		     
 		   if(Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/socialmedia" && Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/thanks" && Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/login"):
 		     if($user->subamount=="" && Yii::app()->urlManager->parseUrl(Yii::app()->request)!="site/subscribe"):

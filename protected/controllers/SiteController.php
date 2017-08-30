@@ -24,7 +24,7 @@ class SiteController extends Controller
 	public function actionProfile()
 	{
 	if (!Yii::app()->user->isGuest){
-		$model=User::model()->findByPk(Yii::app()->user->dcid);
+		$model=User::model()->findByPk(Yii::app()->user->id);
 		$this->render('profile',array('model'=>$model));
 		} else {
 		$this->redirect('/');	
@@ -66,7 +66,7 @@ $this->pageTitle='Home | '.Yii::app()->name ;
             
 			$this->render('index',array('courses'=>$courses));
 	    else:
-	    $user=User::model()->findByPk(Yii::app()->user->dcid);
+	    $user=User::model()->findByPk(Yii::app()->user->id);
 	    $videosviewedarray = array();
 	    	foreach ($user->videosviewed as $videoviewed):
 	    		   if(!in_array($videoviewed->lesson->topicno, $videosviewedarray)){
@@ -145,7 +145,7 @@ $this->pageTitle='Home | '.Yii::app()->name ;
 		endif;
 		
 		if(!Yii::app()->user->isGuest && $_GET['st']=="Completed"):	
-		     $user=User::model()->findByPk(Yii::app()->user->dcid);
+		     $user=User::model()->findByPk(Yii::app()->user->id);
 		     $user->subamount=$_GET['amt'];
 		     $user->subupdated=date("Y-m-d H:i:s"); 
 		     $user->save();
@@ -219,7 +219,7 @@ $this->pageTitle='Home | '.Yii::app()->name ;
 		endif;
 		
 		if(!Yii::app()->user->isGuest):	
-		     $user=User::model()->findByPk(Yii::app()->user->dcid);
+		     $user=User::model()->findByPk(Yii::app()->user->id);
 		        if($user->subamount==""):
 		     $user->subamount=0;
 		     endif;
@@ -245,7 +245,7 @@ $this->pageTitle='Home | '.Yii::app()->name ;
 		endif;
 		
 		if(!Yii::app()->user->isGuest):	
-		     $user=User::model()->findByPk(Yii::app()->user->dcid);
+		     $user=User::model()->findByPk(Yii::app()->user->id);
 		        if($user->subamount==""):
 		     $user->subamount=0;
 		     endif;
@@ -266,7 +266,7 @@ $this->pageTitle='Home | '.Yii::app()->name ;
 
 		
 		if(!Yii::app()->user->isGuest):	
-		     $user=User::model()->findByPk(Yii::app()->user->dcid);
+		     $user=User::model()->findByPk(Yii::app()->user->id);
 		endif;
 		
 		if (isset($user)):
